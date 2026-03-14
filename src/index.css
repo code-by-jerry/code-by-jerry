@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B0B0B;
+  --color-accent: #6366F1;
+  --color-background: #FFFFFF;
+  --color-surface: #F1F5F9;
+  --color-text: #0B0B0B;
+  --color-text-secondary: #64748B;
+  --color-border: #E5E7EB;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .hero-bg {
+    background: linear-gradient(
+      120deg,
+      #ffffff,
+      #f1f5f9,
+      #eef2ff,
+      #ffffff
+    );
+    background-size: 200% 200%;
+  }
+}
+
+/* Base styles for smooth scrolling setup with Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
