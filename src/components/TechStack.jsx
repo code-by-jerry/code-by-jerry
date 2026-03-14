@@ -32,7 +32,7 @@ export default function TechStack() {
             </h3>
             <ul className="flex flex-wrap gap-2" aria-label={`${cat.title} technologies`}>
               {cat.tech.map((t, idx) => (
-                <li key={idx} className="flex items-center rounded-full bg-accent/5 border border-accent/10 px-3 py-1 text-xs font-semibold leading-5 text-accent shadow-sm">
+                <li key={idx} className="tech-item flex items-center rounded-full bg-accent/5 border border-accent/10 px-3 py-1 text-xs font-semibold leading-5 text-accent shadow-sm">
                   {t}
                 </li>
               ))}

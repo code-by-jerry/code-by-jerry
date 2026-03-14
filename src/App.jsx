@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Hero from './components/Hero'
 import About from './components/About'
 import TechStack from './components/TechStack'
@@ -8,6 +9,8 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Contact from './components/Contact'
 import './App.css'
+
+gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -61,6 +64,54 @@ function App() {
       });
     }, appRef);
     return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    const sections = ['#about', '#tech', '#experience', '#projects', '#contact'];
+    
+    sections.forEach((section) => {
+      gsap.fromTo(section, 
+        { 
+          opacity: 0, 
+          y: 20 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // Stagger animation for tech items
+    gsap.fromTo(".tech-item", 
+      { 
+        opacity: 0, 
+        scale: 0.8
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: "#tech",
+          start: "top 80%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
   return (
