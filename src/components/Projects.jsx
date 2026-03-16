@@ -15,26 +15,27 @@ function ProjectImageScroll({ images, title }) {
   };
 
   return (
-    <div className="relative group/scroll flex flex-col items-center h-full">
+    <div className="relative group/scroll flex flex-col items-center h-full max-h-full">
       <button 
         onClick={() => scroll('up')}
-        className="absolute top-0 z-30 p-2 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
+        className="absolute top-2 z-30 p-1 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
         aria-label="Scroll Up"
       >
-        <FaChevronUp size={14} />
+        <FaChevronUp size={12} />
       </button>
 
       <div 
         ref={scrollRef}
-        className="flex-1 w-full overflow-hidden no-scrollbar py-8"
+        className="flex-1 w-full overflow-y-auto no-scrollbar scroll-smooth px-1"
+        style={{ maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)' }}
       >
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3 py-16">
           {images.map((img, idx) => (
-            <div key={idx} className="w-full aspect-[4/3] rounded border border-border/20 overflow-hidden bg-surface shadow-sm shrink-0">
+            <div key={idx} className="w-full aspect-video rounded-lg border border-border/10 overflow-hidden bg-surface shadow-sm shrink-0">
               <img 
                 src={img} 
                 alt={`${title} thumbnail ${idx + 1}`} 
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" 
+                className="w-full h-full object-cover transition-all duration-500 scale-[1.01] hover:scale-100" 
               />
             </div>
           ))}
@@ -43,10 +44,10 @@ function ProjectImageScroll({ images, title }) {
 
       <button 
         onClick={() => scroll('down')}
-        className="absolute bottom-0 z-30 p-2 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
+        className="absolute bottom-2 z-30 p-1 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
         aria-label="Scroll Down"
       >
-        <FaChevronDown size={14} />
+        <FaChevronDown size={12} />
       </button>
     </div>
   );
@@ -58,7 +59,7 @@ export default function Projects() {
       title: "Atha Constructions Platform",
       year: "2026",
       status: "Production / Client Project",
-      images: ["/assets/projects/atha.png", "/assets/projects/atha.png", "/assets/projects/atha.png"],
+      images: ["/assets/projects/atha.png", "/assets/projects/atha.png", "/assets/projects/atha.png", "/assets/projects/atha.png", "/assets/projects/atha.png"],
       description: "Real estate platform for managing property listings, corporate branding, and SEO-driven marketing pages.",
       role: "System Architecture · Full-stack Development · Deployment",
       impact: [
@@ -75,7 +76,7 @@ export default function Projects() {
       title: "FreshTick · Hybrid Delivery Ecosystem",
       year: "2026",
       status: "Production / Client Project",
-      images: ["/assets/projects/freshtick.png", "/assets/projects/freshtick.png", "/assets/projects/freshtick.png"],
+      images: ["/assets/projects/freshtick.png", "/assets/projects/freshtick.png", "/assets/projects/freshtick.png", "/assets/projects/freshtick.png", "/assets/projects/freshtick.png"],
       description: "Delivery platform supporting multi-role operations and real-time fleet tracking.",
       role: "Backend Architecture · API Design · Real-time Integration",
       impact: [
@@ -92,7 +93,7 @@ export default function Projects() {
       title: "JippyMart · Scalable Food Delivery",
       year: "2025",
       status: "Live Production",
-      images: ["/assets/projects/jippymart.png", "/assets/projects/jippymart.png", "/assets/projects/jippymart.png"],
+      images: ["/assets/projects/jippymart.png", "/assets/projects/jippymart.png", "/assets/projects/jippymart.png", "/assets/projects/jippymart.png", "/assets/projects/jippymart.png"],
       description: "Automated food delivery network and vendor management system for local businesses.",
       role: "Full-stack Development · Dashboard Engineering · API Integration",
       impact: [
@@ -109,7 +110,7 @@ export default function Projects() {
       title: "Nesthetix Designs · Architecture Hub",
       year: "2025",
       status: "Live / Client Project",
-      images: ["/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png"],
+      images: ["/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png"],
       description: "High-performance architecture and interior design portfolio with advanced SEO optimization.",
       role: "Frontend Engineering · SEO Strategy · Performance Optimization",
       impact: [
@@ -127,7 +128,7 @@ export default function Projects() {
   return (
     <section id="projects" className="scroll-mt-16 lg:scroll-mt-24 w-full">
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-primary font-display">Featured Projects</h2>
+        <h2 className="text-sm font-bold uppercase tracking-widest text-primary font-display">Selected Client Work & Projects</h2>
       </div>
       
       <div className="flex flex-col gap-16 group/list">
@@ -136,7 +137,7 @@ export default function Projects() {
             <div className="grid sm:grid-cols-12 sm:gap-8 p-4 -m-4 rounded-xl border border-transparent hover:bg-surface/30 project-card-hover h-full items-stretch">
               
               {/* Vertical Image Scroll Column (Matches Card Height) */}
-              <div className="sm:col-span-3 z-10 h-full min-h-[320px]">
+              <div className="sm:col-span-3 z-10 h-auto overflow-hidden">
                 <ProjectImageScroll images={proj.images} title={proj.title} />
               </div>
 
@@ -166,11 +167,25 @@ export default function Projects() {
                 </p>
 
                 <div className="flex-1 flex flex-col gap-6">
-                  <div>
-                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-secondary/40 mb-2">Architecture</h4>
-                    <p className="text-xs leading-relaxed text-text-secondary font-light">
-                      {proj.architecture}
-                    </p>
+                  <div className="flex flex-col gap-4">
+                    <div>
+                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-secondary/40 mb-2">Architecture</h4>
+                      <p className="text-xs leading-relaxed text-text-secondary font-light">
+                        {proj.architecture}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-[10px] font-bold uppercase tracking-widest text-accent/50 mb-3">Key Outcomes</h4>
+                      <ul className="flex flex-col gap-2">
+                        {proj.impact.map((point, idx) => (
+                          <li key={idx} className="text-[11px] leading-relaxed text-text-secondary flex gap-2 items-start">
+                            <span className="text-accent font-bold mt-0.5">·</span>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
                   <ul className="flex flex-wrap gap-2" aria-label="Technologies used">

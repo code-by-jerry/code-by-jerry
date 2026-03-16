@@ -2,7 +2,7 @@ export default function Experience() {
   const experiences = [
     {
       period: "Nov 2026 — Present",
-      title: "Full Stack Developer · Atha Constructions",
+      title: "Full Stack Engineer · Atha Constructions",
       desc: "Leading development of multiple production web platforms, handling architecture, development, deployment, and long-term maintenance of company systems.",
       achievements: [
         "Designed and deployed production platforms including Atha Constructions, Nesthetix Design, and Area24One",
@@ -12,7 +12,7 @@ export default function Experience() {
     },
     {
       period: "2026 — Present",
-      title: "Freelance Full Stack Developer",
+      title: "Independent Full Stack Engineer",
       desc: "Building web applications and platform solutions for clients across e-commerce, delivery platforms, and enterprise tools.",
       achievements: [
         "Developed backend systems and admin dashboards for a software-defined mobility platform (DestroSolutions)",
@@ -22,7 +22,7 @@ export default function Experience() {
     },
     {
       period: "Sept 2025 — Nov 2026",
-      title: "Laravel Full Stack Developer · Appstronauts IT Solutions",
+      title: "Full Stack Engineer · Appstronauts IT Solutions",
       desc: "Worked on high-performance web applications and backend automation while collaborating with a team of developers.",
       achievements: [
         "Improved application performance by 40% through backend optimization and query tuning",
@@ -50,29 +50,29 @@ export default function Experience() {
 
       <div className="flex flex-col gap-12 group/list">
         {experiences.map((exp, i) => (
-          <div key={i} className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 hover:!opacity-100 group-hover/list:opacity-50">
-            <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-[16px] transition motion-reduce:transition-none lg:block lg:group-hover:bg-surface/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(229,231,235,0.4)] pointer-events-none"></div>
-            
-            <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-text-secondary sm:col-span-2">
-              {exp.period}
-            </header>
+          <div key={i} className="group relative transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50">
+            <div className="grid sm:grid-cols-12 sm:gap-8 p-4 -m-4 rounded-xl border border-transparent hover:bg-surface/30 project-card-hover items-start">
+              <header className="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-text-secondary sm:col-span-3">
+                {exp.period}
+              </header>
 
-            <div className="z-10 sm:col-span-6">
-              <h3 className="font-medium leading-snug text-primary group-hover:text-accent font-display text-lg mb-2 transition-colors">
-                {exp.title}
-              </h3>
-              <p className="mt-2 text-sm leading-normal text-text-secondary font-light">
-                {exp.desc}
-              </p>
-              
-              <ul className="mt-4 flex flex-col gap-2">
-                {exp.achievements.map((item, idx) => (
-                  <li key={idx} className="text-xs leading-normal text-text-secondary flex gap-2">
-                    <span className="text-accent">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="z-10 sm:col-span-9">
+                <h3 className="font-medium leading-snug text-primary group-hover:text-accent font-display text-lg mb-2 transition-colors">
+                  {exp.title}
+                </h3>
+                <p className="mt-2 text-sm leading-normal text-text-secondary font-light">
+                  {exp.desc}
+                </p>
+                
+                <ul className="mt-4 flex flex-col gap-2">
+                  {exp.achievements.map((item, idx) => (
+                    <li key={idx} className="text-xs leading-normal text-text-secondary flex gap-2">
+                      <span className="text-accent">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}
@@ -84,7 +84,7 @@ export default function Experience() {
           download 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="group inline-flex items-center gap-3 bg-primary text-background px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-accent hover:-translate-y-1 hover:shadow-lg active:translate-y-0"
+          className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl active:translate-y-0"
         >
           Download Resume
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-y-0.5">

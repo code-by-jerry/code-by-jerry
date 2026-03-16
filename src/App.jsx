@@ -90,20 +90,22 @@ function App() {
       {/* Permanent Technical Grid Overlay */}
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none" />
       
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-28 lg:py-0 relative z-10">
-        <div className="lg:flex lg:justify-between lg:gap-12 relative z-40">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-12 md:px-20 lg:px-32 lg:py-0 relative z-10">
+        <div className="lg:flex lg:justify-between lg:gap-4 relative z-40">
           
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[42%] lg:flex-col lg:justify-center lg:py-24 lg:pr-8">
+          <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-[42%] lg:flex-col lg:py-24">
             <Hero />
           </header>
 
-          <main className="lg:w-[50%] lg:py-24 flex flex-col gap-24">
+          <main className="lg:w-[54%] lg:py-24 flex flex-col gap-32">
             <About />
             <WhatIBring />
             <Projects />
             <Experience />
-            <Contact />
-            <Footer />
+            <div>
+              <Contact />
+              <Footer />
+            </div>
           </main>
 
         </div>
