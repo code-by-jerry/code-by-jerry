@@ -1,60 +1,126 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaChevronUp, FaChevronDown } from 'react-icons/fa';
+import { useState, useRef } from 'react';
+
+function ProjectImageScroll({ images, title }) {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = 180;
+      scrollRef.current.scrollBy({
+        top: direction === 'up' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <div className="relative group/scroll flex flex-col items-center h-full">
+      <button 
+        onClick={() => scroll('up')}
+        className="absolute top-0 z-30 p-2 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
+        aria-label="Scroll Up"
+      >
+        <FaChevronUp size={14} />
+      </button>
+
+      <div 
+        ref={scrollRef}
+        className="flex-1 w-full overflow-hidden no-scrollbar py-8"
+      >
+        <div className="flex flex-col gap-4">
+          {images.map((img, idx) => (
+            <div key={idx} className="w-full aspect-[4/3] rounded border border-border/20 overflow-hidden bg-surface shadow-sm shrink-0">
+              <img 
+                src={img} 
+                alt={`${title} thumbnail ${idx + 1}`} 
+                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" 
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button 
+        onClick={() => scroll('down')}
+        className="absolute bottom-0 z-30 p-2 text-text-secondary/40 hover:text-accent transition-colors opacity-0 group-hover/scroll:opacity-100"
+        aria-label="Scroll Down"
+      >
+        <FaChevronDown size={14} />
+      </button>
+    </div>
+  );
+}
 
 export default function Projects() {
   const projects = [
     {
       title: "Atha Constructions Platform",
-      problem: "Need for a centralized, high-performance real estate platform to manage property listings and corporate identity for a major construction firm.",
-      architecture: "Full-stack monolithic architecture using Laravel for heavy backend logic, paired with React and Inertia.js for a seamless, mobile-first user experience. Leverages MySQL and SEO-optimized routing.",
-      tech: ["React", "Inertia.js", "Laravel", "Tailwind", "MySQL", "Alpine.js"],
+      year: "2026",
+      status: "Production / Client Project",
+      images: ["/assets/projects/atha.png", "/assets/projects/atha.png", "/assets/projects/atha.png"],
+      description: "Real estate platform for managing property listings, corporate branding, and SEO-driven marketing pages.",
+      role: "System Architecture · Full-stack Development · Deployment",
+      impact: [
+        "Production platform serving corporate website and property listings",
+        "Optimized queries and routing → 40% faster page loads",
+        "Mobile-first UI designed for high SEO performance and rankings"
+      ],
+      architecture: "Full-stack architecture using Laravel backend with React + Inertia frontend and MySQL data layer.",
+      tech: ["Laravel", "React", "Inertia", "MySQL"],
       link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "Production/Live"
+      github: "https://github.com/code-by-jerry"
     },
     {
       title: "FreshTick · Hybrid Delivery Ecosystem",
-      problem: "Complex logistics required balancing multi-role access (Admin, Driver, Customer) with hybrid delivery windows (Instant vs Scheduled).",
-      architecture: "Decoupled system with a headless Laravel API providing data to a high-reactivity React/Inertia frontend. Integrated real-time Firebase tracking for delivery fleet coordination.",
-      tech: ["React", "Inertia.js", "Laravel", "MySQL", "Firebase"],
+      year: "2026",
+      status: "Production / Client Project",
+      images: ["/assets/projects/freshtick.png", "/assets/projects/freshtick.png", "/assets/projects/freshtick.png"],
+      description: "Delivery platform supporting multi-role operations and real-time fleet tracking.",
+      role: "Backend Architecture · API Design · Real-time Integration",
+      impact: [
+        "Multi-role system (Admin/Driver/Customer) → 5k+ monthly orders",
+        "Real-time coordination via Firebase transition tracking",
+        "Hybrid delivery logic supporting instant and scheduled cycles"
+      ],
+      architecture: "Headless backend API paired with reactive frontend and real-time tracking infrastructure.",
+      tech: ["Laravel", "React", "Firebase", "MySQL"],
       link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "Live Production"
-    },
-    {
-      title: "Nesthetix Designs · Architecture Hub",
-      problem: "High-end interior design firm required a performance-critical, visually elite platform with complex content relations and SEO dominance.",
-      architecture: "Engineered for speed and UX using Laravel and Tailwind CSS, focusing on optimized asset pipeline and structured SEO-friendly data architecture.",
-      tech: ["Laravel", "Tailwind CSS", "SEO", "Performance Engineering"],
-      link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "Live"
+      github: "https://github.com/code-by-jerry"
     },
     {
       title: "JippyMart · Scalable Food Delivery",
-      problem: "Local food networks lacked a scalable vendor dashboard and automated order management to compete with enterprise platforms.",
-      architecture: "Comprehensive Laravel ecosystem capable of high-concurrency order processing, featuring robust vendor role management and integrated REST APIs.",
-      tech: ["Laravel", "PHP", "Bootstrap", "MySQL", "Firebase", "REST APIs"],
+      year: "2025",
+      status: "Live Production",
+      images: ["/assets/projects/jippymart.png", "/assets/projects/jippymart.png", "/assets/projects/jippymart.png"],
+      description: "Automated food delivery network and vendor management system for local businesses.",
+      role: "Full-stack Development · Dashboard Engineering · API Integration",
+      impact: [
+        "Automated workflow triggers → 25% faster order processing",
+        "High-concurrency architecture supporting 200+ local vendors",
+        "Integrated robust vendor dashboard for real-time inventory"
+      ],
+      architecture: "Comprehensive Laravel ecosystem with role management and integrated REST APIs.",
+      tech: ["Laravel", "PHP", "MySQL", "REST APIs"],
       link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "Live"
+      github: "https://github.com/code-by-jerry"
     },
     {
-      title: "DestroSolutions · SDV Backend",
-      problem: "Backend infrastructure for Software Defined Vehicle platforms required secure admin dashboards and scalable API endpoints for data telematics.",
-      architecture: "Robust PHP/Laravel backend architecture designed for data integrity, featuring an Alpine.js powered dashboard for real-time system monitoring.",
-      tech: ["Laravel", "PHP", "Tailwind CSS", "MySQL", "Alpine.js"],
+      title: "Nesthetix Designs · Architecture Hub",
+      year: "2025",
+      status: "Live / Client Project",
+      images: ["/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png"],
+      description: "High-performance architecture and interior design portfolio with advanced SEO optimization.",
+      role: "Frontend Engineering · SEO Strategy · Performance Optimization",
+      impact: [
+        "Structured data and asset optimization → 60% organic traffic boost",
+        "Under 2s load times for high-resolution image-heavy pages",
+        "Engineered content relations for 100+ project categories"
+      ],
+      architecture: "Performance-critical platform on Laravel with optimized asset pipeline.",
+      tech: ["Laravel", "Tailwind CSS", "SEO"],
       link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "Live"
-    },
-    {
-      title: "EduLearn · LMS Core",
-      problem: "Need for a modular e-learning architecture featuring student progress tracking and secure curriculum distribution.",
-      architecture: "Modular Laravel-based system utilizing Alpine.js for lightweight frontend reactivity and MySQL for structured educational data relational mapping.",
-      tech: ["Laravel", "Alpine.js", "MySQL"],
-      link: "#",
-      github: "https://github.com/code-by-jerry",
-      status: "GitHub Only"
+      github: "https://github.com/code-by-jerry"
     }
   ];
 
@@ -64,59 +130,81 @@ export default function Projects() {
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary font-display">Featured Projects</h2>
       </div>
       
-      <div className="flex flex-col gap-14 group/list">
+      <div className="flex flex-col gap-16 group/list">
         {projects.map((proj, i) => (
-           <div key={i} className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 hover:!opacity-100 group-hover/list:opacity-50">
-            <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-[16px] transition motion-reduce:transition-none lg:block lg:group-hover:bg-surface/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(229,231,235,0.4)] pointer-events-none"></div>
-            
-            <div className="z-10 mb-2 mt-1 sm:col-span-2">
-              <div className="w-full h-16 sm:h-20 bg-border/40 rounded border border-border/50 group-hover:border-border transition-colors flex items-center justify-center overflow-hidden">
-                <span className="text-[10px] uppercase tracking-widest font-bold text-text-secondary/30">{proj.status}</span>
+           <div key={i} className="group relative transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50">
+            <div className="grid sm:grid-cols-12 sm:gap-8 p-4 -m-4 rounded-xl border border-transparent hover:bg-surface/30 project-card-hover h-full items-stretch">
+              
+              {/* Vertical Image Scroll Column (Matches Card Height) */}
+              <div className="sm:col-span-3 z-10 h-full min-h-[320px]">
+                <ProjectImageScroll images={proj.images} title={proj.title} />
               </div>
-            </div>
 
-            <div className="z-10 sm:col-span-6">
-              <h3 className="font-medium leading-snug text-primary group-hover:text-accent font-display text-xl mb-3 transition-colors flex items-center gap-2">
-                <a href={proj.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 hover:underline">
-                  {proj.title}
-                  <svg className="w-5 h-5 translate-y-px transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 text-primary group-hover:text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd"></path></svg>
-                </a>
-              </h3>
-              
-              <div className="mt-2 text-sm md:text-base leading-relaxed text-text-secondary flex flex-col gap-3 font-light mb-4 text-balance">
-                <p><strong className="font-semibold text-primary">Problem:</strong> {proj.problem}</p>
-                <p><strong className="font-semibold text-primary">Architecture:</strong> {proj.architecture}</p>
-              </div>
-              
-              <ul className="mt-4 flex flex-wrap gap-2 mb-5" aria-label="Technologies used">
-                {proj.tech.map((t, idx) => (
-                  <li key={idx} className="flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold leading-5 text-accent">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="flex items-center gap-5 mt-4 pt-4 border-t border-border/60">
-                 <a href={proj.github} target="_blank" rel="noreferrer" className="text-sm font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-2 relative z-20">
-                    <FaGithub size={16}/> GitHub
-                 </a>
-                 <a href={proj.link} target="_blank" rel="noreferrer" className="text-sm font-medium text-text-secondary hover:text-primary transition-colors flex items-center gap-2 relative z-20">
-                    <FaExternalLinkAlt size={14}/> Live Demo
-                 </a>
+              {/* Content Block: sm:col-span-9 (Right side) */}
+              <div className="sm:col-span-9 z-10 flex flex-col">
+                <div className="flex flex-col gap-2 mb-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h3 className="font-bold leading-snug text-primary group-hover:text-accent font-display text-lg transition-all duration-300">
+                      <a href={proj.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 group/link relative z-20">
+                        {proj.title} · {proj.year}
+                        <svg className="w-4 h-4 translate-y-px transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd"></path></svg>
+                      </a>
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[9px] uppercase tracking-widest font-bold text-accent bg-accent/5 px-2 py-0.5 rounded border border-accent/20 whitespace-nowrap">
+                        {proj.status}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-[11px] font-bold text-text-secondary/60">
+                    {proj.role}
+                  </p>
+                </div>
+                
+                <p className="text-sm font-medium text-primary/80 mb-6 leading-relaxed max-w-2xl">
+                  {proj.description}
+                </p>
+
+                <div className="flex-1 flex flex-col gap-6">
+                  <div>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-secondary/40 mb-2">Architecture</h4>
+                    <p className="text-xs leading-relaxed text-text-secondary font-light">
+                      {proj.architecture}
+                    </p>
+                  </div>
+
+                  <ul className="flex flex-wrap gap-2" aria-label="Technologies used">
+                    {proj.tech.map((t, idx) => (
+                      <li key={idx} className="flex items-center rounded-full bg-accent/5 hover:bg-accent/10 px-3 py-1 text-[10px] font-bold leading-5 text-accent border border-accent/10 transition-colors">
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="flex items-center gap-4 pt-4 mt-auto">
+                    <a href={proj.github} target="_blank" rel="noreferrer" className="text-[10px] font-bold uppercase tracking-widest text-text-secondary hover:text-primary transition-colors flex items-center gap-2 relative z-20 group/icon">
+                      <FaGithub size={14} className="group-hover/icon:scale-110 transition-transform" /> GitHub
+                    </a>
+                    <a href={proj.link} target="_blank" rel="noreferrer" className="text-[10px] font-bold uppercase tracking-widest text-text-secondary hover:text-primary transition-colors flex items-center gap-2 relative z-20 group/icon">
+                      <FaExternalLinkAlt size={12} className="group-hover/icon:scale-110 transition-transform" /> Demo
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
       
-      <div className="mt-12">
-        <a href="https://github.com/code-by-jerry?tab=repositories" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest transition-colors hover:text-accent">
-          View Full Project Archive
+      <div className="mt-20 pt-10 border-t border-border/40">
+        <a href="https://github.com/code-by-jerry?tab=repositories" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl">
+          Explore Full Engineering Archive
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-x-1">
-            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+            <path fillRule="evenodd" d="m10 18 8-8-8-8-1.414 1.414L15.172 9H2v2h13.172l-6.586 6.586L10 18z" clipRule="evenodd" />
           </svg>
         </a>
       </div>
     </section>
   );
 }
+

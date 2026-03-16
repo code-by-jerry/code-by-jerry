@@ -3,10 +3,15 @@
 @theme {
   --color-primary: #0B0B0B;
   --color-accent: #6366F1;
+  --color-accent-soft: #A5B4FC;
+  --color-accent-2: #8B5CF6;
+
   --color-background: #FFFFFF;
-  --color-surface: #F1F5F9;
+  --color-surface: #F8FAFC;
+
   --color-text: #0B0B0B;
   --color-text-secondary: #64748B;
+
   --color-border: #E5E7EB;
 
   --font-sans: "Inter", system-ui, sans-serif;
@@ -22,14 +27,41 @@ body {
 
 @layer utilities {
   .hero-bg {
-    background: linear-gradient(
-      120deg,
-      #ffffff,
-      #f1f5f9,
-      #eef2ff,
-      #ffffff
-    );
-    background-size: 200% 200%;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06), transparent 45%),
+      var(--color-background);
+    background-attachment: fixed;
+  }
+
+  .grid-overlay {
+    background-image: 
+      linear-gradient(var(--color-border) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, var(--color-border) 0.5px, transparent 0.5px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    opacity: 0.15;
+  }
+
+  .project-card-hover {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project-card-hover:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .accent-gradient {
+    background: linear-gradient(135deg, #6366F1, #8B5CF6);
   }
 }
 

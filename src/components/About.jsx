@@ -15,9 +15,25 @@ export default function About() {
         <p>
           Over time, I’ve had the opportunity to build and contribute to projects across several domains, including <span className="text-primary font-semibold">real-time delivery platforms</span>, learning management systems, enterprise tools, and financial management systems. These experiences have shaped how I approach building software — focusing on <span className="text-primary font-semibold">scalability, reliability, and long-term maintainability</span> rather than just solving immediate problems.
         </p>
-        <p>
-          Outside of my professional work, I enjoy exploring new technologies, experimenting with <span className="text-primary font-semibold">system architecture</span>, and building independent projects that help me continuously refine my approach to modern software development.
+        <p className="italic text-text-secondary/80">
+          Outside of development, I enjoy exploring new technologies, building side projects, and experimenting with system architecture.
         </p>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-border/40">
+        <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Currently Working On</h3>
+        <ul className="flex flex-col gap-3">
+          {[
+            "Designing scalable delivery platforms with real-time tracking",
+            "Improving system performance and database architecture",
+            "Exploring modern frontend animation systems and UI performance"
+          ].map((item, i) => (
+            <li key={i} className="text-xs text-text-secondary flex gap-3 items-center">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent/40"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

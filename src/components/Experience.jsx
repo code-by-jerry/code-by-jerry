@@ -2,46 +2,42 @@ export default function Experience() {
   const experiences = [
     {
       period: "Nov 2026 — Present",
-      title: "Senior Web Developer · Atha Constructions",
-      desc: "Solo full-stack lead architecting multiple production-grade platforms. Responsible for full project lifecycle: architecture, development, deployment, and maintenance of high-traffic corporate systems.",
-      tech: ["Laravel", "React", "Inertia.js", "MySQL", "Tailwind", "Alpine.js"],
+      title: "Full Stack Developer · Atha Constructions",
+      desc: "Leading development of multiple production web platforms, handling architecture, development, deployment, and long-term maintenance of company systems.",
       achievements: [
-        "Designed and launched production platforms: Atha Constructions, Nesthetix Design, and Area24One.",
-        "Architected scalable React + Laravel systems using modern Inertia.js architecture.",
-        "Optimized MySQL database structures for high-performance data retrieval."
+        "Designed and deployed production platforms including Atha Constructions, Nesthetix Design, and Area24One",
+        "Architected scalable full-stack systems supporting business operations and dynamic content management",
+        "Optimized database structures and backend services to improve system performance and maintainability"
       ]
     },
     {
       period: "2026 — Present",
       title: "Freelance Full Stack Developer",
-      desc: "Developing scalable e-commerce and automotive solutions for diverse global clients, specializing in complex API integrations and real-time delivery systems.",
-      tech: ["Laravel", "PHP", "React", "Firebase", "MySQL", "Inertia.js", "Shopify"],
+      desc: "Building web applications and platform solutions for clients across e-commerce, delivery platforms, and enterprise tools.",
       achievements: [
-        "DestroSolutions: Built backend systems and admin dashboards for an SDV platform.",
-        "FreshTick: Engineered a multi-role hybrid delivery platform with real-time Firebase tracking.",
-        "Shopify: Optimized store performance and customized themes for Camiprod and Baybee Store."
+        "Developed backend systems and admin dashboards for a software-defined mobility platform (DestroSolutions)",
+        "Engineered a multi-role delivery platform with real-time tracking and operational dashboards (FreshTick)",
+        "Customized and optimized Shopify stores for improved performance and user experience"
       ]
     },
     {
       period: "Sept 2025 — Nov 2026",
       title: "Laravel Full Stack Developer · Appstronauts IT Solutions",
-      desc: "Team lead for a group of 3 developers, focused on high-performance web applications and backend automation.",
-      tech: ["Laravel", "MySQL", "Firestore", "JavaScript", "REST APIs"],
+      desc: "Worked on high-performance web applications and backend automation while collaborating with a team of developers.",
       achievements: [
-        "Boosted application performance by 40% through deep Laravel/JS optimization.",
-        "Reduced manual overhead by 50% via custom backend automation scripts.",
-        "Led team code reviews and feature planning, improving maintainability by 25%."
+        "Improved application performance by 40% through backend optimization and query tuning",
+        "Automated operational workflows using custom backend scripts, reducing manual effort by 50%",
+        "Participated in architecture planning, code reviews, and feature development across multiple projects"
       ]
     },
     {
       period: "Nov 2023 — Aug 2024",
       title: "Web Developer · Aaron Infotech",
-      desc: "Developed responsive web applications and robust backend features in a high-deployment velocity environment.",
-      tech: ["Laravel", "Livewire", "PHP", "Bootstrap", "MySQL"],
+      desc: "Developed responsive web applications and backend functionality for multiple client projects.",
       achievements: [
-        "Decreased page load times by 30% via asset and query optimization.",
-        "Maintained a 98% bug-free production deployment rate across multiple sprints.",
-        "Increased user engagement by 25% through strategic UI/UX and backend refinements."
+        "Reduced page load times by 30% through frontend optimization and database query improvements",
+        "Maintained high deployment reliability through testing and code review practices",
+        "Improved user engagement through responsive UI improvements and backend feature development"
       ]
     }
   ];
@@ -69,19 +65,11 @@ export default function Experience() {
                 {exp.desc}
               </p>
               
-              <ul className="mt-4 flex flex-col gap-2 mb-4">
+              <ul className="mt-4 flex flex-col gap-2">
                 {exp.achievements.map((item, idx) => (
                   <li key={idx} className="text-xs leading-normal text-text-secondary flex gap-2">
                     <span className="text-accent">•</span>
                     {item}
-                  </li>
-                ))}
-              </ul>
-              
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies used">
-                {exp.tech.map((t, idx) => (
-                  <li key={idx} className="flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold leading-5 text-accent">
-                    {t}
                   </li>
                 ))}
               </ul>
@@ -90,14 +78,21 @@ export default function Experience() {
         ))}
       </div>
 
-      <div className="mt-12">
-        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-2 text-primary text-sm font-bold uppercase tracking-widest transition-colors hover:text-accent">
-          View Full Resume
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-x-1">
-            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+      <div className="mt-12 flex">
+        <a 
+          href="/resume.pdf" 
+          download 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="group inline-flex items-center gap-3 bg-primary text-background px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:bg-accent hover:-translate-y-1 hover:shadow-lg active:translate-y-0"
+        >
+          Download Resume
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-y-0.5">
+            <path fillRule="evenodd" d="M10 3a.75.75 0 01.75.75v6.638l2.258-2.154a.75.75 0 111.04 1.08l-3.5 3.342a.75.75 0 01-1.04 0l-3.5-3.342a.75.75 0 111.04-1.08l2.258 2.154V3.75A.75.75 0 0110 3zM3.5 13a.75.75 0 000 1.5h13a.75.75 0 000-1.5h-13z" clipRule="evenodd" />
           </svg>
         </a>
       </div>
     </section>
   );
 }
+
