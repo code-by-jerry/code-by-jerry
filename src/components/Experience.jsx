@@ -11,7 +11,7 @@ export default function Experience() {
       ]
     },
     {
-      period: "2026 — Present",
+      period: "2025 — 2026",
       title: "Independent Full Stack Engineer",
       desc: "Building web applications and platform solutions for clients across e-commerce, delivery platforms, and enterprise tools.",
       achievements: [

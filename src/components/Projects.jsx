@@ -211,7 +211,7 @@ export default function Projects() {
         ))}
       </div>
       
-      <div className="mt-20 pt-10 border-t border-border/40">
+      <div className="pt-10">
         <a href="https://github.com/code-by-jerry?tab=repositories" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl">
           Explore Full Engineering Archive
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-x-1">
