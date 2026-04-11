@@ -85,8 +85,8 @@ export default function Experience() {
 
       <div className="mt-12 flex">
         <a
-          href="/resume.pdf"
-          download
+          href="/Jerry (Azhagirishankar K).docx"
+          download="Jerry (Azhagirishankar K).docx"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl active:translate-y-0"

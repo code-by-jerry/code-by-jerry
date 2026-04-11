@@ -59,7 +59,7 @@ const allProjects = [
     images: ["/assets/projects/atha.png", "/assets/projects/atha.png"],
     description: "Construction company website with lead generation, CMS (services, careers, packages, blogs), contact enquiry, email notifications via Brevo, and admin dashboard. Tested with PHPUnit.",
     tech: ["React", "Inertia.js", "Laravel", "MySQL", "Brevo", "ImageKit", "SEO", "PHPUnit"],
-    link: "#",
+    link: "https://athaconstruction.in/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -81,7 +81,7 @@ const allProjects = [
     images: ["/assets/projects/jippymart.png", "/assets/projects/jippymart.png"],
     description: "Complete food and mart delivery system with User, Admin, and Restaurant web panels. Firebase-heavy with functions, indexes, storage, and collections. Full mobile backend API, queues, cron jobs, and Razorpay.",
     tech: ["Laravel", "Alpine.js", "Tailwind CSS", "Node.js", "Firebase", "MySQL", "Razorpay", "RBAC", "REST API"],
-    link: "#",
+    link: "https://jippymart.in/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -92,7 +92,7 @@ const allProjects = [
     images: ["/assets/projects/atha.png", "/assets/projects/atha.png"],
     description: "End-to-end real estate platform — region-based browsing, luxury segments, interactive map search (Google Maps + OSM), property listings, CRM, RBAC dashboards, OAuth, asset & theme manager, global SEO.",
     tech: ["Laravel", "Alpine.js", "TypeScript", "Node.js", "MySQL", "Google Maps", "OSM", "OAuth", "ImageKit", "SEO"],
-    link: "#",
+    link: "https://lightgoldenrodyellow-jaguar-333517.hostingersite.com/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -103,7 +103,7 @@ const allProjects = [
     images: ["/assets/projects/nesthetix.png", "/assets/projects/nesthetix.png"],
     description: "Interior design website with CMS, lead management, and GSAP animations. SEO-optimized with ImageKit asset pipeline. 60% organic traffic boost post-launch.",
     tech: ["React.js", "Inertia.js", "Laravel", "MySQL", "ImageKit", "GSAP", "SEO"],
-    link: "#",
+    link: "https://nesthetixdesigns.com/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -114,7 +114,7 @@ const allProjects = [
     images: ["/assets/projects/atha.png", "/assets/projects/atha.png"],
     description: "Multi-vertical company website with rule-based chat assistant, lead capture, CMS, REST API, GSAP animations, and TypeScript. Covers multiple business verticals under one platform.",
     tech: ["React.js", "Inertia.js", "Laravel", "TypeScript", "Tailwind CSS", "GSAP", "REST API", "SEO"],
-    link: "#",
+    link: "https://area24one.com/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -136,7 +136,7 @@ const allProjects = [
     images: ["/assets/projects/freshtick.png", "/assets/projects/freshtick.png"],
     description: "Complete billing software with GST filing, CMS, and customizable ERP modules. Built with Livewire for real-time UI, REST API, and Node.js backend services.",
     tech: ["Laravel", "Livewire", "PHP", "MySQL", "Node.js", "REST API", "JavaScript"],
-    link: "#",
+    link: "https://aaran.org/",
     github: "https://github.com/code-by-jerry"
   },
   {
@@ -180,7 +180,7 @@ const allProjects = [
     images: ["/assets/projects/jippymart.png", "/assets/projects/jippymart.png"],
     description: "Mobile-first Shopify store with custom Liquid, GoKwik, Quin shoppable integration, wishlist, and optimized custom code for performance.",
     tech: ["Shopify", "Liquid", "GoKwik", "Quin Shoppable"],
-    link: "#",
+    link: "https://baybee.co.in/",
     github: "https://github.com/code-by-jerry"
   },
   {
