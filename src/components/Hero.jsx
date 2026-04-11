@@ -48,6 +48,9 @@ export default function Hero() {
           <h3 className="text-sm font-medium font-display text-text-secondary opacity-60">
             Jerry (Azhagirishankar K)
           </h3>
+          <p className="text-xs text-text-secondary/70 font-light pt-1">
+            Building scalable, production-grade platforms used by real businesses
+          </p>
         </div>
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/5 text-emerald-500 text-[10px] font-bold uppercase tracking-wider mb-6 border border-emerald-500/10 w-fit">

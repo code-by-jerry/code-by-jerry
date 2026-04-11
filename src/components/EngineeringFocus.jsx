@@ -1,9 +1,21 @@
 export default function WhatIBring() {
-  const points = [
-    "Experience developing full-stack systems used in real production environments",
-    "Strong understanding of backend architecture and database optimization",
-    "Proven ability to design systems that handle complex workflows and data flows",
-    "Focus on performance, scalability, and long-term maintainability"
+  const competencies = [
+    "Full Stack Web Development",
+    "Scalable System Architecture",
+    "REST API Design & Integration",
+    "Database Design & Optimization",
+    "Role-Based Access Control (RBAC)",
+    "Payment Gateway Integration",
+    "Real-Time Systems (Firebase)"
+  ];
+
+  const skills = [
+    { label: "Languages", items: ["JavaScript", "TypeScript", "PHP", "SQL"] },
+    { label: "Frontend", items: ["React.js", "Inertia.js", "Next.js", "Alpine.js", "Tailwind CSS", "Bootstrap"] },
+    { label: "Backend", items: ["Laravel", "Node.js", "REST APIs", "OAuth", "RBAC"] },
+    { label: "Databases", items: ["MySQL", "PostgreSQL", "Firebase"] },
+    { label: "Cloud & Tools", items: ["GCP", "Vercel", "Cloudflare", "Git", "Postman", "PHPUnit"] },
+    { label: "CMS & Commerce", items: ["Shopify", "WordPress"] }
   ];
 
   const focuses = [
@@ -28,39 +40,56 @@ export default function WhatIBring() {
       </div>
 
       <div className="flex flex-col gap-10">
+
+        {/* Core Competencies */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Professional Value</h3>
-          <p className="text-sm text-text-secondary leading-relaxed mb-6 font-semibold max-w-2xl text-primary">
-            I help startups, businesses, and teams build production-grade web platforms focused on stability, performance, and scalability.
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-            {points.map((point, i) => (
+          <h3 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Core Competencies</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            {competencies.map((item, i) => (
               <li key={i} className="text-xs text-text-secondary flex gap-3 items-start leading-relaxed">
                 <span className="text-accent font-bold mt-0.5">✓</span>
-                {point}
+                {item}
               </li>
             ))}
           </ul>
         </div>
 
+        {/* Technical Skills */}
         <div className="pt-8 border-t border-border/40">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 font-display">Technical Solutions</h3>
-          <ul className="grid grid-cols-1 gap-y-3">
-            {[
-              "Building scalable web platforms from scratch",
-              "Improving slow or poorly optimized applications",
-              "Designing secure backend APIs and system architecture",
-              "Developing admin dashboards and business tools",
-              "Integrating third-party services and payment systems"
-            ].map((problem, i) => (
-              <li key={i} className="text-xs text-text-secondary flex gap-3 items-start leading-relaxed">
-                <span className="text-accent font-bold mt-0.5">•</span>
-                {problem}
-              </li>
+          <h3 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-6 font-display">Technical Skills</h3>
+          <div className="flex flex-col gap-4">
+            {skills.map((group, i) => (
+              <div key={i} className="grid grid-cols-12 gap-4 items-start">
+                <span className="col-span-3 text-[10px] font-bold uppercase tracking-widest text-text-secondary/50 pt-0.5">
+                  {group.label}
+                </span>
+                <ul className="col-span-9 flex flex-wrap gap-2">
+                  {group.items.map((t, idx) => (
+                    <li key={idx} className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-accent/5 border border-accent/10 text-accent">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
 
+        {/* Focus Areas */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 pt-8 border-t border-border/40">
+          {focuses.map((item, i) => (
+            <div key={i} className="flex flex-col gap-2">
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary font-display">
+                {item.title}
+              </h4>
+              <p className="text-[11px] leading-relaxed text-text-secondary font-light">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Who I work with */}
         <div className="pt-8 border-t border-border/40">
           <h3 className="text-xs font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Collaborative Focus</h3>
           <div className="flex flex-wrap gap-2">
@@ -77,21 +106,7 @@ export default function WhatIBring() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 pt-8 border-t border-border/40">
-          {focuses.map((item, i) => (
-            <div key={i} className="flex flex-col gap-2">
-              <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary font-display">
-                {item.title}
-              </h4>
-              <p className="text-[11px] leading-relaxed text-text-secondary font-light">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
 }
-
-

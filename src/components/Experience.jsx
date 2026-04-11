@@ -1,43 +1,40 @@
 export default function Experience() {
   const experiences = [
     {
-      period: "Nov 2026 — Present",
-      title: "Full Stack Engineer · Atha Constructions",
-      desc: "Leading development of multiple production web platforms, handling architecture, development, deployment, and long-term maintenance of company systems.",
+      period: "Dec 2025 — Present",
+      title: "Senior Full Stack Developer · Atha Constructions",
+      stack: ["React.js", "Inertia.js", "Laravel", "PostgreSQL", "MySQL", "Firebase", "GCP"],
+      desc: "Leading development of multiple production platforms including real estate and interior systems.",
       achievements: [
-        "Designed and deployed production platforms including Atha Constructions, Nesthetix Design, and Area24One",
-        "Architected scalable full-stack systems supporting business operations and dynamic content management",
-        "Optimized database structures and backend services to improve system performance and maintainability"
+        "Architecting scalable full-stack applications using React and Laravel",
+        "Owned end-to-end architecture and delivery of business-critical applications",
+        "Managing complete lifecycle from design to deployment",
+        "Optimizing database performance and application scalability"
       ]
     },
     {
-      period: "2025 — 2026",
-      title: "Independent Full Stack Engineer",
-      desc: "Building web applications and platform solutions for clients across e-commerce, delivery platforms, and enterprise tools.",
+      period: "Sep 2024 — Nov 2025",
+      title: "Laravel Full Stack Developer · Appstronauts IT Solutions",
+      stack: ["Laravel", "MySQL", "Firebase", "GCP", "React.js", "Alpine.js"],
+      desc: "Worked on high-performance web applications and backend automation while leading a team of developers.",
       achievements: [
-        "Developed backend systems and admin dashboards for a software-defined mobility platform (DestroSolutions)",
-        "Engineered a multi-role delivery platform with real-time tracking and operational dashboards (FreshTick)",
-        "Customized and optimized Shopify stores for improved performance and user experience"
-      ]
-    },
-    {
-      period: "Sept 2025 — Nov 2026",
-      title: "Full Stack Engineer · Appstronauts IT Solutions",
-      desc: "Worked on high-performance web applications and backend automation while collaborating with a team of developers.",
-      achievements: [
-        "Improved application performance by 40% through backend optimization and query tuning",
-        "Automated operational workflows using custom backend scripts, reducing manual effort by 50%",
-        "Participated in architecture planning, code reviews, and feature development across multiple projects"
+        "Improved application performance by 40% and user engagement by 30%",
+        "Designed scalable database architectures reducing processing delays by 25%",
+        "Automated backend operations reducing manual effort by 50%",
+        "Led team of 3 developers in code reviews and feature planning",
+        "Increased delivery speed by 15% through refactoring"
       ]
     },
     {
       period: "Nov 2023 — Aug 2024",
       title: "Web Developer · Aaron Infotech",
+      stack: ["Laravel", "PHP", "MySQL", "Bootstrap", "GSAP"],
       desc: "Developed responsive web applications and backend functionality for multiple client projects.",
       achievements: [
-        "Reduced page load times by 30% through frontend optimization and database query improvements",
-        "Maintained high deployment reliability through testing and code review practices",
-        "Improved user engagement through responsive UI improvements and backend feature development"
+        "Reduced page load time by 30% through frontend optimization",
+        "Developed backend modules using Laravel and Livewire",
+        "Maintained 98% bug-free production deployments",
+        "Improved user engagement by 25%"
       ]
     }
   ];
@@ -60,15 +57,23 @@ export default function Experience() {
                 <h3 className="font-medium leading-snug text-primary group-hover:text-accent font-display text-lg mb-2 transition-colors">
                   {exp.title}
                 </h3>
-                <p className="mt-2 text-sm leading-normal text-text-secondary font-light">
+                <p className="mt-2 text-sm leading-normal text-text-secondary font-light mb-4">
                   {exp.desc}
                 </p>
-                
-                <ul className="mt-4 flex flex-col gap-2">
+
+                <ul className="flex flex-col gap-2 mb-4">
                   {exp.achievements.map((item, idx) => (
                     <li key={idx} className="text-xs leading-normal text-text-secondary flex gap-2">
-                      <span className="text-accent">•</span>
+                      <span className="text-accent shrink-0">•</span>
                       {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <ul className="flex flex-wrap gap-2" aria-label="Tech stack">
+                  {exp.stack.map((t, idx) => (
+                    <li key={idx} className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-accent/5 border border-accent/10 text-accent">
+                      {t}
                     </li>
                   ))}
                 </ul>
@@ -79,11 +84,11 @@ export default function Experience() {
       </div>
 
       <div className="mt-12 flex">
-        <a 
-          href="/resume.pdf" 
-          download 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="/resume.pdf"
+          download
+          target="_blank"
+          rel="noopener noreferrer"
           className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl active:translate-y-0"
         >
           Download Resume
@@ -95,4 +100,3 @@ export default function Experience() {
     </section>
   );
 }
-

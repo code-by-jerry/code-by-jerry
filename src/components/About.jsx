@@ -1,26 +1,42 @@
 export default function About() {
+  const achievements = [
+    "Improved application performance by up to 40% across multiple projects",
+    "Reduced manual operations by 50% through backend automation",
+    "Built scalable systems supporting 10,000+ daily users",
+    "Delivered multiple production-grade platforms across different industries"
+  ];
+
   return (
     <section id="about" className="scroll-mt-16 lg:scroll-mt-24 w-full">
       <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/90 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
         <h2 className="text-sm font-bold uppercase tracking-widest text-primary font-display">About</h2>
       </div>
-      
+
       <div className="text-text-secondary text-base leading-relaxed space-y-6 max-w-2xl font-light">
         <p>
-          I’m a <span className="text-primary font-semibold">full-stack engineer</span> focused on building <span className="text-primary font-semibold">reliable web platforms</span>, scalable systems, and intuitive digital experiences. I enjoy working at the intersection of <span className="text-primary font-semibold">backend architecture</span> and user experience, where thoughtful system design meets clean, maintainable code.
+          I'm a <span className="text-primary font-semibold">Senior Full Stack Engineer</span> with 3 years of experience building scalable web applications and production-grade platforms across <span className="text-primary font-semibold">real estate, commerce, and SaaS</span> domains. I specialize in end-to-end system development using Laravel, React, and Inertia.js, with a strong focus on <span className="text-primary font-semibold">clean architecture, performance, and maintainability</span>.
         </p>
         <p>
-          Currently, I work as a developer building and optimizing modern web applications used in <span className="text-primary font-semibold">real-world production environments</span>. My work involves designing <span className="text-primary font-semibold">secure systems</span>, improving application performance, and creating platforms that handle complex workflows and large volumes of data while maintaining a smooth user experience.
+          I have led full project lifecycles, designed efficient database architectures, and built API-driven platforms using MySQL and Firebase. My work includes <span className="text-primary font-semibold">real-time delivery systems</span>, enterprise tools, CRM platforms, and financial applications — consistently focused on reliability and long-term scalability.
         </p>
         <p>
-          Over time, I’ve had the opportunity to build and contribute to projects across several domains, including <span className="text-primary font-semibold">real-time delivery platforms</span>, learning management systems, enterprise tools, and financial management systems. These experiences have shaped how I approach building software — focusing on <span className="text-primary font-semibold">scalability, reliability, and long-term maintainability</span> rather than just solving immediate problems.
-        </p>
-        <p className="italic text-text-secondary/80">
-          Outside of development, I enjoy exploring new technologies, building side projects, and experimenting with system architecture.
+          I work effectively both independently and in collaborative environments, contributing to business-critical systems. Based in <span className="text-primary font-semibold">Bangalore, India</span>.
         </p>
       </div>
 
       <div className="mt-12 pt-8 border-t border-border/40">
+        <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Key Achievements</h3>
+        <ul className="flex flex-col gap-3">
+          {achievements.map((item, i) => (
+            <li key={i} className="text-xs text-text-secondary flex gap-3 items-start">
+              <span className="text-accent font-bold mt-0.5">✓</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-8 pt-8 border-t border-border/40">
         <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-4 font-display">Currently Working On</h3>
         <ul className="flex flex-col gap-3">
           {[
@@ -29,7 +45,7 @@ export default function About() {
             "Exploring modern frontend animation systems and UI performance"
           ].map((item, i) => (
             <li key={i} className="text-xs text-text-secondary flex gap-3 items-center">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent/40"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent/40 shrink-0"></span>
               {item}
             </li>
           ))}

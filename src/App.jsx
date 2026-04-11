@@ -43,17 +43,16 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Subtle organic movement of the ambient background
-      gsap.to(".hero-bg", {
-        backgroundPosition: "40px bottom",
-        duration: 20,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-    }, appRef);
-    return () => ctx.revert();
+    if (!appRef.current) return;
+    // Subtle organic movement of the ambient background
+    const tween = gsap.to(appRef.current, {
+      backgroundPosition: "40px bottom",
+      duration: 20,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+    return () => tween.kill();
   }, []);
 
   useEffect(() => {
