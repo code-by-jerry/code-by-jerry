@@ -1,6 +1,7 @@
 import { FaGithub, FaExternalLinkAlt, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
+import { Link } from 'react-router-dom';
 
 function Lightbox({ images, title, startIndex, onClose }) {
   const [current, setCurrent] = useState(startIndex);
@@ -325,12 +326,12 @@ export default function Projects() {
       </div>
 
       <div className="pt-10">
-        <a href="https://github.com/code-by-jerry?tab=repositories" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl">
+        <Link to="/work" className="group inline-flex items-center gap-3 accent-gradient text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-md hover:shadow-xl">
           Explore Full Engineering Archive
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 transition-transform group-hover:translate-x-1">
             <path fillRule="evenodd" d="m10 18 8-8-8-8-1.414 1.414L15.172 9H2v2h13.172l-6.586 6.586L10 18z" clipRule="evenodd" />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );
