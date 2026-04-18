@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom'
 import {
   FaArrowRight,
   FaBriefcase,
+  FaChartLine,
   FaBullseye,
+  FaCogs,
   FaCode,
   FaEnvelope,
   FaLaptopCode,
   FaMobileAlt,
+  FaRoute,
   FaSearch,
   FaServer,
   FaShoppingCart,
@@ -129,6 +132,48 @@ const process = [
   'We define the business goal, user flow, and feature scope before code starts.',
   'I build in milestones so you can review progress without losing momentum.',
   'The final delivery is launch-ready, maintainable, and documented well enough to extend.',
+]
+
+const caseStudies = [
+  {
+    title: 'Atha Platform',
+    problem: 'No structured property system for managing listings, data, and discovery.',
+    solution:
+      'Built a full-stack real estate platform with organized listing flows, CMS controls, and performance-focused frontend delivery.',
+    result: 'Delivered a platform that runs 40% faster and feels far more reliable at scale.',
+    image: '/assets/projects/atha.png',
+    icon: FaChartLine,
+    metric: '40% faster performance',
+    category: 'Real Estate Platform',
+    accent:
+      'from-[rgba(99,102,241,0.14)] via-[rgba(255,255,255,0.96)] to-[rgba(139,92,246,0.1)]',
+  },
+  {
+    title: 'FreshTick',
+    problem: 'No real-time delivery tracking or clean system for different logistics roles.',
+    solution:
+      'Designed a hybrid delivery ecosystem with role-based workflows for admins, delivery teams, and operational tracking.',
+    result: 'Created a scalable multi-role system ready for growth without collapsing into process chaos.',
+    image: '/assets/projects/freshtick.png',
+    icon: FaRoute,
+    metric: 'Scalable multi-role delivery flow',
+    category: 'Delivery Ecosystem',
+    accent:
+      'from-[rgba(56,189,248,0.14)] via-[rgba(255,255,255,0.96)] to-[rgba(99,102,241,0.08)]',
+  },
+  {
+    title: 'DestroSolutions',
+    problem: 'Vehicle management depended on manual handling, slowing down operations.',
+    solution:
+      'Built a CMS, admin workflows, and automation systems to centralize operations and reduce repetitive overhead.',
+    result: 'Improved operational efficiency with a cleaner system for internal control and execution.',
+    image: '/assets/projects/jippymart.png',
+    icon: FaCogs,
+    metric: 'Operations streamlined through automation',
+    category: 'Admin Automation System',
+    accent:
+      'from-[rgba(251,191,36,0.15)] via-[rgba(255,255,255,0.96)] to-[rgba(99,102,241,0.08)]',
+  },
 ]
 
 function HeroServiceShowcase() {
@@ -419,6 +464,136 @@ function ServicesSection() {
   )
 }
 
+function CaseStudiesSection() {
+  const [expandedPanels, setExpandedPanels] = useState(() =>
+    Object.fromEntries(caseStudies.map(({ title }) => [title, 'Problem'])),
+  )
+
+  const togglePanel = (cardTitle, panelLabel) => {
+    setExpandedPanels((current) => ({
+      ...current,
+      [cardTitle]: current[cardTitle] === panelLabel ? null : panelLabel,
+    }))
+  }
+
+  return (
+    <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="max-w-lg">
+          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
+            Case Studies
+          </p>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+            Proof built around problems, not just polished screenshots.
+          </h2>
+        </div>
+
+        <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+          Each project below starts with a business bottleneck, moves through the system that was
+          built to solve it, and ends with the outcome that mattered to the client.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-5 xl:grid-cols-3">
+        {caseStudies.map(
+          ({ title, problem, solution, result, image, icon: Icon, metric, category, accent }) => (
+            <article
+              key={title}
+              className="group relative overflow-hidden rounded-[2rem] border border-border/70 bg-background/90 shadow-[0_26px_70px_-40px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/25"
+            >
+              <div
+                className={`absolute inset-x-0 top-0 h-44 bg-gradient-to-br ${accent} opacity-90 transition-opacity duration-300 group-hover:opacity-100`}
+              />
+              <div className="relative p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-text-secondary/55">
+                      {category}
+                    </p>
+                    <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-primary">
+                      {title}
+                    </h3>
+                  </div>
+
+                  <span className="inline-flex rounded-2xl border border-white/70 bg-white/80 p-3 text-accent shadow-[0_14px_32px_-24px_rgba(15,23,42,0.35)] backdrop-blur">
+                    <Icon size={18} />
+                  </span>
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/80 p-3 shadow-[0_18px_40px_-30px_rgba(15,23,42,0.28)] backdrop-blur">
+                  <img
+                    src={image}
+                    alt={`${title} preview`}
+                    loading="lazy"
+                    className="h-48 w-full rounded-[1.1rem] object-cover object-top"
+                  />
+                </div>
+
+                <div className="mt-6 rounded-[1.5rem] border border-accent/10 bg-surface/80 p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-accent">
+                    Result Highlight
+                  </p>
+                  <p className="mt-3 text-base font-semibold leading-7 text-primary">{metric}</p>
+                </div>
+
+                <div className="mt-6 space-y-4">
+                  {[
+                    ['Problem', problem],
+                    ['Solution', solution],
+                    ['Result', result],
+                  ].map(([label, copy]) => {
+                    const isOpen = expandedPanels[title] === label
+
+                    return (
+                      <div
+                        key={label}
+                        className="overflow-hidden rounded-[1.25rem] border border-border/60 bg-background/85 transition-colors duration-300"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => togglePanel(title, label)}
+                          aria-expanded={isOpen}
+                          className="flex w-full items-center justify-between gap-4 px-4 py-4 text-left"
+                        >
+                          <div>
+                            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-text-secondary/55">
+                              {label}
+                            </p>
+                          </div>
+
+                          <span
+                            className={`inline-flex h-8 w-8 items-center justify-center rounded-full border border-border/70 bg-surface text-base font-semibold text-accent transition-transform duration-300 ${
+                              isOpen ? 'rotate-45' : 'rotate-0'
+                            }`}
+                          >
+                            +
+                          </span>
+                        </button>
+
+                        <div
+                          className={`grid transition-all duration-300 ease-out ${
+                            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <p className="px-4 pb-4 text-sm leading-7 text-text-secondary">
+                              {copy}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </article>
+          ),
+        )}
+      </div>
+    </section>
+  )
+}
+
 export default function FreelanceLanding() {
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
@@ -500,6 +675,8 @@ export default function FreelanceLanding() {
         <HighImpactSection />
 
         <ServicesSection />
+
+        <CaseStudiesSection />
 
         <section className="mx-auto max-w-screen-xl px-6 py-16 md:px-12 lg:px-20">
           <div className="grid gap-10 rounded-[2.25rem] border border-border/70 bg-background/85 p-6 shadow-[0_24px_60px_-35px_rgba(99,102,241,0.18)] backdrop-blur sm:p-8 lg:grid-cols-[0.75fr_1.25fr] lg:p-12">
