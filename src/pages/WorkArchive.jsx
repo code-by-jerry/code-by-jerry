@@ -238,7 +238,7 @@ export default function WorkArchive() {
 
         {/* Header */}
         <div className="mb-10">
-          <Link to="/" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary hover:text-accent transition-colors mb-6 group">
+          <Link to="/developer" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary hover:text-accent transition-colors mb-6 group">
             <FaArrowLeft size={9} className="group-hover:-translate-x-1 transition-transform" />
             Back
           </Link>

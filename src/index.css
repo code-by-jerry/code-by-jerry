@@ -65,6 +65,54 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .hero-bg {
+    background-attachment: scroll;
+  }
+}
+
+@media (min-width: 1024px) {
+  .freelance-hero-grid {
+    min-height: calc(100vh - 7rem);
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 900px) {
+  .freelance-hero-grid {
+    max-height: calc(100vh - 7rem);
+    overflow: hidden;
+  }
+
+  .freelance-hero-copy {
+    gap: 0.75rem;
+  }
+
+  .freelance-hero-title {
+    font-size: clamp(3.8rem, 4.6vw, 5.6rem);
+    line-height: 0.92;
+  }
+
+  .freelance-hero-stats {
+    margin-top: 1.25rem;
+  }
+
+  .freelance-showcase {
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 820px) {
+  .freelance-hero-grid {
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .freelance-hero-title {
+    font-size: clamp(3.4rem, 4.2vw, 4.8rem);
+  }
+}
+
 /* Base styles for smooth scrolling setup with Lenis */
 html.lenis, html.lenis body {
   height: auto;
