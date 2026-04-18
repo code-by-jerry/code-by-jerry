@@ -1,40 +1,85 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   FaArrowRight,
   FaBriefcase,
+  FaBullseye,
   FaCode,
   FaEnvelope,
   FaLaptopCode,
-  FaLayerGroup,
-  FaRocket,
+  FaMobileAlt,
+  FaSearch,
+  FaServer,
+  FaShoppingCart,
 } from 'react-icons/fa'
 
-const offers = [
+const services = [
   {
-    title: 'Custom Web Platforms',
-    description:
-      'Business websites, portals, CRMs, dashboards, and full product builds designed around your workflow instead of templates.',
+    title: 'Web Applications',
+    description: 'Custom business systems, dashboards, and admin panels built for real workflows.',
     icon: FaLaptopCode,
+    eyebrow: 'Custom Systems',
   },
   {
-    title: 'Systems That Scale',
-    description:
-      'Laravel, React, APIs, payments, RBAC, and data models structured for growth so the build still feels solid six months later.',
-    icon: FaLayerGroup,
+    title: 'eCommerce & Shopify',
+    description: 'High-converting online stores with payment integrations and cleaner buying flows.',
+    icon: FaShoppingCart,
+    eyebrow: 'Revenue Focused',
   },
   {
-    title: 'Launch Support',
-    description:
-      'From planning to deployment, I handle the technical delivery with a clear build process and production-minded execution.',
-    icon: FaRocket,
+    title: 'Mobile Apps',
+    description: 'Flutter or hybrid app experiences connected tightly with your backend systems.',
+    icon: FaMobileAlt,
+    eyebrow: 'Mobile Delivery',
+  },
+  {
+    title: 'Backend Systems',
+    description: 'APIs, automation, integrations, and scalable architectures that support growth.',
+    icon: FaServer,
+    eyebrow: 'Core Logic',
+  },
+  {
+    title: 'Landing Pages',
+    description: 'Conversion-focused pages for ads, campaigns, launches, and lead generation.',
+    icon: FaBullseye,
+    eyebrow: 'Campaign Ready',
+  },
+  {
+    title: 'SEO Optimization',
+    description: 'Performance optimization and search ranking improvements for long-term visibility.',
+    icon: FaSearch,
+    eyebrow: 'Search Growth',
   },
 ]
 
-const proof = [
-  'Production systems across real estate, commerce, enterprise, and SaaS',
-  'Performance-focused builds with measurable speed and workflow improvements',
-  'Comfortable owning architecture, development, and deployment end to end',
+const impactStats = [
+  {
+    value: 40,
+    suffix: '%',
+    headline: 'Faster Applications',
+    label: 'Measured speed gains through cleaner architecture and leaner delivery.',
+    tone: 'dark',
+  },
+  {
+    value: 2,
+    suffix: 'x',
+    headline: 'Conversion Optimized Designs',
+    label: 'Interfaces shaped to reduce friction and create stronger action.',
+    tone: 'light',
+  },
+  {
+    value: 10000,
+    suffix: '+',
+    headline: 'Users Supported by Scalable Systems',
+    label: 'Platforms structured to handle real growth without falling apart.',
+    tone: 'accent',
+  },
+  {
+    staticValue: 'Secure',
+    headline: 'Production-Ready Architecture',
+    label: 'Built for launch with reliability, control, and long-term maintainability.',
+    tone: 'soft',
+  },
 ]
 
 const serviceSlides = [
@@ -192,6 +237,188 @@ function HeroServiceShowcase() {
   )
 }
 
+function HighImpactSection() {
+  const sectionRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false)
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    const node = sectionRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.3 },
+    )
+
+    observer.observe(node)
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setProgress(1)
+      return
+    }
+
+    let frameId = 0
+    let startTime = 0
+    const duration = 1400
+
+    const tick = (timestamp) => {
+      if (!startTime) startTime = timestamp
+
+      const elapsed = timestamp - startTime
+      const rawProgress = Math.min(elapsed / duration, 1)
+      const easedProgress = 1 - Math.pow(1 - rawProgress, 3)
+
+      setProgress(easedProgress)
+
+      if (rawProgress < 1) {
+        frameId = requestAnimationFrame(tick)
+      }
+    }
+
+    frameId = requestAnimationFrame(tick)
+
+    return () => cancelAnimationFrame(frameId)
+  }, [isVisible])
+
+  const formatValue = (stat) => {
+    if (stat.staticValue) return stat.staticValue
+
+    const currentValue = Math.round(stat.value * progress)
+    return `${new Intl.NumberFormat('en-US').format(currentValue)}${stat.suffix}`
+  }
+
+  const cardTone = {
+    dark: 'bg-primary text-white border-primary',
+    light: 'bg-background/90 text-primary border-border/70',
+    accent: 'accent-gradient text-white border-transparent',
+    soft: 'bg-surface text-primary border-border/60',
+  }
+
+  const labelTone = {
+    dark: 'text-white/65',
+    light: 'text-text-secondary',
+    accent: 'text-white/80',
+    soft: 'text-text-secondary',
+  }
+
+  return (
+    <section ref={sectionRef} className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+      <div className="rounded-[1.75rem] border border-border/70 bg-background/90 px-6 py-8 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.22)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
+          <div className="max-w-xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
+              High Impact
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-[3.35rem] lg:leading-[0.98]">
+              Results clients can feel in the product and in the business.
+            </h2>
+          </div>
+
+          <div className="grid gap-5 lg:border-l lg:border-border/70 lg:pl-10">
+            <p className="max-w-2xl text-lg font-medium leading-8 text-text-secondary sm:text-xl sm:leading-9 lg:text-[1.75rem] lg:leading-[1.45]">
+              Strong systems are useful. Measurable impact is what makes them valuable. The point
+              is not just better code, but better outcomes.
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-1">
+              {['Performance', 'Conversion', 'Scalability', 'Security'].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border/70 bg-background/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.24em] text-text-secondary/75"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {impactStats.map((stat) => (
+          <article
+            key={stat.headline}
+            className={`flex min-h-[220px] flex-col justify-between rounded-[2rem] border p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.22)] ${cardTone[stat.tone]}`}
+          >
+            <div>
+              <p
+                className={`text-[10px] font-bold uppercase tracking-[0.3em] ${
+                  stat.tone === 'dark' ? 'text-white/45' : stat.tone === 'accent' ? 'text-white/60' : 'text-text-secondary/55'
+                }`}
+              >
+                Impact
+              </p>
+              <p className="mt-4 font-display text-5xl font-bold leading-none sm:text-6xl">
+                {formatValue(stat)}
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <h3 className="text-xl font-bold leading-tight">{stat.headline}</h3>
+              <p className={`mt-4 text-sm leading-7 ${labelTone[stat.tone]}`}>{stat.label}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function ServicesSection() {
+  return (
+    <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="max-w-lg">
+          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Services</p>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+            What I can design, build, and optimize for your business.
+          </h2>
+        </div>
+
+        <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+          From customer-facing experiences to backend architecture, these are the services I offer
+          when teams need serious execution instead of generic freelance output.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {services.map(({ title, description, icon: Icon, eyebrow }) => (
+          <article
+            key={title}
+            className="group flex min-h-[220px] flex-col justify-between rounded-[1.75rem] border border-border/70 bg-background/90 p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/25"
+          >
+            <div>
+              <span className="inline-flex rounded-2xl bg-accent/8 p-3 text-accent">
+                <Icon size={18} />
+              </span>
+              <p className="mt-5 text-[10px] font-bold uppercase tracking-[0.28em] text-text-secondary/55">
+                {eyebrow}
+              </p>
+              <h3 className="mt-3 font-display text-2xl font-bold leading-tight text-primary">
+                {title}
+              </h3>
+            </div>
+
+            <p className="mt-8 text-sm leading-7 text-text-secondary">{description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export default function FreelanceLanding() {
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
@@ -270,33 +497,9 @@ export default function FreelanceLanding() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-screen-xl gap-8 px-6 pb-8 md:px-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-20">
-          <div className="rounded-[2rem] border border-border/70 bg-primary px-6 py-8 text-white shadow-[0_24px_60px_-35px_rgba(11,11,11,0.55)]">
-            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">What You Get</p>
-            <div className="mt-6 space-y-4">
-              {proof.map((item) => (
-                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
-                  <p className="text-sm leading-7 text-white/80">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        <HighImpactSection />
 
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {offers.map(({ title, description, icon: Icon }) => (
-              <article
-                key={title}
-                className="rounded-[1.75rem] border border-border/70 bg-background/85 p-6 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.2)] backdrop-blur"
-              >
-                <span className="inline-flex rounded-2xl bg-accent/8 p-3 text-accent">
-                  <Icon size={18} />
-                </span>
-                <h3 className="mt-6 font-display text-xl font-bold text-primary">{title}</h3>
-                <p className="mt-4 text-sm leading-7 text-text-secondary">{description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+        <ServicesSection />
 
         <section className="mx-auto max-w-screen-xl px-6 py-16 md:px-12 lg:px-20">
           <div className="grid gap-10 rounded-[2.25rem] border border-border/70 bg-background/85 p-6 shadow-[0_24px_60px_-35px_rgba(99,102,241,0.18)] backdrop-blur sm:p-8 lg:grid-cols-[0.75fr_1.25fr] lg:p-12">
