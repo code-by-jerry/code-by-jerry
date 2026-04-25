@@ -1049,6 +1049,14 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
             </>
           )}
           <div className="relative z-10">
+            {featured && (
+              <div className="mb-4">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-widest text-white border border-white/20 backdrop-blur-sm">
+                  <span className="flex h-1 w-1 rounded-full bg-white animate-pulse" />
+                  Featured Service
+                </span>
+              </div>
+            )}
             <p className={`text-[10px] font-bold uppercase tracking-[0.28em] ${featured ? 'text-white/60' : 'text-text-secondary/55'}`}>
               {eyebrow}
             </p>
@@ -1098,7 +1106,7 @@ function ServicesSection() {
           <div className="max-w-lg">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Services</p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-              What I can design, build, and optimize for your business.
+              Professional Web, Mobile & Backend Development Services
             </h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
@@ -1140,7 +1148,7 @@ function ContributionsSection() {
           <div className="max-w-md">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Contributions</p>
             <h2 className="mt-3 font-display text-2xl font-bold leading-tight text-primary sm:text-[2rem]">
-              Products and platforms I contributed to.
+              Development Projects & Enterprise Platforms I&apos;ve Contributed To
             </h2>
             <p className="mt-3 text-sm leading-7 text-text-secondary">
               Shown here as contributor work and delivery involvement, not ownership claims.
@@ -1732,7 +1740,7 @@ function BlogSection() {
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:mt-12 xl:grid-cols-3">
-        {blogPosts.map((post, index) => (
+        {blogPosts.map((post) => (
           <article
             key={post.title}
             className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]"
@@ -1791,7 +1799,7 @@ function FAQSection() {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqData.map((faq, index) => ({
+      "mainEntity": faqData.map((faq) => ({
         "@type": "Question",
         "name": faq.question,
         "acceptedAnswer": {
@@ -2075,7 +2083,7 @@ export default function FreelanceLanding() {
 
               {/* Headline */}
               <h1 className="freelance-hero-title font-display text-[2.65rem] font-bold leading-[0.98] text-primary sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.0]">
-                I Build Systems<br />{' '}
+                Full-Stack Developer Building Systems<br />{' '}
                 <span className="bg-gradient-to-r from-accent via-[#7961F4] to-[#7c3aed] bg-clip-text text-transparent">
                   Businesses Depend On
                 </span>

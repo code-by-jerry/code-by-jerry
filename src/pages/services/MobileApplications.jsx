@@ -158,8 +158,14 @@ export default function MobileApplications() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-12 sm:pt-32 sm:pb-16 md:pt-40 md:pb-20">
+      <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
+          <div className="mb-8">
+            <a href="/#services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group">
+              <span className="transition-transform group-hover:-translate-x-1">←</span>
+              Back to all services
+            </a>
+          </div>
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
             <div className="max-w-2xl">
               <div className="mb-6 flex items-center gap-2">
@@ -170,9 +176,9 @@ export default function MobileApplications() {
               </div>
 
               <h1 className="font-display text-4xl font-bold leading-tight text-primary sm:text-5xl lg:text-6xl">
-                Mobile Apps That
+                Cross-Platform Mobile
                 <span className="bg-gradient-to-r from-accent via-[#7961F4] to-[#7c3aed] bg-clip-text text-transparent">
-                  {' '}Users Love
+                  {' '}App Development
                 </span>
               </h1>
 
@@ -224,7 +230,7 @@ export default function MobileApplications() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {approaches.map((approach, index) => (
+            {approaches.map((approach) => (
               <div
                 key={approach.title}
                 className="rounded-[1.5rem] border border-border/60 bg-background/95 p-6 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)] text-center"
@@ -258,7 +264,7 @@ export default function MobileApplications() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <div
                 key={feature.title}
                 className="group rounded-[1.5rem] border border-border/60 bg-background/95 p-6 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_16px_48px_-20px_rgba(99,102,241,0.18)]"

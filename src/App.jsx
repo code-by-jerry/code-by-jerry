@@ -9,6 +9,8 @@ import MobileApplications from './pages/services/MobileApplications'
 import BackendAPIs from './pages/services/BackendAPIs'
 import BusinessPlatforms from './pages/services/BusinessPlatforms'
 import GrowthSEO from './pages/services/GrowthSEO'
+import NotFound from './pages/NotFound'
+
 function ScrollToTop() {
   const { pathname } = useLocation()
 
@@ -35,7 +37,7 @@ function App() {
         <Route path="/services/seo-growth" element={<GrowthSEO />} />
         <Route path="/developer" element={<Navigate to="/about" replace />} />
         <Route path="/work" element={<Navigate to="/portfolio" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )
