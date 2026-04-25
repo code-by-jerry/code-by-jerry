@@ -1,9 +1,14 @@
 import { Link } from 'react-router-dom'
 import { FaHome, FaArrowLeft } from 'react-icons/fa'
+import SEO from '../components/SEO'
 
 export default function NotFound() {
   return (
     <div className="hero-bg min-h-screen flex flex-col items-center justify-center font-sans text-text px-5 selection:bg-accent selection:text-white">
+      <SEO 
+        title="404 | Page Not Found | Code by Jerry"
+        description="The page you are looking for does not exist. Return to Code by Jerry for expert full-stack development services."
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
       
       <div className="relative z-10 text-center max-w-xl">

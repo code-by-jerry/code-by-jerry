@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaSearch, FaChartLine, FaRocket, FaCode, FaGlobe, FaTachometerAlt } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const services = [
   {
@@ -53,72 +54,59 @@ export default function GrowthSEO() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "SEO & Growth Optimization",
-      "description": "Professional SEO and growth optimization services. Technical SEO, performance optimization, and data-driven strategies for sustainable business growth and higher search rankings.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "SEO & Growth",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "SEO & Growth Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Technical SEO",
-              "description": "Core Web Vitals, schema markup, and technical SEO improvements."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Performance Optimization",
-              "description": "Speed improvements and user experience enhancements."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SEO Strategy",
-              "description": "Data-driven SEO strategies and content optimization."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "SEO & Growth Optimization",
+    "description": "Professional SEO and growth optimization services. Technical SEO, performance optimization, and data-driven strategies for sustainable business growth and higher search rankings.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "SEO & Growth",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "SEO & Growth Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Technical SEO",
+            "description": "Core Web Vitals, schema markup, and technical SEO improvements."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Performance Optimization",
+            "description": "Speed improvements and user experience enhancements."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SEO Strategy",
+            "description": "Data-driven SEO strategies and content optimization."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'SEO & Growth Optimization | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional SEO and growth optimization. Technical SEO, performance optimization, and data-driven strategies for higher search rankings and sustainable business growth.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="SEO & Growth Optimization | Code by Jerry"
+        description="Professional SEO and growth optimization. Technical SEO, performance optimization, and data-driven strategies for higher search rankings and sustainable business growth."
+        keywords="SEO optimization, growth hacking, technical SEO, performance marketing, Core Web Vitals, search rankings"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

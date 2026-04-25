@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaDatabase, FaCode, FaShieldAlt, FaRocket, FaSync, FaServer } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const capabilities = [
   {
@@ -48,72 +49,59 @@ export default function BackendAPIs() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Backend & API Development",
-      "description": "Professional backend development and API services. Build scalable server-side applications, RESTful APIs, and robust backend systems with Laravel, Node.js, and modern technologies.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "Backend Development",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Backend Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "API Development",
-              "description": "RESTful and GraphQL API development with comprehensive documentation."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Database Architecture",
-              "description": "Optimized database design and implementation for performance and scalability."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Microservices",
-              "description": "Scalable microservice architectures for complex applications."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Backend & API Development",
+    "description": "Professional backend development and API services. Build scalable server-side applications, RESTful APIs, and robust backend systems with Laravel, Node.js, and modern technologies.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "Backend Development",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Backend Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "API Development",
+            "description": "RESTful and GraphQL API development with comprehensive documentation."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Database Architecture",
+            "description": "Optimized database design and implementation for performance and scalability."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Microservices",
+            "description": "Scalable microservice architectures for complex applications."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'Backend & API Development | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional backend development services. Build scalable APIs, databases, and server-side applications with Laravel, Node.js, PostgreSQL, and modern technologies.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Backend & API Development | Code by Jerry"
+        description="Professional backend development services. Build scalable APIs, databases, and server-side applications with Laravel, Node.js, PostgreSQL, and modern technologies."
+        keywords="backend development, API development, Laravel, Node.js, database architecture, microservices, RESTful APIs"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

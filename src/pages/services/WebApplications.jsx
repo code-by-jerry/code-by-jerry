@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaCheckCircle, FaCode, FaDatabase, FaRocket, FaUsers, FaChartLine, FaShieldAlt, FaClock, FaGlobe } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const processSteps = [
   {
@@ -71,72 +72,59 @@ export default function WebApplications() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Custom Web Applications Development",
-      "description": "Professional custom web applications development service. Build scalable business systems, dashboards, and admin panels designed for real workflows and business growth.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "Web Development",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Web Application Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Custom Business Systems",
-              "description": "Tailored web applications built for specific business workflows and operational needs."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Admin Dashboards",
-              "description": "Comprehensive admin panels with role-based access and operational insights."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Scalable Web Platforms",
-              "description": "Enterprise-grade web applications designed to grow with your business."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Web Applications Development",
+    "description": "Professional custom web applications development service. Build scalable business systems, dashboards, and admin panels designed for real workflows and business growth.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "Web Development",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Application Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Business Systems",
+            "description": "Tailored web applications built for specific business workflows and operational needs."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Admin Dashboards",
+            "description": "Comprehensive admin panels with role-based access and operational insights."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Scalable Web Platforms",
+            "description": "Enterprise-grade web applications designed to grow with your business."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'Custom Web Applications Development | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional custom web applications development. Build scalable business systems, dashboards, and admin panels designed for real workflows. Laravel, React, Node.js expertise.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Custom Web Applications Development | Code by Jerry"
+        description="Professional custom web applications development. Build scalable business systems, dashboards, and admin panels designed for real workflows. Laravel, React, Node.js expertise."
+        keywords="custom web apps, business systems, admin dashboards, scalable platforms, full-stack development, React, Laravel"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

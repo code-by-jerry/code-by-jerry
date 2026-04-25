@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa'
+import SEO from '../components/SEO'
 
 const shots = {
   realty: [
@@ -258,44 +259,32 @@ export default function WorkArchive() {
     return allProjects.filter((project) => project.category === activeCategory)
   }, [activeCategory])
 
-  // Add meta tags and structured data
-  useEffect(() => {
-    document.title = 'Project Portfolio | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore a compact archive of shipped production systems, commerce builds, real estate platforms, and custom business applications developed by Jerry.')
+  const portfolioSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Project Portfolio",
+    "description": "Archive of production systems and applications developed by Jerry.",
+    "url": "https://codebyjerry.online/portfolio",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": allProjects.map((project, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": project.title,
+        "description": project.description,
+        "url": project.link || "https://codebyjerry.online/portfolio"
+      }))
     }
-
-    const portfolioSchema = {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Project Portfolio",
-      "description": "Archive of production systems and applications developed by Jerry.",
-      "url": "https://codebyjerry.online/portfolio",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": allProjects.map((project, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "name": project.title,
-          "description": project.description,
-          "url": project.link || "https://codebyjerry.online/portfolio"
-        }))
-      }
-    }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(portfolioSchema)
-    document.head.appendChild(script)
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Project Portfolio | Code by Jerry"
+        description="Explore a compact archive of shipped production systems, commerce builds, real estate platforms, and custom business applications developed by Jerry."
+        keywords="developer portfolio, production systems, business applications, Laravel projects, React projects, custom software development"
+        schema={portfolioSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.08]" />
       {lightbox && <Lightbox images={lightbox.images} title={lightbox.title} onClose={() => setLightbox(null)} />}
 

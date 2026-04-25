@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaShoppingCart, FaCreditCard, FaChartLine, FaUsers, FaMobileAlt, FaShieldAlt, FaRocket, FaHeadset } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const features = [
   {
@@ -51,72 +52,59 @@ export default function ECommerceSystems() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "eCommerce Systems Development",
-      "description": "Professional eCommerce development services. Build high-converting online stores with payment integrations, optimized checkout flows, and scalable commerce platforms.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "eCommerce Development",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "eCommerce Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Custom Online Stores",
-              "description": "Tailored eCommerce platforms built for specific business models and customer needs."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Payment Integration",
-              "description": "Secure payment processing with multiple gateway integrations and fraud protection."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conversion Optimization",
-              "description": "Checkout flow optimization and UX improvements to maximize sales conversion."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "eCommerce Systems Development",
+    "description": "Professional eCommerce development services. Build high-converting online stores with payment integrations, optimized checkout flows, and scalable commerce platforms.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "eCommerce Development",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "eCommerce Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Online Stores",
+            "description": "Tailored eCommerce platforms built for specific business models and customer needs."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Payment Integration",
+            "description": "Secure payment processing with multiple gateway integrations and fraud protection."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Conversion Optimization",
+            "description": "Checkout flow optimization and UX improvements to maximize sales conversion."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'eCommerce Systems Development | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional eCommerce development. Build high-converting online stores with optimized checkout, payment integration, and scalable commerce platforms. Shopify, WooCommerce, custom solutions.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="eCommerce Systems Development | Code by Jerry"
+        description="Professional eCommerce development. Build high-converting online stores with optimized checkout, payment integration, and scalable commerce platforms. Shopify, WooCommerce, custom solutions."
+        keywords="eCommerce development, online stores, Shopify, WooCommerce, payment integration, checkout optimization, commerce platforms"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
+import SEO from '../components/SEO'
 import Lenis from 'lenis'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -13,74 +14,48 @@ import '../App.css'
 export default function DeveloperPortfolio() {
   const appRef = useRef(null)
 
-  useEffect(() => {
-    const previousTitle = document.title
-    const description = document.querySelector('meta[name="description"]')
-    const previousDescription = description?.getAttribute('content')
-    const keywords = document.querySelector('meta[name="keywords"]')
-    const previousKeywords = keywords?.getAttribute('content')
-
-    document.title = 'Code by Jerry | Senior Full Stack Developer Portfolio'
-    description?.setAttribute(
-      'content',
-      'Senior Full Stack Developer portfolio for Jerry, focused on Laravel, React, Inertia, scalable platforms, backend APIs, and production engineering.',
-    )
-    if (keywords) {
-      keywords.setAttribute('content', 'full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer')
-    } else {
-      const metaKeywords = document.createElement('meta')
-      metaKeywords.name = 'keywords'
-      metaKeywords.content = 'full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer'
-      document.head.appendChild(metaKeywords)
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jerry (Azhagirishankar K)",
+    "jobTitle": "Senior Full Stack Developer",
+    "description": "Senior Full Stack Developer specializing in Laravel, React, Inertia.js, scalable platforms, backend APIs, and production engineering.",
+    "url": "https://codebyjerry.online/portfolio",
+    "sameAs": [
+      "https://www.linkedin.com/in/code-by-jerry/",
+      "https://github.com/code-by-jerry"
+    ],
+    "knowsAbout": [
+      "Laravel",
+      "React",
+      "Inertia.js",
+      "Full Stack Development",
+      "Backend APIs",
+      "Scalable Web Applications",
+      "Production Engineering"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Full Stack Developer",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "India"
+      }
     }
+  }
 
-    // Add structured data
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Jerry (Azhagirishankar K)",
-      "jobTitle": "Senior Full Stack Developer",
-      "description": "Senior Full Stack Developer specializing in Laravel, React, Inertia.js, scalable platforms, backend APIs, and production engineering.",
-      "url": "https://codebyjerry.online/portfolio",
-      "sameAs": [
-        "https://www.linkedin.com/in/code-by-jerry/",
-        "https://github.com/code-by-jerry"
-      ],
-      "knowsAbout": [
-        "Laravel",
-        "React",
-        "Inertia.js",
-        "Full Stack Development",
-        "Backend APIs",
-        "Scalable Web Applications",
-        "Production Engineering"
-      ],
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Full Stack Developer",
-        "occupationLocation": {
-          "@type": "Country",
-          "name": "India"
-        }
-      }
-    })
-    document.head.appendChild(script)
+  return (
+    <div
+      ref={appRef}
+      className="hero-bg relative min-h-screen font-sans text-text selection:bg-accent selection:text-white"
+    >
+      <SEO 
+        title="Code by Jerry | Senior Full Stack Developer Portfolio"
+        description="Senior Full Stack Developer portfolio for Jerry, focused on Laravel, React, Inertia, scalable platforms, backend APIs, and production engineering."
+        keywords="full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer, senior developer"
+        schema={schema}
+      />
 
-    return () => {
-      document.title = previousTitle
-      if (description && previousDescription) {
-        description.setAttribute('content', previousDescription)
-      }
-      if (keywords && previousKeywords) {
-        keywords.setAttribute('content', previousKeywords)
-      } else if (keywords) {
-        document.head.removeChild(keywords)
-      }
-      document.head.removeChild(script)
-    }
-  }, [])
 
   useEffect(() => {
     const lenis = new Lenis({

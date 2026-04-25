@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaBuilding, FaUsers, FaChartLine, FaShieldAlt, FaRocket, FaCog } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const platformTypes = [
   {
@@ -62,72 +63,59 @@ export default function BusinessPlatforms() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Business Platforms Development",
-      "description": "Professional business platform development. Build SaaS applications, marketplaces, and internal tools with role-based access, automation, and scalable architectures.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "Platform Development",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Business Platform Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SaaS Platform Development",
-              "description": "Custom SaaS applications with subscription management and multi-tenancy."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Marketplace Platforms",
-              "description": "Two-sided marketplace platforms with escrow and dispute resolution."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Internal Business Tools",
-              "description": "Custom applications for internal operations and workflow management."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Business Platforms Development",
+    "description": "Professional business platform development. Build SaaS applications, marketplaces, and internal tools with role-based access, automation, and scalable architectures.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "Platform Development",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Business Platform Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "SaaS Platform Development",
+            "description": "Custom SaaS applications with subscription management and multi-tenancy."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Marketplace Platforms",
+            "description": "Two-sided marketplace platforms with escrow and dispute resolution."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Internal Business Tools",
+            "description": "Custom applications for internal operations and workflow management."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'Business Platforms Development | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional business platform development. Build SaaS applications, marketplaces, and internal tools with automation, role-based access, and scalable architectures.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Business Platforms Development | Code by Jerry"
+        description="Professional business platform development. Build SaaS applications, marketplaces, and internal tools with automation, role-based access, and scalable architectures."
+        keywords="SaaS development, marketplace platforms, business applications, workflow automation, role-based access, scalable platforms"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight, FaMobileAlt, FaCodeBranch, FaSync, FaBatteryHalf, FaShieldAlt, FaRocket, FaUsers } from 'react-icons/fa'
+import SEO from '../../components/SEO'
 
 const approaches = [
   {
@@ -62,72 +63,59 @@ export default function MobileApplications() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Add structured data for the service page
-  useEffect(() => {
-    const serviceSchema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Mobile Applications Development",
-      "description": "Professional mobile app development services. Build cross-platform mobile applications with Flutter, React Native, and PWA technologies for iOS and Android.",
-      "provider": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "url": "https://codebyjerry.online"
-      },
-      "serviceType": "Mobile App Development",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Mobile Development Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Flutter App Development",
-              "description": "Cross-platform mobile applications built with Flutter for iOS and Android."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "React Native Development",
-              "description": "JavaScript-based mobile apps with React Native framework."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Progressive Web Apps",
-              "description": "Web-based mobile experiences with app-like functionality."
-            }
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Mobile Applications Development",
+    "description": "Professional mobile app development services. Build cross-platform mobile applications with Flutter, React Native, and PWA technologies for iOS and Android.",
+    "provider": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "url": "https://codebyjerry.online"
+    },
+    "serviceType": "Mobile App Development",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Mobile Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Flutter App Development",
+            "description": "Cross-platform mobile applications built with Flutter for iOS and Android."
           }
-        ]
-      }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "React Native Development",
+            "description": "JavaScript-based mobile apps with React Native framework."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Progressive Web Apps",
+            "description": "Web-based mobile experiences with app-like functionality."
+          }
+        }
+      ]
     }
-
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(serviceSchema)
-    document.head.appendChild(script)
-
-    // Update meta tags
-    document.title = 'Mobile Applications Development | Code by Jerry'
-    const metaDescription = document.querySelector('meta[name="description"]')
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional mobile app development. Build cross-platform applications with Flutter, React Native, and PWA technologies for iOS and Android. Native performance, offline capabilities.')
-    }
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
+  }
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Mobile Applications Development | Code by Jerry"
+        description="Professional mobile app development. Build cross-platform applications with Flutter, React Native, and PWA technologies for iOS and Android. Native performance, offline capabilities."
+        keywords="mobile app development, Flutter, React Native, PWA, iOS development, Android development, cross-platform apps"
+        schema={serviceSchema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}

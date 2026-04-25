@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import SEO from '../components/SEO'
 import {
   FaArrowRight,
   FaChartLine,
@@ -1890,91 +1891,87 @@ export default function FreelanceLanding() {
     { label: 'About', href: '#about' },
   ]
 
-  // Add structured data
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.type = 'application/ld+json'
-    script.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Code by Jerry",
-      "description": "Freelance full-stack developer building scalable web apps, dashboards, eCommerce systems, mobile apps, backend APIs, and SEO-ready business platforms.",
-      "url": "https://codebyjerry.online",
-      "logo": "https://codebyjerry.online/logo.png",
-      "founder": {
-        "@type": "Person",
-        "name": "Jerry (Azhagirishankar K)",
-        "jobTitle": "Full Stack Developer",
-        "email": "contact@codebyjerry.online",
-        "telephone": "+91-7092936243",
-        "sameAs": [
-          "https://www.linkedin.com/in/code-by-jerry/",
-          "https://github.com/code-by-jerry"
-        ]
-      },
-      "serviceType": [
-        "Web Development",
-        "Mobile App Development",
-        "eCommerce Development",
-        "Backend API Development",
-        "SEO Optimization"
-      ],
-      "areaServed": "Worldwide",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-7092936243",
-        "contactType": "Customer Service",
-        "email": "contact@codebyjerry.online",
-        "availableLanguage": "English"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Development Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Web Applications",
-              "description": "Custom business systems, dashboards, and admin panels built for real workflows."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "eCommerce Systems",
-              "description": "High-converting online stores with payment integrations and cleaner buying flows."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Mobile Applications",
-              "description": "Flutter or hybrid app experiences connected tightly with your backend systems."
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Backend & APIs",
-              "description": "APIs, automation, integrations, and scalable architectures that support real growth."
-            }
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Code by Jerry",
+    "description": "Freelance full-stack developer building scalable web apps, dashboards, eCommerce systems, mobile apps, backend APIs, and SEO-ready business platforms.",
+    "url": "https://codebyjerry.online",
+    "logo": "https://codebyjerry.online/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Jerry (Azhagirishankar K)",
+      "jobTitle": "Full Stack Developer",
+      "email": "contact@codebyjerry.online",
+      "telephone": "+91-7092936243",
+      "sameAs": [
+        "https://www.linkedin.com/in/code-by-jerry/",
+        "https://github.com/code-by-jerry"
+      ]
+    },
+    "serviceType": [
+      "Web Development",
+      "Mobile App Development",
+      "eCommerce Development",
+      "Backend API Development",
+      "SEO Optimization"
+    ],
+    "areaServed": "Worldwide",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-7092936243",
+      "contactType": "Customer Service",
+      "email": "contact@codebyjerry.online",
+      "availableLanguage": "English"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Applications",
+            "description": "Custom business systems, dashboards, and admin panels built for real workflows."
           }
-        ]
-      }
-    })
-    document.head.appendChild(script)
-
-    return () => {
-      document.head.removeChild(script)
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "eCommerce Systems",
+            "description": "High-converting online stores with payment integrations and cleaner buying flows."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile Applications",
+            "description": "Flutter or hybrid app experiences connected tightly with your backend systems."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Backend & APIs",
+            "description": "APIs, automation, integrations, and scalable architectures that support real growth."
+          }
+        }
+      ]
     }
-  }, [])
+  }
 
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
+      <SEO 
+        title="Code by Jerry | Expert Full-Stack Developer for Scalable Systems"
+        description="Senior Full-Stack Developer specializing in custom web apps, eCommerce platforms, backend APIs, and scalable business systems. High-end delivery for serious founders."
+        keywords="full stack developer, freelance developer, web development, Laravel developer, React developer, custom business systems, SEO expert"
+        schema={schema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}
