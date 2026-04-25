@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export default function Hero() {
@@ -39,7 +40,9 @@ export default function Hero() {
     <div className="flex flex-col w-full relative z-10 h-full justify-between py-0">
       <div className="flex flex-col">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-primary mb-2">
-          Code by Jerry
+          <Link to="/" className="transition-colors hover:text-accent">
+            Code by Jerry
+          </Link>
         </h1>
         <div className="space-y-1 mb-4">
           <h2 className="text-xl md:text-2xl font-semibold font-display text-primary">

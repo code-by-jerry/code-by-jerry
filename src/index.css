@@ -63,6 +63,34 @@ body {
   .accent-gradient {
     background: linear-gradient(135deg, #6366F1, #7961F4, #8B5CF6);
   }
+
+  .tech-stack-marquee {
+    animation: tech-stack-scroll 34s linear infinite;
+  }
+
+  .tech-stack-marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  .tech-stack-marquee:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes tech-stack-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-stack-marquee {
+    animation: none;
+  }
 }
 
 @media (max-width: 767px) {

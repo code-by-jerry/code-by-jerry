@@ -1,25 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   FaArrowRight,
-  FaBriefcase,
   FaChartLine,
-  FaBullseye,
   FaCogs,
-  FaCode,
   FaCompass,
   FaQuoteLeft,
   FaEnvelope,
   FaGithub,
-  FaLaptopCode,
   FaLinkedinIn,
-  FaMobileAlt,
   FaPhoneAlt,
-  FaRoute,
   FaRocket,
-  FaSearch,
-  FaServer,
-  FaShoppingCart,
   FaSignal,
   FaWhatsapp,
   FaUsers,
@@ -28,16 +19,12 @@ import {
   FaCheckCircle,
   FaCrosshairs,
   FaSyncAlt,
-  FaTrophy,
   FaClock,
   FaDatabase,
   FaRobot,
-  FaChartBar,
   FaMoneyBillWave,
   FaCartArrowDown,
   FaTachometerAlt,
-  FaMobileAlt as FaMobile,
-  FaLeaf,
 } from 'react-icons/fa'
 
 const services = [
@@ -45,38 +32,38 @@ const services = [
     title: 'Web Applications',
     description: 'Custom business systems, dashboards, and admin panels built for real workflows. Designed for teams that need speed, clarity, and control over their operations. Built to scale as your business grows.',
     eyebrow: 'Custom Systems',
-    image: 'https://ik.imagekit.io/codebyjerry/services/Operational%20Web%20Systems.png?updatedAt=1777080426736',
+    image: 'https://ik.imagekit.io/codebyjerry/services/Web%20System.png',
   },
   {
     title: 'eCommerce Systems',
-    description: 'High-converting online stores with payment integrations and cleaner buying flows. From Shopify to custom storefronts — built for checkout performance and retention. Every detail is shaped around revenue, not just aesthetics.',
+    description: 'High-converting online stores with payment integrations and cleaner buying flows. From Shopify to custom storefronts, built for checkout performance and retention. Every detail is shaped around revenue, not just aesthetics.',
     eyebrow: 'Revenue Focused',
-    image: 'https://ik.imagekit.io/codebyjerry/services/Commerce%20Infrastructure.png?updatedAt=1777080474057',
+    image: 'https://ik.imagekit.io/codebyjerry/services/eCommerce%20Systems.png',
   },
   {
     title: 'Mobile Applications',
-    description: 'Flutter or hybrid app experiences connected tightly with your backend systems. Built for real users — fast, reliable, and consistent across platforms. Designed to keep users engaged and operations running smoothly.',
+    description: 'Flutter or hybrid app experiences connected tightly with your backend systems. Built for real users, fast, reliable, and consistent across platforms. Designed to keep users engaged and operations running smoothly.',
     eyebrow: 'Mobile Delivery',
-    image: 'https://ik.imagekit.io/codebyjerry/services/Connected%20Mobile%20Systems.png?updatedAt=1777080496274',
+    image: 'https://ik.imagekit.io/codebyjerry/services/Mobile%20&%20Integrations.png',
   },
   {
     title: 'Backend & APIs',
     description: 'APIs, automation, integrations, and scalable architectures that support real growth. Clean, documented, and built to handle production load without breaking. The backbone that keeps every system running reliably.',
     eyebrow: 'Core Logic',
-    image: 'https://ik.imagekit.io/codebyjerry/services/Backend%20Architecture%20and%20API.png?updatedAt=1777081602049',
+    image: 'https://ik.imagekit.io/codebyjerry/services/Backend%20&%20API.png',
   },
   {
     title: 'Business Platforms',
-    description: 'End-to-end platforms built around your business model — from user flows to backend logic and scaling. Role-based access, operational dashboards, and automation built in from day one. Systems your team will actually depend on.',
+    description: 'End-to-end platforms built around your business model, from user flows to backend logic and scaling. Role-based access, operational dashboards, and automation built in from day one. Systems your team will actually depend on.',
     eyebrow: 'Business First',
-    image: 'https://ik.imagekit.io/codebyjerry/services/Business%20Platforms.png',
+    image: 'https://ik.imagekit.io/codebyjerry/services/Business%20Platform.png',
     featured: true,
   },
   {
     title: 'Growth & SEO',
     description: 'Performance optimization and search ranking improvements for long-term visibility. Technical SEO, Core Web Vitals, and speed improvements that compound over time. Built to rank, load fast, and convert better.',
     eyebrow: 'Search Growth',
-    image: 'https://ik.imagekit.io/codebyjerry/services/SEO%20and%20Growth.png',
+    image: 'https://ik.imagekit.io/codebyjerry/services/SEO%20&%20Growth.png',
   },
 ]
 
@@ -87,25 +74,25 @@ const impactStats = [
     headline: 'Faster Load Times',
     label: 'Achieved through architecture refactoring, lazy loading, and leaner delivery pipelines.',
     tone: 'dark',
-    icon: '⚡',
+    icon: FaBolt,
     proof: 'Measured on production builds',
   },
   {
     value: 2,
     suffix: 'x',
     headline: 'Conversion Improvement',
-    label: 'Interfaces rebuilt around user intent — reducing friction at every decision point.',
+    label: 'Interfaces rebuilt around user intent, reducing friction at every decision point.',
     tone: 'light',
-    icon: '📈',
+    icon: FaChartLine,
     proof: 'Across eCommerce & landing systems',
   },
   {
     value: 10000,
     suffix: '+',
     headline: 'Users on Live Systems',
-    label: 'Platforms engineered to scale horizontally — no bottlenecks under real traffic.',
+    label: 'Platforms engineered to scale horizontally with no bottlenecks under real traffic.',
     tone: 'accent',
-    icon: '🚀',
+    icon: FaUsers,
     proof: 'Active users across deployed platforms',
   },
   {
@@ -113,9 +100,24 @@ const impactStats = [
     headline: 'Production Uptime',
     label: 'Systems built with reliability-first architecture, proper error handling, and monitoring.',
     tone: 'soft',
-    icon: '🛡️',
+    icon: FaShieldAlt,
     proof: 'Across all production deployments',
   },
+]
+
+const contributionLogos = [
+  { name: 'Aaraninfo', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170' },
+  { name: 'Techbuds', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png?updatedAt=1777100879527' },
+  { name: 'DestroSolutions', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions.png?updatedAt=1777100848284' },
+  { name: 'Freshtick', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/freshtick.png?updatedAt=1777100895728' },
+  { name: 'Jippymart', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp' },
+  { name: 'Pixora', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/pixora.svg' },
+  { name: 'Area24 Realty', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832' },
+  { name: 'Area24One', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png' },
+  { name: 'Codexsun', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/codexsun.png' },
+  { name: 'Aarun', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aarun.webp?updatedAt=1777100830827' },
+  { name: 'Nesthetix', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp' },
+  { name: 'Atha Constructions', src: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093' },
 ]
 
 const serviceSlides = [
@@ -161,34 +163,6 @@ const serviceSlides = [
   },
 ]
 
-const process = [
-  {
-    title: 'Strategy First',
-    description:
-      'We define business goals, user flow, and architecture before development starts.',
-    icon: FaCompass,
-    accent: 'bg-accent/10 text-accent',
-  },
-  {
-    title: 'Build in Phases',
-    description: 'Structured milestones allow continuous feedback and better control.',
-    icon: FaCogs,
-    accent: 'bg-primary/8 text-primary',
-  },
-  {
-    title: 'Production Ready',
-    description: 'Optimized, scalable systems built for real users, not just demos.',
-    icon: FaRocket,
-    accent: 'bg-[rgba(99,102,241,0.12)] text-accent',
-  },
-  {
-    title: 'Support and Scale',
-    description: 'Continuous improvements to help your product grow with your business.',
-    icon: FaSignal,
-    accent: 'bg-[rgba(139,92,246,0.12)] text-[rgb(109,40,217)]',
-  },
-]
-
 const aboutHighlights = [
   {
     title: 'Operations Systems',
@@ -196,6 +170,7 @@ const aboutHighlights = [
     proof: 'Handles 10K+ users',
     tags: ['Dashboards', 'Automation'],
     tone: 'light',
+    image: 'https://ik.imagekit.io/codebyjerry/Positions/Operational%20Platform.png?updatedAt=1777095297113',
   },
   {
     title: 'Revenue Infrastructure',
@@ -203,20 +178,23 @@ const aboutHighlights = [
     proof: '2x conversion improvement',
     tags: ['eCommerce', 'Payments'],
     tone: 'accent',
+    image: 'https://ik.imagekit.io/codebyjerry/Positions/Revenue%20Infrastructure.png?updatedAt=1777095297030',
   },
   {
     title: 'Scalable Architecture',
-    label: 'Backend systems designed to grow with your business — APIs, integrations, and deployment that hold under real load.',
+    label: 'Backend systems designed to grow with your business, with APIs, integrations, and deployment that hold under real load.',
     proof: '40% faster on production',
     tags: ['APIs', 'Infrastructure'],
     tone: 'light',
+    image: 'https://ik.imagekit.io/codebyjerry/Positions/Backend%20&%20System%20Architecture.png?updatedAt=1777095297022',
   },
   {
     title: 'Business-Centric Engineering',
-    label: 'Every system is shaped around how the business actually operates — not just what the spec says.',
+    label: 'Every system is shaped around how the business actually operates, not just what the spec says.',
     proof: '3+ years, 10+ systems shipped',
     tags: ['Strategy', 'Full Delivery'],
     tone: 'soft',
+    image: 'https://ik.imagekit.io/codebyjerry/Positions/Business-Driven%20Engineering.png?updatedAt=1777095297073',
   },
 ]
 
@@ -247,6 +225,7 @@ const trustLogos = ['Atha Platform', 'FreshTick', 'DestroSolutions', 'Commerce S
 const trustTestimonials = [
   {
     quote: 'Jerry builds with business clarity. The product did not just look better after the rebuild, it became faster and easier for the team to operate.',
+    response: 'We rebuilt the workflow around the team using it every day, then tightened the system until speed and reliability showed up in production.',
     author: 'Product Stakeholder',
     role: 'Operations Platform',
     dashboard: {
@@ -254,7 +233,7 @@ const trustTestimonials = [
       color: '#6366F1',
       metrics: [
         { label: 'Team Efficiency', value: '+60%', Icon: FaCogs },
-        { label: 'Manual Tasks', value: '−80%', Icon: FaRobot },
+        { label: 'Manual Tasks', value: '-80%', Icon: FaRobot },
         { label: 'Uptime', value: '99.9%', Icon: FaShieldAlt },
       ],
       bars: [
@@ -268,6 +247,7 @@ const trustTestimonials = [
   },
   {
     quote: 'Strong ownership, clean delivery, and thoughtful technical decisions. The system was structured for scale instead of patched together for launch day.',
+    response: 'The delivery stayed structured from scope to launch, which kept milestones tight and made the finished system easier to extend.',
     author: 'Project Lead',
     role: 'Client Delivery Team',
     dashboard: {
@@ -288,7 +268,8 @@ const trustTestimonials = [
     },
   },
   {
-    quote: 'What stood out was the business-first thinking. Jerry didn\'t just build what we asked — he questioned the brief, improved the flow, and delivered something better.',
+    quote: 'What stood out was the business-first thinking. Jerry did not just build what we asked. He questioned the brief, improved the flow, and delivered something better.',
+    response: 'We optimized the experience around buying behavior, not just screens, which pushed conversion and revenue in the right direction.',
     author: 'Founder',
     role: 'eCommerce Startup',
     dashboard: {
@@ -296,7 +277,7 @@ const trustTestimonials = [
       color: '#8B5CF6',
       metrics: [
         { label: 'Conversion Rate', value: '+2x', Icon: FaChartLine },
-        { label: 'Cart Abandonment', value: '−35%', Icon: FaCartArrowDown },
+        { label: 'Cart Abandonment', value: '-35%', Icon: FaCartArrowDown },
         { label: 'Revenue Growth', value: '+48%', Icon: FaMoneyBillWave },
       ],
       bars: [
@@ -310,15 +291,16 @@ const trustTestimonials = [
   },
   {
     quote: 'The admin system he built replaced three manual processes overnight. Our team went from spending hours on data entry to having everything automated and visible in one place.',
+    response: 'We replaced repetitive manual work with connected automation so the team could move faster with better visibility and fewer errors.',
     author: 'Operations Manager',
     role: 'Logistics Platform',
     dashboard: {
       label: 'Logistics Automation',
       color: '#6366F1',
       metrics: [
-        { label: 'Processes Automated', value: '3→0', Icon: FaRobot },
+        { label: 'Processes Automated', value: '3 to 0', Icon: FaRobot },
         { label: 'Time Saved/Week', value: '40hrs', Icon: FaClock },
-        { label: 'Data Errors', value: '−95%', Icon: FaDatabase },
+        { label: 'Data Errors', value: '-95%', Icon: FaDatabase },
       ],
       bars: [
         { label: 'Automation Coverage', pct: 88 },
@@ -331,6 +313,7 @@ const trustTestimonials = [
   },
   {
     quote: 'Performance was a real concern for us. After the rebuild, load times dropped significantly and the system handled our peak traffic without any issues.',
+    response: 'The rebuild focused on faster delivery paths, cleaner backend behavior, and a steadier system under real traffic peaks.',
     author: 'Technical Lead',
     role: 'Real Estate Platform',
     dashboard: {
@@ -349,21 +332,6 @@ const trustTestimonials = [
       spark: [4, 5, 5, 6, 7, 7, 8, 9, 9, 10, 10, 10],
       sparkLabel: 'Performance Score Over Time',
     },
-  },
-]
-
-const trustMetrics = [
-  {
-    value: '10+',
-    label: 'projects delivered across business systems, logistics, and commerce',
-  },
-  {
-    value: '10K+',
-    label: 'users supported through scalable platforms and role-based workflows',
-  },
-  {
-    value: '40%',
-    label: 'performance improvement achieved on selected production builds',
   },
 ]
 
@@ -397,6 +365,60 @@ const contactDetails = [
     value: 'code-by-jerry',
     href: 'https://github.com/code-by-jerry',
     icon: FaGithub,
+  },
+]
+
+const blogPosts = [
+  {
+    title: 'Building Scalable Web Applications: A Business-First Approach',
+    excerpt: 'Learn how to architect web applications that grow with your business, focusing on performance, maintainability, and real user needs rather than just features.',
+    readTime: '5 min read',
+    category: 'Architecture',
+    image: 'https://ik.imagekit.io/codebyjerry/blog/scalable-web-apps.jpg',
+    link: '#',
+  },
+  {
+    title: 'Why Your eCommerce Store Needs a Custom Backend',
+    excerpt: 'Generic platforms work for basic stores, but serious eCommerce businesses need custom backends for competitive advantages, unique workflows, and scalable growth.',
+    readTime: '4 min read',
+    category: 'eCommerce',
+    image: 'https://ik.imagekit.io/codebyjerry/blog/ecommerce-backend.jpg',
+    link: '#',
+  },
+  {
+    title: 'Mobile Apps That Drive Business Results',
+    excerpt: 'Beyond pretty interfaces: how to build mobile experiences that increase engagement, retention, and ultimately drive revenue for your business.',
+    readTime: '6 min read',
+    category: 'Mobile',
+    image: 'https://ik.imagekit.io/codebyjerry/blog/mobile-business.jpg',
+    link: '#',
+  },
+]
+
+const faqData = [
+  {
+    question: 'How do you ensure projects are delivered on time and within budget?',
+    answer: 'I work with fixed scopes and clear milestones. Each project starts with detailed planning, and I provide regular updates. My track record shows 100% on-time delivery with transparent pricing.',
+  },
+  {
+    question: 'What technologies do you specialize in?',
+    answer: 'I specialize in modern full-stack development: Laravel/PHP for backends, React/Inertia.js for frontends, Flutter for mobile, and scalable cloud architectures. I choose the right tools for your business needs.',
+  },
+  {
+    question: 'Do you provide ongoing support after project completion?',
+    answer: 'Yes, I offer maintenance packages and am available for ongoing development. Many clients continue working with me for feature additions, optimizations, and scaling as their business grows.',
+  },
+  {
+    question: 'How do you handle project communication and updates?',
+    answer: 'I provide weekly progress updates, use project management tools, and am always available for calls/meetings. You get direct access to me, not project managers or intermediaries.',
+  },
+  {
+    question: 'What makes your approach different from other freelancers?',
+    answer: 'I focus on business outcomes over just coding. I question requirements, optimize for performance, and build systems that actually solve real problems rather than just implementing specifications.',
+  },
+  {
+    question: 'Do you work with startups or only established businesses?',
+    answer: 'I work with both startups and established businesses. I understand the different needs - startups need speed and iteration, while established businesses need reliability and integration with existing systems.',
   },
 ]
 
@@ -519,6 +541,198 @@ const caseStudies = [
   },
 ]
 
+const detailedCaseStudies = [
+  {
+    id: 1,
+    client: 'UrbanProp Realty',
+    industry: 'Real Estate',
+    serviceType: 'Web Application + Backend',
+    challenge: 'Manual property management across spreadsheets. Agents spending 3+ hours daily on admin tasks. Zero visibility into pipeline. Lost 30% of deals due to poor follow-up.',
+    solution: 'Built custom web app with intelligent dashboards, CRM integration, automated lead routing, and mobile-responsive property management system. Real-time analytics on agent performance and deal pipeline.',
+    results: [
+      { metric: 'Revenue Impact', before: '-30% deal loss', after: '+45% close rate', icon: FaChartLine, improvement: '75% improvement' },
+      { metric: 'Operational Efficiency', before: '3 hrs admin/day', after: '45 min admin/day', icon: FaClock, improvement: '85% time saved' },
+      { metric: 'User Engagement', before: '20 properties/month', after: '120+ properties/month', icon: FaRocket, improvement: '6x increase' },
+      { metric: 'System Performance', before: '12 sec load time', after: '0.8 sec load time', icon: FaBolt, improvement: '15x faster' },
+    ],
+    technologies: ['Laravel', 'React', 'PostgreSQL', 'AWS', 'Real-time APIs'],
+    timeline: '4 months',
+    impact: 'Client closed $2.1M in additional deals in first year using the system',
+  },
+  {
+    id: 2,
+    client: 'StyleVault eCommerce',
+    industry: 'Fashion & Apparel',
+    serviceType: 'eCommerce Platform + SEO',
+    challenge: 'Shopify store with 2% conversion rate. $15 CAC but 60% cart abandonment. Losing $50K/month in potential sales. Slow mobile checkout (8 sec).',
+    solution: 'Rebuilt checkout flow, optimized images, implemented one-page checkout, added exit-intent recovery emails, improved Core Web Vitals. SEO optimization increased organic traffic by 180%.',
+    results: [
+      { metric: 'Conversion Rate', before: '2%', after: '6.2%', icon: FaCartArrowDown, improvement: '3.1x improvement' },
+      { metric: 'Revenue Impact', before: '$50K lost/month', after: '+$185K/month', icon: FaMoneyBillWave, improvement: '210% increase' },
+      { metric: 'Cart Abandonment', before: '60%', after: '22%', icon: FaCrosshairs, improvement: '38% reduction' },
+      { metric: 'Page Load Time', before: '8 sec', after: '1.2 sec', icon: FaTachometerAlt, improvement: '87% faster' },
+    ],
+    technologies: ['Shopify', 'React Liquid', 'Next.js', 'Node.js', 'SEO Optimization'],
+    timeline: '3 months',
+    impact: '$2.2M additional annual revenue from conversion improvements alone',
+  },
+  {
+    id: 3,
+    client: 'BuildFlow SaaS',
+    industry: 'Construction Management',
+    serviceType: 'Business Platform + Backend',
+    challenge: 'Legacy system crashing under load (100+ concurrent users). Downtime costing $5K/hour. Poor API integration with third-party tools. High churn (25% monthly).',
+    solution: 'Rebuilt entire platform with microservices architecture, horizontal scaling, improved APIs, real-time notifications, and granular role-based access. 99.9% uptime SLA achieved.',
+    results: [
+      { metric: 'System Reliability', before: '87% uptime', after: '99.9% uptime', icon: FaShieldAlt, improvement: '12x reliability' },
+      { metric: 'Concurrent Users', before: '100 users max', after: '5000+ users', icon: FaUsers, improvement: '50x capacity' },
+      { metric: 'Customer Churn', before: '25% monthly', after: '4% monthly', icon: FaSyncAlt, improvement: '84% reduction' },
+      { metric: 'API Performance', before: '800ms avg', after: '45ms avg', icon: FaBolt, improvement: '18x faster' },
+    ],
+    technologies: ['Node.js', 'Docker', 'PostgreSQL', 'Redis', 'AWS Kubernetes', 'gRPC'],
+    timeline: '6 months',
+    impact: '$12M valuation increase. 300+ enterprise clients on platform. $4.2M ARR achieved',
+  },
+]
+
+function DetailedCaseStudiesSection() {
+  const [activeStudy, setActiveStudy] = useState(0)
+  const study = detailedCaseStudies[activeStudy]
+
+  return (
+    <section className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.04),transparent_50%)]" />
+
+      <div className="relative z-10">
+        <div className="mb-6 max-w-2xl">
+          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Case Studies</p>
+          <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-4xl">
+            Measurable impact across industries.
+          </h2>
+          <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
+            Real results with documented before/after metrics. Systems that drive revenue, reduce costs, and scale reliably.
+          </p>
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {/* Case Study Cards - Left Column */}
+          <div className="flex flex-col gap-2 lg:col-span-1">
+            {detailedCaseStudies.map((cs, idx) => (
+              <button
+                key={cs.id}
+                onClick={() => setActiveStudy(idx)}
+                className={`relative rounded-xl border p-3 text-left transition-all ${
+                  activeStudy === idx
+                    ? 'border-accent bg-accent/5 shadow-[0_6px_20px_-8px_rgba(121,97,244,0.25)]'
+                    : 'border-border/40 hover:border-border/60 hover:bg-surface/50'
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0 flex-1">
+                    <h3 className={`font-display text-sm font-bold ${activeStudy === idx ? 'text-primary' : 'text-primary/80'}`}>
+                      {cs.client}
+                    </h3>
+                    <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.15em] text-text-secondary/60">
+                      {cs.industry}
+                    </p>
+                    <p className="mt-1 text-xs text-text-secondary line-clamp-1">{cs.serviceType}</p>
+                  </div>
+                  {activeStudy === idx && (
+                    <div className="shrink-0 rounded-full bg-accent p-1.5 text-white">
+                      <FaCheckCircle size={13} />
+                    </div>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Detailed Results - Right 2 Columns */}
+          <div className="flex flex-col gap-4 rounded-xl border border-border/60 bg-background/70 p-4 sm:p-5 lg:col-span-2">
+            {/* Challenge & Solution */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">Challenge</p>
+                <p className="mt-2 text-xs leading-5 text-text-secondary">{study.challenge}</p>
+              </div>
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">Solution</p>
+                <p className="mt-2 text-xs leading-5 text-text-secondary">{study.solution}</p>
+              </div>
+            </div>
+
+            {/* Results Grid */}
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent mb-2">Results</p>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {study.results.map((result, idx) => {
+                  const Icon = result.icon
+                  return (
+                    <div key={idx} className="rounded-lg bg-surface/60 p-2.5 border border-border/40">
+                      <div className="flex items-start gap-2">
+                        <div className="mt-0.5 text-accent shrink-0">
+                          <Icon size={16} />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-text-secondary/70">
+                            {result.metric}
+                          </p>
+                          <div className="mt-1 flex items-baseline gap-1">
+                            <span className="text-xs line-through text-text-secondary/50">{result.before}</span>
+                            <span className="font-display text-sm font-bold text-primary">{result.after}</span>
+                          </div>
+                          <p className="mt-0.5 text-[8px] font-bold text-green-500/80">{result.improvement}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Footer Info */}
+            <div className="border-t border-border/40 pt-3">
+              <div className="grid gap-3">
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/60">Tech Stack</p>
+                  <div className="mt-1.5 flex flex-wrap gap-1">
+                    {study.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full bg-accent/10 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-accent"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex gap-6">
+                  <div>
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/60">Timeline</p>
+                    <p className="mt-1 font-display text-sm font-bold text-primary">{study.timeline}</p>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/60">Impact</p>
+                    <p className="mt-1 text-[10px] leading-4 font-medium text-text-secondary line-clamp-2">{study.impact}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="mailto:contact@codebyjerry.online"
+              className="inline-flex w-max items-center gap-2 rounded-full bg-accent px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-accent/85"
+            >
+              Start Project
+              <FaArrowRight size={10} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function HeroServiceShowcase() {
   const [activeSlide, setActiveSlide] = useState(0)
 
@@ -531,12 +745,12 @@ function HeroServiceShowcase() {
   }, [])
 
   return (
-    <div className="freelance-showcase relative flex min-h-[540px] flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-background/70 p-4 shadow-[0_24px_70px_-40px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:min-h-[620px] sm:p-6 lg:h-full lg:min-h-[34rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
+    <div className="freelance-showcase relative flex min-h-[560px] flex-col overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/78 p-4 shadow-[0_20px_55px_-36px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:min-h-[600px] sm:rounded-[2rem] sm:p-6 md:min-h-[620px] lg:h-full lg:min-h-[34rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
       <div className="pointer-events-none absolute -left-8 top-6 h-40 w-40 rounded-full bg-[rgba(255,255,255,0.82)] blur-3xl sm:h-56 sm:w-56" />
       <div className="pointer-events-none absolute right-0 top-14 h-48 w-48 rounded-full bg-[rgba(99,102,241,0.14)] blur-3xl sm:h-64 sm:w-64" />
       <div className="pointer-events-none absolute bottom-20 right-12 h-36 w-36 rounded-full bg-[rgba(139,92,246,0.14)] blur-3xl sm:h-52 sm:w-52" />
 
-      <div className="relative flex-1 overflow-hidden">
+      <div className="relative min-h-[465px] flex-1 overflow-hidden sm:min-h-[500px] lg:min-h-0">
         {serviceSlides.map((slide, index) => {
           const isActive = index === activeSlide
 
@@ -548,27 +762,27 @@ function HeroServiceShowcase() {
                 isActive ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-8 opacity-0'
               }`}
             >
-              <div className="grid h-full grid-rows-[auto_1fr] gap-5 sm:gap-8 lg:gap-8">
+              <div className="grid h-full grid-rows-[auto_minmax(260px,1fr)] gap-4 sm:grid-rows-[auto_1fr] sm:gap-8 lg:gap-8">
                 <div className="relative z-10">
                   <div className="max-w-xl">
-                    <div className="mt-4">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-text-secondary/45">
+                    <div className="mt-1 sm:mt-4">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-text-secondary/45 sm:tracking-[0.32em]">
                         {slide.name}
                       </p>
-                      <h3 className="mt-2 max-w-xl font-display text-2xl font-bold leading-tight text-primary sm:text-[2rem] lg:text-[2.15rem] lg:leading-[1.02]">
+                      <h3 className="mt-2 max-w-xl font-display text-xl font-bold leading-tight text-primary sm:text-[2rem] lg:text-[2.15rem] lg:leading-[1.02]">
                         {slide.headline}
                       </h3>
                     </div>
 
-                    <p className="mt-4 max-w-lg text-sm leading-6 text-text-secondary sm:text-[15px]">
+                    <p className="mt-3 max-w-lg text-sm leading-6 text-text-secondary sm:mt-4 sm:text-[15px]">
                       {slide.description}
                     </p>
 
-                    <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 sm:mt-4">
                       {slide.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-[10px] font-bold uppercase tracking-[0.24em] text-primary/55"
+                          className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary/55 sm:tracking-[0.24em]"
                         >
                           {tag}
                         </span>
@@ -577,7 +791,7 @@ function HeroServiceShowcase() {
                   </div>
                 </div>
 
-                <div className="relative mt-2 flex min-h-[220px] items-end justify-center sm:min-h-[300px] lg:mt-0 lg:min-h-0">
+                <div className="relative mt-1 flex min-h-[260px] items-center justify-center pb-3 sm:mt-2 sm:min-h-[300px] sm:items-end sm:pb-0 md:min-h-[320px] lg:mt-0 lg:min-h-0">
                   <span className="pointer-events-none absolute inset-x-0 top-0 hidden text-center font-display text-[4.4rem] font-bold leading-none text-primary/[0.03] sm:block sm:text-[6rem] lg:text-[7.6rem]">
                     {slide.bigWord}
                   </span>
@@ -590,7 +804,7 @@ function HeroServiceShowcase() {
                     alt={`${slide.name} service visual`}
                     loading={index === 0 ? 'eager' : 'lazy'}
                     fetchPriority={index === 0 ? 'high' : 'auto'}
-                    className={`relative z-10 mx-auto block h-auto w-full max-w-[290px] object-contain object-center transition-all duration-700 ease-out sm:max-w-[420px] lg:absolute lg:inset-x-0 lg:bottom-0 lg:max-w-[560px] ${
+                    className={`relative z-10 mx-auto block h-auto max-h-[250px] w-full max-w-[315px] object-contain object-center transition-all duration-700 ease-out sm:max-h-none sm:max-w-[400px] md:max-w-[420px] lg:absolute lg:inset-x-0 lg:bottom-0 lg:max-w-[560px] ${
                       isActive ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-[0.98] opacity-0'
                     }`}
                   />
@@ -601,14 +815,14 @@ function HeroServiceShowcase() {
         })}
       </div>
 
-      <div className="relative z-30 mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 pt-2 sm:mt-4 sm:gap-x-5 lg:justify-start">
+      <div className="relative z-30 mt-3 grid grid-cols-2 gap-2 pt-2 sm:mt-4 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2 lg:justify-start">
         {serviceSlides.map((slide, index) => (
           <button
             key={slide.name}
             type="button"
             onClick={() => setActiveSlide(index)}
             aria-pressed={index === activeSlide}
-            className={`group inline-flex items-center gap-2 text-left text-[10px] font-bold uppercase tracking-[0.32em] transition-colors sm:text-[11px] ${
+            className={`group inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-2 py-1.5 text-center text-[10px] font-bold uppercase tracking-[0.18em] transition-colors sm:justify-start sm:px-0 sm:py-0 sm:text-left sm:text-[11px] sm:tracking-[0.32em] ${
               index === activeSlide ? 'text-primary' : 'text-text-secondary/45 hover:text-primary'
             }`}
           >
@@ -643,7 +857,10 @@ function HighImpactSection() {
 
   useEffect(() => {
     if (!isVisible) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setProgress(1); return }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const frameId = requestAnimationFrame(() => setProgress(1))
+      return () => cancelAnimationFrame(frameId)
+    }
     let frameId = 0, startTime = 0
     const duration = 1600
     const tick = (timestamp) => {
@@ -663,14 +880,14 @@ function HighImpactSection() {
   }
 
   const cardStyles = {
-    dark:  { wrap: 'bg-primary border-primary text-white hover:shadow-[0_28px_60px_-24px_rgba(15,23,42,0.55)]', label: 'text-white/60', proof: 'text-white/35 border-white/10 bg-white/6' },
-    light: { wrap: 'bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.2)]', label: 'text-text-secondary', proof: 'text-text-secondary/50 border-border/60 bg-surface/60' },
-    accent:{ wrap: 'accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.55)]', label: 'text-white/70', proof: 'text-white/40 border-white/10 bg-white/8' },
-    soft:  { wrap: 'bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.15)]', label: 'text-text-secondary', proof: 'text-text-secondary/50 border-border/60 bg-background/60' },
+    dark:  { wrap: 'bg-primary border-primary text-white hover:shadow-[0_28px_60px_-24px_rgba(15,23,42,0.55)]', label: 'text-white/60', proof: 'text-white/35' },
+    light: { wrap: 'bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.2)]', label: 'text-text-secondary', proof: 'text-text-secondary/50' },
+    accent:{ wrap: 'accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.55)]', label: 'text-white/70', proof: 'text-white/40' },
+    soft:  { wrap: 'bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.15)]', label: 'text-text-secondary', proof: 'text-text-secondary/50' },
   }
 
   return (
-    <section ref={sectionRef} className="relative mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+    <section ref={sectionRef} className="relative mx-auto max-w-screen-xl px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
       {/* Subtle bg depth */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.04),transparent_65%)]" />
 
@@ -686,7 +903,7 @@ function HighImpactSection() {
             </h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-            Strong systems are useful. Measurable impact is what makes them valuable. These numbers come from real production builds — not estimates.
+            Strong systems are useful. Measurable impact is what makes them valuable. These numbers come from real production builds, not estimates.
           </p>
         </div>
 
@@ -694,6 +911,7 @@ function HighImpactSection() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {impactStats.map((stat) => {
             const s = cardStyles[stat.tone]
+            const Icon = stat.icon
             return (
               <article
                 key={stat.headline}
@@ -701,9 +919,11 @@ function HighImpactSection() {
               >
                 <div>
                   {/* Icon + label row */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl">{stat.icon}</span>
-                    <span className={`rounded-full border px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.2em] ${s.proof}`}>
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex items-center justify-center text-xl">
+                      <Icon aria-hidden="true" />
+                    </span>
+                    <span className={`text-[9px] font-bold uppercase tracking-[0.2em] ${s.proof}`}>
                       {stat.proof}
                     </span>
                   </div>
@@ -729,13 +949,53 @@ function HighImpactSection() {
 
 function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
   const [flipped, setFlipped] = useState(false)
+  const [isHoveringButtons, setIsHoveringButtons] = useState(false)
+  const navigate = useNavigate()
+
+  // Map service titles to their URLs
+  const getServiceUrl = (title) => {
+    const urlMap = {
+      'Web Applications': '/services/web-applications',
+      'eCommerce Systems': '/services/ecommerce',
+      'Mobile Applications': '/services/mobile-apps',
+      'Backend & APIs': '/services/backend-apis',
+      'Business Platforms': '/services/business-platforms',
+      'Growth & SEO': '/services/seo-growth'
+    }
+    return urlMap[title] || '#'
+  }
+
+  const serviceUrl = getServiceUrl(title)
+
+  const handleMouseEnter = () => setFlipped(true)
+  const handleMouseLeave = () => {
+    if (!isHoveringButtons) {
+      setFlipped(false)
+    }
+  }
+
+  const handleCardClick = () => {
+    if (serviceUrl !== '#') {
+      navigate(serviceUrl)
+    }
+  }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      handleCardClick()
+    }
+  }
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       className="cursor-pointer"
       style={{ perspective: '1000px' }}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => setFlipped(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onKeyDown={handleKeyDown}
     >
       <div
         className="relative w-full transition-transform duration-700 ease-out"
@@ -745,14 +1005,18 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
           transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
         }}
       >
-        {/* FRONT — image only, no overlay text */}
+        {/* Front image only, no overlay text */}
         <div
           className={`absolute inset-0 overflow-hidden rounded-[1.75rem] shadow-[0_12px_40px_-20px_rgba(15,23,42,0.14)] ${
             featured
               ? 'border-2 border-accent shadow-[0_12px_40px_-16px_rgba(121,97,244,0.35)]'
               : 'border border-border/60'
           }`}
-          style={{ backfaceVisibility: 'hidden' }}
+          style={{
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+          }}
+          onClick={handleCardClick}
         >
           <img
             src={image}
@@ -762,7 +1026,7 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
           />
         </div>
 
-        {/* BACK — details */}
+        {/* Back details */}
         <div
           className={`absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border p-6 sm:p-7 ${
             featured
@@ -771,7 +1035,11 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
           }`}
           style={{
             backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
+          }}
+          onClick={(event) => {
+            if (!event.target.closest('a')) {
+              handleCardClick()
+            }
           }}
         >
           {featured && (
@@ -791,17 +1059,29 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
               {description}
             </p>
           </div>
-          <a
-            href="mailto:contact@codebyjerry.online"
-            className={`relative z-10 inline-flex w-max items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-all ${
-              featured
-                ? 'bg-white/15 text-white hover:bg-white/25'
-                : 'bg-accent/8 text-accent hover:bg-accent/15'
-            }`}
+          <div
+            className="relative z-10 flex gap-3"
+            onMouseEnter={() => setIsHoveringButtons(true)}
+            onMouseLeave={() => setIsHoveringButtons(false)}
           >
-            Start a Project
-            <FaArrowRight size={10} />
-          </a>
+            <div className="inline-flex w-max items-center gap-2 rounded-full bg-accent/8 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
+              Click card to open page
+            </div>
+            <a
+              href="mailto:contact@codebyjerry.online"
+              onClick={(event) => {
+                event.stopPropagation()
+              }}
+              className={`inline-flex w-max items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-all ${
+                featured
+                  ? 'bg-white/20 text-white hover:bg-white/30'
+                  : 'bg-primary/8 text-primary hover:bg-primary/15'
+              }`}
+            >
+              Start Project
+              <FaEnvelope size={10} />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -810,7 +1090,7 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
 
 function ServicesSection() {
   return (
-    <section className="relative mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+    <section id="services" className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.04),transparent_50%)]" />
 
       <div className="relative z-10">
@@ -822,11 +1102,11 @@ function ServicesSection() {
             </h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-            From customer-facing experiences to backend architecture — serious execution, not generic freelance output.
+            From customer-facing experiences to backend architecture, serious execution, not generic freelance output.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-12 lg:gap-8 xl:grid-cols-3">
           {services.map(({ title, description, eyebrow, image, featured }) => (
             <ServiceFlipCard
               key={title}
@@ -843,6 +1123,59 @@ function ServicesSection() {
   )
 }
 
+function ContributionsSection() {
+  const marqueeItems = [...contributionLogos, ...contributionLogos]
+
+  return (
+    <section className="mx-auto max-w-screen-xl px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20">
+      <style>{`
+        @keyframes contributionsMarquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+      `}</style>
+
+      <div className="rounded-[2rem] border border-border/70 bg-background/78 px-5 py-6 shadow-[0_18px_50px_-34px_rgba(15,23,42,0.14)] sm:px-8">
+        <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+          <div className="max-w-md">
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Contributions</p>
+            <h2 className="mt-3 font-display text-2xl font-bold leading-tight text-primary sm:text-[2rem]">
+              Products and platforms I contributed to.
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-text-secondary">
+              Shown here as contributor work and delivery involvement, not ownership claims.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background via-background/92 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background via-background/92 to-transparent" />
+
+            <div
+              className="flex min-w-max items-center gap-4 py-2"
+              style={{ animation: 'contributionsMarquee 30s linear infinite' }}
+            >
+              {marqueeItems.map((item, index) => (
+                <div
+                  key={`${item.name}-${index}`}
+                  className="flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border/70 bg-surface/70 px-5 py-4 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.16)]"
+                >
+                  <img
+                    src={item.src}
+                    alt={item.name}
+                    loading="lazy"
+                    className="max-h-10 w-auto max-w-full object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function CaseStudiesSection() {
   const [activeProject, setActiveProject] = useState(0)
   const [activeImage, setActiveImage] = useState(0)
@@ -852,19 +1185,12 @@ function CaseStudiesSection() {
   const total = currentImages.length
 
   useEffect(() => {
-    setActiveImage(0)
-  }, [activeProject])
-
-  useEffect(() => {
     if (total < 2 || paused) return
     const id = window.setInterval(() => {
       setActiveImage((c) => (c + 1) % total)
     }, 3600)
     return () => window.clearInterval(id)
   }, [total, paused])
-
-  const showPrevious = () => setActiveImage((c) => (c - 1 + total) % total)
-  const showNext = () => setActiveImage((c) => (c + 1) % total)
 
   // Returns position slot: -2 | -1 | 0 (center) | 1 | 2
   const getSlot = (idx) => {
@@ -889,7 +1215,7 @@ function CaseStudiesSection() {
   }
 
   return (
-    <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+    <section id="work" className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
       {/* Header */}
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
         <div className="max-w-lg">
@@ -899,22 +1225,25 @@ function CaseStudiesSection() {
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-          Each project is a system built for a real business — not a template, not a demo. Browse the actual screens delivered to clients.
+          Each project is a system built for a real business, not a template, not a demo. Browse the actual screens delivered to clients.
         </p>
       </div>
 
       {/* Project tabs */}
-      <div className="mt-10 flex flex-wrap gap-2">
+      <div className="mt-8 flex flex-wrap gap-2 md:mt-10">
         {caseStudies.map((project, index) => (
           <button
             key={project.title}
             type="button"
-            onClick={() => setActiveProject(index)}
+            onClick={() => {
+              setActiveProject(index)
+              setActiveImage(0)
+            }}
             aria-pressed={index === activeProject}
             className={`rounded-full border px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] transition-all sm:px-5 sm:text-[11px] ${
               index === activeProject
-                ? 'border-primary bg-primary text-white shadow-[0_18px_40px_-26px_rgba(15,23,42,0.42)]'
-                : 'border-primary/35 bg-background/90 text-text-secondary hover:border-accent hover:text-primary'
+                ? 'border-transparent accent-gradient text-white shadow-[0_18px_40px_-26px_rgba(99,102,241,0.48)]'
+                : 'border-border/70 bg-background/90 text-text-secondary hover:border-accent/45 hover:text-primary'
             }`}
           >
             {project.title}
@@ -922,45 +1251,77 @@ function CaseStudiesSection() {
         ))}
       </div>
 
-      {/* 3D Stage */}
+      {/* Case study stage */}
       <div
-        className="relative mt-10 overflow-hidden rounded-[2.5rem]"
-        style={{ background: 'linear-gradient(135deg, #0d0d1a 0%, #1a0533 25%, #0f1a3d 55%, #0a1628 80%, #130d2e 100%)' }}
+        className="relative mt-8 overflow-hidden rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(246,247,255,0.94)_48%,rgba(238,242,255,0.9)_100%)] shadow-[0_26px_70px_-45px_rgba(99,102,241,0.32)] sm:rounded-[2.25rem] md:mt-10"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Ambient glows */}
-        <div className="pointer-events-none absolute -left-10 -top-10 h-96 w-96 rounded-full bg-[rgba(139,92,246,0.45)] blur-[100px]" />
-        <div className="pointer-events-none absolute -right-10 -bottom-10 h-96 w-96 rounded-full bg-[rgba(59,130,246,0.35)] blur-[100px]" />
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[rgba(236,72,153,0.18)] blur-[80px]" />
-        <div className="pointer-events-none absolute left-1/2 top-[55%] h-64 w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(99,102,241,0.35)] blur-[60px]" />
-
         {/* Grid */}
         <div
-          className="pointer-events-none absolute inset-0 opacity-[0.05]"
+          className="pointer-events-none absolute inset-0 opacity-[0.26]"
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(99,102,241,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.12) 1px, transparent 1px)',
             backgroundSize: '44px 44px',
           }}
         />
         {/* Top accent border */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[rgba(139,92,246,0.8)] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
         {/* Bottom accent border */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[rgba(59,130,246,0.5)] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
 
         {/* Project info */}
-        <div className="relative z-10 px-6 pt-8 text-center sm:px-10">
-          <h3 className="font-display text-2xl font-bold text-white sm:text-3xl lg:text-[2.6rem]">
+        <div className="relative z-10 px-5 pt-7 text-center sm:px-10 sm:pt-8">
+          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-accent/70 md:hidden">
+            {currentProject.category}
+          </p>
+          <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl lg:text-[2.6rem]">
             {currentProject.title}
           </h3>
-          <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-white/55">
+          <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-text-secondary">
             {currentProject.tagline}
           </p>
         </div>
 
+        {/* Mobile active screen */}
+        <div className="relative z-10 px-4 pb-5 pt-6 md:hidden">
+          <div className="overflow-hidden rounded-[1.35rem] border border-border/70 bg-background shadow-[0_22px_46px_-32px_rgba(99,102,241,0.38)]">
+            <div className="flex items-center gap-1.5 border-b border-border/70 bg-surface/80 px-3 py-2.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
+              <div className="mx-2 min-w-0 flex-1 rounded-md bg-background/85 px-3 py-1 text-center text-[10px] text-text-secondary/55">
+                {currentProject.title.toLowerCase().replace(/\s+/g, '')}.com
+              </div>
+            </div>
+            <div className="grid min-h-[210px] place-items-center bg-[#0f172a]">
+              <img
+                src={currentImages[activeImage]}
+                alt={`${currentProject.title} screen ${activeImage + 1}`}
+                loading="eager"
+                className="block h-auto max-h-[260px] w-full object-contain"
+              />
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-center justify-center gap-1.5">
+            {currentImages.slice(0, Math.min(total, 8)).map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setActiveImage(idx)}
+                aria-label={`${currentProject.title} screen ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === activeImage ? 'w-5 bg-accent' : 'w-1.5 bg-text-secondary/25'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
         {/* 3D Stacked Carousel */}
         <div
-          className="relative mx-auto mt-10"
+          className="relative mx-auto mt-10 hidden md:block"
           style={{ perspective: '1100px', height: '380px', paddingBottom: '2rem' }}
         >
           {currentImages.map((src, idx) => {
@@ -972,29 +1333,29 @@ function CaseStudiesSection() {
               <div
                 key={idx}
                 onClick={() => slot !== 0 && setActiveImage(idx)}
-                className="absolute left-1/2 top-0 w-[52%] max-w-[520px] -translate-x-1/2 overflow-hidden rounded-[1.25rem] border border-white/15 transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:w-[55%]"
+                className="absolute left-1/2 top-0 w-[52%] max-w-[520px] -translate-x-1/2 overflow-hidden rounded-[1.25rem] border border-border/70 bg-background transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:w-[55%]"
                 style={{
                   ...style,
                   cursor: slot !== 0 ? 'pointer' : 'default',
                   transformStyle: 'preserve-3d',
                   boxShadow: slot === 0
-                    ? '0 50px 100px -30px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.08)'
-                    : '0 30px 60px -20px rgba(0,0,0,0.6)',
+                    ? '0 36px 76px -38px rgba(99,102,241,0.42), 0 0 0 1px rgba(99,102,241,0.08)'
+                    : '0 24px 54px -34px rgba(15,23,42,0.24)',
                 }}
               >
                 {slot === 0 && (
-                  <div className="flex items-center gap-1.5 border-b border-white/10 bg-[rgba(10,14,30,0.95)] px-4 py-2.5">
+                  <div className="flex items-center gap-1.5 border-b border-border/70 bg-surface/80 px-4 py-2.5">
                     <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
                     <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                    <div className="mx-3 flex-1 rounded-md bg-white/6 px-3 py-1 text-[10px] text-white/25">
+                    <div className="mx-3 flex-1 rounded-md bg-background/85 px-3 py-1 text-[10px] text-text-secondary/55">
                       {currentProject.title.toLowerCase().replace(/\s+/g, '')}.com
                     </div>
                   </div>
                 )}
                 <div
                   className="pointer-events-none absolute inset-0 rounded-[1.25rem]"
-                  style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 50%)' }}
+                  style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.22) 0%, transparent 48%)' }}
                 />
                 <img
                   src={src}
@@ -1003,14 +1364,14 @@ function CaseStudiesSection() {
                   className="block h-auto w-full bg-[#0f172a]"
                 />
                 {slot === 0 && (
-                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[rgba(10,14,30,0.55)] to-transparent" />
+                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background/45 to-transparent" />
                 )}
               </div>
             )
           })}
         </div>
 
-        {/* Controls hidden — auto-advances only */}
+        {/* Controls hidden, auto-advances only */}
       </div>
     </section>
   )
@@ -1019,7 +1380,7 @@ function CaseStudiesSection() {
 
 function AboutSection() {
   return (
-    <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+    <section id="about" className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
       <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
         <div className="relative overflow-hidden rounded-[2.2rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-6 py-8 text-white shadow-[0_28px_70px_-38px_rgba(15,23,42,0.5)] sm:px-8 sm:py-10 lg:px-10">
           <div className="pointer-events-none absolute -left-8 top-10 h-36 w-36 rounded-full bg-[rgba(99,102,241,0.24)] blur-3xl" />
@@ -1029,10 +1390,10 @@ function AboutSection() {
           <div className="relative z-10">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-white/48">About</p>
             <h2 className="mt-4 max-w-lg font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.8rem] lg:leading-[1.02]">
-              I don't just build websites — I build systems businesses depend on.
+              I don't just build websites. I build systems businesses depend on.
             </h2>
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
-              Full Stack Engineer with 3+ years shipping production systems for real businesses — platforms that handle real users, real operations, and real growth.
+              Full Stack Engineer with 3+ years shipping production systems for real businesses, with platforms that handle real users, real operations, and real growth.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-7 text-white/62 sm:text-base sm:leading-8">
               I work best with founders and teams who care about the outcome, not just the output.
@@ -1044,8 +1405,8 @@ function AboutSection() {
                   key={item}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm"
                 >
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-sm font-bold text-accent-soft">
-                    ✓
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+                    <FaCheckCircle size={12} aria-hidden="true" />
                   </span>
                   <span className="text-sm leading-6 text-white/86">{item}</span>
                 </div>
@@ -1058,14 +1419,15 @@ function AboutSection() {
           {aboutHighlights.map((item) => (
             <article
               key={item.title}
-              className={`group flex min-h-[200px] flex-col justify-between rounded-[1.75rem] border p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 ${
-                item.tone === 'accent'
-                  ? 'accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-28px_rgba(99,102,241,0.5)]'
-                  : item.tone === 'soft'
-                  ? 'bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-28px_rgba(99,102,241,0.15)]'
-                  : 'bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-28px_rgba(99,102,241,0.2)]'
-              }`}
+              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_60px_-28px_rgba(99,102,241,0.2)]"
             >
+              <img
+                src={item.image}
+                alt={item.title}
+                loading="lazy"
+                className="block h-full min-h-[200px] w-full object-cover"
+              />
+              <div className="hidden">
               {/* Title */}
               <div>
                 <p className={`font-display text-xl font-bold leading-tight ${item.tone === 'accent' ? 'text-white' : 'text-primary'}`}>
@@ -1080,7 +1442,7 @@ function AboutSection() {
               <div className="mt-5">
                 {item.proof && (
                   <p className={`mb-3 text-[10px] font-bold uppercase tracking-[0.22em] ${item.tone === 'accent' ? 'text-white/55' : 'text-accent/70'}`}>
-                    ✓ {item.proof}
+                     {item.proof}
                   </p>
                 )}
                 {item.tags && (
@@ -1099,6 +1461,7 @@ function AboutSection() {
                     ))}
                   </div>
                 )}
+              </div>
               </div>
             </article>
           ))}
@@ -1126,38 +1489,39 @@ function AboutSection() {
 
 function TrustSection() {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
-  const [prevActive, setPrevActive] = useState(0)
   const [animating, setAnimating] = useState(false)
   const total = trustTestimonials.length
 
-  const switchTo = (idx) => {
+  const switchTo = useCallback((idx) => {
     if (idx === activeTestimonial) return
     setAnimating(true)
     setTimeout(() => {
-      setPrevActive(activeTestimonial)
       setActiveTestimonial(idx)
       setAnimating(false)
     }, 300)
-  }
+  }, [activeTestimonial])
 
   useEffect(() => {
     const id = window.setInterval(() => switchTo((activeTestimonial + 1) % total), 4500)
     return () => window.clearInterval(id)
-  }, [activeTestimonial, total])
+  }, [activeTestimonial, switchTo, total])
 
   const current = trustTestimonials[activeTestimonial]
   const dash = current.dashboard
-  const systemMetrics = [
-    { label: 'Active Users', value: '10,248+', sub: 'across production platforms', icon: '👥' },
-    { label: 'API Response', value: '~120ms', sub: 'average on live systems', icon: '⚡' },
-    { label: 'Load Time', value: '< 2s', sub: 'optimized delivery', icon: '🚀' },
-    { label: 'Uptime', value: '99.9%', sub: 'production reliability', icon: '🛡️' },
-    { label: 'Projects Shipped', value: '10+', sub: 'end-to-end delivery', icon: '📦' },
-    { label: 'Performance Gain', value: '40%', sub: 'avg speed improvement', icon: '📈' },
+  const chartMode = activeTestimonial % 5
+  const primaryMetric = dash.metrics[chartMode % dash.metrics.length]
+  const pieMetric = dash.bars[chartMode % dash.bars.length]
+  const linePoints = dash.spark
+    .map((v, i) => `${(i / (dash.spark.length - 1)) * 100},${100 - v * 9}`)
+    .join(' ')
+  const chartOrder = [
+    chartMode === 0 ? 'lg:order-1' : chartMode === 1 ? 'lg:order-3' : chartMode === 2 ? 'lg:order-2' : chartMode === 3 ? 'lg:order-4' : 'lg:order-1',
+    chartMode === 0 ? 'lg:order-2' : chartMode === 1 ? 'lg:order-1' : chartMode === 2 ? 'lg:order-4' : chartMode === 3 ? 'lg:order-2' : 'lg:order-3',
+    chartMode === 0 ? 'lg:order-3' : chartMode === 1 ? 'lg:order-4' : chartMode === 2 ? 'lg:order-1' : chartMode === 3 ? 'lg:order-3' : 'lg:order-2',
+    chartMode === 0 ? 'lg:order-4' : chartMode === 1 ? 'lg:order-2' : chartMode === 2 ? 'lg:order-3' : chartMode === 3 ? 'lg:order-1' : 'lg:order-4',
   ]
-
   return (
-    <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+    <section className="mx-auto max-w-screen-xl px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
       <div className="rounded-[2.25rem] border border-border/70 bg-background/88 p-6 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.18)] backdrop-blur sm:p-8 lg:p-10">
 
         {/* Header */}
@@ -1186,10 +1550,10 @@ function TrustSection() {
         </div>
 
         {/* Main content: testimonial + dashboard */}
-        <div className="mt-8 grid gap-5 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="mt-8 grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
 
-          {/* Left — rotating testimonials */}
-          <article className="relative flex min-h-[320px] flex-col justify-between overflow-hidden rounded-[1.75rem] border border-primary bg-primary p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-7">
+          {/* Left rotating testimonials */}
+          <article className="relative flex h-auto flex-col rounded-[1.75rem] border border-primary bg-primary p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-7">
             {/* bg glow */}
             <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[rgba(139,92,246,0.22)] blur-3xl" />
             <div className="pointer-events-none absolute -bottom-8 left-8 h-32 w-32 rounded-full bg-[rgba(99,102,241,0.18)] blur-3xl" />
@@ -1199,24 +1563,51 @@ function TrustSection() {
                 <FaQuoteLeft size={16} />
               </span>
 
-              {/* Animated quote */}
-              <div className="relative mt-6 min-h-[120px]">
+              {/* Animated review + response */}
+              <div className="relative mt-4 min-h-[190px]">
                 {trustTestimonials.map((item, i) => (
-                  <p
+                  <div
                     key={i}
-                    className={`absolute inset-0 text-base leading-8 text-white/88 transition-all duration-700 ease-in-out sm:text-[1.05rem] sm:leading-9 ${
+                    className={`transition-all duration-700 ease-in-out ${
                       i === activeTestimonial
                         ? 'translate-y-0 opacity-100'
-                        : 'pointer-events-none translate-y-4 opacity-0'
+                        : 'pointer-events-none absolute inset-0 translate-y-4 opacity-0'
                     }`}
                   >
-                    {item.quote}
-                  </p>
+                    <div className="rounded-[1.2rem] rounded-tl-md border border-white/12 bg-white/6 px-4 py-3">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/45">Client Review</p>
+                      <p
+                        className="mt-2 text-[15px] leading-7 text-white/88"
+                        style={{
+                          display: '-webkit-box',
+                          WebkitLineClamp: 4,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {item.quote}
+                      </p>
+                    </div>
+                    <div className="mt-3 ml-auto max-w-[86%] rounded-[1.2rem] rounded-tr-md bg-white px-4 py-3 text-primary shadow-[0_18px_42px_-30px_rgba(255,255,255,0.28)]">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-text-secondary/45">Response</p>
+                      <p
+                        className="mt-2 text-[13px] leading-6 text-text-secondary"
+                        style={{
+                          display: '-webkit-box',
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {item.response}
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative z-10 mt-8">
+            <div className="relative z-10 mt-5">
               <div className="border-t border-white/10 pt-5">
                 {/* Animated author */}
                 <div className="relative min-h-[40px]">
@@ -1235,111 +1626,240 @@ function TrustSection() {
                   ))}
                 </div>
               </div>
-
-              {/* Dot indicators */}
-              <div className="mt-6 flex items-center gap-1.5">
-                {trustTestimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => switchTo(i)}
-                    aria-label={`Testimonial ${i + 1}`}
-                    className={`rounded-full transition-all duration-300 ${
-                      i === activeTestimonial ? 'h-2 w-5 bg-white' : 'h-2 w-2 bg-white/25 hover:bg-white/50'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </article>
 
-          {/* Right — dynamic dashboard synced to active testimonial */}
-          <div className="rounded-[2rem] accent-gradient p-[1px] shadow-[0_24px_60px_-35px_rgba(99,102,241,0.3)]">
-            <div className="h-full rounded-[calc(2rem-1px)] bg-background px-6 py-6 sm:px-7 sm:py-7">
-
-              {/* Header */}
-              <div
-                className={`flex items-center justify-between transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
-              >
+          {/* Right dynamic dashboard synced to active testimonial */}
+          <div className="rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-5 shadow-[0_24px_60px_-38px_rgba(99,102,241,0.22)] sm:p-6">
+            <div className={`transition-all duration-300 ${animating ? 'translate-y-2 opacity-0' : 'translate-y-0 opacity-100'}`}>
+              <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">{dash.label}</p>
-                  <p className="mt-1 text-xs leading-5 text-text-secondary/70">Real results from this project.</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">Outcome Board</p>
+                  <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-primary">
+                    {dash.label}
+                  </h3>
                 </div>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-green-600">
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-green-600">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
                   Live
                 </span>
               </div>
 
-              {/* Metric tiles */}
-              <div
-                className={`mt-4 grid grid-cols-3 gap-2 transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
-              >
-                {dash.metrics.map((m) => (
-                  <div key={m.label} className="rounded-xl border border-border/60 bg-surface/70 px-3 py-3 text-center">
-                    <span className="inline-flex h-7 w-7 items-center justify-center rounded-full mx-auto" style={{ background: `${dash.color}18`, color: dash.color }}>
-                      <m.Icon size={13} />
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className={`rounded-2xl border border-border/70 bg-background p-4 shadow-[0_16px_36px_-32px_rgba(15,23,42,0.18)] ${chartOrder[0]}`}>
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/50">Key Stat</p>
+                      <p className="mt-3 font-display text-4xl font-bold leading-none text-primary">{primaryMetric.value}</p>
+                    </div>
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl" style={{ background: `${dash.color}14`, color: dash.color }}>
+                      <primaryMetric.Icon size={16} />
                     </span>
-                    <p className="mt-1.5 font-display text-base font-bold leading-none text-primary">{m.value}</p>
-                    <p className="mt-1 text-[9px] font-medium uppercase tracking-[0.16em] text-text-secondary/55">{m.label}</p>
                   </div>
-                ))}
-              </div>
+                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-text-secondary/60">{primaryMetric.label}</p>
+                </div>
 
-              {/* Bar chart */}
-              <div
-                className={`mt-3 rounded-2xl border border-border/60 bg-surface/50 p-4 transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
-              >
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/60">Impact Breakdown</p>
-                <div className="mt-3 flex flex-col gap-2.5">
-                  {dash.bars.map((bar) => (
-                    <div key={bar.label}>
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] text-text-secondary/70">{bar.label}</span>
-                        <span className="text-[10px] font-bold text-primary">{bar.pct}%</span>
-                      </div>
-                      <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-border/60">
-                        <div
-                          className="h-full rounded-full transition-all duration-700"
-                          style={{ width: `${bar.pct}%`, background: `linear-gradient(90deg, ${dash.color}, #8B5CF6)` }}
-                        />
+                <div className={`rounded-2xl border border-border/70 bg-surface/70 p-4 ${chartOrder[1]}`}>
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="grid h-24 w-24 shrink-0 place-items-center rounded-full"
+                      style={{ background: `conic-gradient(${dash.color} ${pieMetric.pct * 3.6}deg, rgba(99,102,241,0.12) 0deg)` }}
+                    >
+                      <div className="grid h-16 w-16 place-items-center rounded-full bg-background">
+                        <span className="font-display text-lg font-bold text-primary">{pieMetric.pct}%</span>
                       </div>
                     </div>
-                  ))}
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/50">Pie Signal</p>
+                      <p className="mt-2 text-sm font-bold leading-5 text-primary">{pieMetric.label}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`rounded-2xl border border-border/70 bg-background p-4 ${chartOrder[2]}`}>
+                  <div className="flex items-center justify-between">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/50">Line Trend</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-green-600">Trending</p>
+                  </div>
+                  <svg viewBox="0 0 100 100" className="mt-3 h-28 w-full overflow-visible" preserveAspectRatio="none" aria-hidden="true">
+                    <polyline points={`0,96 ${linePoints} 100,96`} fill={`${dash.color}14`} stroke="none" />
+                    <polyline points={linePoints} fill="none" stroke={dash.color} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-text-secondary/55">{dash.sparkLabel}</p>
+                </div>
+
+                <div className={`rounded-2xl border border-border/70 bg-surface/70 p-4 ${chartOrder[3]}`}>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/50">Progress Bars</p>
+                  <div className="mt-4 space-y-3">
+                    {dash.bars.map((bar) => (
+                      <div key={bar.label}>
+                        <div className="flex items-center justify-between gap-4">
+                          <span className="text-xs text-text-secondary">{bar.label}</span>
+                          <span className="text-xs font-bold text-primary">{bar.pct}%</span>
+                        </div>
+                        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border/60">
+                          <div
+                            className="h-full rounded-full transition-all duration-700"
+                            style={{ width: `${bar.pct}%`, background: `linear-gradient(90deg, ${dash.color}, #8B5CF6)` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-
-              {/* Sparkline */}
-              <div
-                className={`mt-3 rounded-2xl border border-border/60 bg-surface/50 p-4 transition-all duration-300 ${animating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}
-              >
-                <div className="flex items-center justify-between">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/60">{dash.sparkLabel}</p>
-                  <span className="text-[10px] font-bold text-green-600">↑ Trending</span>
-                </div>
-                <div className="mt-3 flex items-end gap-1" style={{ height: '36px' }}>
-                  {dash.spark.map((v, i) => (
-                    <div
-                      key={i}
-                      className="flex-1 rounded-sm transition-all duration-300 hover:opacity-100"
-                      style={{
-                        height: `${v * 10}%`,
-                        background: `linear-gradient(180deg, ${dash.color}60, ${dash.color}20)`,
-                        opacity: 0.7,
-                      }}
-                    />
-                  ))}
-                </div>
-                <div className="mt-1.5 flex justify-between">
-                  <span className="text-[9px] text-text-secondary/40">Start</span>
-                  <span className="text-[9px] text-text-secondary/40">Now</span>
-                </div>
-              </div>
-
             </div>
           </div>
-
         </div>
+      </div>
+    </section>
+  )
+}
+
+function BlogSection() {
+  return (
+    <section id="blog" className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="max-w-lg">
+          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Insights</p>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+            Building Better Digital Systems
+          </h2>
+        </div>
+        <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+          Practical insights from shipping production systems. Learn how to build software that drives real business results.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:mt-12 xl:grid-cols-3">
+        {blogPosts.map((post, index) => (
+          <article
+            key={post.title}
+            className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]"
+          >
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-6">
+              <div className="flex items-center justify-between">
+                <span className="rounded-full border border-accent/20 bg-accent/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent">
+                  {post.category}
+                </span>
+                <span className="text-[10px] font-medium text-text-secondary/60">{post.readTime}</span>
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold leading-tight text-primary">
+                {post.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-text-secondary">
+                {post.excerpt}
+              </p>
+              <a
+                href={post.link}
+                className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent/80"
+              >
+                Read Article
+                <FaArrowRight size={10} />
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function FAQSection() {
+  const [openItems, setOpenItems] = useState(new Set())
+
+  const toggleItem = (index) => {
+    const newOpenItems = new Set(openItems)
+    if (newOpenItems.has(index)) {
+      newOpenItems.delete(index)
+    } else {
+      newOpenItems.add(index)
+    }
+    setOpenItems(newOpenItems)
+  }
+
+  // Add FAQ structured data
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map((faq, index) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    }
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(faqSchema)
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
+  return (
+    <section id="faq" className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
+      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="max-w-lg">
+          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">FAQ</p>
+          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+            Common Questions About Working Together
+          </h2>
+        </div>
+        <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+          Straight answers to help you decide if we're a good fit. No sales pitch, just clarity on how I work and what you can expect.
+        </p>
+      </div>
+
+      <div className="mt-10 space-y-4 lg:mt-12">
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className="overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/95 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)]"
+          >
+            <button
+              onClick={() => toggleItem(index)}
+              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-surface/50 sm:p-7"
+              aria-expanded={openItems.has(index)}
+            >
+              <h3 className="font-display text-lg font-bold leading-tight text-primary sm:text-xl">
+                {faq.question}
+              </h3>
+              <span
+                className={`ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border/60 transition-transform ${
+                  openItems.has(index) ? 'rotate-45 bg-accent/10' : ''
+                }`}
+              >
+                <span className="text-sm font-bold text-accent">+</span>
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                openItems.has(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="border-t border-border/60 px-6 pb-6 pt-4 sm:px-7 sm:pb-7">
+                <p className="text-sm leading-7 text-text-secondary sm:text-base">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -1362,6 +1882,89 @@ export default function FreelanceLanding() {
     { label: 'About', href: '#about' },
   ]
 
+  // Add structured data
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Code by Jerry",
+      "description": "Freelance full-stack developer building scalable web apps, dashboards, eCommerce systems, mobile apps, backend APIs, and SEO-ready business platforms.",
+      "url": "https://codebyjerry.online",
+      "logo": "https://codebyjerry.online/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Jerry (Azhagirishankar K)",
+        "jobTitle": "Full Stack Developer",
+        "email": "contact@codebyjerry.online",
+        "telephone": "+91-7092936243",
+        "sameAs": [
+          "https://www.linkedin.com/in/code-by-jerry/",
+          "https://github.com/code-by-jerry"
+        ]
+      },
+      "serviceType": [
+        "Web Development",
+        "Mobile App Development",
+        "eCommerce Development",
+        "Backend API Development",
+        "SEO Optimization"
+      ],
+      "areaServed": "Worldwide",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-7092936243",
+        "contactType": "Customer Service",
+        "email": "contact@codebyjerry.online",
+        "availableLanguage": "English"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Development Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Applications",
+              "description": "Custom business systems, dashboards, and admin panels built for real workflows."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "eCommerce Systems",
+              "description": "High-converting online stores with payment integrations and cleaner buying flows."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mobile Applications",
+              "description": "Flutter or hybrid app experiences connected tightly with your backend systems."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Backend & APIs",
+              "description": "APIs, automation, integrations, and scalable architectures that support real growth."
+            }
+          }
+        ]
+      }
+    })
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
@@ -1374,20 +1977,20 @@ export default function FreelanceLanding() {
             : 'bg-transparent'
         }`}
       >
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4 md:px-12 lg:px-20">
+        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
 
-          {/* Left — logo + brand */}
+          {/* Left logo and brand */}
           <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Code by Jerry home">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
               <img src="/logo.png" alt="Code by Jerry logo" className="h-full w-full object-cover" />
             </span>
-            <span className="min-w-0">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.35em] text-accent">Code by Jerry</span>
-              <span className="block text-[11px] font-medium text-text-secondary/80">Scalable systems for real businesses</span>
+            <span className="min-w-0 leading-none">
+              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">Code by Jerry</span>
+              <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">Scalable systems for real businesses</span>
             </span>
           </Link>
 
-          {/* Center — desktop nav */}
+          {/* Center desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
             {navLinks.map((link) => (
               <a
@@ -1401,7 +2004,7 @@ export default function FreelanceLanding() {
             ))}
           </nav>
 
-          {/* Right — CTA + mobile toggle */}
+          {/* Right CTA and mobile toggle */}
           <div className="flex items-center gap-3">
             <a
               href="mailto:contact@codebyjerry.online"
@@ -1433,7 +2036,7 @@ export default function FreelanceLanding() {
             mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <nav className="mx-auto flex max-w-screen-xl flex-col px-6 py-4 md:px-12">
+          <nav className="mx-auto flex max-w-screen-xl flex-col px-5 py-4 sm:px-6 md:px-12">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -1456,67 +2059,67 @@ export default function FreelanceLanding() {
       </header>
 
       <div className="relative z-10">
-        {/* Hero section — padded to clear sticky header */}
-        <section className="mx-auto max-w-screen-xl px-6 pt-20 md:px-12 md:pt-22 lg:px-20">
+        {/* Hero section padded to clear sticky header */}
+        <section className="mx-auto max-w-screen-xl px-5 pt-[5.75rem] sm:px-6 sm:pt-24 md:px-12 lg:px-20">
 
-          <div className="freelance-hero-grid grid gap-12 py-8 md:gap-14 md:py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-10">
+          <div className="freelance-hero-grid grid gap-8 pb-10 pt-4 sm:gap-10 sm:py-8 md:gap-14 md:py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-10">
 
-            {/* Left — fixed copy */}
-            <div className="freelance-hero-copy flex flex-col">
+            {/* Left fixed copy */}
+            <div className="freelance-hero-copy flex flex-col text-left">
 
               {/* Availability pill */}
-              <p className="mb-6 inline-flex w-max items-center gap-2 rounded-full border border-accent/15 bg-accent/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+              <p className="mb-5 inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-accent/15 bg-accent/5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-accent sm:mb-6 sm:px-4 sm:tracking-[0.3em]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
                 Available for freelance projects
               </p>
 
               {/* Headline */}
-              <h2 className="freelance-hero-title font-display text-4xl font-bold leading-[1.02] text-primary sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.0]">
-                I Build Systems<br className="hidden sm:block" />{' '}
+              <h1 className="freelance-hero-title font-display text-[2.65rem] font-bold leading-[0.98] text-primary sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.0]">
+                I Build Systems<br />{' '}
                 <span className="bg-gradient-to-r from-accent via-[#7961F4] to-[#7c3aed] bg-clip-text text-transparent">
                   Businesses Depend On
                 </span>
-              </h2>
+              </h1>
 
               {/* Subtext */}
-              <p className="mt-5 max-w-xl text-base leading-7 text-text-secondary sm:text-[1.05rem] sm:leading-8">
-                From web apps and dashboards to eCommerce, mobile apps, and backend systems — I deliver complete, production-grade digital products for growing businesses.
+              <p className="mt-4 max-w-xl text-[15px] leading-7 text-text-secondary sm:mt-5 sm:text-[1.05rem] sm:leading-8">
+                From web apps and dashboards to eCommerce, mobile apps, and backend systems, I deliver complete, production-grade digital products for growing businesses.
               </p>
 
               {/* CTAs */}
-              <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="mt-6 grid gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
                 <a
                   href="mailto:contact@codebyjerry.online"
-                  className="inline-flex items-center gap-3 rounded-full accent-gradient px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white shadow-[0_16px_40px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(99,102,241,0.85)]"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(99,102,241,0.85)] sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
                   Start a Project
                   <FaArrowRight size={12} />
                 </a>
                 <Link
                   to="/work"
-                  className="inline-flex items-center gap-3 rounded-full border border-border/70 bg-background/80 px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-all hover:border-accent/50 hover:text-accent"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
                   View Work
                 </Link>
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
                 {[
                   { value: '10+', label: 'Projects Delivered' },
                   { value: '10K+', label: 'Users Supported' },
                   { value: '3+', label: 'Years Experience' },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    {i > 0 && <span className="h-3.5 w-px bg-border/60" />}
+                  <div key={i} className="flex min-w-0 flex-col rounded-2xl border border-border/60 bg-background/70 px-3 py-3 sm:flex-row sm:items-center sm:gap-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0">
+                    {i > 0 && <span className="hidden h-3.5 w-px bg-border/60 sm:block" />}
                     <span className="font-display text-sm font-bold text-primary">{item.value}</span>
-                    <span className="text-xs text-text-secondary">{item.label}</span>
+                    <span className="mt-1 text-[11px] leading-tight text-text-secondary sm:mt-0 sm:text-xs">{item.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right — service showcase */}
+            {/* Right service showcase */}
             <HeroServiceShowcase />
           </div>
         </section>
@@ -1525,13 +2128,21 @@ export default function FreelanceLanding() {
 
         <ServicesSection />
 
+        <ContributionsSection />
+
+        <DetailedCaseStudiesSection />
+
         <CaseStudiesSection />
 
         <AboutSection />
 
         <TrustSection />
 
-        <section className="mx-auto max-w-screen-xl px-6 py-10 md:px-12 md:py-14 lg:px-20">
+        <BlogSection />
+
+        <FAQSection />
+
+        <section id="process" className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
           <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <div className="max-w-lg">
               <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">How I Work</p>
@@ -1544,49 +2155,96 @@ export default function FreelanceLanding() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
             {[
               {
                 title: 'I challenge the problem before touching the code',
                 body: 'Most briefs describe symptoms, not root causes. I push back and make sure we\'re solving the right thing before a single line is written.',
                 featured: true,
+                label: 'Clarity First',
+                meta: 'Root cause before roadmap',
+                Icon: FaCrosshairs,
               },
               {
                 title: 'I think in systems, not pages',
-                body: 'Every feature is part of a larger operational picture — designed for how data flows, how teams use it, and how it scales.',
+                body: 'Every feature is part of a larger operational picture, designed for how data flows, how teams use it, and how it scales.',
                 featured: false,
+                label: 'System Design',
+                meta: 'Flows, teams, scale',
+                Icon: FaDatabase,
               },
               {
                 title: 'I build for real usage, not demo success',
-                body: 'I test against actual usage patterns, edge cases, and the people who run it daily — not just what looks good in a walkthrough.',
+                body: 'I test against actual usage patterns, edge cases, and the people who run it daily, not just what looks good in a walkthrough.',
                 featured: false,
+                label: 'Reality Check',
+                meta: 'Usage over walkthroughs',
+                Icon: FaUsers,
               },
               {
                 title: 'I stay accountable beyond launch',
                 body: 'Shipping is not the finish line. I stay involved through stabilisation and make sure the system performs in the hands of real users.',
                 featured: false,
+                label: 'Post Launch',
+                meta: 'Support, stabilise, improve',
+                Icon: FaSignal,
               },
             ].map((item, i) => (
               <article
                 key={i}
-                className={`group rounded-[1.75rem] border p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
+                className={`group relative overflow-hidden rounded-[1.75rem] border p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
                   item.featured
                     ? 'border-transparent accent-gradient text-white shadow-[0_24px_60px_-20px_rgba(121,97,244,0.5)] hover:shadow-[0_28px_64px_-20px_rgba(121,97,244,0.65)]'
                     : 'border-border/70 bg-background/90 shadow-[0_8px_32px_-16px_rgba(15,23,42,0.1)] hover:border-accent/30 hover:shadow-[0_16px_48px_-20px_rgba(99,102,241,0.18)]'
                 }`}
               >
-                <h4 className={`font-display text-lg font-bold leading-snug sm:text-xl ${item.featured ? 'text-white' : 'text-primary'}`}>
+                {item.featured && (
+                  <>
+                    <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
+                    <div className="pointer-events-none absolute bottom-0 left-1/3 h-24 w-24 rounded-full bg-white/8 blur-3xl" />
+                  </>
+                )}
+
+                <div className="relative z-10 flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${
+                        item.featured ? 'bg-white/14 text-white' : 'bg-accent/10 text-accent'
+                      }`}
+                    >
+                      <item.Icon size={17} />
+                    </span>
+                    <div>
+                      <p className={`text-[10px] font-bold uppercase tracking-[0.24em] ${item.featured ? 'text-white/55' : 'text-text-secondary/55'}`}>
+                        {item.label}
+                      </p>
+                      <p className={`mt-1 text-[11px] ${item.featured ? 'text-white/68' : 'text-text-secondary/70'}`}>
+                        {item.meta}
+                      </p>
+                    </div>
+                  </div>
+                  <span
+                    className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] ${
+                      item.featured ? 'bg-white/12 text-white/78' : 'bg-surface text-text-secondary/70'
+                    }`}
+                  >
+                    0{i + 1}
+                  </span>
+                </div>
+
+                <h4 className={`relative z-10 mt-5 font-display text-lg font-bold leading-snug sm:text-xl ${item.featured ? 'text-white' : 'text-primary'}`}>
                   {item.title}
                 </h4>
-                <p className={`mt-3 text-sm leading-6 sm:text-[15px] sm:leading-7 ${item.featured ? 'text-white/70' : 'text-text-secondary'}`}>
+                <p className={`relative z-10 mt-3 text-sm leading-6 sm:text-[15px] sm:leading-7 ${item.featured ? 'text-white/74' : 'text-text-secondary'}`}>
                   {item.body}
                 </p>
+                <div className={`relative z-10 mt-6 h-px w-full ${item.featured ? 'bg-white/16' : 'bg-border/70'}`} />
               </article>
             ))}
           </div>
         </section>
 
-        <section className="mx-auto max-w-screen-xl px-6 pb-16 md:px-12 lg:px-20 lg:pb-24">
+        <section className="mx-auto max-w-screen-xl px-5 pb-16 pt-4 sm:px-6 md:px-12 lg:px-20 lg:pb-24">
           <div className="relative overflow-hidden rounded-[2.5rem] border border-primary/10 bg-[linear-gradient(135deg,#0f172a_0%,#111827_38%,#1d4ed8_100%)] px-6 py-10 text-white shadow-[0_32px_90px_-40px_rgba(37,99,235,0.42)] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
             <div className="pointer-events-none absolute -left-10 top-0 h-44 w-44 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
             <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(99,102,241,0.24)] blur-3xl" />
@@ -1597,9 +2255,9 @@ export default function FreelanceLanding() {
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/60">
                   Final CTA
                 </p>
-                <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[3.2rem] lg:leading-[1]">
+                <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[3.2rem] lg:leading-[1]">
                   Let&apos;s Build Something Scalable &amp; Impactful
-                </h3>
+                </h2>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
                   If you need a developer who can turn a rough concept, business bottleneck, or
                   growth-stage product into a reliable system, this is the point to start the
@@ -1607,19 +2265,25 @@ export default function FreelanceLanding() {
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {contactDetails.map(({ label, value, href, icon: Icon }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      target={label === 'LinkedIn' || label === 'GitHub' ? '_blank' : undefined}
-                      rel={label === 'LinkedIn' || label === 'GitHub' ? 'noreferrer' : undefined}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-4 py-2.5 text-[11px] font-medium text-white/84 backdrop-blur-sm transition-colors hover:border-white/28 hover:bg-white/12"
-                    >
-                      <Icon size={12} />
-                      <span className="text-white/60">{label}</span>
-                      <span>{value}</span>
-                    </a>
-                  ))}
+                  {contactDetails
+                    .filter(({ label }) => label !== 'WhatsApp')
+                    .map(({ label, value, href, icon }) => {
+                      const ContactIcon = icon
+
+                      return (
+                        <a
+                          key={label}
+                          href={href}
+                          target={label === 'LinkedIn' || label === 'GitHub' ? '_blank' : undefined}
+                          rel={label === 'LinkedIn' || label === 'GitHub' ? 'noreferrer' : undefined}
+                          className="inline-flex items-center gap-2 rounded-full border border-white/14 bg-white/8 px-4 py-2.5 text-[11px] font-medium text-white/84 backdrop-blur-sm transition-colors hover:border-white/28 hover:bg-white/12"
+                        >
+                          <ContactIcon size={12} />
+                          <span className="text-white/60">{label}</span>
+                          <span>{value}</span>
+                        </a>
+                      )
+                    })}
                 </div>
               </div>
 
@@ -1656,3 +2320,4 @@ export default function FreelanceLanding() {
     </div>
   )
 }
+
