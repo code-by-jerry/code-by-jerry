@@ -6,7 +6,7 @@ export default function Footer() {
           <p className="text-sm font-display font-bold text-primary">
             2026 Jerry (Azhagirishankar K)
           </p>
-          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-text-secondary/40">
+          <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-text-secondary/70">
             Full Stack Developer - Based in India
           </p>
         </div>
@@ -15,7 +15,7 @@ export default function Footer() {
           <p className="text-xs text-text-secondary font-light">
             Built with <span className="text-primary font-medium">React</span> - <span className="text-primary font-medium">GSAP</span> - <span className="text-primary font-medium">Tailwind CSS</span>
           </p>
-          <p className="text-[10px] uppercase tracking-widest text-text-secondary/30 font-bold">
+          <p className="text-[10px] uppercase tracking-widest text-text-secondary/70 font-bold">
             Actively maintained portfolio
           </p>
         </div>

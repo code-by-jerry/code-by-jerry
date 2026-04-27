@@ -74,7 +74,7 @@ export default function About() {
             <h3 className={`mt-2 text-[10px] font-bold uppercase tracking-widest ${index === 0 ? 'text-white/78' : 'text-primary/70'}`}>
               {item.label}
             </h3>
-            <p className={`mt-2 text-[11px] leading-5 ${index === 0 ? 'text-white/68' : 'text-text-secondary'}`}>{item.detail}</p>
+            <p className={`mt-2 text-[11px] leading-5 ${index === 0 ? 'text-white/70' : 'text-text-secondary'}`}>{item.detail}</p>
           </article>
         ))}
       </div>

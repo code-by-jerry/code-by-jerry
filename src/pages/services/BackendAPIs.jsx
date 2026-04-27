@@ -107,7 +107,7 @@ export default function BackendAPIs() {
       {/* Sticky Header */}
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-border/50 bg-background/90 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.12)] backdrop-blur-md' : 'bg-transparent'}`}>
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
-          <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Code by Jerry home">
+          <Link to="/" className="flex min-w-0 items-center gap-3" >
             <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
               <img src="/logo.png" alt="Code by Jerry logo" className="h-full w-full object-cover" />
             </span>
@@ -180,7 +180,7 @@ export default function BackendAPIs() {
             <div className="relative">
               <div className="aspect-[4/3] overflow-hidden rounded-[2rem] border border-border/70 bg-gradient-to-br from-surface/50 to-background shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
                 <img
-                  src="https://ik.imagekit.io/codebyjerry/services/Backend%20&%20API.png"
+                  src="https://ik.imagekit.io/codebyjerry/services/Backend%20&%20API.png?tr=f-auto,q-80"
                   alt="Backend architecture diagram showing APIs and database connections"
                   className="h-full w-full object-cover"
                 />

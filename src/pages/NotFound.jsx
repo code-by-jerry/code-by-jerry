@@ -42,7 +42,7 @@ export default function NotFound() {
         </div>
       </div>
       
-      <div className="mt-20 relative z-10 text-[10px] font-bold uppercase tracking-[0.34em] text-text-secondary/30">
+      <div className="mt-20 relative z-10 text-[10px] font-bold uppercase tracking-[0.34em] text-text-secondary/70">
         Code by Jerry &copy; 2026
       </div>
     </div>

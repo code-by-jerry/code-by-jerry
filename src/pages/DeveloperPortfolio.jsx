@@ -44,19 +44,6 @@ export default function DeveloperPortfolio() {
     }
   }
 
-  return (
-    <div
-      ref={appRef}
-      className="hero-bg relative min-h-screen font-sans text-text selection:bg-accent selection:text-white"
-    >
-      <SEO 
-        title="Code by Jerry | Senior Full Stack Developer Portfolio"
-        description="Senior Full Stack Developer portfolio for Jerry, focused on Laravel, React, Inertia, scalable platforms, backend APIs, and production engineering."
-        keywords="full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer, senior developer"
-        schema={schema}
-      />
-
-
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -90,6 +77,12 @@ export default function DeveloperPortfolio() {
       ref={appRef}
       className="hero-bg relative min-h-screen font-sans text-text selection:bg-accent selection:text-white"
     >
+      <SEO 
+        title="Code by Jerry | Senior Full Stack Developer Portfolio"
+        description="Senior Full Stack Developer portfolio for Jerry, focused on Laravel, React, Inertia, scalable platforms, backend APIs, and production engineering."
+        keywords="full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer, senior developer"
+        schema={schema}
+      />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
       <div className="relative z-10 mx-auto min-h-screen max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="relative z-40 lg:flex lg:justify-between lg:gap-10">

@@ -25,7 +25,7 @@ export default function Contact() {
 
       <div className="flex flex-col gap-7">
         <div className="rounded-[2rem] border border-border/70 bg-background/88 p-5 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-6">
-          <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-6 font-display">Opportunity</h3>
+          <h3 className="text-[10px] font-bold uppercase tracking-widest text-primary/80 mb-6 font-display">Opportunity</h3>
           <h4 className="text-sm font-bold text-primary mb-4">I'm currently open to discussing opportunities in:</h4>
           <ul className="flex flex-col gap-3">
             {[
@@ -52,9 +52,9 @@ export default function Contact() {
               <span className="text-white/76">I'm always open to discussing new projects, product ideas, or opportunities to build scalable digital platforms.</span>
             </p>
             <p>
-              <span className="text-white/68">If you're working on something interesting, feel free to reach out.</span>
+              <span className="text-white/70">If you're working on something interesting, feel free to reach out.</span>
             </p>
-            <p className="pt-2 text-[10px] font-bold uppercase tracking-widest text-white/45">
+            <p className="pt-2 text-[10px] font-bold uppercase tracking-widest text-white/70">
               Based in India - Available for remote collaboration
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function Contact() {
                     {createElement(ContactIcon, { size: 14 })}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/46">{label}</span>
+                    <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">{label}</span>
                     <span className="block truncate text-xs font-semibold text-white/86">{value}</span>
                   </span>
                 </a>

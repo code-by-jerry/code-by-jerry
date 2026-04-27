@@ -61,7 +61,7 @@ export default function Experience() {
                 : 'border-border/70 bg-background/88 hover:border-accent/25'
             }`}>
               <header className="z-10 mb-3 text-xs font-bold uppercase tracking-[0.14em] text-accent/70 sm:col-span-3 sm:mb-0 sm:mt-1">
-                <span className={i === 0 ? 'text-white/68' : 'text-accent/70'}>{exp.period}</span>
+                <span className={i === 0 ? 'text-white/70' : 'text-accent/70'}>{exp.period}</span>
               </header>
 
               <div className="z-10 sm:col-span-9">

@@ -27,10 +27,12 @@
     <meta name="twitter:title" content="Code by Jerry | Freelance Web, Mobile & Backend Systems" />
     <meta name="twitter:description" content="Scalable web, mobile, backend, eCommerce, and SEO-ready systems for growing businesses." />
 
-    <!-- Fonts: Inter and Space Grotesk -->
+    <!-- Fonts & Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"></noscript>
   </head>
   <body class="bg-background text-text font-sans antialiased selection:bg-accent selection:text-background">
     <div id="root"></div>
