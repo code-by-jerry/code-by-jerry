@@ -311,6 +311,15 @@ export default function WorkArchive() {
               A quick scan of production sites, commerce builds, real estate platforms, and business systems with updated screenshots.
             </p>
           </div>
+          <div className="mt-6">
+            <Link
+              to="/case-studies"
+              className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/82 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary transition-all hover:border-accent/30 hover:text-accent"
+            >
+              View Detailed Case Studies
+              <FaExternalLinkAlt size={10} />
+            </Link>
+          </div>
         </header>
 
         <div className="mb-8 flex flex-wrap gap-2">

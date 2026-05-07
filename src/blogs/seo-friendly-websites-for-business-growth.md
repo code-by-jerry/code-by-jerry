@@ -6,7 +6,7 @@ description: "Learn how SEO-friendly websites help businesses improve visibility
 date: "2026-05-07"
 readTime: "6 min read"
 category: "SEO"
-image: "[https://ik.imagekit.io/codebyjerry/services/SEO.png?tr=f-auto,q-80](https://ik.imagekit.io/codebyjerry/services/SEO.png?tr=f-auto,q-80)"
+image: "https://ik.imagekit.io/codebyjerry/services/SEO.png?tr=f-auto,q-80"
 keywords: "SEO-friendly website, technical SEO, website optimization, organic traffic, business SEO"
 ----------------------------------------------------------------------------------------------------
 

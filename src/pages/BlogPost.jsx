@@ -3,8 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import SEO from "../components/SEO";
 import SiteHeader from "../components/SiteHeader";
+import BlogArticleCTA from "../components/BlogArticleCTA";
+import RelatedPosts from "../components/RelatedPosts";
+import BlogInArticleLinks from "../components/BlogInArticleLinks";
 import NotFound from "./NotFound";
-import { getBlogBySlug } from "../blogs";
+import { getBlogBySlug, getRelatedBlogs } from "../blogs";
 
 export default function BlogPost() {
   const { slug } = useParams();
@@ -12,22 +15,62 @@ export default function BlogPost() {
 
   if (!post) return <NotFound />;
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.description,
-    image: post.image,
-    datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: "Jerry",
+  const relatedPosts = getRelatedBlogs(post.slug);
+  const postUrl = `https://codebyjerry.online/blog/${post.slug}`;
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.description,
+      image: post.image,
+      datePublished: post.date,
+      dateModified: post.date,
+      articleSection: post.category,
+      keywords: post.keywords,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": postUrl,
+      },
+      author: {
+        "@type": "Person",
+        name: "Jerry",
+        url: "https://codebyjerry.online/about",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Code by Jerry",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://codebyjerry.online/logo.png",
+        },
+      },
     },
-    publisher: {
-      "@type": "Organization",
-      name: "Code by Jerry",
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://codebyjerry.online/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://codebyjerry.online/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: post.title,
+          item: postUrl,
+        },
+      ],
     },
-  };
+  ];
 
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
@@ -36,6 +79,7 @@ export default function BlogPost() {
         description={post.description}
         keywords={post.keywords}
         ogImage={post.image}
+        ogType="article"
         schema={schema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
@@ -52,9 +96,12 @@ export default function BlogPost() {
 
         <article className="mt-10">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full border border-accent/20 bg-accent/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent">
+            <Link
+              to={`/blog/category/${post.categorySlug}`}
+              className="rounded-full border border-accent/20 bg-accent/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent transition-colors hover:border-accent/40 hover:bg-accent/12"
+            >
               {post.category}
-            </span>
+            </Link>
             <span className="text-xs font-medium text-text-secondary">
               {post.readTime}
             </span>
@@ -125,6 +172,11 @@ export default function BlogPost() {
             >
               {post.content}
             </ReactMarkdown>
+
+            <BlogInArticleLinks categorySlug={post.categorySlug} />
+
+            <BlogArticleCTA category={post.category} />
+            <RelatedPosts posts={relatedPosts} />
           </div>
         </article>
       </main>

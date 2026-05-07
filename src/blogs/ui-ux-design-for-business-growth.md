@@ -6,7 +6,7 @@ description: "Learn how modern UI/UX design improves customer experience, increa
 date: "2026-05-07"
 readTime: "6 min read"
 category: "UI/UX Design"
-image: "[https://ik.imagekit.io/codebyjerry/services/UIUX%20Design.png?tr=f-auto,q-80](https://ik.imagekit.io/codebyjerry/services/UIUX%20Design.png?tr=f-auto,q-80)"
+image: "https://ik.imagekit.io/codebyjerry/services/UIUX%20Design.png?tr=f-auto,q-80"
 keywords: "UI UX design, user experience, responsive design, business website design, conversion optimization"
 --------------------------------------------------------------------------------------------------------------
 

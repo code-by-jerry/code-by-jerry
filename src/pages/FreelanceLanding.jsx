@@ -2467,94 +2467,107 @@ export default function FreelanceLanding() {
   const navLinks = [
     { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
-    { label: "Services", to: "/services/web-applications" },
+    { label: "Case Studies", to: "/case-studies" },
+    { label: "Services", to: "/services" },
     { label: "Blog", to: "/blog" },
   ];
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Code by Jerry",
-    description:
-      "Freelance full-stack developer building scalable web apps, dashboards, eCommerce systems, mobile apps, backend APIs, and SEO-ready business platforms.",
-    url: "https://codebyjerry.online",
-    logo: "https://codebyjerry.online/logo.png",
-    founder: {
-      "@type": "Person",
-      name: "Jerry (Azhagirishankar K)",
-      jobTitle: "Full Stack Developer",
-      email: "contact@codebyjerry.online",
-      telephone: "+91-7092936243",
-      sameAs: [
-        "https://www.linkedin.com/in/code-by-jerry/",
-        "https://github.com/code-by-jerry",
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Code by Jerry",
+      description:
+        "Remote full-stack developer building scalable business systems, custom web applications, eCommerce platforms, automation tools, APIs, dashboards, and startup MVPs using the right technology for the job.",
+      url: "https://codebyjerry.online",
+      logo: "https://codebyjerry.online/logo.png",
+      founder: {
+        "@type": "Person",
+        name: "Jerry (Azhagirishankar K)",
+        jobTitle: "Full Stack Developer",
+        email: "contact@codebyjerry.online",
+        telephone: "+91-7092936243",
+        sameAs: [
+          "https://www.linkedin.com/in/code-by-jerry/",
+          "https://github.com/code-by-jerry",
+        ],
+      },
+      serviceType: [
+        "Custom Web Application Development",
+        "Business Automation",
+        "Mobile App Development",
+        "eCommerce Development",
+        "Backend API Development",
+        "Startup MVP Development",
+        "SEO & Performance Optimization",
       ],
+      areaServed: "Worldwide",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-7092936243",
+        contactType: "Project inquiries",
+        email: "contact@codebyjerry.online",
+        availableLanguage: "English",
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Development Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Custom Web Applications",
+              description:
+                "Scalable dashboards, portals, internal tools, and business platforms designed around real workflows.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "eCommerce Systems",
+              description:
+                "High-converting online stores and custom commerce workflows with payment, checkout, and backend integrations.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Business Automation",
+              description:
+                "Automation tools, admin dashboards, CRM flows, and API integrations that reduce manual operations.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Startup MVP Development",
+              description:
+                "Focused MVPs and product foundations built with the right stack for speed, maintainability, and scale.",
+            },
+          },
+        ],
+      },
     },
-    serviceType: [
-      "Web Development",
-      "Mobile App Development",
-      "eCommerce Development",
-      "Backend API Development",
-      "SEO Optimization",
-    ],
-    areaServed: "Worldwide",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-7092936243",
-      contactType: "Customer Service",
-      email: "contact@codebyjerry.online",
-      availableLanguage: "English",
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Code by Jerry",
+      url: "https://codebyjerry.online",
+      description:
+        "Stack-flexible full-stack development for scalable business systems, automation, eCommerce, APIs, and startup MVPs.",
     },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Development Services",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Web Applications",
-            description:
-              "Custom business systems, dashboards, and admin panels built for real workflows.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "eCommerce Systems",
-            description:
-              "High-converting online stores with payment integrations and cleaner buying flows.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Mobile Applications",
-            description:
-              "Flutter or hybrid app experiences connected tightly with your backend systems.",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Backend & APIs",
-            description:
-              "APIs, automation, integrations, and scalable architectures that support real growth.",
-          },
-        },
-      ],
-    },
-  };
+  ];
 
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <SEO
-        title="Code by Jerry | Expert Full-Stack Developer for Scalable Systems"
-        description="Senior Full-Stack Developer specializing in custom web apps, eCommerce platforms, backend APIs, and scalable business systems. High-end delivery for serious founders."
-        keywords="full stack developer, freelance developer, web development, Laravel developer, React developer, custom business systems, SEO expert"
+        title="Code by Jerry | Full-Stack Developer for Scalable Business Systems"
+        description="Remote full-stack developer building custom web apps, business systems, eCommerce platforms, APIs, automation tools, dashboards, and startup MVPs using the right stack."
+        keywords="remote full stack developer, custom business software developer, web application developer, business automation developer, eCommerce developer, API integration developer, startup MVP developer"
         schema={schema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />

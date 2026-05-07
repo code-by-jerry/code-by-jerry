@@ -8,7 +8,9 @@ const SEO = ({
   ogTitle, 
   ogDescription, 
   ogImage, 
+  ogType = 'website',
   canonical,
+  robots = 'index, follow',
   schema 
 }) => {
   const location = useLocation();
@@ -33,10 +35,13 @@ const SEO = ({
 
     updateMeta('description', description);
     updateMeta('keywords', keywords);
+    updateMeta('robots', robots);
     updateMeta('og:title', ogTitle || title, 'property');
     updateMeta('og:description', ogDescription || description, 'property');
     updateMeta('og:image', ogImage || `${siteUrl}/og-image.png`, 'property');
     updateMeta('og:url', currentUrl, 'property');
+    updateMeta('og:type', ogType, 'property');
+    updateMeta('twitter:card', 'summary_large_image');
     updateMeta('twitter:title', ogTitle || title);
     updateMeta('twitter:description', ogDescription || description);
     updateMeta('twitter:image', ogImage || `${siteUrl}/og-image.png`);
@@ -53,10 +58,16 @@ const SEO = ({
     }
 
     // Handle Schema
+    const existingSchema = document.querySelector('script[data-seo-schema="true"]');
+    if (existingSchema) {
+      existingSchema.remove();
+    }
+
     let script;
     if (schema) {
       script = document.createElement('script');
       script.type = 'application/ld+json';
+      script.setAttribute('data-seo-schema', 'true');
       script.textContent = JSON.stringify(schema);
       document.head.appendChild(script);
     }
@@ -66,7 +77,7 @@ const SEO = ({
         document.head.removeChild(script);
       }
     };
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, canonical, currentUrl, schema]);
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogType, canonical, robots, currentUrl, schema]);
 
   return null;
 };

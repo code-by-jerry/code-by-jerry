@@ -53,7 +53,7 @@ export default function BackendAPIs() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Backend & API Development",
-    "description": "Professional backend development and API services. Build scalable server-side applications, RESTful APIs, and robust backend systems with Laravel, Node.js, and modern technologies.",
+    "description": "Backend development and API services for scalable server-side applications, RESTful APIs, integrations, databases, and robust systems built with the right technology stack.",
     "provider": {
       "@type": "Person",
       "name": "Jerry (Azhagirishankar K)",
@@ -98,8 +98,8 @@ export default function BackendAPIs() {
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <SEO 
         title="Backend & API Development | Code by Jerry"
-        description="Professional backend development services. Build scalable APIs, databases, and server-side applications with Laravel, Node.js, PostgreSQL, and modern technologies."
-        keywords="backend development, API development, Laravel, Node.js, database architecture, microservices, RESTful APIs"
+        description="Backend and API development for scalable applications, databases, integrations, authentication, and server-side systems using the right stack for the product."
+        keywords="backend development, API development, database architecture, API integration, scalable backend, REST APIs, server-side systems"
         schema={serviceSchema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
@@ -121,10 +121,10 @@ export default function BackendAPIs() {
             <Link to="/" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
               Home
             </Link>
-            <Link to="/work" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <Link to="/portfolio" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
               Work
             </Link>
-            <a href="#contact" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <a href="/#contact" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
               Contact
             </a>
           </nav>
@@ -135,7 +135,7 @@ export default function BackendAPIs() {
       <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="mb-8">
-            <a href="/#services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group">
+            <a href="/services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group">
               <span className="transition-transform group-hover:-translate-x-1">←</span>
               Back to all services
             </a>
@@ -162,14 +162,14 @@ export default function BackendAPIs() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
-                  href="mailto:contact@codebyjerry.online"
+                  href="/#contact"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full accent-gradient px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(99,102,241,0.85)] sm:w-auto sm:px-8"
                 >
                   Build Your Backend
                   <FaArrowRight size={14} />
                 </a>
                 <Link
-                  to="/work"
+                  to="/portfolio"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-8"
                 >
                   View API Work
@@ -263,7 +263,7 @@ export default function BackendAPIs() {
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a
-                  href="mailto:contact@codebyjerry.online"
+                  href="/#contact"
                   className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(99,102,241,0.85)]"
                 >
                   Start Backend Project

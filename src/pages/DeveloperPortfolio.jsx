@@ -19,20 +19,23 @@ export default function DeveloperPortfolio() {
     "@type": "Person",
     "name": "Jerry (Azhagirishankar K)",
     "jobTitle": "Senior Full Stack Developer",
-    "description": "Senior Full Stack Developer specializing in Laravel, React, Inertia.js, scalable platforms, backend APIs, and production engineering.",
+    "description": "Senior full-stack developer focused on scalable platforms, backend APIs, automation, business systems, and production engineering across modern stacks.",
     "url": "https://codebyjerry.online/portfolio",
     "sameAs": [
       "https://www.linkedin.com/in/code-by-jerry/",
       "https://github.com/code-by-jerry"
     ],
     "knowsAbout": [
-      "Laravel",
       "React",
-      "Inertia.js",
       "Full Stack Development",
+      "Custom Business Software",
+      "Business Automation",
       "Backend APIs",
       "Scalable Web Applications",
-      "Production Engineering"
+      "Production Engineering",
+      "Laravel",
+      "Node.js",
+      "eCommerce Development"
     ],
     "hasOccupation": {
       "@type": "Occupation",
@@ -79,8 +82,8 @@ export default function DeveloperPortfolio() {
     >
       <SEO 
         title="Code by Jerry | Senior Full Stack Developer Portfolio"
-        description="Senior Full Stack Developer portfolio for Jerry, focused on Laravel, React, Inertia, scalable platforms, backend APIs, and production engineering."
-        keywords="full stack developer, Laravel, React, Inertia.js, backend APIs, scalable web apps, freelance developer, senior developer"
+        description="Senior full-stack developer portfolio for Jerry, focused on scalable platforms, backend APIs, automation, business systems, and production engineering across modern stacks."
+        keywords="full stack developer portfolio, scalable platforms, backend APIs, business systems, automation developer, production engineering"
         schema={schema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />

@@ -1,16 +1,55 @@
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
 import SEO from "../components/SEO";
 import SiteHeader from "../components/SiteHeader";
-import { blogs } from "../blogs";
+import BlogCard from "../components/BlogCard";
+import { blogCategories, blogs } from "../blogs";
 
 export default function BlogIndex() {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Code by Jerry Blog",
+      description:
+        "Practical articles on business software, full-stack development, automation, eCommerce, APIs, SEO, and scalable digital systems.",
+      url: "https://codebyjerry.online/blog",
+      mainEntity: {
+        "@type": "ItemList",
+        itemListElement: blogs.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: post.title,
+          url: `https://codebyjerry.online/blog/${post.slug}`,
+        })),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://codebyjerry.online/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://codebyjerry.online/blog",
+        },
+      ],
+    },
+  ];
+
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <SEO
-        title="Blog | Code by Jerry"
-        description="Practical articles on React, Laravel, Shopify, SEO, Cloudflare, SaaS architecture, and building better digital systems."
-        keywords="Code by Jerry blog, React blog, Laravel tips, SEO, Shopify optimization, SaaS architecture"
+        title="Blog | Business Software, Automation & Full-Stack Development | Code by Jerry"
+        description="Practical articles on business software, full-stack development, automation, eCommerce, APIs, SEO, and scalable digital systems."
+        keywords="business software blog, full-stack development blog, automation, eCommerce development, API development, SEO, startup MVP"
+        schema={schema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
       <SiteHeader />
@@ -31,49 +70,24 @@ export default function BlogIndex() {
           </p>
         </section>
 
+        <section className="mt-10 flex flex-wrap gap-2">
+          {blogCategories.map((category) => (
+            <Link
+              key={category.slug}
+              to={`/blog/category/${category.slug}`}
+              className="rounded-full border border-border/70 bg-background/82 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary transition-all hover:border-accent/30 hover:text-accent"
+            >
+              {category.name}
+              <span className="ml-2 text-text-secondary/60">
+                {category.count}
+              </span>
+            </Link>
+          ))}
+        </section>
+
         <section className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {blogs.map((post) => (
-            <article
-              key={post.slug}
-              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]"
-            >
-              <Link to={`/blog/${post.slug}`} className="block">
-                <div className="aspect-[4/3] overflow-hidden bg-surface">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-              </Link>
-
-              <div className="p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="rounded-full border border-accent/20 bg-accent/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent">
-                    {post.category}
-                  </span>
-                  <span className="shrink-0 text-[10px] font-medium text-text-secondary/70">
-                    {post.readTime}
-                  </span>
-                </div>
-                <h2 className="mt-4 font-display text-xl font-bold leading-tight text-primary">
-                  <Link to={`/blog/${post.slug}`} className="hover:text-accent">
-                    {post.title}
-                  </Link>
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-text-secondary">
-                  {post.description}
-                </p>
-                <Link
-                  to={`/blog/${post.slug}`}
-                  className="mt-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent/80"
-                >
-                  Read Article
-                  <FaArrowRight size={10} />
-                </Link>
-              </div>
-            </article>
+            <BlogCard key={post.slug} post={post} />
           ))}
         </section>
       </main>

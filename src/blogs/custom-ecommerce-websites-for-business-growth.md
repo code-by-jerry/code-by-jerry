@@ -6,7 +6,7 @@ description: "Learn how custom eCommerce websites improve branding, customer exp
 date: "2026-05-07"
 readTime: "6 min read"
 category: "E-Commerce Development"
-image: "[https://ik.imagekit.io/codebyjerry/services/E-commerce%20System.png?tr=f-auto,q-80](https://ik.imagekit.io/codebyjerry/services/E-commerce%20System.png?tr=f-auto,q-80)"
+image: "https://ik.imagekit.io/codebyjerry/services/E-commerce%20System.png?tr=f-auto,q-80"
 keywords: "custom eCommerce website, eCommerce development, Shopify development, online store optimization, scalable eCommerce"
 -------------------------------------------------------------------------------------------------------------------------------
 

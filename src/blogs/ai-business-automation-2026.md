@@ -6,7 +6,7 @@ description: "Discover how AI-powered automation is transforming modern business
 date: "2026-05-07"
 readTime: "7 min read"
 category: "AI & Automation"
-image: "[https://ik.imagekit.io/codebyjerry/services/AI%20Automation.png?tr=f-auto,q-80](https://ik.imagekit.io/codebyjerry/services/AI%20Automation.png?tr=f-auto,q-80)"
+image: "https://ik.imagekit.io/codebyjerry/services/AI%20Automation.png?tr=f-auto,q-80"
 keywords: "AI automation, business automation, AI workflows, artificial intelligence, AI web applications, automation systems"
 ------------------------------------------------------------------------------------------------------------------------------
 

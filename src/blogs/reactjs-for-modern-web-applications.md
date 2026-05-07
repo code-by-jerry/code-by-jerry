@@ -6,7 +6,7 @@ description: "Learn how React.js helps businesses build scalable, high-performan
 date: "2026-05-07"
 readTime: "6 min read"
 category: "Frontend Development"
-image: "[https://ik.imagekit.io/codebyjerry/services/React%20Development.png?tr=f-auto,q-80](https://ik.imagekit.io/codebyjerry/services/React%20Development.png?tr=f-auto,q-80)"
+image: "https://ik.imagekit.io/codebyjerry/services/React%20Development.png?tr=f-auto,q-80"
 keywords: "React.js development, scalable frontend, modern web applications, React frontend, business web applications"
 -----------------------------------------------------------------------------------------------------------------------
 

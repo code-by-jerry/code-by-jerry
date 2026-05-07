@@ -7,6 +7,14 @@ const blogModules = import.meta.glob("./*.md", {
 const fallbackImage =
   "https://ik.imagekit.io/codebyjerry/services/Web%20System.png?tr=f-auto,q-80";
 
+export const slugify = (value) =>
+  String(value)
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
 const slugFromPath = (path) =>
   path
     .split("/")
@@ -34,10 +42,20 @@ function parseFrontmatter(raw) {
   return { data, content: match[2].trim() };
 }
 
+function normalizeImageUrl(value) {
+  if (!value) return fallbackImage;
+
+  const markdownLink = value.match(/^\[.*?\]\((.*?)\)$/);
+  if (markdownLink?.[1]) return markdownLink[1];
+
+  return value;
+}
+
 export const blogs = Object.entries(blogModules)
   .map(([path, raw]) => {
     const { data, content } = parseFrontmatter(raw);
     const slug = data.slug || slugFromPath(path);
+    const category = data.category || "Web Development";
 
     return {
       slug,
@@ -45,8 +63,9 @@ export const blogs = Object.entries(blogModules)
       description: data.description || "",
       date: data.date || "",
       readTime: data.readTime || "3 min read",
-      category: data.category || "Web Development",
-      image: data.image || fallbackImage,
+      category,
+      categorySlug: slugify(category),
+      image: normalizeImageUrl(data.image),
       keywords: data.keywords || "",
       content,
     };
@@ -55,6 +74,48 @@ export const blogs = Object.entries(blogModules)
 
 export const featuredBlogs = blogs.slice(0, 3);
 
+export const blogCategories = Object.values(
+  blogs.reduce((categories, blog) => {
+    if (!categories[blog.categorySlug]) {
+      categories[blog.categorySlug] = {
+        name: blog.category,
+        slug: blog.categorySlug,
+        count: 0,
+      };
+    }
+
+    categories[blog.categorySlug].count += 1;
+    return categories;
+  }, {})
+).sort((a, b) => a.name.localeCompare(b.name));
+
 export function getBlogBySlug(slug) {
   return blogs.find((blog) => blog.slug === slug);
+}
+
+export function getBlogCategoryBySlug(categorySlug) {
+  return blogCategories.find((category) => category.slug === categorySlug);
+}
+
+export function getBlogsByCategorySlug(categorySlug) {
+  return blogs.filter((blog) => blog.categorySlug === categorySlug);
+}
+
+export function getRelatedBlogs(currentSlug, limit = 3) {
+  const currentBlog = getBlogBySlug(currentSlug);
+  if (!currentBlog) return [];
+
+  const sameCategory = blogs.filter(
+    (blog) =>
+      blog.slug !== currentSlug &&
+      blog.category.toLowerCase() === currentBlog.category.toLowerCase()
+  );
+
+  const fallback = blogs.filter(
+    (blog) =>
+      blog.slug !== currentSlug &&
+      !sameCategory.some((related) => related.slug === blog.slug)
+  );
+
+  return [...sameCategory, ...fallback].slice(0, limit);
 }
