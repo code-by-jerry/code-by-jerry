@@ -5,7 +5,7 @@ export default function Contact() {
   const contactLinks = [
     { label: 'Email', value: 'contact@codebyjerry.online', href: 'mailto:contact@codebyjerry.online', Icon: FaEnvelope },
     { label: 'Phone', value: '+91 7092936243', href: 'tel:+917092936243', Icon: FaPhoneAlt },
-    { label: 'WhatsApp', value: 'Message directly', href: 'https://wa.me/917092936243', Icon: FaWhatsapp },
+    { label: 'WhatsApp', value: 'Message directly', href: 'https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0', Icon: FaWhatsapp },
     { label: 'LinkedIn', value: 'code-by-jerry', href: 'https://www.linkedin.com/in/code-by-jerry/', Icon: FaLinkedinIn },
     { label: 'GitHub', value: 'code-by-jerry', href: 'https://github.com/code-by-jerry', Icon: FaGithub },
   ]

@@ -104,7 +104,7 @@ export default function DeveloperPortfolio() {
 
       <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
         <a
-          href="https://wa.me/917092936243"
+          href="https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0"
           target="_blank"
           rel="noreferrer"
           aria-label="Chat on WhatsApp"

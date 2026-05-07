@@ -292,7 +292,7 @@ export default function MobileApplications() {
                   <FaArrowRight size={14} />
                 </a>
                 <a
-                  href="https://wa.me/917092936243"
+                  href="https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0"
                   className="inline-flex items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-8 py-4 text-sm font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent"
                 >
                   Discuss Your Idea

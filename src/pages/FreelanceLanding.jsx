@@ -420,7 +420,7 @@ const contactDetails = [
   {
     label: "WhatsApp",
     value: "7092936243",
-    href: "https://wa.me/917092936243",
+    href: "https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0",
     icon: FaWhatsapp,
   },
   {
@@ -2364,10 +2364,9 @@ export default function FreelanceLanding() {
   }, []);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Work", href: "#work" },
-    { label: "Process", href: "#process" },
-    { label: "About", href: "#about" },
+    { label: "About", to: "/about" },
+    { label: "Portfolio", to: "/portfolio" },
+    { label: "Services", to: "/services/web-applications" },
   ];
 
   const schema = {
@@ -2492,14 +2491,14 @@ export default function FreelanceLanding() {
             aria-label="Main navigation"
           >
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.to}
                 className="group relative px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-4 right-4 h-px scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -2543,14 +2542,14 @@ export default function FreelanceLanding() {
         >
           <nav className="mx-auto flex max-w-screen-xl flex-col px-5 py-4 sm:px-6 md:px-12">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.to}
                 onClick={() => setMobileOpen(false)}
                 className="border-b border-border/40 py-3 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-accent last:border-0"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button
               onClick={() => setContactOpen(true)}
@@ -2878,7 +2877,7 @@ export default function FreelanceLanding() {
       </main>
 
       <a
-        href="https://wa.me/917092936243"
+        href="https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0"
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
@@ -2900,15 +2899,66 @@ export default function FreelanceLanding() {
 }
 
 function ContactFormModal({ isOpen, onClose }) {
-  const [status, setStatus] = useState("idle"); // idle, submitting, success
+  const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
+  const STATIC_FORMS_ACCESS_KEY = import.meta.env.VITE_STATICFORMS_ACCESS_KEY || "YOUR_STATICFORMS_ACCESS_KEY";
 
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState("idle"); // idle, submitting, success, error
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate API call
-    setTimeout(() => {
+    setErrorMessage("");
+
+    const payload = {
+      accessKey: STATIC_FORMS_ACCESS_KEY,
+      name,
+      email,
+      phone,
+      service,
+      message,
+      source: "Portfolio Homepage Contact Modal",
+      subject: "Website project inquiry",
+      replyTo: email,
+    };
+
+    try {
+      const response = await fetch(STATIC_FORMS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      const result = await response.json();
+      if (result.success !== true) {
+        throw new Error(result.message || "Static Forms submission failed");
+      }
+
       setStatus("success");
-    }, 1500);
+      // Reset form on success
+      setName("");
+      setEmail("");
+      setPhone("");
+      setService("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      setErrorMessage(
+        error?.message || "Unable to send your message right now. Please try again."
+      );
+    }
   };
 
   if (!isOpen) return null;
@@ -2977,6 +3027,8 @@ function ContactFormModal({ isOpen, onClose }) {
                   <input
                     required
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
                     className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
                   />
@@ -2988,9 +3040,41 @@ function ContactFormModal({ isOpen, onClose }) {
                   <input
                     required
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@company.com"
                     className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
                   />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+91 7092936243"
+                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                    Service Interested In
+                  </label>
+                  <select
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+                  >
+                    <option value="">Select a service</option>
+                    <option value="Web Applications">Web Applications</option>
+                    <option value="eCommerce Systems">eCommerce Systems</option>
+                    <option value="Mobile Applications">Mobile Applications</option>
+                    <option value="Backend & APIs">Backend & APIs</option>
+                    <option value="Business Platforms">Business Platforms</option>
+                    <option value="Growth & SEO">Growth & SEO</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
@@ -2999,10 +3083,15 @@ function ContactFormModal({ isOpen, onClose }) {
                   <textarea
                     required
                     rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder="Briefly describe the challenge..."
                     className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors resize-none"
                   />
                 </div>
+                {status === "error" && (
+                  <p className="text-sm text-red-400">{errorMessage}</p>
+                )}
                 <button
                   disabled={status === "submitting"}
                   type="submit"
