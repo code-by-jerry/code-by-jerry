@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { FaArrowLeft, FaChevronLeft, FaChevronRight, FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa'
 import SEO from '../components/SEO'
+import SiteHeader from '../components/SiteHeader'
 
 const shots = {
   realty: [
@@ -286,9 +287,10 @@ export default function WorkArchive() {
         schema={portfolioSchema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.08]" />
+      <SiteHeader />
       {lightbox && <Lightbox images={lightbox.images} title={lightbox.title} onClose={() => setLightbox(null)} />}
 
-      <main className="relative z-10 mx-auto max-w-3xl px-5 py-12 sm:px-6 sm:py-14 md:px-10 lg:py-16">
+      <main className="relative z-10 mx-auto max-w-3xl px-5 pb-12 pt-28 sm:px-6 sm:pb-14 md:px-10 lg:pb-16 lg:pt-32">
         <header className="mb-9">
           <Link
             to="/about"

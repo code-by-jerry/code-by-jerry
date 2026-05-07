@@ -9,6 +9,8 @@ import MobileApplications from './pages/services/MobileApplications'
 import BackendAPIs from './pages/services/BackendAPIs'
 import BusinessPlatforms from './pages/services/BusinessPlatforms'
 import GrowthSEO from './pages/services/GrowthSEO'
+import BlogIndex from './pages/BlogIndex'
+import BlogPost from './pages/BlogPost'
 import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
@@ -35,6 +37,8 @@ function App() {
         <Route path="/services/backend-apis" element={<BackendAPIs />} />
         <Route path="/services/business-platforms" element={<BusinessPlatforms />} />
         <Route path="/services/seo-growth" element={<GrowthSEO />} />
+        <Route path="/blog" element={<BlogIndex />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/developer" element={<Navigate to="/about" replace />} />
         <Route path="/work" element={<Navigate to="/portfolio" replace />} />
         <Route path="*" element={<NotFound />} />

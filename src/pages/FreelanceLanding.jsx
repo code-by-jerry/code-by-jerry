@@ -449,6 +449,9 @@ const contactDetails = [
   },
 ];
 
+const whatsappProjectHref =
+  "https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0";
+
 const blogPosts = [
   {
     title: "Building Scalable Web Applications: A Business-First Approach",
@@ -457,8 +460,8 @@ const blogPosts = [
     readTime: "5 min read",
     category: "Architecture",
     image:
-      "https://ik.imagekit.io/codebyjerry/blog/scalable-web-apps.jpg?tr=f-auto,q-80",
-    link: "#",
+      "https://ik.imagekit.io/codebyjerry/services/Web%20System.png?tr=f-auto,q-80",
+    link: "/blog/building-scalable-web-applications",
   },
   {
     title: "Why Your eCommerce Store Needs a Custom Backend",
@@ -467,8 +470,8 @@ const blogPosts = [
     readTime: "4 min read",
     category: "eCommerce",
     image:
-      "https://ik.imagekit.io/codebyjerry/blog/ecommerce-backend.jpg?tr=f-auto,q-80",
-    link: "#",
+      "https://ik.imagekit.io/codebyjerry/services/eCommerce%20Systems.png?tr=f-auto,q-80",
+    link: "/blog/why-ecommerce-needs-custom-backend",
   },
   {
     title: "Mobile Apps That Drive Business Results",
@@ -477,8 +480,8 @@ const blogPosts = [
     readTime: "6 min read",
     category: "Mobile",
     image:
-      "https://ik.imagekit.io/codebyjerry/blog/mobile-business.jpg?tr=f-auto,q-80",
-    link: "#",
+      "https://ik.imagekit.io/codebyjerry/services/Mobile%20&%20Integrations.png?tr=f-auto,q-80",
+    link: "/blog/mobile-apps-that-drive-business-results",
   },
 ];
 
@@ -1373,7 +1376,7 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
   );
 }
 
-function ServicesSection() {
+function ServicesSection({ onContactClick }) {
   return (
     <section
       id="services"
@@ -1391,10 +1394,31 @@ function ServicesSection() {
               Professional Web, Mobile & Backend Development Services
             </h2>
           </div>
-          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-            From customer-facing experiences to backend architecture, serious
-            execution, not generic freelance output.
-          </p>
+          <div className="max-w-2xl">
+            <p className="text-sm leading-7 text-text-secondary sm:text-base">
+              From customer-facing experiences to backend architecture, serious
+              execution, not generic freelance output.
+            </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <button
+                type="button"
+                onClick={onContactClick}
+                className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_-18px_rgba(99,102,241,0.72)] transition-all hover:-translate-y-1"
+              >
+                Discuss a Build
+                <FaArrowRight size={11} />
+              </button>
+              <a
+                href={whatsappProjectHref}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:-translate-y-1 hover:border-accent/40 hover:text-accent"
+              >
+                <FaWhatsapp size={14} />
+                WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 md:mt-12 lg:gap-8 xl:grid-cols-3">
@@ -2237,13 +2261,13 @@ function BlogSection() {
               <p className="mt-3 text-sm leading-6 text-text-secondary">
                 {post.excerpt}
               </p>
-              <a
-                href={post.link}
+              <Link
+                to={post.link}
                 className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent/80"
               >
                 Read Article
                 <FaArrowRight size={10} />
-              </a>
+              </Link>
             </div>
           </article>
         ))}
@@ -2352,6 +2376,83 @@ function FAQSection() {
   );
 }
 
+function ConversionCtaStrip({
+  eyebrow,
+  title,
+  body,
+  onContactClick,
+  tone = "light",
+  primaryLabel = "Start a Project",
+  secondaryLabel = "WhatsApp Jerry",
+}) {
+  const isDark = tone === "dark";
+
+  return (
+    <section className="mx-auto max-w-screen-xl px-5 py-6 sm:px-6 md:px-12 lg:px-20">
+      <div
+        className={`relative overflow-hidden rounded-[2rem] border px-6 py-7 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] sm:px-8 sm:py-8 lg:flex lg:items-center lg:justify-between lg:gap-10 ${
+          isDark
+            ? "border-transparent bg-[linear-gradient(135deg,#0f172a_0%,#111827_42%,#4f46e5_100%)] text-white"
+            : "border-border/70 bg-background/92 text-primary"
+        }`}
+      >
+        <div className="pointer-events-none absolute -right-12 -top-16 h-44 w-44 rounded-full bg-accent/14 blur-3xl" />
+        <div className="relative z-10 max-w-2xl">
+          <p
+            className={`text-[10px] font-bold uppercase tracking-[0.3em] ${
+              isDark ? "text-white/64" : "text-accent"
+            }`}
+          >
+            {eyebrow}
+          </p>
+          <h2
+            className={`mt-3 font-display text-2xl font-bold leading-tight sm:text-3xl ${
+              isDark ? "text-white" : "text-primary"
+            }`}
+          >
+            {title}
+          </h2>
+          <p
+            className={`mt-3 text-sm leading-7 sm:text-base ${
+              isDark ? "text-white/72" : "text-text-secondary"
+            }`}
+          >
+            {body}
+          </p>
+        </div>
+
+        <div className="relative z-10 mt-6 grid gap-3 sm:flex sm:flex-wrap lg:mt-0 lg:justify-end">
+          <button
+            type="button"
+            onClick={onContactClick}
+            className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-all hover:-translate-y-1 sm:px-7 ${
+              isDark
+                ? "bg-white text-primary shadow-[0_18px_44px_-24px_rgba(255,255,255,0.7)]"
+                : "accent-gradient text-white shadow-[0_16px_40px_-18px_rgba(99,102,241,0.72)]"
+            }`}
+          >
+            {primaryLabel}
+            <FaArrowRight size={11} />
+          </button>
+          <a
+            href={whatsappProjectHref}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex items-center justify-center gap-3 rounded-full border px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-all hover:-translate-y-1 sm:px-7 ${
+              isDark
+                ? "border-white/18 bg-white/8 text-white hover:border-white/32 hover:bg-white/12"
+                : "border-border/70 bg-background/80 text-primary hover:border-accent/40 hover:text-accent"
+            }`}
+          >
+            <FaWhatsapp size={14} />
+            {secondaryLabel}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function FreelanceLanding() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -2367,6 +2468,7 @@ export default function FreelanceLanding() {
     { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
     { label: "Services", to: "/services/web-applications" },
+    { label: "Blog", to: "/blog" },
   ];
 
   const schema = {
@@ -2602,12 +2704,13 @@ export default function FreelanceLanding() {
                   <FaArrowRight size={12} />
                 </button>
                 <a
-                  href="/Jerry (Azhagirishankar K).docx"
-                  download
+                  href={whatsappProjectHref}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
-                  Download Roadmap
-                  <FaRocket size={12} className="text-accent" />
+                  WhatsApp Me
+                  <FaWhatsapp size={14} className="text-accent" />
                 </a>
               </div>
 
@@ -2666,13 +2769,37 @@ export default function FreelanceLanding() {
 
         <HighImpactSection />
 
-        <ServicesSection />
+        <ConversionCtaStrip
+          eyebrow="Have a system problem?"
+          title="Let me look at the bottleneck before you spend more time patching it."
+          body="Share the workflow, performance issue, or product idea. I will help you identify the cleanest next move."
+          onContactClick={() => setContactOpen(true)}
+        />
+
+        <ServicesSection onContactClick={() => setContactOpen(true)} />
+
+        <ConversionCtaStrip
+          eyebrow="Need one of these built?"
+          title="Tell me what you are trying to launch, automate, or scale."
+          body="Use the contact form for project details, or message me directly on WhatsApp if you want to start with a quick conversation."
+          onContactClick={() => setContactOpen(true)}
+          tone="dark"
+          primaryLabel="Open Contact Form"
+        />
 
         <ContributionsSection />
 
         <DetailedCaseStudiesSection />
 
         <CaseStudiesSection />
+
+        <ConversionCtaStrip
+          eyebrow="Seen enough proof?"
+          title="Bring the same clarity to your product, platform, or internal system."
+          body="If the project needs business thinking and production-grade execution, this is a good point to start the conversation."
+          onContactClick={() => setContactOpen(true)}
+          secondaryLabel="Chat on WhatsApp"
+        />
 
         <AboutSection />
 
@@ -2681,6 +2808,15 @@ export default function FreelanceLanding() {
         <BlogSection />
 
         <FAQSection />
+
+        <ConversionCtaStrip
+          eyebrow="Still comparing options?"
+          title="Send the rough idea. I can help you shape the right technical direction."
+          body="You do not need a perfect brief. A few lines about the problem, budget range, and timeline is enough to begin."
+          onContactClick={() => setContactOpen(true)}
+          tone="dark"
+          primaryLabel="Send Project Details"
+        />
 
         <section
           id="process"
@@ -2804,7 +2940,79 @@ export default function FreelanceLanding() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-screen-xl px-5 pb-16 pt-4 sm:px-6 md:px-12 lg:px-20 lg:pb-24">
+        {/* Dedicated Contact Form Section */}
+        <section
+          id="contact"
+          className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+        >
+          <div className="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
+            <div className="space-y-7">
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
+                  Get in Touch
+                </p>
+                <h2 className="mt-4 max-w-xl font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+                  Share Your Project Details
+                </h2>
+                <p className="mt-5 max-w-xl text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">
+                  Fill out the form and I'll get back to you within 24 hours
+                  with a clear perspective on your project.
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                <div className="rounded-2xl border border-border/60 bg-background/80 p-5">
+                  <h3 className="font-display text-base font-bold text-primary">
+                    Why reach out?
+                  </h3>
+                  <p className="mt-3 text-sm leading-6 text-text-secondary">
+                    I help turn business bottlenecks into scalable systems that
+                    are practical to run and easier to grow.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-border/60 bg-background/80 p-5">
+                  <h3 className="font-display text-base font-bold text-primary">
+                    What happens next?
+                  </h3>
+                  <ul className="mt-3 space-y-2.5">
+                    {[
+                      "I review your project details",
+                      "We schedule a 15-min discovery call",
+                      "You get a strategic proposal",
+                    ].map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-sm leading-6 text-text-secondary"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="rounded-2xl border border-border/60 bg-background/80 p-5 sm:col-span-2 lg:col-span-1">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-accent">
+                    Availability
+                  </p>
+                  <p className="mt-3 font-display text-base font-bold text-primary">
+                    Available for June Projects
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-text-secondary">
+                    I take on 2-3 projects per month to keep delivery focused.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="w-full rounded-[2rem] border border-border/60 bg-background/88 p-5 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-8">
+              <InlineContactForm />
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-screen-xl px-5 pb-16 sm:px-6 md:px-12 lg:px-20 lg:pb-24">
           <div className="relative overflow-hidden rounded-[2.5rem] border border-primary/10 bg-[linear-gradient(135deg,#0f172a_0%,#111827_38%,#1d4ed8_100%)] px-6 py-10 text-white shadow-[0_32px_90px_-40px_rgba(37,99,235,0.42)] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
             <div className="pointer-events-none absolute -left-10 top-0 h-44 w-44 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
             <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(99,102,241,0.24)] blur-3xl" />
@@ -2877,7 +3085,7 @@ export default function FreelanceLanding() {
       </main>
 
       <a
-        href="https://api.whatsapp.com/send?phone=917092936243&text=Hi%20Jerry%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.&app_absent=0"
+        href={whatsappProjectHref}
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
@@ -3105,6 +3313,182 @@ function ContactFormModal({ isOpen, onClose }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function InlineContactForm() {
+  const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
+  const STATIC_FORMS_ACCESS_KEY = import.meta.env.VITE_STATICFORMS_ACCESS_KEY || "YOUR_STATICFORMS_ACCESS_KEY";
+
+  const [status, setStatus] = useState("idle");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("");
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const payload = {
+      accessKey: STATIC_FORMS_ACCESS_KEY,
+      name,
+      email,
+      phone,
+      service,
+      message,
+      source: "Portfolio Homepage Inline Form",
+      subject: "Website project inquiry",
+      replyTo: email,
+    };
+
+    try {
+      const response = await fetch(STATIC_FORMS_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Submission failed with status ${response.status}`);
+      }
+
+      const result = await response.json();
+      if (result.success !== true) {
+        throw new Error(result.message || "Static Forms submission failed");
+      }
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setService("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      setErrorMessage(
+        error?.message || "Unable to send your message right now. Please try again."
+      );
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="flex flex-col items-center justify-center text-center py-10 animate-in zoom-in duration-500">
+        <div className="h-16 w-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mb-4">
+          <FaCheckCircle size={32} />
+        </div>
+        <h3 className="font-display text-xl font-bold text-primary">
+          Message Received!
+        </h3>
+        <p className="mt-3 text-sm text-text-secondary">
+          Thanks for reaching out. I'll get back to you within 24 hours.
+        </p>
+        <button
+          onClick={() => {
+            setStatus("idle");
+            setName("");
+            setEmail("");
+            setPhone("");
+            setService("");
+            setMessage("");
+          }}
+          className="mt-6 rounded-full bg-accent px-6 py-2 text-xs font-bold uppercase tracking-widest text-white hover:bg-accent/90 transition-colors"
+        >
+          Send Another Message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+          Your Name
+        </label>
+        <input
+          required
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="John Doe"
+          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+        />
+      </div>
+      <div>
+        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+          Email Address
+        </label>
+        <input
+          required
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="john@company.com"
+          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+        />
+      </div>
+      <div>
+        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+          Phone Number
+        </label>
+        <input
+          type="tel"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          placeholder="+91 7092936243"
+          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+        />
+      </div>
+      <div>
+        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+          Service Interested In
+        </label>
+        <select
+          value={service}
+          onChange={(e) => setService(e.target.value)}
+          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
+        >
+          <option value="">Select a service</option>
+          <option value="Web Applications">Web Applications</option>
+          <option value="eCommerce Systems">eCommerce Systems</option>
+          <option value="Mobile Applications">Mobile Applications</option>
+          <option value="Backend & APIs">Backend & APIs</option>
+          <option value="Business Platforms">Business Platforms</option>
+          <option value="Growth & SEO">Growth & SEO</option>
+        </select>
+      </div>
+      <div>
+        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+          Tell me about the project
+        </label>
+        <textarea
+          required
+          rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Briefly describe the challenge or opportunity..."
+          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors resize-none"
+        />
+      </div>
+      {status === "error" && (
+        <p className="text-sm text-red-400">{errorMessage}</p>
+      )}
+      <button
+        disabled={status === "submitting"}
+        type="submit"
+        className="w-full rounded-full accent-gradient py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+      >
+        {status === "submitting" ? "Sending..." : "Send Message"}
+      </button>
+    </form>
   );
 }
 
