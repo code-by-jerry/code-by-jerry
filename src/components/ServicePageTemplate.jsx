@@ -12,7 +12,6 @@ export default function ServicePageTemplate({
   serviceTypeTag,
   schema,
   features,
-  technologies,
   processSteps,
   outcomes,
   faqs,
@@ -188,24 +187,27 @@ export default function ServicePageTemplate({
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/3] overflow-hidden rounded-[2rem] border border-border/70 bg-gradient-to-br from-surface/50 to-background shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
-                <img
-                  src={heroImageSrc}
-                  alt={heroLabel}
-                  className="h-full w-full object-cover"
-                />
+              <div className="aspect-[4/3] overflow-hidden rounded-[2rem] border border-border/70 bg-background/80 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
+                <div className="flex h-full w-full items-center justify-center p-6 sm:p-10">
+                  <img
+                    src={heroImageSrc}
+                    alt={heroLabel}
+                    className="max-h-full w-full object-contain"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Who / Problems */}
+      {/* Problems solved */}
       <section className="py-12 sm:py-16 md:py-20 bg-surface/30">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
-              Built Around Business Outcomes
+              Problems Solved
             </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               {outcomes?.[0] ?? "Solve real workflow problems"}
@@ -234,19 +236,19 @@ export default function ServicePageTemplate({
         </div>
       </section>
 
-      {/* Process */}
+      {/* What gets built */}
       <section className="py-12 sm:py-16 md:py-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
-              Process
+              What Gets Built
             </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
-              {processSteps?.[0]?.title ?? "A clear build process"}
+              {processSteps?.[0]?.title ?? "A practical build you can use"}
             </h2>
             <p className="text-lg text-text-secondary">
               {processSteps?.[0]?.description ??
-                "A systematic approach to deliver the right solution without surprises."}
+                "A system built around real workflows, not generic templates."}
             </p>
           </div>
 
@@ -272,34 +274,6 @@ export default function ServicePageTemplate({
 
       {/* Related case studies */}
       <RelatedCaseStudies serviceSlug={serviceSlug} />
-
-      {/* Technologies */}
-      <section className="py-12 sm:py-16 md:py-20 bg-surface/30">
-        <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
-              Technologies
-            </p>
-            <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
-              Stack-flexible delivery
-            </h2>
-            <p className="text-lg text-text-secondary">
-              We choose tools based on your business problem, timeline, scalability, and maintainability.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            {(technologies || []).map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-border/70 bg-background/80 px-4 py-2 text-sm font-medium text-text-secondary shadow-[0_8px_24px_-12px_rgba(15,23,42,0.12)]"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQs */}
       <section className="py-12 sm:py-16 md:py-20">

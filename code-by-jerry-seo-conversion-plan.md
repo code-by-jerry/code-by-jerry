@@ -122,12 +122,21 @@ Final SEO service URLs (added in this iteration):
 Decision (Option A, Cloudflare-static safe) implemented:
 - We **added new final SEO routes** (new pages) and **kept existing routes working** (no redirects added in this iteration).
 
-- Blog content exists and article CTA blocks are in place, but blog posts still need stronger contextual internal links inside the article body.
-- Portfolio page exists; the first dedicated case study page is now live, but more case studies still need to be added.
-- Homepage has strong sections, but service pages need stronger conversion-focused structure.
-- Existing service pages have basic CTA/link cleanup, but still need deeper content upgrades later.
-- Structured data exists, but more schema can be added to service and case study pages.
-- Sitemap includes current case studies and blog categories, but it should later include location pages when created.
+Now implemented for the new final service pages (codebase criteria met):
+- Breadcrumb UI + `BreadcrumbList` schema
+- FAQs UI + `FAQPage` structured data
+- Related case studies section/cards
+
+Blog in-article contextual internal linking:
+- Implemented on all blog posts via `BlogInArticleLinks` (services + case studies).
+
+Still pending in codebase (mainly content volume):
+- More case studies (current `src/data/caseStudies.js` contains only 1 study)
+- Remaining location landing pages:
+  - /bangalore-web-application-developer
+  - /chennai-full-stack-developer
+  - /coimbatore-business-software-developer
+  - /hyderabad-startup-mvp-developer
 
 ### Missing In Codebase
 
