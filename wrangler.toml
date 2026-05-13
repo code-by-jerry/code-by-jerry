@@ -1,0 +1,8 @@
+# Cloudflare Pages configuration
+# https://developers.cloudflare.com/pages/
+
+name = "code-by-jerry"
+pages_build_output_dir = "dist"
+
+[env.production]
+name = "code-by-jerry"
