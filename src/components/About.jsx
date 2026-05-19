@@ -66,7 +66,7 @@ export default function About() {
             key={item.label}
             className={`rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 ${
               index === 0
-                ? 'border-transparent accent-gradient text-white shadow-[0_22px_55px_-28px_rgba(99,102,241,0.58)]'
+                ? 'border-transparent accent-gradient text-white shadow-[0_22px_55px_-28px_rgba(17, 24, 39,0.58)]'
                 : 'border-border/70 bg-background/82 shadow-[0_18px_50px_-38px_rgba(15,23,42,0.18)] hover:border-accent/25'
             }`}
           >

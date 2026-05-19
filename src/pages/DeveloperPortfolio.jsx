@@ -111,7 +111,7 @@ export default function DeveloperPortfolio() {
           target="_blank"
           rel="noreferrer"
           aria-label="Chat on WhatsApp"
-          className="inline-flex h-14 w-14 items-center justify-center rounded-full accent-gradient text-white shadow-[0_20px_45px_-20px_rgba(99,102,241,0.85)] transition-transform hover:-translate-y-1"
+          className="inline-flex h-14 w-14 items-center justify-center rounded-full accent-gradient text-white shadow-[0_20px_45px_-20px_rgba(17, 24, 39,0.85)] transition-transform hover:-translate-y-1"
         >
           <FaWhatsapp size={24} />
         </a>

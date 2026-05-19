@@ -106,7 +106,7 @@ export default function WhatIBring() {
             key={title}
             className={`flex min-h-[178px] flex-col justify-between rounded-[1.5rem] border p-5 transition-all duration-300 hover:-translate-y-1 ${
               featured
-                ? 'border-transparent accent-gradient text-white shadow-[0_22px_55px_-28px_rgba(99,102,241,0.58)]'
+                ? 'border-transparent accent-gradient text-white shadow-[0_22px_55px_-28px_rgba(17, 24, 39,0.58)]'
                 : 'border-border/70 bg-background/82 hover:border-accent/25'
             }`}
           >

@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function BlogCard({ post }) {
   return (
-    <article className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]">
+    <article className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(17, 24, 39,0.2)]">
       <Link to={`/blog/${post.slug}`} className="block">
         <div className="aspect-[4/3] overflow-hidden bg-surface">
           <img

@@ -113,7 +113,7 @@ export default function RemoteFullStackDeveloperIndia() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="/#contact"
-                className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_16px_40px_-18px_rgba(99,102,241,0.72)] transition-all hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_16px_40px_-18px_rgba(17, 24, 39,0.72)] transition-all hover:-translate-y-1"
               >
                 Discuss a Project
                 <FaArrowRight size={11} />

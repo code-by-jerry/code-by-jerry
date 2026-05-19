@@ -57,7 +57,7 @@ export default function Experience() {
           <div key={i} className="group relative transition-all duration-300 hover:!opacity-100 group-hover/list:opacity-50">
             <div className={`grid items-start rounded-[2rem] border p-5 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 sm:grid-cols-12 sm:gap-8 ${
               i === 0
-                ? 'border-transparent accent-gradient text-white hover:shadow-[0_28px_62px_-32px_rgba(99,102,241,0.58)]'
+                ? 'border-transparent accent-gradient text-white hover:shadow-[0_28px_62px_-32px_rgba(17, 24, 39,0.58)]'
                 : 'border-border/70 bg-background/88 hover:border-accent/25'
             }`}>
               <header className="z-10 mb-3 text-xs font-bold uppercase tracking-[0.14em] text-accent/70 sm:col-span-3 sm:mb-0 sm:mt-1">

@@ -297,7 +297,7 @@ export default function Projects() {
             onClick={() => setActiveFilter(filter)}
             className={`rounded-full border px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${
               activeFilter === filter
-                ? 'border-transparent accent-gradient text-white shadow-[0_14px_34px_-22px_rgba(99,102,241,0.72)]'
+                ? 'border-transparent accent-gradient text-white shadow-[0_14px_34px_-22px_rgba(17, 24, 39,0.72)]'
                 : 'border-border/70 bg-background/82 text-text-secondary hover:border-accent/30 hover:text-accent'
             }`}
           >
@@ -310,7 +310,7 @@ export default function Projects() {
         {filteredProjects.map((project, index) => (
           <article
             key={project.title}
-            className={`group relative overflow-hidden rounded-[2rem] border bg-background/88 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/28 hover:shadow-[0_30px_72px_-44px_rgba(99,102,241,0.32)] ${
+            className={`group relative overflow-hidden rounded-[2rem] border bg-background/88 shadow-[0_24px_60px_-42px_rgba(15,23,42,0.2)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/28 hover:shadow-[0_30px_72px_-44px_rgba(17, 24, 39,0.32)] ${
               project.featured ? 'border-accent/18' : 'border-border/70'
             }`}
           >
@@ -320,7 +320,7 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => setLightbox({ images: project.images, title: project.title, startIndex: 0 })}
-                  className="group/shot relative block h-full min-h-[230px] w-full overflow-hidden rounded-[1.45rem] border border-border/70 bg-[#0f172a] shadow-[0_22px_52px_-32px_rgba(99,102,241,0.36)]"
+                  className="group/shot relative block h-full min-h-[230px] w-full overflow-hidden rounded-[1.45rem] border border-border/70 bg-[#0f172a] shadow-[0_22px_52px_-32px_rgba(17, 24, 39,0.36)]"
                   aria-label={`Open ${project.title} screenshots`}
                 >
                   <img

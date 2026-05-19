@@ -330,7 +330,7 @@ export default function WorkArchive() {
               onClick={() => setActiveCategory(category)}
               className={`rounded-full border px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${
                 activeCategory === category
-                  ? 'border-transparent accent-gradient text-white shadow-[0_14px_34px_-22px_rgba(99,102,241,0.72)]'
+                  ? 'border-transparent accent-gradient text-white shadow-[0_14px_34px_-22px_rgba(17, 24, 39,0.72)]'
                   : 'border-border/70 bg-background/82 text-text-secondary hover:border-accent/30 hover:text-accent'
               }`}
             >

@@ -182,7 +182,7 @@ const serviceSlides = [
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/web.png?tr=f-auto,q-80",
     bigWord: "BUILD",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.26),rgba(99,102,241,0.08),transparent_72%)]",
+    glow: "bg-[radial-gradient(circle_at_center,rgba(17, 24, 39,0.26),rgba(17, 24, 39,0.08),transparent_72%)]",
     tags: ["Dashboards", "Admin Panels"],
   },
   {
@@ -193,7 +193,7 @@ const serviceSlides = [
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/mobile-app.png?tr=f-auto,q-80",
     bigWord: "SHIP",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.22),rgba(99,102,241,0.08),transparent_72%)]",
+    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.22),rgba(17, 24, 39,0.08),transparent_72%)]",
     tags: ["Hybrid UX", "API Ready"],
   },
   {
@@ -204,7 +204,7 @@ const serviceSlides = [
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/ecom.png?tr=f-auto,q-80",
     bigWord: "SELL",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.22),rgba(99,102,241,0.08),transparent_72%)]",
+    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.22),rgba(17, 24, 39,0.08),transparent_72%)]",
     tags: ["Shopify", "Payments"],
   },
   {
@@ -215,7 +215,7 @@ const serviceSlides = [
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/seo-.png?tr=f-auto,q-80",
     bigWord: "RANK",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.2),rgba(99,102,241,0.08),transparent_72%)]",
+    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.2),rgba(17, 24, 39,0.08),transparent_72%)]",
     tags: ["SEO", "Performance"],
   },
 ];
@@ -303,7 +303,7 @@ const trustTestimonials = [
     role: "Operations Platform",
     dashboard: {
       label: "Operations Platform",
-      color: "#6366F1",
+      color: "#1F2937",
       metrics: [
         { label: "Team Efficiency", value: "+60%", Icon: FaCogs },
         { label: "Manual Tasks", value: "-80%", Icon: FaRobot },
@@ -327,7 +327,7 @@ const trustTestimonials = [
     role: "Client Delivery Team",
     dashboard: {
       label: "Delivery Performance",
-      color: "#7961F4",
+      color: "#374151",
       metrics: [
         { label: "On-Time Delivery", value: "100%", Icon: FaCheckCircle },
         { label: "Milestones Hit", value: "12/12", Icon: FaCrosshairs },
@@ -351,7 +351,7 @@ const trustTestimonials = [
     role: "eCommerce Startup",
     dashboard: {
       label: "eCommerce Impact",
-      color: "#8B5CF6",
+      color: "#4B5563",
       metrics: [
         { label: "Conversion Rate", value: "+2x", Icon: FaChartLine },
         { label: "Cart Abandonment", value: "-35%", Icon: FaCartArrowDown },
@@ -375,7 +375,7 @@ const trustTestimonials = [
     role: "Logistics Platform",
     dashboard: {
       label: "Logistics Automation",
-      color: "#6366F1",
+      color: "#1F2937",
       metrics: [
         { label: "Processes Automated", value: "3 to 0", Icon: FaRobot },
         { label: "Time Saved/Week", value: "40hrs", Icon: FaClock },
@@ -399,7 +399,7 @@ const trustTestimonials = [
     role: "Real Estate Platform",
     dashboard: {
       label: "Performance Metrics",
-      color: "#7961F4",
+      color: "#374151",
       metrics: [
         { label: "Load Time", value: "< 2s", Icon: FaBolt },
         { label: "Peak Users", value: "10K+", Icon: FaUsers },
@@ -798,7 +798,7 @@ function DetailedCaseStudiesSection() {
 
   return (
     <section className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.04),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(17, 24, 39,0.04),transparent_50%)]" />
 
       <div className="relative z-10">
         <div className="mb-6 max-w-2xl">
@@ -823,7 +823,7 @@ function DetailedCaseStudiesSection() {
                 onClick={() => setActiveStudy(idx)}
                 className={`relative rounded-xl border p-3 text-left transition-all ${
                   activeStudy === idx
-                    ? "border-accent bg-accent/5 shadow-[0_6px_20px_-8px_rgba(121,97,244,0.25)]"
+                    ? "border-accent bg-accent/5 shadow-[0_6px_20px_-8px_rgba(17, 24, 39,0.25)]"
                     : "border-border/40 hover:border-border/60 hover:bg-surface/50"
                 }`}
               >
@@ -980,8 +980,8 @@ function HeroServiceShowcase() {
   return (
     <div className="freelance-showcase relative flex min-h-[560px] flex-col overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/78 p-4 shadow-[0_20px_55px_-36px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:min-h-[600px] sm:rounded-[2rem] sm:p-6 md:min-h-[620px] lg:h-full lg:min-h-[34rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
       <div className="pointer-events-none absolute -left-8 top-6 h-40 w-40 rounded-full bg-[rgba(255,255,255,0.82)] blur-3xl sm:h-56 sm:w-56" />
-      <div className="pointer-events-none absolute right-0 top-14 h-48 w-48 rounded-full bg-[rgba(99,102,241,0.14)] blur-3xl sm:h-64 sm:w-64" />
-      <div className="pointer-events-none absolute bottom-20 right-12 h-36 w-36 rounded-full bg-[rgba(139,92,246,0.14)] blur-3xl sm:h-52 sm:w-52" />
+      <div className="pointer-events-none absolute right-0 top-14 h-48 w-48 rounded-full bg-[rgba(17, 24, 39,0.14)] blur-3xl sm:h-64 sm:w-64" />
+      <div className="pointer-events-none absolute bottom-20 right-12 h-36 w-36 rounded-full bg-[rgba(55, 65, 81,0.14)] blur-3xl sm:h-52 sm:w-52" />
 
       <div className="relative min-h-[465px] flex-1 overflow-hidden sm:min-h-[500px] lg:min-h-0">
         {serviceSlides.map((slide, index) => {
@@ -1133,17 +1133,17 @@ function HighImpactSection() {
       proof: "text-white/70",
     },
     light: {
-      wrap: "bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.2)]",
+      wrap: "bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.2)]",
       label: "text-text-secondary",
       proof: "text-text-secondary/70",
     },
     accent: {
-      wrap: "accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.55)]",
+      wrap: "accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.55)]",
       label: "text-white/70",
       proof: "text-white/70",
     },
     soft: {
-      wrap: "bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-24px_rgba(99,102,241,0.15)]",
+      wrap: "bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.15)]",
       label: "text-text-secondary",
       proof: "text-text-secondary/70",
     },
@@ -1155,7 +1155,7 @@ function HighImpactSection() {
       className="relative mx-auto max-w-screen-xl px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
     >
       {/* Subtle bg depth */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.04),transparent_65%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(17, 24, 39,0.04),transparent_65%)]" />
 
       <div className="relative z-10">
         {/* Header */}
@@ -1283,7 +1283,7 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
         <div
           className={`absolute inset-0 overflow-hidden rounded-[1.75rem] shadow-[0_12px_40px_-20px_rgba(15,23,42,0.14)] ${
             featured
-              ? "border-2 border-accent shadow-[0_12px_40px_-16px_rgba(121,97,244,0.35)]"
+              ? "border-2 border-accent shadow-[0_12px_40px_-16px_rgba(17, 24, 39,0.35)]"
               : "border border-border/60"
           }`}
           style={{
@@ -1304,7 +1304,7 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
         <div
           className={`absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border p-6 sm:p-7 ${
             featured
-              ? "border-transparent accent-gradient shadow-[0_20px_60px_-20px_rgba(121,97,244,0.5)]"
+              ? "border-transparent accent-gradient shadow-[0_20px_60px_-20px_rgba(17, 24, 39,0.5)]"
               : "border-border/60 bg-background shadow-[0_12px_40px_-20px_rgba(15,23,42,0.14)]"
           }`}
           style={{
@@ -1382,7 +1382,7 @@ function ServicesSection({ onContactClick }) {
       id="services"
       className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.04),transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(17, 24, 39,0.04),transparent_50%)]" />
 
       <div className="relative z-10">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
@@ -1403,7 +1403,7 @@ function ServicesSection({ onContactClick }) {
               <button
                 type="button"
                 onClick={onContactClick}
-                className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_-18px_rgba(99,102,241,0.72)] transition-all hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_-18px_rgba(17, 24, 39,0.72)] transition-all hover:-translate-y-1"
               >
                 Discuss a Build
                 <FaArrowRight size={11} />
@@ -1597,7 +1597,7 @@ function CaseStudiesSection() {
             aria-pressed={index === activeProject}
             className={`rounded-full border px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] transition-all sm:px-5 sm:text-[11px] ${
               index === activeProject
-                ? "border-transparent accent-gradient text-white shadow-[0_18px_40px_-26px_rgba(99,102,241,0.48)]"
+                ? "border-transparent accent-gradient text-white shadow-[0_18px_40px_-26px_rgba(17, 24, 39,0.48)]"
                 : "border-border/70 bg-background/90 text-text-secondary hover:border-accent/45 hover:text-primary"
             }`}
           >
@@ -1608,7 +1608,7 @@ function CaseStudiesSection() {
 
       {/* Case study stage */}
       <div
-        className="relative mt-8 overflow-hidden rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(246,247,255,0.94)_48%,rgba(238,242,255,0.9)_100%)] shadow-[0_26px_70px_-45px_rgba(99,102,241,0.32)] sm:rounded-[2.25rem] md:mt-10"
+        className="relative mt-8 overflow-hidden rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(246,247,255,0.94)_48%,rgba(238,242,255,0.9)_100%)] shadow-[0_26px_70px_-45px_rgba(17, 24, 39,0.32)] sm:rounded-[2.25rem] md:mt-10"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
@@ -1617,7 +1617,7 @@ function CaseStudiesSection() {
           className="pointer-events-none absolute inset-0 opacity-[0.26]"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(99,102,241,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(17, 24, 39,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 24, 39,0.12) 1px, transparent 1px)",
             backgroundSize: "44px 44px",
           }}
         />
@@ -1641,7 +1641,7 @@ function CaseStudiesSection() {
 
         {/* Mobile active screen */}
         <div className="relative z-10 px-4 pb-5 pt-6 md:hidden">
-          <div className="overflow-hidden rounded-[1.35rem] border border-border/70 bg-background shadow-[0_22px_46px_-32px_rgba(99,102,241,0.38)]">
+          <div className="overflow-hidden rounded-[1.35rem] border border-border/70 bg-background shadow-[0_22px_46px_-32px_rgba(17, 24, 39,0.38)]">
             <div className="flex items-center gap-1.5 border-b border-border/70 bg-surface/80 px-3 py-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
@@ -1702,7 +1702,7 @@ function CaseStudiesSection() {
                   transformStyle: "preserve-3d",
                   boxShadow:
                     slot === 0
-                      ? "0 36px 76px -38px rgba(99,102,241,0.42), 0 0 0 1px rgba(99,102,241,0.08)"
+                      ? "0 36px 76px -38px rgba(17, 24, 39,0.42), 0 0 0 1px rgba(17, 24, 39,0.08)"
                       : "0 24px 54px -34px rgba(15,23,42,0.24)",
                 }}
               >
@@ -1752,8 +1752,8 @@ function AboutSection() {
     >
       <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
         <div className="relative overflow-hidden rounded-[2.2rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-6 py-8 text-white shadow-[0_28px_70px_-38px_rgba(15,23,42,0.5)] sm:px-8 sm:py-10 lg:px-10">
-          <div className="pointer-events-none absolute -left-8 top-10 h-36 w-36 rounded-full bg-[rgba(99,102,241,0.24)] blur-3xl" />
-          <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-[rgba(139,92,246,0.16)] blur-3xl" />
+          <div className="pointer-events-none absolute -left-8 top-10 h-36 w-36 rounded-full bg-[rgba(17, 24, 39,0.24)] blur-3xl" />
+          <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-[rgba(55, 65, 81,0.16)] blur-3xl" />
           <div className="pointer-events-none absolute bottom-0 left-1/3 h-28 w-28 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
 
           <div className="relative z-10">
@@ -1795,7 +1795,7 @@ function AboutSection() {
           {aboutHighlights.map((item) => (
             <article
               key={item.title}
-              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_60px_-28px_rgba(99,102,241,0.2)]"
+              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_60px_-28px_rgba(17, 24, 39,0.2)]"
             >
               <img
                 src={item.image}
@@ -1979,8 +1979,8 @@ function TrustSection() {
           {/* Left rotating testimonials */}
           <article className="relative flex h-auto flex-col rounded-[1.75rem] border border-primary bg-primary p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-7">
             {/* bg glow */}
-            <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[rgba(139,92,246,0.22)] blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-8 left-8 h-32 w-32 rounded-full bg-[rgba(99,102,241,0.18)] blur-3xl" />
+            <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[rgba(55, 65, 81,0.22)] blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-8 left-8 h-32 w-32 rounded-full bg-[rgba(17, 24, 39,0.18)] blur-3xl" />
 
             <div className="relative z-10">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white">
@@ -2062,7 +2062,7 @@ function TrustSection() {
           </article>
 
           {/* Right dynamic dashboard synced to active testimonial */}
-          <div className="rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-5 shadow-[0_24px_60px_-38px_rgba(99,102,241,0.22)] sm:p-6">
+          <div className="rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-5 shadow-[0_24px_60px_-38px_rgba(17, 24, 39,0.22)] sm:p-6">
             <div
               className={`transition-all duration-300 ${animating ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"}`}
             >
@@ -2116,7 +2116,7 @@ function TrustSection() {
                     <div
                       className="grid h-24 w-24 shrink-0 place-items-center rounded-full"
                       style={{
-                        background: `conic-gradient(${dash.color} ${pieMetric.pct * 3.6}deg, rgba(99,102,241,0.12) 0deg)`,
+                        background: `conic-gradient(${dash.color} ${pieMetric.pct * 3.6}deg, rgba(17, 24, 39,0.12) 0deg)`,
                       }}
                     >
                       <div className="grid h-16 w-16 place-items-center rounded-full bg-background">
@@ -2194,7 +2194,7 @@ function TrustSection() {
                             className="h-full rounded-full transition-all duration-700"
                             style={{
                               width: `${bar.pct}%`,
-                              background: `linear-gradient(90deg, ${dash.color}, #8B5CF6)`,
+                              background: `linear-gradient(90deg, ${dash.color}, #4B5563)`,
                             }}
                           />
                         </div>
@@ -2236,7 +2236,7 @@ function BlogSection() {
         {blogPosts.map((post) => (
           <article
             key={post.title}
-            className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]"
+            className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(17, 24, 39,0.2)]"
           >
             <div className="aspect-[4/3] overflow-hidden">
               <img
@@ -2428,7 +2428,7 @@ function ConversionCtaStrip({
             className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] transition-all hover:-translate-y-1 sm:px-7 ${
               isDark
                 ? "bg-white text-primary shadow-[0_18px_44px_-24px_rgba(255,255,255,0.7)]"
-                : "accent-gradient text-white shadow-[0_16px_40px_-18px_rgba(99,102,241,0.72)]"
+                : "accent-gradient text-white shadow-[0_16px_40px_-18px_rgba(17, 24, 39,0.72)]"
             }`}
           >
             {primaryLabel}
@@ -2621,7 +2621,7 @@ export default function FreelanceLanding() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setContactOpen(true)}
-              className="hidden items-center gap-2 rounded-full accent-gradient px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_32px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-16px_rgba(99,102,241,0.85)] sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full accent-gradient px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.24em] text-white shadow-[0_12px_32px_-16px_rgba(17, 24, 39,0.7)] transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-16px_rgba(17, 24, 39,0.85)] sm:inline-flex"
             >
               <FaEnvelope size={11} />
               Start a Project
@@ -2683,49 +2683,43 @@ export default function FreelanceLanding() {
           <div className="freelance-hero-grid grid gap-8 pb-10 pt-4 sm:gap-10 sm:py-8 md:gap-14 md:py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-10">
             {/* Left fixed copy */}
             <div className="freelance-hero-copy flex flex-col text-left">
-              {/* Availability pill - Urgency added */}
-              <div className="mb-5 flex flex-wrap items-center gap-3 sm:mb-6">
-                <p className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-accent/15 bg-accent/5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-accent sm:px-4 sm:tracking-[0.3em]">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-                  Available for freelance projects
-                </p>
-              </div>
-
               {/* Headline */}
-              <h1 className="freelance-hero-title font-display text-[2.65rem] font-bold leading-[0.98] text-primary sm:text-5xl md:text-6xl lg:text-[4rem] lg:leading-[1.0]">
-                Full-Stack Developer Building Systems
-                <br />{" "}
-                <span className="bg-gradient-to-r from-accent via-[#7961F4] to-[#7c3aed] bg-clip-text text-transparent">
-                  Businesses Depend On
-                </span>
+              <h1 className="max-w-lg text-[0.85rem] font-display font-semibold uppercase tracking-[0.28em] text-primary sm:text-[0.95rem]">
+                FULL-STACK ENGINEER • PRODUCT BUILDER
               </h1>
 
-              {/* Subtext */}
-              <p className="mt-4 max-w-xl text-[15px] leading-7 text-text-secondary sm:mt-5 sm:text-[1.05rem] sm:leading-8">
-                From web apps and dashboards to eCommerce, mobile apps, and
-                backend systems, I deliver complete, production-grade digital
-                products for growing businesses.
+              <h2 className="mt-6 max-w-lg text-[2.2rem] font-display font-bold leading-[0.98] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
+                <span className="block">Building Real-World</span>
+                <span className="block">Digital Products</span>
+                <span className="block">Across Industries.</span>
+              </h2>
+
+              <p className="mt-6 max-w-xl text-base leading-7 text-text-secondary sm:text-[1.05rem] sm:leading-8">
+                From ecommerce and real estate platforms to dashboards, LMS
+                systems, billing software, and business automation tools.
               </p>
 
               {/* CTAs */}
-              <div className="mt-6 grid gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
+              <div className="mt-8 grid gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex w-full items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(17, 24, 39,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(17, 24, 39,0.85)] sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
+                >
+                  Explore Projects
+                  <FaArrowRight size={12} />
+                </Link>
+
                 <button
                   onClick={() => setContactOpen(true)}
-                  className="inline-flex w-full items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(99,102,241,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(99,102,241,0.85)] sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
-                >
-                  Start a Project
-                  <FaArrowRight size={12} />
-                </button>
-                <a
-                  href={whatsappProjectHref}
-                  target="_blank"
-                  rel="noreferrer"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
-                  WhatsApp Me
-                  <FaWhatsapp size={14} className="text-accent" />
-                </a>
+                  Let&apos;s Build Something
+                </button>
               </div>
+
+              <p className="mt-6 max-w-xl text-sm font-bold uppercase tracking-[0.18em] text-text-secondary sm:text-base">
+                Ecommerce • LMS • Real Estate • Shopify • Automation
+              </p>
 
               {/* Trust indicators */}
               <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
@@ -2889,8 +2883,8 @@ export default function FreelanceLanding() {
                 key={i}
                 className={`group relative overflow-hidden rounded-[1.75rem] border p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
                   item.featured
-                    ? "border-transparent accent-gradient text-white shadow-[0_24px_60px_-20px_rgba(121,97,244,0.5)] hover:shadow-[0_28px_64px_-20px_rgba(121,97,244,0.65)]"
-                    : "border-border/70 bg-background/90 shadow-[0_8px_32px_-16px_rgba(15,23,42,0.1)] hover:border-accent/30 hover:shadow-[0_16px_48px_-20px_rgba(99,102,241,0.18)]"
+                    ? "border-transparent accent-gradient text-white shadow-[0_24px_60px_-20px_rgba(17, 24, 39,0.5)] hover:shadow-[0_28px_64px_-20px_rgba(17, 24, 39,0.65)]"
+                    : "border-border/70 bg-background/90 shadow-[0_8px_32px_-16px_rgba(15,23,42,0.1)] hover:border-accent/30 hover:shadow-[0_16px_48px_-20px_rgba(17, 24, 39,0.18)]"
                 }`}
               >
                 {item.featured && (
@@ -3028,8 +3022,8 @@ export default function FreelanceLanding() {
         <section className="mx-auto max-w-screen-xl px-5 pb-16 sm:px-6 md:px-12 lg:px-20 lg:pb-24">
           <div className="relative overflow-hidden rounded-[2.5rem] border border-primary/10 bg-[linear-gradient(135deg,#0f172a_0%,#111827_38%,#1d4ed8_100%)] px-6 py-10 text-white shadow-[0_32px_90px_-40px_rgba(37,99,235,0.42)] sm:px-8 sm:py-12 lg:px-12 lg:py-14">
             <div className="pointer-events-none absolute -left-10 top-0 h-44 w-44 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
-            <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(99,102,241,0.24)] blur-3xl" />
-            <div className="pointer-events-none absolute bottom-0 left-1/3 h-40 w-40 rounded-full bg-[rgba(139,92,246,0.18)] blur-3xl" />
+            <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(17, 24, 39,0.24)] blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 left-1/3 h-40 w-40 rounded-full bg-[rgba(55, 65, 81,0.18)] blur-3xl" />
 
             <div className="relative z-10 lg:flex lg:items-end lg:justify-between lg:gap-12">
               <div className="max-w-3xl">
@@ -3102,7 +3096,7 @@ export default function FreelanceLanding() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full accent-gradient text-white shadow-[0_20px_45px_-20px_rgba(99,102,241,0.85)] transition-transform hover:-translate-y-1"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full accent-gradient text-white shadow-[0_20px_45px_-20px_rgba(17, 24, 39,0.85)] transition-transform hover:-translate-y-1"
       >
         <FaWhatsapp size={24} />
       </a>
@@ -3121,7 +3115,9 @@ export default function FreelanceLanding() {
 
 function ContactFormModal({ isOpen, onClose }) {
   const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
-  const STATIC_FORMS_ACCESS_KEY = import.meta.env.VITE_STATICFORMS_ACCESS_KEY || "YOUR_STATICFORMS_ACCESS_KEY";
+  const STATIC_FORMS_ACCESS_KEY =
+    import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
+    "YOUR_STATICFORMS_ACCESS_KEY";
 
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
   const [name, setName] = useState("");
@@ -3177,7 +3173,8 @@ function ContactFormModal({ isOpen, onClose }) {
       console.error(error);
       setStatus("error");
       setErrorMessage(
-        error?.message || "Unable to send your message right now. Please try again."
+        error?.message ||
+          "Unable to send your message right now. Please try again.",
       );
     }
   };
@@ -3291,9 +3288,13 @@ function ContactFormModal({ isOpen, onClose }) {
                     <option value="">Select a service</option>
                     <option value="Web Applications">Web Applications</option>
                     <option value="eCommerce Systems">eCommerce Systems</option>
-                    <option value="Mobile Applications">Mobile Applications</option>
+                    <option value="Mobile Applications">
+                      Mobile Applications
+                    </option>
                     <option value="Backend & APIs">Backend & APIs</option>
-                    <option value="Business Platforms">Business Platforms</option>
+                    <option value="Business Platforms">
+                      Business Platforms
+                    </option>
                     <option value="Growth & SEO">Growth & SEO</option>
                   </select>
                 </div>
@@ -3331,7 +3332,9 @@ function ContactFormModal({ isOpen, onClose }) {
 
 function InlineContactForm() {
   const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
-  const STATIC_FORMS_ACCESS_KEY = import.meta.env.VITE_STATICFORMS_ACCESS_KEY || "YOUR_STATICFORMS_ACCESS_KEY";
+  const STATIC_FORMS_ACCESS_KEY =
+    import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
+    "YOUR_STATICFORMS_ACCESS_KEY";
 
   const [status, setStatus] = useState("idle");
   const [name, setName] = useState("");
@@ -3386,7 +3389,8 @@ function InlineContactForm() {
       console.error(error);
       setStatus("error");
       setErrorMessage(
-        error?.message || "Unable to send your message right now. Please try again."
+        error?.message ||
+          "Unable to send your message right now. Please try again.",
       );
     }
   };

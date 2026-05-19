@@ -42,8 +42,8 @@ export default function Contact() {
         </div>
 
         <div className="relative overflow-hidden rounded-[2.25rem] border border-primary/10 bg-[linear-gradient(135deg,#0f172a_0%,#111827_38%,#1d4ed8_100%)] p-6 text-white shadow-[0_32px_90px_-40px_rgba(37,99,235,0.42)] sm:p-8">
-          <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(99,102,241,0.22)] blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 left-1/4 h-40 w-40 rounded-full bg-[rgba(139,92,246,0.16)] blur-3xl" />
+          <div className="pointer-events-none absolute right-0 top-10 h-52 w-52 rounded-full bg-[rgba(17, 24, 39,0.22)] blur-3xl" />
+          <div className="pointer-events-none absolute bottom-0 left-1/4 h-40 w-40 rounded-full bg-[rgba(55, 65, 81,0.16)] blur-3xl" />
 
           <div className="relative z-10">
           <h3 className="mb-6 font-display text-3xl font-bold leading-tight text-white">Let's build something great together.</h3>

@@ -75,7 +75,7 @@ export default function CaseStudiesIndex() {
           {caseStudies.map((study) => (
             <article
               key={study.slug}
-              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(99,102,241,0.2)]"
+              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(17, 24, 39,0.2)]"
             >
               <Link to={`/case-studies/${study.slug}`} className="block">
                 <div className="aspect-[16/10] overflow-hidden bg-surface">
@@ -126,7 +126,7 @@ export default function CaseStudiesIndex() {
             </div>
             <a
               href="/#contact"
-              className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_16px_40px_-18px_rgba(99,102,241,0.72)] transition-all hover:-translate-y-1"
+              className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_16px_40px_-18px_rgba(17, 24, 39,0.72)] transition-all hover:-translate-y-1"
             >
               <FaBriefcase size={13} />
               Discuss Project

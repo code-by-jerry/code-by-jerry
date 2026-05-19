@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0B0B0B;
-  --color-accent: #6366F1;
-  --color-accent-soft: #A5B4FC;
-  --color-accent-2: #8B5CF6;
+  --color-primary: #0b0b0b;
+  --color-accent: #111827;
+  --color-accent-soft: #374151;
+  --color-accent-2: #4b5563;
 
-  --color-background: #FFFFFF;
-  --color-surface: #F8FAFC;
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
 
-  --color-text: #0B0B0B;
-  --color-text-secondary: #64748B;
+  --color-text: #0b0b0b;
+  --color-text-secondary: #64748b;
 
-  --color-border: #E5E7EB;
+  --color-border: #e5e7eb;
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
@@ -27,15 +27,23 @@ body {
 
 @layer utilities {
   .hero-bg {
-    background: 
-      radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08), transparent 45%),
-      radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.06), transparent 45%),
+    background:
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(17, 24, 39, 0.08),
+        transparent 45%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(55, 65, 81, 0.06),
+        transparent 45%
+      ),
       var(--color-background);
     background-attachment: fixed;
   }
 
   .grid-overlay {
-    background-image: 
+    background-image:
       linear-gradient(var(--color-border) 0.5px, transparent 0.5px),
       linear-gradient(90deg, var(--color-border) 0.5px, transparent 0.5px);
     background-size: 60px 60px;
@@ -48,20 +56,24 @@ body {
   }
 
   .project-card-hover:hover {
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.1);
+    border-color: rgba(17, 24, 39, 0.3);
+    box-shadow: 0 20px 40px -15px rgba(17, 24, 39, 0.1);
     transform: translateY(-4px);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-accent-2)
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .accent-gradient {
-    background: linear-gradient(135deg, #6366F1, #7961F4, #8B5CF6);
+    background: linear-gradient(135deg, #111827, #1f2937, #4b5563);
   }
 
   .tech-stack-marquee {
@@ -142,7 +154,8 @@ body {
 }
 
 /* Base styles for smooth scrolling setup with Lenis */
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
