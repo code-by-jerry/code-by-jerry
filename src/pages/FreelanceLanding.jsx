@@ -34,8 +34,7 @@ const services = [
     description:
       "Custom business systems, dashboards, and admin panels built for real workflows. Designed for teams that need speed, clarity, and control over their operations. Built to scale as your business grows.",
     eyebrow: "Custom Systems",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/Web%20System.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/web_serv.png",
   },
   {
     title: "eCommerce Systems",
@@ -43,23 +42,21 @@ const services = [
       "High-converting online stores with payment integrations and cleaner buying flows. From Shopify to custom storefronts, built for checkout performance and retention. Every detail is shaped around revenue, not just aesthetics.",
     eyebrow: "Revenue Focused",
     image:
-      "https://ik.imagekit.io/codebyjerry/services/eCommerce%20Systems.png?tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/coj%20services/ecommerce_serv.png",
   },
   {
     title: "Mobile Applications",
     description:
       "Flutter or hybrid app experiences connected tightly with your backend systems. Built for real users, fast, reliable, and consistent across platforms. Designed to keep users engaged and operations running smoothly.",
     eyebrow: "Mobile Delivery",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/Mobile%20&%20Integrations.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/Mobile_serv.png",
   },
   {
     title: "Backend & APIs",
     description:
       "APIs, automation, integrations, and scalable architectures that support real growth. Clean, documented, and built to handle production load without breaking. The backbone that keeps every system running reliably.",
     eyebrow: "Core Logic",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/Backend%20&%20API.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/backend_serv.png",
   },
   {
     title: "Business Platforms",
@@ -67,7 +64,7 @@ const services = [
       "End-to-end platforms built around your business model, from user flows to backend logic and scaling. Role-based access, operational dashboards, and automation built in from day one. Systems your team will actually depend on.",
     eyebrow: "Business First",
     image:
-      "https://ik.imagekit.io/codebyjerry/services/Business%20Platform.png?tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/coj%20services/Business_serv.png",
     featured: true,
   },
   {
@@ -76,7 +73,7 @@ const services = [
       "Performance optimization and search ranking improvements for long-term visibility. Technical SEO, Core Web Vitals, and speed improvements that compound over time. Built to rank, load fast, and convert better.",
     eyebrow: "Search Growth",
     image:
-      "https://ik.imagekit.io/codebyjerry/services/SEO%20&%20Growth.png?tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/coj%20services/seo_growth_serv.png",
   },
 ];
 
@@ -122,54 +119,68 @@ const impactStats = [
   },
 ];
 
-const contributionLogos = [
+// contribution logos removed — Contributions section deleted
+
+const trustedByLogos = [
   {
-    name: "Aaraninfo",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170&tr=f-auto,q-80",
-  },
-  {
-    name: "Techbuds",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png?updatedAt=1777100879527&tr=f-auto,q-80",
+    name: "Pixora",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/pixora_new_white.png?updatedAt=1779039491768",
   },
   {
     name: "DestroSolutions",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions.png?updatedAt=1777100848284&tr=f-auto,q-80",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions_new.png?updatedAt=1779038470588",
   },
   {
-    name: "Freshtick",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/freshtick.png?updatedAt=1777100895728&tr=f-auto,q-80",
+    name: "Contributions",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/logo.svg?updatedAt=1779038004821",
   },
   {
-    name: "Jippymart",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?tr=f-auto,q-80",
+    name: "Baybee",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
   },
   {
-    name: "Pixora",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/pixora.svg?tr=f-auto,q-80",
-  },
-  {
-    name: "Area24 Realty",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832&tr=f-auto,q-80",
-  },
-  {
-    name: "Area24One",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?tr=f-auto,q-80",
-  },
-  {
-    name: "Codexsun",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/codexsun.png?tr=f-auto,q-80",
-  },
-  {
-    name: "Aarun",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aarun.webp?updatedAt=1777100830827&tr=f-auto,q-80",
-  },
-  {
-    name: "Nesthetix",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?tr=f-auto,q-80",
+    name: "Enmart",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857",
   },
   {
     name: "Atha Constructions",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093&tr=f-auto,q-80",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093",
+  },
+  {
+    name: "Aaraninfo",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170",
+  },
+  {
+    name: "Techbuds",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png",
+  },
+  {
+    name: "Codexsun",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/codexsun.png?updatedAt=1777100737283",
+  },
+  {
+    name: "Nesthetix",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?updatedAt=1777100737298",
+  },
+  {
+    name: "Aarun",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aarun.webp?updatedAt=1777100830827",
+  },
+  {
+    name: "Freshtick",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/freshtick_new.png?updatedAt=1779241564019",
+  },
+  {
+    name: "Jippymart",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251",
+  },
+  {
+    name: "Area24One",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279",
+  },
+  {
+    name: "Area24Realty",
+    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832",
   },
 ];
 
@@ -1178,53 +1189,13 @@ function HighImpactSection() {
 
 function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
   const [flipped, setFlipped] = useState(false);
-  const [isHoveringButtons, setIsHoveringButtons] = useState(false);
-  const navigate = useNavigate();
-
-  // Map service titles to their URLs
-  const getServiceUrl = (title) => {
-    const urlMap = {
-      "Web Applications": "/services/web-applications",
-      "eCommerce Systems": "/services/ecommerce",
-      "Mobile Applications": "/services/mobile-apps",
-      "Backend & APIs": "/services/backend-apis",
-      "Business Platforms": "/services/business-platforms",
-      "Growth & SEO": "/services/seo-growth",
-    };
-    return urlMap[title] || "#";
-  };
-
-  const serviceUrl = getServiceUrl(title);
-
-  const handleMouseEnter = () => setFlipped(true);
-  const handleMouseLeave = () => {
-    if (!isHoveringButtons) {
-      setFlipped(false);
-    }
-  };
-
-  const handleCardClick = () => {
-    if (serviceUrl !== "#") {
-      navigate(serviceUrl);
-    }
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleCardClick();
-    }
-  };
 
   return (
     <div
-      role="button"
-      tabIndex={0}
-      className="cursor-pointer"
+      className=""
       style={{ perspective: "1000px" }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onKeyDown={handleKeyDown}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
     >
       <div
         className="relative w-full transition-transform duration-700 ease-out"
@@ -1234,96 +1205,45 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* Front image only, no overlay text */}
+        {/* Front: Image on top (full width), title at bottom; no grayscale */}
         <div
-          className={`absolute inset-0 overflow-hidden rounded-[1.75rem] shadow-[0_12px_40px_-20px_rgba(15,23,42,0.14)] ${
-            featured
-              ? "border-2 border-accent shadow-[0_12px_40px_-16px_rgba(17, 24, 39,0.35)]"
-              : "border border-border/60"
+          className="absolute inset-0 flex flex-col items-center justify-between overflow-hidden rounded-[1.75rem] p-4"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="w-full flex items-center justify-center flex-1">
+            <img
+              src={image}
+              alt={title}
+              loading="lazy"
+              className="w-full h-full object-contain"
+              style={{ maxHeight: "82%" }}
+            />
+          </div>
+
+          <div className="w-full text-center mt-3">
+            {eyebrow && (
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-text-secondary/70">
+                {eyebrow}
+              </p>
+            )}
+            <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-primary">
+              {title}
+            </h3>
+          </div>
+        </div>
+
+        {/* Back: Solid background with description */}
+        <div
+          className={`absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[1.75rem] p-6 ${
+            featured ? "bg-primary text-white" : "bg-primary text-white"
           }`}
           style={{
             backfaceVisibility: "hidden",
             transform: "rotateY(180deg)",
           }}
-          onClick={handleCardClick}
         >
-          <img
-            src={image}
-            alt={title}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
-        </div>
-
-        {/* Back details */}
-        <div
-          className={`absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] border p-6 sm:p-7 ${
-            featured
-              ? "border-transparent accent-gradient shadow-[0_20px_60px_-20px_rgba(17, 24, 39,0.5)]"
-              : "border-border/60 bg-background shadow-[0_12px_40px_-20px_rgba(15,23,42,0.14)]"
-          }`}
-          style={{
-            backfaceVisibility: "hidden",
-          }}
-          onClick={(event) => {
-            if (!event.target.closest("a")) {
-              handleCardClick();
-            }
-          }}
-        >
-          {featured && (
-            <>
-              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-2xl" />
-              <div className="pointer-events-none absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-white/8 blur-2xl" />
-            </>
-          )}
           <div className="relative z-10">
-            {featured && (
-              <div className="mb-4">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-widest text-white border border-white/20 backdrop-blur-sm">
-                  <span className="flex h-1 w-1 rounded-full bg-white animate-pulse" />
-                  Featured Service
-                </span>
-              </div>
-            )}
-            <p
-              className={`text-[10px] font-bold uppercase tracking-[0.28em] ${featured ? "text-white/70" : "text-text-secondary/70"}`}
-            >
-              {eyebrow}
-            </p>
-            <h3
-              className={`mt-3 font-display text-2xl font-bold leading-tight ${featured ? "text-white" : "text-primary"}`}
-            >
-              {title}
-            </h3>
-            <p
-              className={`mt-4 text-sm leading-6 ${featured ? "text-white/75" : "text-text-secondary"}`}
-            >
-              {description}
-            </p>
-          </div>
-          <div
-            className="relative z-10 flex gap-3"
-            onMouseEnter={() => setIsHoveringButtons(true)}
-            onMouseLeave={() => setIsHoveringButtons(false)}
-          >
-            <div className="inline-flex w-max items-center gap-2 rounded-full bg-accent/8 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
-              Click card to open page
-            </div>
-            <a
-              href="mailto:contact@codebyjerry.online"
-              onClick={(event) => {
-                event.stopPropagation();
-              }}
-              className={`inline-flex w-max items-center gap-2 rounded-full px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] transition-all ${
-                featured
-                  ? "bg-white/20 text-white hover:bg-white/30"
-                  : "bg-primary/8 text-primary hover:bg-primary/15"
-              }`}
-            >
-              Start Project
-              <FaEnvelope size={10} />
-            </a>
+            <p className="text-sm leading-6 text-white/90">{description}</p>
           </div>
         </div>
       </div>
@@ -1393,62 +1313,7 @@ function ServicesSection({ onContactClick }) {
   );
 }
 
-function ContributionsSection() {
-  const marqueeItems = [...contributionLogos, ...contributionLogos];
-
-  return (
-    <section className="mx-auto max-w-screen-xl px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20">
-      <style>{`
-        @keyframes contributionsMarquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
-      `}</style>
-
-      <div className="rounded-[2rem] border border-border/70 bg-background/78 px-5 py-6 shadow-[0_18px_50px_-34px_rgba(15,23,42,0.14)] sm:px-8">
-        <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
-          <div className="max-w-md">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
-              Contributions
-            </p>
-            <h2 className="mt-3 font-display text-2xl font-bold leading-tight text-primary sm:text-[2rem]">
-              Development Projects & Enterprise Platforms I&apos;ve Contributed
-              To
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-text-secondary">
-              Shown here as contributor work and delivery involvement, not
-              ownership claims.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden">
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background via-background/92 to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background via-background/92 to-transparent" />
-
-            <div
-              className="flex min-w-max items-center gap-4 py-2"
-              style={{ animation: "contributionsMarquee 30s linear infinite" }}
-            >
-              {marqueeItems.map((item, index) => (
-                <div
-                  key={`${item.name}-${index}`}
-                  className="flex h-20 w-40 shrink-0 items-center justify-center rounded-2xl border border-border/70 bg-surface/70 px-5 py-4 shadow-[0_12px_30px_-24px_rgba(15,23,42,0.16)]"
-                >
-                  <img
-                    src={item.src}
-                    alt={item.name}
-                    loading="lazy"
-                    className="max-h-10 w-auto max-w-full object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// ContributionsSection removed
 
 function CaseStudiesSection() {
   const [activeProject, setActiveProject] = useState(0);
@@ -1521,7 +1386,7 @@ function CaseStudiesSection() {
   return (
     <section
       id="work"
-      className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+      className="mx-auto max-w-screen-xl scroll-mt-24 px-5 pt-8 pb-6 sm:px-6 md:px-12 md:pt-12 md:pb-6 lg:px-20 lg:pt-12 lg:pb-6"
     >
       {/* Header */}
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
@@ -1563,54 +1428,20 @@ function CaseStudiesSection() {
 
       {/* Case study stage */}
       <div
-        className="relative mt-8 overflow-hidden rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(246,247,255,0.94)_48%,rgba(238,242,255,0.9)_100%)] shadow-[0_26px_70px_-45px_rgba(17, 24, 39,0.32)] sm:rounded-[2.25rem] md:mt-10"
+        className="relative mt-8 overflow-hidden md:mt-10"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
         {/* Grid */}
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.26]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(17, 24, 39,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(17, 24, 39,0.12) 1px, transparent 1px)",
-            backgroundSize: "44px 44px",
-          }}
-        />
-        {/* Top accent border */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/45 to-transparent" />
-        {/* Bottom accent border */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
-
-        {/* Project info */}
-        <div className="relative z-10 px-5 pt-7 text-center sm:px-10 sm:pt-8">
-          <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.22em] text-accent/70 md:hidden">
-            {currentProject.category}
-          </p>
-          <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl lg:text-[2.6rem]">
-            {currentProject.title}
-          </h3>
-          <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-text-secondary">
-            {currentProject.tagline}
-          </p>
-        </div>
-
         {/* Mobile active screen */}
         <div className="relative z-10 px-4 pb-5 pt-6 md:hidden">
-          <div className="overflow-hidden rounded-[1.35rem] border border-border/70 bg-background shadow-[0_22px_46px_-32px_rgba(17, 24, 39,0.38)]">
-            <div className="flex items-center gap-1.5 border-b border-border/70 bg-surface/80 px-3 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-              <div className="mx-2 min-w-0 flex-1 rounded-md bg-background/85 px-3 py-1 text-center text-[10px] text-text-secondary/70">
-                {currentProject.title.toLowerCase().replace(/\s+/g, "")}.com
-              </div>
-            </div>
-            <div className="grid min-h-[210px] place-items-center bg-[#0f172a]">
+          <div className="overflow-hidden rounded-[1.35rem]">
+            <div className="grid min-h-[210px] place-items-center">
               <img
                 src={currentImages[activeImage]}
-                alt={`${currentProject.title} screen ${activeImage + 1}`}
+                alt={`screen ${activeImage + 1}`}
                 loading="eager"
-                className="block h-auto max-h-[260px] w-full object-contain"
+                className="block h-auto max-h-[320px] w-full object-contain"
               />
             </div>
           </div>
@@ -1638,7 +1469,6 @@ function CaseStudiesSection() {
           style={{
             perspective: "1100px",
             height: "380px",
-            paddingBottom: "2rem",
           }}
         >
           {currentImages.map((src, idx) => {
@@ -1661,33 +1491,14 @@ function CaseStudiesSection() {
                       : "0 24px 54px -34px rgba(15,23,42,0.24)",
                 }}
               >
-                {slot === 0 && (
-                  <div className="flex items-center gap-1.5 border-b border-border/70 bg-surface/80 px-4 py-2.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-                    <div className="mx-3 flex-1 rounded-md bg-background/85 px-3 py-1 text-[10px] text-text-secondary/70">
-                      {currentProject.title.toLowerCase().replace(/\s+/g, "")}
-                      .com
-                    </div>
-                  </div>
-                )}
-                <div
-                  className="pointer-events-none absolute inset-0 rounded-[1.25rem]"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, transparent 48%)",
-                  }}
-                />
+                {/* Removed top browser bar and overlay gradient for clean image */}
                 <img
                   src={src}
                   alt={`${currentProject.title} screen ${idx + 1}`}
                   loading={abs === 0 ? "eager" : "lazy"}
-                  className="block h-auto w-full bg-[#0f172a]"
+                  className="block h-auto w-full"
                 />
-                {slot === 0 && (
-                  <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background/45 to-transparent" />
-                )}
+                {/* removed bottom gradient */}
               </div>
             );
           })}
@@ -2702,21 +2513,33 @@ export default function FreelanceLanding() {
             <p className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-secondary/60">
               Helping businesses scale across Industries
             </p>
-            <div className="mt-8 flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700">
-              {[
-                "Real Estate",
-                "Logistics",
-                "eCommerce",
-                "SaaS",
-                "Interior Design",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="font-display text-xl font-bold tracking-tighter text-primary sm:text-2xl"
-                >
-                  {item}
-                </span>
-              ))}
+            <div className="mt-8 overflow-hidden">
+              <style>{`
+                @keyframes trustedByMarquee {
+                  from { transform: translateX(0); }
+                  to { transform: translateX(-50%); }
+                }
+              `}</style>
+
+              <div
+                className="flex min-w-max items-center gap-4 py-3"
+                style={{ animation: "trustedByMarquee 30s linear infinite" }}
+              >
+                {[...trustedByLogos, ...trustedByLogos].map((item, index) => (
+                  <div
+                    key={`${item.name}-${index}`}
+                    className="flex h-20 shrink-0 items-center justify-center px-4 py-3"
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.name}
+                      loading="lazy"
+                      className="max-h-10 w-auto object-contain opacity-70 transition duration-300 hover:opacity-100"
+                      style={{ filter: "grayscale(100%) brightness(0.35)" }}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -2740,8 +2563,6 @@ export default function FreelanceLanding() {
           tone="dark"
           primaryLabel="Open Contact Form"
         />
-
-        <ContributionsSection />
 
         <DetailedCaseStudiesSection />
 
