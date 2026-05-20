@@ -78,7 +78,7 @@ export default function CaseStudyDetail() {
 
       <main className="relative z-10 mx-auto max-w-5xl px-5 pb-16 pt-28 sm:px-6 md:px-12 lg:pb-24 lg:pt-32">
         <Link
-          to="/case-studies"
+          to="/#work"
           className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-text-secondary transition-colors hover:text-accent"
         >
           <FaArrowLeft size={10} />

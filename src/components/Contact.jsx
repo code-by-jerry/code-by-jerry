@@ -19,7 +19,7 @@ export default function Contact() {
       <div className="mb-6">
         <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Contact</p>
         <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl">
-          Ready for senior engineering work and serious product teams.
+          Ready for full-stack engineering work and serious product teams.
         </h2>
       </div>
 

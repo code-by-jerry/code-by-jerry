@@ -170,7 +170,7 @@ export default function ServicePageTemplate({
                 </a>
 
                 <Link
-                  to="/case-studies"
+                  to="/#work"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-8"
                 >
                   View Relevant Case Studies

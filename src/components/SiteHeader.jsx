@@ -5,7 +5,6 @@ import { FaEnvelope } from "react-icons/fa";
 const navLinks = [
   { label: "About", to: "/about" },
   { label: "Portfolio", to: "/portfolio" },
-  { label: "Case Studies", to: "/case-studies" },
   { label: "Services", to: "/services" },
   { label: "Blog", to: "/blog" },
 ];

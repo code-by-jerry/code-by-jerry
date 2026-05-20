@@ -14,6 +14,19 @@ const shots = {
     'https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180325.png?updatedAt=1776506172517&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180242.png?updatedAt=1776506172393&tr=f-auto,q-80',
   ],
+  jippymart: [
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151950.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152058.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152205.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151852.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152009.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152135.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151846.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152026.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151637.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151838.png',
+    'https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151654.png',
+  ],
   nesthetix: [
     'https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174304.png?updatedAt=1776506131947&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174404.png?updatedAt=1776506131779&tr=f-auto,q-80',
@@ -27,6 +40,11 @@ const shots = {
     'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144548.png?updatedAt=1776506054013&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144659.png?updatedAt=1776506055429&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144745.png?updatedAt=1776506054151&tr=f-auto,q-80',
+    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144819.png?updatedAt=1776506054135&tr=f-auto,q-80',
+    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144802.png?updatedAt=1776506054356&tr=f-auto,q-80',
+    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144915.png?updatedAt=1776506053788&tr=f-auto,q-80',
+    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144641.png?updatedAt=1776506053279&tr=f-auto,q-80',
+    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144721.png?updatedAt=1776506052388&tr=f-auto,q-80',
   ],
   baybee: [
     'https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80',
@@ -50,6 +68,45 @@ const shots = {
     'https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180834.png?updatedAt=1776505783335&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180935.png?updatedAt=1776505783299&tr=f-auto,q-80',
   ],
+  billing: [
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182025.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182122.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182250.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182345.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182107.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182136.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182527.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182608.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182053.png',
+    'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20183413.png',
+  ],
+  enmart: [
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(3).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM.jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(4).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM.jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(1).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%203.59.44%20PM.jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(5).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(2).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(2).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(3).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(1).jpeg',
+    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(4).jpeg',
+  ],
+}
+
+const logos = {
+  atha: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093',
+  jippymart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251',
+  realty: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832',
+  enmart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857',
+  arran: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170',
+  baybee: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024',
+  nesthetix: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?updatedAt=1777100737298',
+  techbuds: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png',
+  destro: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions_new.png?updatedAt=1779038470588',
+  area24one: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279',
 }
 
 const allProjects = [
@@ -57,21 +114,23 @@ const allProjects = [
     title: 'Atha Constructions',
     year: '2026',
     status: 'Live',
-    category: 'Real Estate',
+    category: 'Construction',
     images: shots.atha,
-    description: 'Construction and real estate website with CMS, lead capture, service pages, blogs, enquiry handling, and admin workflows.',
+    logo: logos.atha,
+    description: 'Lead-focused construction operations platform with consultation workflows, pricing visibility, cost estimators, inquiry handling, SEO controls, theme customization, and an internal admin system.',
     tech: ['React', 'Inertia.js', 'Laravel', 'MySQL', 'Brevo', 'SEO'],
     link: 'https://athaconstruction.in/',
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'FreshTick',
+    title: 'EnMart',
     year: '2026',
-    status: 'In Progress',
+    status: 'GitHub',
     category: 'Commerce',
-    images: ['/assets/projects/freshtick.png'],
-    description: 'Hybrid commerce platform with admin workflows, real-time tracking, payments, OAuth, and role-based access.',
-    tech: ['React.js', 'Inertia.js', 'Laravel', 'Firebase', 'Razorpay'],
+    images: shots.enmart,
+    logo: logos.enmart,
+    description: 'Mobile-first quick commerce infrastructure for rapid product discovery, multi-vertical store management, inventory workflows, delivery coordination, and scalable commerce administration.',
+    tech: ['React.js', 'Inertia.js', 'Laravel', 'PostgreSQL', 'Maps'],
     link: '',
     github: 'https://github.com/code-by-jerry',
   },
@@ -80,19 +139,21 @@ const allProjects = [
     year: '2025',
     status: 'Live',
     category: 'Commerce',
-    images: ['/assets/projects/jippymart.png'],
-    description: 'Food and mart delivery system with user, admin, restaurant panels, mobile APIs, queues, cron jobs, and payments.',
+    images: shots.jippymart,
+    logo: logos.jippymart,
+    description: 'Full-scale food delivery ecosystem with customer storefront, restaurant panel, centralized admin operations, restaurant onboarding, order workflows, mobile deep links, SEO infrastructure, and dashboards.',
     tech: ['Laravel', 'Firebase', 'MySQL', 'Razorpay', 'REST API'],
-    link: 'https://jippymart.in/',
+    link: 'https://jippymart.in/mart/',
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'Area24Realty',
+    title: 'Area24Reality',
     year: '2025',
     status: 'Live',
     category: 'Real Estate',
     images: shots.realty,
-    description: 'Property platform with regional browsing, luxury segments, map search, listings, CRM, dashboards, and SEO.',
+    logo: logos.realty,
+    description: 'Multi-region real estate operations platform with interactive property mapping, advanced listing management, analytics dashboards, owner and agent portals, and lead handling tools.',
     tech: ['Laravel', 'TypeScript', 'MySQL', 'Maps', 'SEO'],
     link: 'https://lightgoldenrodyellow-jaguar-333517.hostingersite.com/',
     github: 'https://github.com/code-by-jerry',
@@ -103,7 +164,8 @@ const allProjects = [
     status: 'Live',
     category: 'Portfolio',
     images: shots.nesthetix,
-    description: 'Interior design portfolio with CMS, lead management, image-rich project pages, animation, and SEO-focused structure.',
+    logo: logos.nesthetix,
+    description: 'Premium interior design business website with lead generation, SEO structure, lightweight CMS management, service showcasing, inquiry conversion, and easy content updates.',
     tech: ['React.js', 'Inertia.js', 'Laravel', 'ImageKit', 'GSAP'],
     link: 'https://nesthetixdesigns.com/',
     github: 'https://github.com/code-by-jerry',
@@ -112,9 +174,10 @@ const allProjects = [
     title: 'Area24One',
     year: '2025',
     status: 'Live',
-    category: 'Enterprise',
+    category: 'Services',
     images: shots.area24one,
-    description: 'Multi-vertical company site with CMS, lead capture, service sections, assistant logic, animations, and SEO.',
+    logo: logos.area24one,
+    description: 'Conversion-focused business platform with rule-based assistant systems, centralized CMS management, SEO controls, theme customization, and operational admin tooling.',
     tech: ['React.js', 'Laravel', 'TypeScript', 'Tailwind CSS', 'SEO'],
     link: 'https://area24one.com/',
     github: 'https://github.com/code-by-jerry',
@@ -125,7 +188,8 @@ const allProjects = [
     status: 'Live',
     category: 'Commerce',
     images: shots.baybee,
-    description: 'Mobile-first Shopify store with custom Liquid, checkout integrations, wishlist, and optimized storefront code.',
+    logo: logos.baybee,
+    description: 'End-to-end Shopify commerce store for a baby products brand with optimized storefront structure, product organization, cleaner purchase flows, and conversion-focused shopping experiences.',
     tech: ['Shopify', 'Liquid', 'GoKwik', 'Custom UI'],
     link: 'https://baybee.co.in/',
     github: 'https://github.com/code-by-jerry',
@@ -136,36 +200,92 @@ const allProjects = [
     status: 'Storefront',
     category: 'Commerce',
     images: shots.camiprod,
-    description: 'Custom Shopify storefront with tailored Liquid theme development, product presentation, and performance improvements.',
-    tech: ['Shopify', 'Liquid', 'CSS', 'JavaScript'],
+    logo: '',
+    description: 'Complete Shopify ecommerce store for health products with product browsing, collection structure, visual merchandising, responsive storefront pages, and conversion-focused purchase flows.',
+    tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Commerce'],
     link: '',
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'Aaran Billing',
+    title: 'ArranBilling',
+    year: '2024',
+    status: 'GitHub',
+    category: 'Operations',
+    images: shots.billing,
+    logo: logos.arran,
+    description: 'Accounting and inventory management system tailored for garment, knitting, and printing operations with GST-ready accounting, purchase and sales workflows, payables, receivables, and reporting.',
+    tech: ['Laravel', 'Livewire', 'PHP', 'MySQL', 'GST'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Edulearn',
+    year: '2024',
+    status: 'GitHub',
+    category: 'Education',
+    images: ['/assets/projects/atha.png'],
+    logo: '',
+    description: 'Structured learning management platform supporting onboarding-to-learning workflows, course management, tutorial delivery, student access, admin controls, and scalable educational content operations.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'Admin Panel', 'LMS'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'TechBuds',
     year: '2024',
     status: 'Live',
-    category: 'Enterprise',
-    images: ['/assets/projects/freshtick.png'],
-    description: 'Billing and ERP software with GST workflows, customizable modules, APIs, and real-time admin interfaces.',
-    tech: ['Laravel', 'Livewire', 'PHP', 'MySQL', 'REST API'],
-    link: 'https://aaran.org/',
+    category: 'Services',
+    images: [
+      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153008.png',
+      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20152941.png',
+      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153039.png',
+      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153056.png',
+      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153123.png',
+    ],
+    logo: logos.techbuds,
+    description: 'Digital services platform positioned around web engineering, mobile solutions, SEO systems, business platforms, and branding services with conversion-focused service presentation.',
+    tech: ['React', 'Tailwind CSS', 'SEO', 'Lead Forms', 'Branding'],
+    link: 'https://techbuds.online/',
     github: 'https://github.com/code-by-jerry',
   },
   {
     title: 'DestroSolutions',
     year: '2025',
     status: 'GitHub',
-    category: 'Enterprise',
+    category: 'Branding',
     images: ['/assets/projects/jippymart.png'],
-    description: 'Vehicle solution website and admin system with payment integration, animation, and business content management.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'GSAP', 'Razorpay'],
+    logo: logos.destro,
+    description: 'Software-defined vehicles branding platform focused on technical positioning, corporate communication, and scalable content presentation for vehicle technology solutions.',
+    tech: ['Laravel', 'PHP', 'MySQL', 'GSAP', 'Branding'],
     link: '',
     github: 'https://github.com/code-by-jerry',
   },
 ]
 
-const categories = ['All', 'Real Estate', 'Commerce', 'Enterprise', 'Portfolio']
+const categories = ['All', 'Construction', 'Real Estate', 'Commerce', 'Operations', 'Services', 'Education', 'Portfolio', 'Branding']
+
+function ProjectLogo({ project }) {
+  const initials = project.title
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+
+  return (
+    <div className="flex h-16 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border/70 bg-white p-3 shadow-[0_14px_30px_-24px_rgba(15,23,42,0.45)] ring-1 ring-black/[0.03]">
+      {project.logo ? (
+        <img
+          src={project.logo}
+          alt={`${project.title} logo`}
+          loading="lazy"
+          className="max-h-10 max-w-full object-contain contrast-125 saturate-110"
+        />
+      ) : (
+        <span className="text-sm font-black uppercase tracking-tight text-primary">{initials}</span>
+      )}
+    </div>
+  )
+}
 
 function Lightbox({ images, title, onClose }) {
   const [current, setCurrent] = useState(0)
@@ -313,7 +433,7 @@ export default function WorkArchive() {
           </div>
           <div className="mt-6">
             <Link
-              to="/case-studies"
+              to="/#work"
               className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/82 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary transition-all hover:border-accent/30 hover:text-accent"
             >
               View Detailed Case Studies
@@ -372,13 +492,16 @@ export default function WorkArchive() {
 
               <div className="flex min-w-0 flex-col justify-between">
                 <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-accent">
-                      {project.title}
-                    </h2>
-                    <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                      {project.category} - {project.year} - {project.status}
-                    </p>
+                  <div className="flex min-w-0 items-start gap-3">
+                    <ProjectLogo project={project} />
+                    <div className="min-w-0">
+                      <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-accent">
+                        {project.title}
+                      </h2>
+                      <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
+                        {project.category} - {project.year} - {project.status}
+                      </p>
+                    </div>
                   </div>
                   <div className="flex shrink-0 items-center gap-3">
                     <a
@@ -404,7 +527,7 @@ export default function WorkArchive() {
                   </div>
                 </div>
 
-                <p className="mt-2 line-clamp-2 text-xs leading-6 text-text-secondary">{project.description}</p>
+                <p className="mt-2 line-clamp-3 text-xs leading-6 text-text-secondary">{project.description}</p>
 
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {project.tech.slice(0, 5).map((tech) => (

@@ -2,7 +2,7 @@ export default function Experience() {
   const experiences = [
     {
       period: "Dec 2025 - Present",
-      title: "Senior Full Stack Developer - Atha Constructions",
+      title: "Full Stack Developer - Atha Constructions",
       stack: ["React.js", "Inertia.js", "Laravel", "PostgreSQL", "MySQL", "Firebase", "GCP"],
       desc: "Leading development of multiple production platforms including real estate and interior systems.",
       achievements: [

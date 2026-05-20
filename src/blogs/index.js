@@ -7,6 +7,33 @@ const blogModules = import.meta.glob("./*.md", {
 const fallbackImage =
   "https://ik.imagekit.io/codebyjerry/services/Web%20System.png?tr=f-auto,q-80";
 
+const orderedBlogImages = [
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%201.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%202.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%203.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%204.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%205.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%206.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%207.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%208.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%209.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2010.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2011.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2012.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2013.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2014.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2015.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2016.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2017.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2018.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2020.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2019.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2022.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2021.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2023.png",
+  "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%2024.png",
+];
+
 export const slugify = (value) =>
   String(value)
     .toLowerCase()
@@ -70,7 +97,11 @@ export const blogs = Object.entries(blogModules)
       content,
     };
   })
-  .sort((a, b) => new Date(b.date) - new Date(a.date));
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .map((blog, index) => ({
+    ...blog,
+    image: orderedBlogImages[index] || blog.image,
+  }));
 
 export const featuredBlogs = blogs.slice(0, 3);
 

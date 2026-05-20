@@ -222,7 +222,7 @@ export default function RemoteFullStackDeveloperIndia() {
               </p>
             </div>
             <Link
-              to="/case-studies"
+              to="/#work"
               className="inline-flex items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:-translate-y-1 hover:border-accent/40 hover:text-accent"
             >
               View Case Studies

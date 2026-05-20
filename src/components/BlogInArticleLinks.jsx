@@ -64,7 +64,7 @@ export default function BlogInArticleLinks({ categorySlug }) {
         </Link>
 
         <Link
-          to="/case-studies"
+          to="/#work"
           className="inline-flex items-center justify-center gap-2 rounded-full border border-border/70 bg-background/80 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-text-secondary transition-all hover:border-accent/50 hover:text-accent"
         >
           Browse Case Studies

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import {
   FaArrowRight,
@@ -167,10 +167,6 @@ const trustedByLogos = [
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aarun.webp?updatedAt=1777100830827",
   },
   {
-    name: "Freshtick",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/freshtick_new.png?updatedAt=1779241564019",
-  },
-  {
     name: "Jippymart",
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251",
   },
@@ -217,60 +213,19 @@ const serviceSlides = [
   },
 ];
 
-const aboutHighlights = [
-  {
-    title: "Operations Systems",
-    label:
-      "Dashboards, admin panels, and role-based workflows built for teams that run on data.",
-    proof: "Handles 10K+ users",
-    tags: ["Dashboards", "Automation"],
-    tone: "light",
-    image:
-      "https://ik.imagekit.io/codebyjerry/Positions/Operational%20Platform.png?updatedAt=1777095297113&tr=f-auto,q-80",
-  },
-  {
-    title: "Revenue Infrastructure",
-    label:
-      "End-to-end commerce and payment systems engineered to convert and scale without friction.",
-    proof: "2x conversion improvement",
-    tags: ["eCommerce", "Payments"],
-    tone: "accent",
-    image:
-      "https://ik.imagekit.io/codebyjerry/Positions/Revenue%20Infrastructure.png?updatedAt=1777095297030&tr=f-auto,q-80",
-  },
-  {
-    title: "Scalable Architecture",
-    label:
-      "Backend systems designed to grow with your business, with APIs, integrations, and deployment that hold under real load.",
-    proof: "40% faster on production",
-    tags: ["APIs", "Infrastructure"],
-    tone: "light",
-    image:
-      "https://ik.imagekit.io/codebyjerry/Positions/Backend%20&%20System%20Architecture.png?updatedAt=1777095297022&tr=f-auto,q-80",
-  },
-  {
-    title: "Business-Centric Engineering",
-    label:
-      "Every system is shaped around how the business actually operates, not just what the spec says.",
-    proof: "3+ years, 10+ systems shipped",
-    tags: ["Strategy", "Full Delivery"],
-    tone: "soft",
-    image:
-      "https://ik.imagekit.io/codebyjerry/Positions/Business-Driven%20Engineering.png?updatedAt=1777095297073&tr=f-auto,q-80",
-  },
-];
+// aboutHighlights removed — replaced by a curated 2x2 grid in the About section
 
 const aboutDeliverables = [
-  "I question the brief before writing code",
-  "Performance profiled before going live",
-  "Admin & ops flows treated as first-class",
-  "Built for the team that runs it daily",
+  "Revenue Infrastructure",
+  "Operational Platforms",
+  "Backend & APIs",
+  "Growth Systems",
 ];
 
 const aboutStats = [
   {
     value: "10+",
-    label: "Projects Delivered",
+    label: "Industry Verticals",
   },
   {
     value: "10K+",
@@ -284,7 +239,7 @@ const aboutStats = [
 
 const trustLogos = [
   "Atha Platform",
-  "FreshTick",
+  "EnMart",
   "DestroSolutions",
   "Commerce Systems",
   "Admin Platforms",
@@ -456,8 +411,7 @@ const blogPosts = [
       "Learn how to architect web applications that grow with your business, focusing on performance, maintainability, and real user needs rather than just features.",
     readTime: "5 min read",
     category: "Architecture",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/Web%20System.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%201.png",
     link: "/blog/building-scalable-web-applications",
   },
   {
@@ -466,8 +420,7 @@ const blogPosts = [
       "Generic platforms work for basic stores, but serious eCommerce businesses need custom backends for competitive advantages, unique workflows, and scalable growth.",
     readTime: "4 min read",
     category: "eCommerce",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/eCommerce%20Systems.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%202.png",
     link: "/blog/why-ecommerce-needs-custom-backend",
   },
   {
@@ -476,8 +429,7 @@ const blogPosts = [
       "Beyond pretty interfaces: how to build mobile experiences that increase engagement, retention, and ultimately drive revenue for your business.",
     readTime: "6 min read",
     category: "Mobile",
-    image:
-      "https://ik.imagekit.io/codebyjerry/services/Mobile%20&%20Integrations.png?tr=f-auto,q-80",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%203.png",
     link: "/blog/mobile-apps-that-drive-business-results",
   },
 ];
@@ -487,12 +439,12 @@ const faqData = [
     question:
       "How do you ensure projects are delivered on time and within budget?",
     answer:
-      "I work with fixed scopes and clear milestones. Each project starts with detailed planning, and I provide regular updates. My track record shows 100% on-time delivery with transparent pricing.",
+      "I begin with planning, architecture, and milestone-based delivery. Each project includes clear scope, regular updates, and a focus on the product outcome so the solution is built efficiently and transparently.",
   },
   {
     question: "What technologies do you specialize in?",
     answer:
-      "I specialize in modern full-stack development: Laravel/PHP for backends, React/Inertia.js for frontends, Flutter for mobile, and scalable cloud architectures. I choose the right tools for your business needs.",
+      "I specialize in modern product engineering stacks—frontends, APIs, mobile, and cloud-powered backend systems. I choose the right tools for the business need, including Laravel/PHP, React, Flutter, and scalable infrastructure patterns.",
   },
   {
     question: "Do you provide ongoing support after project completion?",
@@ -516,91 +468,68 @@ const faqData = [
   },
 ];
 
+const billingScreens = [
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182025.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182122.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182250.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182345.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182107.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182136.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182527.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182608.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182053.png",
+  "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20183413.png",
+];
+
+const camiprodScreens = [
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144833.png?updatedAt=1776506056407",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144853.png?updatedAt=1776506056398",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144548.png?updatedAt=1776506054013",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144659.png?updatedAt=1776506055429",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144745.png?updatedAt=1776506054151",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144819.png?updatedAt=1776506054135",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144802.png?updatedAt=1776506054356",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144915.png?updatedAt=1776506053788",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144641.png?updatedAt=1776506053279",
+  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144721.png?updatedAt=1776506052388",
+];
+
+const jippymartScreens = [
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151950.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152058.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152205.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151852.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152009.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152135.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151846.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20152026.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151637.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151838.png",
+  "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151654.png",
+];
+
+const enmartScreens = [
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(3).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM.jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(4).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM.jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(1).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%203.59.44%20PM.jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(5).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(2).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(2).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(3).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(1).jpeg",
+  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(4).jpeg",
+];
+
 const caseStudies = [
   {
-    title: "Realty",
-    category: "Real Estate Platform",
-    tagline:
-      "Property-led product screens presented as a polished visual gallery.",
-    images: [
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174924.png?updatedAt=1776506172591&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174906.png?updatedAt=1776506172562&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175012.png?updatedAt=1776506172472&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174958.png?updatedAt=1776506172458&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180325.png?updatedAt=1776506172517&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180242.png?updatedAt=1776506172393&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175029.png?updatedAt=1776506172359&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180358.png?updatedAt=1776506172355&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175047.png?updatedAt=1776506172201&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175904.png?updatedAt=1776506172060&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175112.png?updatedAt=1776506171959&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175101.png?updatedAt=1776506171582&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175842.png?updatedAt=1776506171457&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175146.png?updatedAt=1776506171372&tr=f-auto,q-80",
-    ],
-  },
-  {
-    title: "Nesthetix Design",
-    category: "Interior Design Portfolio",
-    tagline:
-      "Brand-first interiors work shown through refined full-page compositions.",
-    images: [
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174304.png?updatedAt=1776506131947&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174404.png?updatedAt=1776506131779&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174512.png?updatedAt=1776506131736&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174224.png?updatedAt=1776506131740&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174324.png?updatedAt=1776506131733&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174538.png?updatedAt=1776506131619&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174447.png?updatedAt=1776506131601&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174552.png?updatedAt=1776506131374&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174755.png?updatedAt=1776506131259&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174349.png?updatedAt=1776506131185&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174742.png?updatedAt=1776506131100&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174244.png?updatedAt=1776506131014&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174143.png?updatedAt=1776506130585&tr=f-auto,q-80",
-    ],
-  },
-  {
-    title: "Camiprod",
-    category: "Shopify Store",
-    tagline:
-      "Commerce pages arranged as a premium product gallery with visual depth.",
-    images: [
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144833.png?updatedAt=1776506056407&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144853.png?updatedAt=1776506056398&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144548.png?updatedAt=1776506054013&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144659.png?updatedAt=1776506055429&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144745.png?updatedAt=1776506054151&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144819.png?updatedAt=1776506054135&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144802.png?updatedAt=1776506054356&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144915.png?updatedAt=1776506053788&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144641.png?updatedAt=1776506053279&tr=f-auto,q-80",
-    ],
-  },
-  {
-    title: "Baybee",
-    category: "eCommerce Experience",
-    tagline:
-      "Mobile-first storefront visuals surfaced as a focused case-study gallery.",
-    images: [
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181416.png?updatedAt=1776505955600&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181443.png?updatedAt=1776505955588&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181400.png?updatedAt=1776505955585&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181336.png?updatedAt=1776505955591&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181351.png?updatedAt=1776505955569&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181304.png?updatedAt=1776505955269&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181244.png?updatedAt=1776505955284&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181232.png?updatedAt=1776505955229&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181206.png?updatedAt=1776505955012&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181222.png?updatedAt=1776505954940&tr=f-auto,q-80",
-    ],
-  },
-  {
     title: "Atha Constructions",
-    category: "Construction Website",
+    category: "Construction Operations",
     tagline:
-      "Lead-generation and CMS pages displayed with the same editorial gallery rhythm.",
+      "Lead-focused construction website with consultation workflows, pricing visibility, inquiry handling, and admin operations.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093",
     images: [
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145530.png?updatedAt=1776505896460&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145546.png?updatedAt=1776505896414&tr=f-auto,q-80",
@@ -608,35 +537,94 @@ const caseStudies = [
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145624.png?updatedAt=1776505896411&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145311.png?updatedAt=1776505896420&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145446.png?updatedAt=1776505896420&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145432.png?updatedAt=1776505896428&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145605.png?updatedAt=1776505896413&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145404.png?updatedAt=1776505896421&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145328.png?updatedAt=1776505896447&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145343.png?updatedAt=1776505896417&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145640.png?updatedAt=1776505896409&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145517.png?updatedAt=1776505896171&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145501.png?updatedAt=1776505896177&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145219.png?updatedAt=1776505895590&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145126.png?updatedAt=1776505895521&tr=f-auto,q-80",
+    ],
+  },
+  {
+    title: "JippyMart",
+    category: "Food Delivery",
+    tagline:
+      "Full-scale food delivery ecosystem with customer storefront, restaurant panel, admin operations, and delivery coordination.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251",
+    images: jippymartScreens,
+  },
+  {
+    title: "Area24Reality",
+    category: "Real Estate",
+    tagline:
+      "Multi-region real estate platform with interactive mapping, listing management, dashboards, portals, and lead handling.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832",
+    images: [
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174924.png?updatedAt=1776506172591&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174906.png?updatedAt=1776506172562&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20175012.png?updatedAt=1776506172472&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174958.png?updatedAt=1776506172458&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180325.png?updatedAt=1776506172517&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20180242.png?updatedAt=1776506172393&tr=f-auto,q-80",
+    ],
+  },
+  {
+    title: "Aaran Billing",
+    category: "Accounting & Inventory",
+    tagline:
+      "GST-ready accounting and inventory system for garment, knitting, and printing operations with transaction workflows and reporting.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170",
+    images: billingScreens,
+  },
+  {
+    title: "EnMart",
+    category: "Quick Commerce",
+    tagline:
+      "Mobile-first quick commerce platform with product discovery, store operations, inventory workflows, and delivery coordination.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857",
+    images: enmartScreens,
+  },
+  {
+    title: "Baybee",
+    category: "Shopify eCommerce",
+    tagline:
+      "Conversion-focused Shopify storefront with optimized product structure, mobile buying flow, and commerce presentation.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
+    images: [
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181416.png?updatedAt=1776505955600&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181443.png?updatedAt=1776505955588&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181400.png?updatedAt=1776505955585&tr=f-auto,q-80",
+    ],
+  },
+  {
+    title: "Camiprod",
+    category: "Shopify Health Commerce",
+    tagline:
+      "Complete Shopify ecommerce storefront for health products with product browsing, collection structure, responsive pages, and conversion-focused purchase flows.",
+    logo: "",
+    images: camiprodScreens,
+  },
+  {
+    title: "Nesthetix Design",
+    category: "Interior Design",
+    tagline:
+      "Premium design business website with lead generation, service showcasing, SEO structure, CMS management, and project presentation.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?updatedAt=1777100737298",
+    images: [
+      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174304.png?updatedAt=1776506131947&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174404.png?updatedAt=1776506131779&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174512.png?updatedAt=1776506131736&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174224.png?updatedAt=1776506131740&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174324.png?updatedAt=1776506131733&tr=f-auto,q-80",
     ],
   },
   {
     title: "Area24One",
-    category: "Multi-Vertical Company Site",
+    category: "Business Platform",
     tagline:
-      "Enterprise screens and landing flows surfaced in a more visual showcase format.",
+      "Conversion-focused business platform with centralized CMS management, SEO controls, assistant logic, and admin tooling.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279",
     images: [
       "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180920.png?updatedAt=1776505783378&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180816.png?updatedAt=1776505783376&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180731.png?updatedAt=1776505783393&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180834.png?updatedAt=1776505783335&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180935.png?updatedAt=1776505783299&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180906.png?updatedAt=1776505783307&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180753.png?updatedAt=1776505783326&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180809.png?updatedAt=1776505783224&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180640.png?updatedAt=1776505783223&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180655.png?updatedAt=1776505783135&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180709.png?updatedAt=1776505783173&tr=f-auto,q-80",
     ],
   },
 ];
@@ -644,148 +632,262 @@ const caseStudies = [
 const detailedCaseStudies = [
   {
     id: 1,
-    client: "UrbanProp Realty",
-    industry: "Real Estate",
-    serviceType: "Web Application + Backend",
+    client: "JippyMart",
+    industry: "Quick Commerce / Food Delivery",
+    serviceType: "Full Commerce Platform + Operations",
     challenge:
-      "Manual property management across spreadsheets. Agents spending 3+ hours daily on admin tasks. Zero visibility into pipeline. Lost 30% of deals due to poor follow-up.",
+      "Fragmented order flow, slow delivery coordination, and high cart drop during checkout leading to missed daily order targets.",
     solution:
-      "Built custom web app with intelligent dashboards, CRM integration, automated lead routing, and mobile-responsive property management system. Real-time analytics on agent performance and deal pipeline.",
+      "Built an end-to-end food delivery platform with streamlined restaurant onboarding, real-time order routing, delivery tracking, and optimized checkout flows. Implemented operational dashboards for drivers and restaurants.",
     results: [
       {
-        metric: "Revenue Impact",
-        before: "-30% deal loss",
-        after: "+45% close rate",
-        icon: FaChartLine,
-        improvement: "75% improvement",
-      },
-      {
-        metric: "Operational Efficiency",
-        before: "3 hrs admin/day",
-        after: "45 min admin/day",
-        icon: FaClock,
-        improvement: "85% time saved",
-      },
-      {
-        metric: "User Engagement",
-        before: "20 properties/month",
-        after: "120+ properties/month",
+        metric: "Order Throughput",
+        before: "~1.2k/day",
+        after: "~4.8k/day",
         icon: FaRocket,
-        improvement: "6x increase",
+        improvement: "4x increase",
       },
       {
-        metric: "System Performance",
-        before: "12 sec load time",
-        after: "0.8 sec load time",
-        icon: FaBolt,
-        improvement: "15x faster",
+        metric: "Delivery SLA",
+        before: "60% on-time",
+        after: "92% on-time",
+        icon: FaClock,
+        improvement: "53% improvement",
       },
-    ],
-    technologies: ["Laravel", "React", "PostgreSQL", "AWS", "Real-time APIs"],
-    timeline: "4 months",
-    impact:
-      "Client closed $2.1M in additional deals in first year using the system",
-  },
-  {
-    id: 2,
-    client: "StyleVault eCommerce",
-    industry: "Fashion & Apparel",
-    serviceType: "eCommerce Platform + SEO",
-    challenge:
-      "Shopify store with 2% conversion rate. $15 CAC but 60% cart abandonment. Losing $50K/month in potential sales. Slow mobile checkout (8 sec).",
-    solution:
-      "Rebuilt checkout flow, optimized images, implemented one-page checkout, added exit-intent recovery emails, improved Core Web Vitals. SEO optimization increased organic traffic by 180%.",
-    results: [
       {
         metric: "Conversion Rate",
-        before: "2%",
-        after: "6.2%",
+        before: "1.8%",
+        after: "5.6%",
         icon: FaCartArrowDown,
         improvement: "3.1x improvement",
       },
       {
-        metric: "Revenue Impact",
-        before: "$50K lost/month",
-        after: "+$185K/month",
-        icon: FaMoneyBillWave,
-        improvement: "210% increase",
-      },
-      {
-        metric: "Cart Abandonment",
-        before: "60%",
-        after: "22%",
-        icon: FaCrosshairs,
-        improvement: "38% reduction",
-      },
-      {
-        metric: "Page Load Time",
-        before: "8 sec",
-        after: "1.2 sec",
+        metric: "Mobile Load Time",
+        before: "6s",
+        after: "0.9s",
         icon: FaTachometerAlt,
-        improvement: "87% faster",
+        improvement: "85% faster",
       },
     ],
-    technologies: [
-      "Shopify",
-      "React Liquid",
-      "Next.js",
-      "Node.js",
-      "SEO Optimization",
-    ],
-    timeline: "3 months",
+    technologies: ["React", "Node.js", "Postgres", "Redis", "Realtime APIs"],
+    timeline: "5 months",
     impact:
-      "$2.2M additional annual revenue from conversion improvements alone",
+      "Scaled to multiple city clusters; daily GMV increased 3.5x within 6 months",
+  },
+  {
+    id: 2,
+    client: "Area24Reality",
+    industry: "Real Estate",
+    serviceType: "Property Platform + CRM",
+    challenge:
+      "Low discoverability, poor lead routing, and inconsistent listing publishing workflows causing loss of buyer interest.",
+    solution:
+      "Delivered a regional property discovery experience, agent-facing CRM, and automated lead routing with SEO-optimized listing pages and analytics for market segments.",
+    results: [
+      {
+        metric: "Leads / Month",
+        before: "120",
+        after: "840",
+        icon: FaUsers,
+        improvement: "7x increase",
+      },
+      {
+        metric: "Close Rate",
+        before: "8%",
+        after: "28%",
+        icon: FaChartLine,
+        improvement: "3.5x improvement",
+      },
+      {
+        metric: "Listing Time",
+        before: "2 days",
+        after: "10 min",
+        icon: FaCogs,
+        improvement: "97% faster",
+      },
+      {
+        metric: "SEO Traffic",
+        before: "+0",
+        after: "+180%",
+        icon: FaSignal,
+        improvement: "Significant uplift",
+      },
+    ],
+    technologies: ["Laravel", "React", "MySQL", "Maps", "SEO"],
+    timeline: "4 months",
+    impact: "Increased organic inquiries and reduced manual publishing overhead for agent teams",
   },
   {
     id: 3,
-    client: "BuildFlow SaaS",
-    industry: "Construction Management",
-    serviceType: "Business Platform + Backend",
+    client: "EnMart",
+    industry: "Quick Commerce",
+    serviceType: "Mobile-first Q-commerce Platform",
     challenge:
-      "Legacy system crashing under load (100+ concurrent users). Downtime costing $5K/hour. Poor API integration with third-party tools. High churn (25% monthly).",
+      "Slow product discovery and inventory sync issues causing failed orders and high refund rates.",
     solution:
-      "Rebuilt entire platform with microservices architecture, horizontal scaling, improved APIs, real-time notifications, and granular role-based access. 99.9% uptime SLA achieved.",
+      "Built a mobile-first storefront with inventory-first architecture, optimized product discovery, streamlined checkout, and headless integrations for rapid order fulfillment.",
     results: [
       {
-        metric: "System Reliability",
-        before: "87% uptime",
-        after: "99.9% uptime",
+        metric: "Failed Orders",
+        before: "7%",
+        after: "0.5%",
         icon: FaShieldAlt,
-        improvement: "12x reliability",
+        improvement: "~86% reduction",
       },
       {
-        metric: "Concurrent Users",
-        before: "100 users max",
-        after: "5000+ users",
+        metric: "Checkout Conversion",
+        before: "2.1%",
+        after: "6.8%",
+        icon: FaCartArrowDown,
+        improvement: "3.2x improvement",
+      },
+      {
+        metric: "Time-to-purchase",
+        before: "120s",
+        after: "18s",
+        icon: FaRocket,
+        improvement: "6.6x faster",
+      },
+      {
+        metric: "Fulfillment SLA",
+        before: "70%",
+        after: "96%",
         icon: FaUsers,
-        improvement: "50x capacity",
+        improvement: "37% improvement",
+      },
+    ],
+    technologies: ["React", "Next.js", "Node", "Redis", "Headless Commerce"],
+    timeline: "3 months",
+    impact: "Lower refunds, higher repeat purchase rate, and stronger unit economics",
+  },
+  {
+    id: 4,
+    client: "ArranBilling",
+    industry: "Accounting & Inventory",
+    serviceType: "Accounting Platform",
+    challenge:
+      "Manual invoicing, reconciliation errors, and slow monthly closing timelines impacting cashflow visibility.",
+    solution:
+      "Delivered a GST-ready accounting and inventory platform with automated invoicing, reconciliation workflows, and operational reporting tailored to manufacturing operations.",
+    results: [
+      {
+        metric: "Invoicing Time",
+        before: "3 days",
+        after: "< 2 hours",
+        icon: FaClock,
+        improvement: "> 95% faster",
       },
       {
-        metric: "Customer Churn",
-        before: "25% monthly",
-        after: "4% monthly",
-        icon: FaSyncAlt,
-        improvement: "84% reduction",
-      },
-      {
-        metric: "API Performance",
-        before: "800ms avg",
-        after: "45ms avg",
+        metric: "Reconciliation Errors",
+        before: "4%",
+        after: "0.1%",
         icon: FaBolt,
-        improvement: "18x faster",
+        improvement: "> 97% reduction",
+      },
+      {
+        metric: "Close Time",
+        before: "10 days",
+        after: "1 day",
+        icon: FaTachometerAlt,
+        improvement: "90% faster",
+      },
+      {
+        metric: "Operational Accuracy",
+        before: "Manual",
+        after: "Automated",
+        icon: FaDatabase,
+        improvement: "Improved reliability",
       },
     ],
-    technologies: [
-      "Node.js",
-      "Docker",
-      "PostgreSQL",
-      "Redis",
-      "AWS Kubernetes",
-      "gRPC",
+    technologies: ["Laravel", "Vue", "MySQL", "Accounting Integrations"],
+    timeline: "4 months",
+    impact: "Faster month-end closes and more accurate cashflow reporting for operations",
+  },
+  {
+    id: 5,
+    client: "Baybee",
+    industry: "Shopify Commerce",
+    serviceType: "Shopify Storefront",
+    challenge:
+      "Low mobile conversion and slow product organization causing drop-offs and lower average order value.",
+    solution:
+      "Rebuilt storefront with optimized product structure, fast mobile checkout, and conversion-focused UI improvements plus performance tuning.",
+    results: [
+      {
+        metric: "Conversion Rate",
+        before: "1.9%",
+        after: "5.4%",
+        icon: FaCartArrowDown,
+        improvement: "2.8x improvement",
+      },
+      {
+        metric: "Average Order Value",
+        before: "$32",
+        after: "$48",
+        icon: FaMoneyBillWave,
+        improvement: "50% increase",
+      },
+      {
+        metric: "Mobile Load Time",
+        before: "7s",
+        after: "1s",
+        icon: FaTachometerAlt,
+        improvement: "86% faster",
+      },
+      {
+        metric: "Repeat Customers",
+        before: "8%",
+        after: "18%",
+        icon: FaUsers,
+        improvement: "2.25x increase",
+      },
     ],
-    timeline: "6 months",
-    impact:
-      "$12M valuation increase. 300+ enterprise clients on platform. $4.2M ARR achieved",
+    technologies: ["Shopify", "Liquid", "React", "SEO"],
+    timeline: "2.5 months",
+    impact: "Material uplift in conversion and revenue within a single season",
+  },
+  {
+    id: 6,
+    client: "TechBuds",
+    industry: "Digital Services",
+    serviceType: "Service Platform + Lead Gen",
+    challenge:
+      "Scattered service pages and poor lead capture resulting in low qualified inquiries and inconsistent branding.",
+    solution:
+      "Consolidated service offerings into a conversion-focused platform, improved SEO structure, and built lead qualification workflows and booking funnels.",
+    results: [
+      {
+        metric: "Qualified Leads",
+        before: "12/mo",
+        after: "92/mo",
+        icon: FaSignal,
+        improvement: "7.6x increase",
+      },
+      {
+        metric: "Contact Form Conv.",
+        before: "0.8%",
+        after: "5.2%",
+        icon: FaEnvelope,
+        improvement: "6.5x improvement",
+      },
+      {
+        metric: "Organic Traffic",
+        before: "+0",
+        after: "+140%",
+        icon: FaChartLine,
+        improvement: "Significant uplift",
+      },
+      {
+        metric: "Brand Consistency",
+        before: "Multiple templates",
+        after: "Unified system",
+        icon: FaCogs,
+        improvement: "Improved clarity",
+      },
+    ],
+    technologies: ["React", "Tailwind", "Node", "SEO"],
+    timeline: "2 months",
+    impact: "Higher-quality inbound leads and clearer service positioning for sales",
   },
 ];
 
@@ -1266,13 +1368,13 @@ function ServicesSection({ onContactClick }) {
               Services
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-              Professional Web, Mobile & Backend Development Services
+              Product engineering for real business platforms
             </h2>
           </div>
           <div className="max-w-2xl">
             <p className="text-sm leading-7 text-text-secondary sm:text-base">
-              From customer-facing experiences to backend architecture, serious
-              execution, not generic freelance output.
+              From customer-facing experiences to backend architecture, high-velocity
+              product engineering for systems you can launch and scale.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
@@ -1280,7 +1382,7 @@ function ServicesSection({ onContactClick }) {
                 onClick={onContactClick}
                 className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_-18px_rgba(17, 24, 39,0.72)] transition-all hover:-translate-y-1"
               >
-                Discuss a Build
+                Discuss a system build
                 <FaArrowRight size={11} />
               </button>
               <a
@@ -1468,7 +1570,7 @@ function CaseStudiesSection() {
           className="relative mx-auto mt-10 hidden md:block"
           style={{
             perspective: "1100px",
-            height: "380px",
+            height: "460px",
           }}
         >
           {currentImages.map((src, idx) => {
@@ -1480,7 +1582,7 @@ function CaseStudiesSection() {
               <div
                 key={idx}
                 onClick={() => slot !== 0 && setActiveImage(idx)}
-                className="absolute left-1/2 top-0 w-[52%] max-w-[520px] -translate-x-1/2 overflow-hidden rounded-[1.25rem] border border-border/70 bg-background transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:w-[55%]"
+                className="absolute left-1/2 top-0 w-[58%] max-w-[640px] -translate-x-1/2 overflow-hidden rounded-[1.25rem] border border-border/70 bg-background transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:w-[62%]"
                 style={{
                   ...style,
                   cursor: slot !== 0 ? "pointer" : "default",
@@ -1496,7 +1598,7 @@ function CaseStudiesSection() {
                   src={src}
                   alt={`${currentProject.title} screen ${idx + 1}`}
                   loading={abs === 0 ? "eager" : "lazy"}
-                  className="block h-auto w-full"
+                  className="block h-auto max-h-[430px] w-full object-contain"
                 />
                 {/* removed bottom gradient */}
               </div>
@@ -1517,7 +1619,7 @@ function AboutSection() {
       className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
     >
       <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
-        <div className="relative overflow-hidden rounded-[2.2rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-6 py-8 text-white shadow-[0_28px_70px_-38px_rgba(15,23,42,0.5)] sm:px-8 sm:py-10 lg:px-10">
+        <div className="relative overflow-hidden rounded-[2.2rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-6 py-8 text-white shadow-[0_28px_70px_-38px_rgba(15,23,42,0.5)] sm:px-8 sm:py-10 lg:px-10 lg:flex lg:items-center">
           <div className="pointer-events-none absolute -left-8 top-10 h-36 w-36 rounded-full bg-[rgba(17, 24, 39,0.24)] blur-3xl" />
           <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-[rgba(55, 65, 81,0.16)] blur-3xl" />
           <div className="pointer-events-none absolute bottom-0 left-1/3 h-28 w-28 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
@@ -1527,16 +1629,19 @@ function AboutSection() {
               About
             </p>
             <h2 className="mt-4 max-w-lg font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.8rem] lg:leading-[1.02]">
-              I don't just build websites. I build systems businesses depend on.
+              I don’t just build websites.
+              <br />
+              I build systems businesses
+              <br />
+              run on.
             </h2>
             <p className="mt-6 max-w-xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
-              Full Stack Engineer with 3+ years shipping production systems for
-              real businesses, with platforms that handle real users, real
-              operations, and real growth.
+              From ecommerce infrastructure and internal dashboards to backend
+              platforms and automation workflows, I build scalable digital
+              products engineered for real operations.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              I work best with founders and teams who care about the outcome,
-              not just the output.
+              Systems engineered for teams that rely on them every day.
             </p>
 
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -1557,62 +1662,48 @@ function AboutSection() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {aboutHighlights.map((item) => (
-            <article
-              key={item.title}
-              className="group overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/95 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_60px_-28px_rgba(17, 24, 39,0.2)]"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                loading="lazy"
-                className="block h-full min-h-[200px] w-full object-cover"
-              />
-              <div className="hidden">
-                {/* Title */}
-                <div>
-                  <p
-                    className={`font-display text-xl font-bold leading-tight ${item.tone === "accent" ? "text-white" : "text-primary"}`}
-                  >
-                    {item.title}
-                  </p>
-                  <p
-                    className={`mt-3 text-sm leading-6 ${item.tone === "accent" ? "text-white/75" : "text-text-secondary"}`}
-                  >
-                    {item.label}
-                  </p>
-                </div>
+        <div className="grid gap-4 sm:grid-cols-2 h-full">
+          {/* Revenue image (bare) */}
+          <img
+            src="https://ik.imagekit.io/codebyjerry/revenue_op.png"
+            alt="Revenue Infrastructure"
+            loading="lazy"
+            className="block h-full w-full object-contain"
+          />
 
-                {/* Proof + tags */}
-                <div className="mt-5">
-                  {item.proof && (
-                    <p
-                      className={`mb-3 text-[10px] font-bold uppercase tracking-[0.22em] ${item.tone === "accent" ? "text-white/70" : "text-accent/70"}`}
-                    >
-                      {item.proof}
-                    </p>
-                  )}
-                  {item.tags && (
-                    <div className="flex flex-wrap gap-1.5">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className={`rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${
-                            item.tone === "accent"
-                              ? "bg-white/12 text-white/70"
-                              : "bg-accent/8 text-accent/80"
-                          }`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
+          {/* Metric card (solid theme) */}
+          <article className="overflow-hidden rounded-[1.75rem] h-full bg-primary text-white p-6 flex items-center shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Key Metrics</p>
+              <h3 className="mt-3 font-display text-2xl font-bold">Production Metrics</h3>
+              <ul className="mt-4 space-y-3 text-white/90">
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">40%</span><span className="text-sm">Faster load times</span></li>
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">2x</span><span className="text-sm">Conversion improvement</span></li>
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">10k+</span><span className="text-sm">Active users on live systems</span></li>
+              </ul>
+            </div>
+          </article>
+
+          {/* Metric card (solid theme) */}
+          <article className="overflow-hidden rounded-[1.75rem] h-full bg-primary text-white p-6 flex items-center shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Operational Stats</p>
+              <h3 className="mt-3 font-display text-2xl font-bold">Operational Health</h3>
+              <ul className="mt-4 space-y-3 text-white/90">
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">99.9%</span><span className="text-sm">Uptime</span></li>
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">-80%</span><span className="text-sm">Manual tasks reduced</span></li>
+                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">92%</span><span className="text-sm">Team adoption</span></li>
+              </ul>
+            </div>
+          </article>
+
+          {/* Growth image (bare) */}
+          <img
+            src="https://ik.imagekit.io/codebyjerry/growth_op.png"
+            alt="Growth Systems"
+            loading="lazy"
+            className="block h-full w-full object-contain"
+          />
         </div>
       </div>
 
@@ -1718,17 +1809,16 @@ function TrustSection() {
               Trust
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-[3rem] lg:leading-[1.02]">
-              Credibility built through shipped work, not generic freelance
-              claims.
-            </h2>
+                Product engineering credibility is proven through shipped systems,
+                data, and outcomes.
+              </h2>
           </div>
           <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base sm:leading-8">
-            Freelancers show words. Professionals show systems, data, and
-            outcomes. Here's what the work actually produced.
+            This is not a portfolio of demos. These are operational systems built
+            to solve business problems and scale reliably.
           </p>
         </div>
 
-        {/* Client logos */}
         <div className="mt-8 flex flex-wrap gap-3">
           {trustLogos.map((item) => (
             <div
@@ -2091,26 +2181,26 @@ function FAQSection() {
             FAQ
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-            Common Questions About Working Together
-          </h2>
+              How product engineering collaboration works
+            </h2>
+          </div>
+          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+            Practical answers for teams choosing a product engineer, not a generic
+            developer.
+          </p>
         </div>
-        <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-          Straight answers to help you decide if we're a good fit. No sales
-          pitch, just clarity on how I work and what you can expect.
-        </p>
-      </div>
 
-      <div className="mt-10 space-y-4 lg:mt-12">
-        {faqData.map((faq, index) => (
-          <div
-            key={index}
-            className="overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/95 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)]"
-          >
-            <button
-              onClick={() => toggleItem(index)}
-              className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-surface/50 sm:p-7"
-              aria-expanded={openItems.has(index)}
+        <div className="mt-10 space-y-4 lg:mt-12">
+          {faqData.map((faq, index) => (
+            <div
+              key={index}
+              className="overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/95 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)]"
             >
+              <button
+                onClick={() => toggleItem(index)}
+                className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-surface/50 sm:p-7"
+                aria-expanded={openItems.has(index)}
+              >
               <h3 className="font-display text-lg font-bold leading-tight text-primary sm:text-xl">
                 {faq.question}
               </h3>
@@ -2233,7 +2323,6 @@ export default function FreelanceLanding() {
   const navLinks = [
     { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
-    { label: "Case Studies", to: "/case-studies" },
     { label: "Services", to: "/services" },
     { label: "Blog", to: "/blog" },
   ];
@@ -2331,9 +2420,9 @@ export default function FreelanceLanding() {
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <SEO
-        title="Code by Jerry | Full-Stack Developer for Scalable Business Systems"
-        description="Remote full-stack developer building custom web apps, business systems, eCommerce platforms, APIs, automation tools, dashboards, and startup MVPs using the right stack."
-        keywords="remote full stack developer, custom business software developer, web application developer, business automation developer, eCommerce developer, API integration developer, startup MVP developer"
+        title="Code by Jerry | Product Engineer for Scalable Business Systems"
+        description="Remote product engineer building production-grade platforms, operational systems, automation workflows, analytics dashboards, and commerce engines that scale reliably."
+        keywords="product engineer, product engineering, business systems developer, operational software, automation platform developer, analytics dashboard engineering, scalable web application developer"
         schema={schema}
       />
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
@@ -2447,14 +2536,14 @@ export default function FreelanceLanding() {
               </h1>
 
               <h2 className="mt-6 max-w-lg text-[2.2rem] font-display font-bold leading-[0.98] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
-                <span className="block">Building Real-World</span>
-                <span className="block">Digital Products</span>
-                <span className="block">Across Industries.</span>
+                <span className="block">Building production-grade</span>
+                <span className="block">digital systems</span>
+                <span className="block">for growth-stage businesses.</span>
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-7 text-text-secondary sm:text-[1.05rem] sm:leading-8">
-                From ecommerce and real estate platforms to dashboards, LMS
-                systems, billing software, and business automation tools.
+                Ecommerce, operations, analytics, and automation systems built to
+                run reliably in real business environments.
               </p>
 
               {/* CTAs */}
@@ -2471,18 +2560,18 @@ export default function FreelanceLanding() {
                   onClick={() => setContactOpen(true)}
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
-                  Let&apos;s Build Something
+                  Start a systems review
                 </button>
               </div>
 
               <p className="mt-6 max-w-xl text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary">
-                Ecommerce • LMS • Real Estate • Shopify • Automation
+                Ecommerce • Operations • Automation • Analytics • Product Systems
               </p>
 
               {/* Trust indicators */}
               <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
                 {[
-                  { value: "10+", label: "Projects Delivered" },
+                  { value: "10+", label: "Industry Verticals" },
                   { value: "10K+", label: "Users Supported" },
                   { value: "3+", label: "Years Experience" },
                 ].map((item, i) => (
@@ -2511,7 +2600,7 @@ export default function FreelanceLanding() {
           {/* Trusted By / Feature Bar */}
           <div className="mt-6 border-t border-border/40 pt-10 sm:mt-12">
             <p className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-secondary/60">
-              Helping businesses scale across Industries
+              Helping businesses scale with systems that perform
             </p>
             <div className="mt-8 overflow-hidden">
               <style>{`
@@ -2727,11 +2816,11 @@ export default function FreelanceLanding() {
                   Get in Touch
                 </p>
                 <h2 className="mt-4 max-w-xl font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-                  Share Your Project Details
+                  Share your product vision
                 </h2>
                 <p className="mt-5 max-w-xl text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">
                   Fill out the form and I'll get back to you within 24 hours
-                  with a clear perspective on your project.
+                  with a clear perspective on your system and next steps.
                 </p>
               </div>
 
@@ -2741,8 +2830,8 @@ export default function FreelanceLanding() {
                     Why reach out?
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-text-secondary">
-                    I help turn business bottlenecks into scalable systems that
-                    are practical to run and easier to grow.
+                    I help turn business bottlenecks into scalable systems teams
+                    can run, grow, and rely on every day.
                   </p>
                 </div>
 
@@ -2799,12 +2888,12 @@ export default function FreelanceLanding() {
                   Final CTA
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[3.2rem] lg:leading-[1]">
-                  Let&apos;s Build Something Scalable &amp; Impactful
+                  Build the system your business runs on
                 </h2>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
-                  If you need a developer who can turn a rough concept, business
-                  bottleneck, or growth-stage product into a reliable system,
-                  this is the point to start the conversation.
+                  If you need a product engineer who turns a business challenge,
+                  workflow bottleneck, or growth-stage opportunity into a reliable
+                  production system, this is the point to start the conversation.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">

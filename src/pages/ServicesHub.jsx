@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   FaArrowRight,
   FaBolt,
@@ -25,6 +26,7 @@ const services = [
       "Scalable dashboards, portals, admin systems, and workflow-driven web apps built around how your business actually operates.",
     href: "/services/custom-web-app-development",
     icon: FaCode,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/web_serv.png",
     keywords: ["Business systems", "Dashboards", "Portals"],
   },
   {
@@ -33,6 +35,7 @@ const services = [
       "Online stores, checkout flows, payment integrations, and backend operations built to support sales and fulfillment.",
     href: "/services/ecommerce-development",
     icon: FaShoppingCart,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/ecommerce_serv.png",
     keywords: ["Stores", "Checkout", "Payments"],
   },
   {
@@ -41,6 +44,7 @@ const services = [
       "Mobile and cross-platform app experiences connected cleanly with backend systems, APIs, and business workflows.",
     href: "/services/mobile-app-development",
     icon: FaMobileAlt,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/Mobile_serv.png",
     keywords: ["Apps", "Hybrid", "API-ready"],
   },
   {
@@ -49,6 +53,7 @@ const services = [
       "Reliable APIs, database structure, payment gateways, third-party integrations, and backend logic for growing products.",
     href: "/services/api-integration-development",
     icon: FaDatabase,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/backend_serv.png",
     keywords: ["APIs", "Integrations", "Backend"],
   },
   {
@@ -57,6 +62,7 @@ const services = [
       "Automate approvals, notifications, internal workflows, and system-to-system operations so teams save time and reduce errors.",
     href: "/services/business-automation",
     icon: FaRocket,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/Business_serv.png",
     keywords: ["Automation", "Workflows", "Reliability"],
   },
   {
@@ -65,6 +71,7 @@ const services = [
       "Technical SEO, performance optimization, Core Web Vitals improvements, and conversion-focused growth foundations.",
     href: "/services/seo-performance-optimization",
     icon: FaChartLine,
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/seo_growth_serv.png",
     keywords: ["SEO", "Speed", "Growth"],
   },
 ];
@@ -77,6 +84,63 @@ const outcomes = [
   "Build systems your team can operate daily",
   "Choose the right stack for the project",
 ];
+
+function ServiceCard({ service }) {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className=""
+      style={{ perspective: "1000px" }}
+      onMouseEnter={() => setFlipped(true)}
+      onMouseLeave={() => setFlipped(false)}
+    >
+      <div
+        className="relative w-full transition-transform duration-700 ease-out"
+        style={{
+          transformStyle: "preserve-3d",
+          minHeight: "23rem",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+        }}
+      >
+        <div
+          className="absolute inset-0 overflow-hidden rounded-[1.75rem] bg-transparent"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <img
+            src={service.image}
+            alt={service.title}
+            loading="lazy"
+            className="h-full w-full object-contain"
+            style={{ width: "100%", height: "100%" }}
+          />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background/95 to-transparent" />
+          <div className="absolute left-0 right-0 bottom-0 p-6 text-center">
+            <h2 className="font-display text-2xl font-bold leading-tight text-primary">
+              {service.title}
+            </h2>
+          </div>
+        </div>
+
+        <div
+          className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-[1.75rem] bg-primary p-6 text-white"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <div>
+            <p className="text-sm leading-7 text-white/90">{service.description}</p>
+          </div>
+          <Link
+            to={service.href}
+            className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-colors hover:text-white/80"
+          >
+            View Service
+            <FaArrowRight size={10} />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function ServicesHub() {
   const schema = [
@@ -154,7 +218,7 @@ export default function ServicesHub() {
                 <FaArrowRight size={11} />
               </a>
               <a
-                href="/case-studies"
+                href="/#work"
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:-translate-y-1 hover:border-accent/40 hover:text-accent"
               >
                 View Case Studies
@@ -173,45 +237,9 @@ export default function ServicesHub() {
         </section>
 
         <section className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
-
-            return (
-              <article
-                key={service.title}
-                className="group flex min-h-[23rem] flex-col justify-between rounded-[1.75rem] border border-border/60 bg-background/95 p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-[0_28px_64px_-28px_rgba(17, 24, 39,0.2)]"
-              >
-                <div>
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
-                    <Icon size={18} />
-                  </span>
-                  <h2 className="mt-5 font-display text-2xl font-bold leading-tight text-primary">
-                    {service.title}
-                  </h2>
-                  <p className="mt-4 text-sm leading-7 text-text-secondary">
-                    {service.description}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {service.keywords.map((keyword) => (
-                      <span
-                        key={keyword}
-                        className="rounded-full border border-border/60 bg-surface px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary"
-                      >
-                        {keyword}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <Link
-                  to={service.href}
-                  className="mt-7 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent/80"
-                >
-                  View Service
-                  <FaArrowRight size={10} />
-                </Link>
-              </article>
-            );
-          })}
+          {services.map((service) => (
+            <ServiceCard key={service.title} service={service} />
+          ))}
         </section>
 
         <section className="mt-12 overflow-hidden rounded-[2rem] border border-primary/10 bg-[linear-gradient(135deg,#0f172a_0%,#111827_42%,#4f46e5_100%)] p-6 text-white shadow-[0_32px_90px_-40px_rgba(37,99,235,0.42)] sm:p-8 lg:p-10">
