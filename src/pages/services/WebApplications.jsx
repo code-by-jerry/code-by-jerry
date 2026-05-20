@@ -1,125 +1,157 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaArrowRight, FaCheckCircle, FaCode, FaDatabase, FaRocket, FaUsers, FaChartLine, FaShieldAlt, FaClock, FaGlobe } from 'react-icons/fa'
-import SEO from '../../components/SEO'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaCode,
+  FaDatabase,
+  FaRocket,
+  FaUsers,
+  FaChartLine,
+  FaShieldAlt,
+  FaClock,
+  FaGlobe,
+} from "react-icons/fa";
+import SEO from "../../components/SEO";
 
 const processSteps = [
   {
-    title: 'Discovery & Planning',
-    description: 'We analyze your business requirements, user workflows, and technical constraints to create a comprehensive project roadmap.',
+    title: "Discovery & Planning",
+    description:
+      "We analyze your business requirements, user workflows, and technical constraints to create a comprehensive project roadmap.",
     icon: FaUsers,
   },
   {
-    title: 'Architecture Design',
-    description: 'Design scalable system architecture, database schema, and API structure that supports your business growth.',
+    title: "Architecture Design",
+    description:
+      "Design scalable system architecture, database schema, and API structure that supports your business growth.",
     icon: FaCode,
   },
   {
-    title: 'Development & Testing',
-    description: 'Build the application with modern technologies, rigorous testing, and continuous integration practices.',
+    title: "Development & Testing",
+    description:
+      "Build the application with modern technologies, rigorous testing, and continuous integration practices.",
     icon: FaRocket,
   },
   {
-    title: 'Deployment & Support',
-    description: 'Deploy to production with monitoring, provide training, and offer ongoing support for system maintenance.',
+    title: "Deployment & Support",
+    description:
+      "Deploy to production with monitoring, provide training, and offer ongoing support for system maintenance.",
     icon: FaChartLine,
   },
-]
+];
 
 const features = [
   {
-    title: 'Custom Business Logic',
-    description: 'Tailored workflows and business rules that match your exact operational needs.',
+    title: "Custom Business Logic",
+    description:
+      "Tailored workflows and business rules that match your exact operational needs.",
     icon: FaCode,
   },
   {
-    title: 'Scalable Architecture',
-    description: 'Built to handle growth from day one, with modular design for easy feature additions.',
+    title: "Scalable Architecture",
+    description:
+      "Built to handle growth from day one, with modular design for easy feature additions.",
     icon: FaDatabase,
   },
   {
-    title: 'Performance Optimized',
-    description: 'Fast loading times, efficient database queries, and optimized user experiences.',
+    title: "Performance Optimized",
+    description:
+      "Fast loading times, efficient database queries, and optimized user experiences.",
     icon: FaRocket,
   },
   {
-    title: 'Security First',
-    description: 'Enterprise-grade security with data encryption, secure authentication, and compliance.',
+    title: "Security First",
+    description:
+      "Enterprise-grade security with data encryption, secure authentication, and compliance.",
     icon: FaShieldAlt,
   },
   {
-    title: 'Real-time Features',
-    description: 'Live updates, notifications, and collaborative features when your business needs them.',
+    title: "Real-time Features",
+    description:
+      "Live updates, notifications, and collaborative features when your business needs them.",
     icon: FaClock,
   },
   {
-    title: 'Mobile Responsive',
-    description: 'Works perfectly on all devices, with native app feel on any screen size.',
+    title: "Mobile Responsive",
+    description:
+      "Works perfectly on all devices, with native app feel on any screen size.",
     icon: FaGlobe,
   },
-]
+];
 
 const technologies = [
-  'Laravel', 'React', 'Node.js', 'PostgreSQL', 'Redis', 'AWS', 'Docker', 'Tailwind CSS'
-]
+  "Laravel",
+  "React",
+  "Node.js",
+  "PostgreSQL",
+  "Redis",
+  "AWS",
+  "Docker",
+  "Tailwind CSS",
+];
 
 export default function WebApplications() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Custom Web Applications Development",
-    "description": "Professional custom web applications development service. Build scalable business systems, dashboards, and admin panels designed for real workflows and business growth.",
-    "provider": {
+    name: "Custom Web Applications Development",
+    description:
+      "Professional custom web applications development service. Build scalable business systems, dashboards, and admin panels designed for real workflows and business growth.",
+    provider: {
       "@type": "Person",
-      "name": "Jerry (Azhagirishankar K)",
-      "jobTitle": "Full Stack Developer",
-      "url": "https://codebyjerry.online"
+      name: "Jerry (Azhagirishankar K)",
+      jobTitle: "Full Stack Developer",
+      url: "https://codebyjerry.online",
     },
-    "serviceType": "Web Development",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
+    serviceType: "Web Development",
+    areaServed: "Worldwide",
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Web Application Services",
-      "itemListElement": [
+      name: "Web Application Services",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Custom Business Systems",
-            "description": "Tailored web applications built for specific business workflows and operational needs."
-          }
+            name: "Custom Business Systems",
+            description:
+              "Tailored web applications built for specific business workflows and operational needs.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Admin Dashboards",
-            "description": "Comprehensive admin panels with role-based access and operational insights."
-          }
+            name: "Admin Dashboards",
+            description:
+              "Comprehensive admin panels with role-based access and operational insights.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Scalable Web Platforms",
-            "description": "Enterprise-grade web applications designed to grow with your business."
-          }
-        }
-      ]
-    }
-  }
+            name: "Scalable Web Platforms",
+            description:
+              "Enterprise-grade web applications designed to grow with your business.",
+          },
+        },
+      ],
+    },
+  };
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
-      <SEO 
+      <SEO
         title="Custom Web Applications Development | Code by Jerry"
         description="Custom web application development for scalable business systems, dashboards, portals, and admin panels designed around real workflows and the right technology stack."
         keywords="custom web application development, business systems, admin dashboards, scalable platforms, full-stack development, workflow software"
@@ -128,38 +160,57 @@ export default function WebApplications() {
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-border/50 bg-background/90 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.12)] backdrop-blur-md' : 'bg-transparent'}`}>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-border/50 bg-background/90 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.12)] backdrop-blur-md" : "bg-transparent"}`}
+      >
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
-          <Link to="/" className="flex min-w-0 items-center gap-3" >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
-              <img src="/logo.png" alt="Code by Jerry logo" className="h-full w-full object-cover" />
-            </span>
-            <span className="min-w-0 leading-none">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">Code by Jerry</span>
-              <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">Scalable systems for real businesses</span>
+          <Link to="/" className="flex min-w-0 items-center">
+            <span className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+              <img
+                src="/logo.png"
+                alt="Code by Jerry logo"
+                className="h-full w-auto object-contain"
+              />
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
-            <Link to="/" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Main navigation"
+          >
+            <Link
+              to="/"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link to="/portfolio" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <Link
+              to="/portfolio"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Work
             </Link>
-            <a href="/#contact" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <a
+              href="/#contact"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Contact
             </a>
           </nav>
         </div>
       </header>
-      
+
       {/* Hero Section */}
       <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="mb-8">
-            <a href="/services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group">
-              <span className="transition-transform group-hover:-translate-x-1">←</span>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group"
+            >
+              <span className="transition-transform group-hover:-translate-x-1">
+                ←
+              </span>
               Back to all services
             </a>
           </div>
@@ -175,12 +226,16 @@ export default function WebApplications() {
               <h1 className="font-display text-4xl font-bold leading-tight text-primary sm:text-5xl lg:text-6xl">
                 Scalable Custom Web
                 <span className="bg-gradient-to-r from-accent via-[#374151] to-[#4B5563] bg-clip-text text-transparent">
-                  {' '}Application Development
+                  {" "}
+                  Application Development
                 </span>
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-text-secondary sm:text-xl">
-                From dashboards and admin panels to complex business systems, I build web applications that solve real problems and scale with your business. No generic templates—just solutions designed for your specific workflows.
+                From dashboards and admin panels to complex business systems, I
+                build web applications that solve real problems and scale with
+                your business. No generic templates—just solutions designed for
+                your specific workflows.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -217,12 +272,15 @@ export default function WebApplications() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">Features</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
+              Features
+            </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               Built for Real Business Needs
             </h2>
             <p className="text-lg text-text-secondary">
-              Every feature is designed around how your team actually works, not just what looks good in a demo.
+              Every feature is designed around how your team actually works, not
+              just what looks good in a demo.
             </p>
           </div>
 
@@ -251,12 +309,15 @@ export default function WebApplications() {
       <section className="py-12 sm:py-16 md:py-20 bg-surface/30">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">Process</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
+              Process
+            </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               How We Build Your Web Application
             </h2>
             <p className="text-lg text-text-secondary">
-              A systematic approach that ensures your application is built right the first time.
+              A systematic approach that ensures your application is built right
+              the first time.
             </p>
           </div>
 
@@ -268,7 +329,10 @@ export default function WebApplications() {
                     <step.icon size={24} />
                   </div>
                   {index < processSteps.length - 1 && (
-                    <div className="absolute top-8 left-full w-full h-0.5 bg-accent/20 hidden lg:block" style={{ width: 'calc(100vw / 4 - 4rem)' }} />
+                    <div
+                      className="absolute top-8 left-full w-full h-0.5 bg-accent/20 hidden lg:block"
+                      style={{ width: "calc(100vw / 4 - 4rem)" }}
+                    />
                   )}
                 </div>
                 <h3 className="font-display text-lg font-bold text-primary mb-3">
@@ -287,12 +351,15 @@ export default function WebApplications() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">Technologies</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
+              Technologies
+            </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               Modern Tech Stack for Reliable Results
             </h2>
             <p className="text-lg text-text-secondary">
-              Using battle-tested technologies that power production applications worldwide.
+              Using battle-tested technologies that power production
+              applications worldwide.
             </p>
           </div>
 
@@ -318,7 +385,8 @@ export default function WebApplications() {
                 Ready to Build Your Custom Web Application?
               </h2>
               <p className="text-lg text-text-secondary mb-8">
-                Let's discuss your project requirements and create a web application that drives real business results.
+                Let's discuss your project requirements and create a web
+                application that drives real business results.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a
@@ -340,5 +408,5 @@ export default function WebApplications() {
         </div>
       </section>
     </div>
-  )
+  );
 }

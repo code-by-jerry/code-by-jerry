@@ -95,21 +95,13 @@ export default function ServicePageTemplate({
         }`}
       >
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
-          <Link to="/" className="flex min-w-0 items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
+          <Link to="/" className="flex min-w-0 items-center">
+            <span className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-xl">
               <img
                 src="/logo.png"
                 alt="Code by Jerry logo"
-                className="h-full w-full object-cover"
+                className="h-full w-auto object-contain"
               />
-            </span>
-            <span className="min-w-0 leading-none">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">
-                Code by Jerry
-              </span>
-              <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">
-                Scalable systems for real businesses
-              </span>
             </span>
           </Link>
 
@@ -314,10 +306,12 @@ export default function ServicePageTemplate({
           <div className="rounded-[2.25rem] border border-border/70 bg-background/88 p-8 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.18)] backdrop-blur sm:p-12 lg:p-16">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
-                Ready to build your {serviceSlug?.replace(/-/g, " ") || "project"}?
+                Ready to build your{" "}
+                {serviceSlug?.replace(/-/g, " ") || "project"}?
               </h2>
               <p className="text-lg text-text-secondary mb-8">
-                Share your workflow and goals. I’ll suggest the right approach and build a scalable system.
+                Share your workflow and goals. I’ll suggest the right approach
+                and build a scalable system.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">

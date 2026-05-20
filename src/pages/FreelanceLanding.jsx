@@ -175,48 +175,34 @@ const contributionLogos = [
 
 const serviceSlides = [
   {
-    name: "Web Apps",
-    headline: "Business platforms that keep teams fast and in control.",
-    description:
-      "Dashboards, portals, and admin flows shaped around real operations.",
-    image:
-      "https://ik.imagekit.io/codebyjerry/coj%20services/web.png?tr=f-auto,q-80",
-    bigWord: "BUILD",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(17, 24, 39,0.26),rgba(17, 24, 39,0.08),transparent_72%)]",
-    tags: ["Dashboards", "Admin Panels"],
+    name: "ecommerce",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/ecommerce.png",
   },
   {
-    name: "Mobile Apps",
-    headline: "Mobile experiences connected cleanly with your backend.",
-    description:
-      "Hybrid app interfaces built for speed, clean UX, and reliable integration.",
-    image:
-      "https://ik.imagekit.io/codebyjerry/coj%20services/mobile-app.png?tr=f-auto,q-80",
-    bigWord: "SHIP",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.22),rgba(17, 24, 39,0.08),transparent_72%)]",
-    tags: ["Hybrid UX", "API Ready"],
+    name: "cms",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/cms.png",
   },
   {
-    name: "eCommerce",
-    headline: "Commerce systems built to convert and scale cleanly.",
-    description:
-      "Shopify and custom storefronts tuned for checkout, payments, and retention.",
+    name: "construction",
     image:
-      "https://ik.imagekit.io/codebyjerry/coj%20services/ecom.png?tr=f-auto,q-80",
-    bigWord: "SELL",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.22),rgba(17, 24, 39,0.08),transparent_72%)]",
-    tags: ["Shopify", "Payments"],
+      "https://ik.imagekit.io/codebyjerry/coj%20services/construction_interior.png",
   },
   {
-    name: "SEO",
-    headline: "Search-focused pages engineered for visibility and speed.",
-    description:
-      "Landing pages and websites shaped for ranking, growth, and measurable performance.",
+    name: "real-estate",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/Real_estate.png",
+  },
+  {
+    name: "food-delivery",
     image:
-      "https://ik.imagekit.io/codebyjerry/coj%20services/seo-.png?tr=f-auto,q-80",
-    bigWord: "RANK",
-    glow: "bg-[radial-gradient(circle_at_center,rgba(55, 65, 81,0.2),rgba(17, 24, 39,0.08),transparent_72%)]",
-    tags: ["SEO", "Performance"],
+      "https://ik.imagekit.io/codebyjerry/coj%20services/food_delivery.png",
+  },
+  {
+    name: "automation",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/automation.png",
+  },
+  {
+    name: "shopify",
+    image: "https://ik.imagekit.io/codebyjerry/coj%20services/shopify.png",
   },
 ];
 
@@ -997,55 +983,24 @@ function HeroServiceShowcase() {
                   : "pointer-events-none translate-y-8 opacity-0"
               }`}
             >
-              <div className="grid h-full grid-rows-[auto_minmax(260px,1fr)] gap-4 sm:grid-rows-[auto_1fr] sm:gap-8 lg:gap-8">
-                <div className="relative z-10">
-                  <div className="max-w-xl">
-                    <div className="mt-1 sm:mt-4">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-text-secondary/70 sm:tracking-[0.32em]">
-                        {slide.name}
-                      </p>
-                      <h2 className="mt-2 max-w-xl font-display text-xl font-bold leading-tight text-primary sm:text-[2rem] lg:text-[2.15rem] lg:leading-[1.02]">
-                        {slide.headline}
-                      </h2>
-                    </div>
+              <div className="relative h-full flex items-center justify-center">
+                <div className="pointer-events-none absolute inset-x-6 bottom-5 h-24 blur-3xl sm:inset-x-8 sm:bottom-auto sm:top-10 sm:h-48 lg:inset-x-12 lg:top-12 lg:h-56" />
 
-                    <p className="mt-3 max-w-lg text-sm leading-6 text-text-secondary sm:mt-4 sm:text-[15px]">
-                      {slide.description}
-                    </p>
-
-                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 sm:mt-4">
-                      {slide.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[10px] font-bold uppercase tracking-[0.18em] text-primary/80 sm:tracking-[0.24em]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="relative mt-1 flex min-h-[260px] items-center justify-center pb-3 sm:mt-2 sm:min-h-[300px] sm:items-end sm:pb-0 md:min-h-[320px] lg:mt-0 lg:min-h-0">
-                  <span className="pointer-events-none absolute inset-x-0 top-0 hidden text-center font-display text-[4.4rem] font-bold leading-none text-primary/[0.03] sm:block sm:text-[6rem] lg:text-[7.6rem]">
-                    {slide.bigWord}
-                  </span>
-                  <div
-                    className={`pointer-events-none absolute inset-x-6 bottom-5 h-24 blur-3xl sm:inset-x-8 sm:bottom-auto sm:top-10 sm:h-48 lg:inset-x-12 lg:top-12 lg:h-56 ${slide.glow}`}
-                  />
-
-                  <img
-                    src={slide.image}
-                    alt={`${slide.name} service visual`}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    fetchPriority={index === 0 ? "high" : "auto"}
-                    className={`relative z-10 mx-auto block h-auto max-h-[250px] w-full max-w-[315px] object-contain object-center transition-all duration-700 ease-out sm:max-h-none sm:max-w-[400px] md:max-w-[420px] lg:absolute lg:inset-x-0 lg:bottom-0 lg:max-w-[560px] ${
-                      isActive
-                        ? "translate-y-0 scale-100 opacity-100"
-                        : "translate-y-4 scale-[0.98] opacity-0"
-                    }`}
-                  />
-                </div>
+                <img
+                  src={slide.image}
+                  alt={`${slide.name} service visual`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  className={`relative z-10 mx-auto block h-auto max-h-full w-auto max-w-[315px] object-contain object-center transition-all duration-700 ease-out sm:max-w-[400px] md:max-w-[420px] lg:max-w-[560px] ${
+                    isActive
+                      ? "translate-y-0 scale-100 opacity-100"
+                      : "translate-y-4 scale-[0.98] opacity-0"
+                  }`}
+                  style={{
+                    // ensure image scales by height without cropping
+                    maxHeight: "100%",
+                  }}
+                />
               </div>
             </article>
           );
@@ -2582,21 +2537,13 @@ export default function FreelanceLanding() {
       >
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
           {/* Left logo and brand */}
-          <Link to="/" className="flex min-w-0 items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
+          <Link to="/" className="flex min-w-0 items-center">
+            <span className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-xl">
               <img
                 src="/logo.png"
                 alt="Code by Jerry logo"
-                className="h-full w-full object-cover"
+                className="h-full w-auto object-contain"
               />
-            </span>
-            <span className="min-w-0 leading-none">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">
-                Code by Jerry
-              </span>
-              <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">
-                Scalable systems for real businesses
-              </span>
             </span>
           </Link>
 
@@ -2717,7 +2664,7 @@ export default function FreelanceLanding() {
                 </button>
               </div>
 
-              <p className="mt-6 max-w-xl text-sm font-bold uppercase tracking-[0.18em] text-text-secondary sm:text-base">
+              <p className="mt-6 max-w-xl text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary">
                 Ecommerce • LMS • Real Estate • Shopify • Automation
               </p>
 

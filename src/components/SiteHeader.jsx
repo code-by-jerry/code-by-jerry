@@ -39,21 +39,13 @@ export default function SiteHeader({ onStartProject }) {
       }`}
     >
       <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
-        <Link to="/" className="flex min-w-0 items-center gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
+        <Link to="/" className="flex min-w-0 items-center">
+          <span className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-xl">
             <img
               src="/logo.png"
               alt="Code by Jerry logo"
-              className="h-full w-full object-cover"
+              className="h-full w-auto object-contain"
             />
-          </span>
-          <span className="min-w-0 leading-none">
-            <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">
-              Code by Jerry
-            </span>
-            <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">
-              Scalable systems for real businesses
-            </span>
           </span>
         </Link>
 

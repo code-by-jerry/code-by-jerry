@@ -1,102 +1,127 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { FaArrowRight, FaDatabase, FaCode, FaShieldAlt, FaRocket, FaSync, FaServer } from 'react-icons/fa'
-import SEO from '../../components/SEO'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  FaArrowRight,
+  FaDatabase,
+  FaCode,
+  FaShieldAlt,
+  FaRocket,
+  FaSync,
+  FaServer,
+} from "react-icons/fa";
+import SEO from "../../components/SEO";
 
 const capabilities = [
   {
-    title: 'RESTful APIs',
-    description: 'Clean, documented APIs that power your frontend applications and third-party integrations.',
+    title: "RESTful APIs",
+    description:
+      "Clean, documented APIs that power your frontend applications and third-party integrations.",
     icon: FaCode,
   },
   {
-    title: 'Database Design',
-    description: 'Optimized database schemas with proper indexing, relationships, and performance considerations.',
+    title: "Database Design",
+    description:
+      "Optimized database schemas with proper indexing, relationships, and performance considerations.",
     icon: FaDatabase,
   },
   {
-    title: 'Microservices',
-    description: 'Scalable microservice architectures that allow independent deployment and scaling of components.',
+    title: "Microservices",
+    description:
+      "Scalable microservice architectures that allow independent deployment and scaling of components.",
     icon: FaServer,
   },
   {
-    title: 'Real-time Systems',
-    description: 'WebSocket implementations and real-time data synchronization for live features.',
+    title: "Real-time Systems",
+    description:
+      "WebSocket implementations and real-time data synchronization for live features.",
     icon: FaSync,
   },
   {
-    title: 'Security & Authentication',
-    description: 'JWT, OAuth, and enterprise-grade security implementations with data encryption.',
+    title: "Security & Authentication",
+    description:
+      "JWT, OAuth, and enterprise-grade security implementations with data encryption.",
     icon: FaShieldAlt,
   },
   {
-    title: 'Performance Optimization',
-    description: 'Caching strategies, query optimization, and scalable architectures for high traffic.',
+    title: "Performance Optimization",
+    description:
+      "Caching strategies, query optimization, and scalable architectures for high traffic.",
     icon: FaRocket,
   },
-]
+];
 
 const technologies = [
-  'Laravel', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'AWS', 'GraphQL', 'WebSockets'
-]
+  "Laravel",
+  "Node.js",
+  "PostgreSQL",
+  "Redis",
+  "Docker",
+  "AWS",
+  "GraphQL",
+  "WebSockets",
+];
 
 export default function BackendAPIs() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Backend & API Development",
-    "description": "Backend development and API services for scalable server-side applications, RESTful APIs, integrations, databases, and robust systems built with the right technology stack.",
-    "provider": {
+    name: "Backend & API Development",
+    description:
+      "Backend development and API services for scalable server-side applications, RESTful APIs, integrations, databases, and robust systems built with the right technology stack.",
+    provider: {
       "@type": "Person",
-      "name": "Jerry (Azhagirishankar K)",
-      "jobTitle": "Full Stack Developer",
-      "url": "https://codebyjerry.online"
+      name: "Jerry (Azhagirishankar K)",
+      jobTitle: "Full Stack Developer",
+      url: "https://codebyjerry.online",
     },
-    "serviceType": "Backend Development",
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
+    serviceType: "Backend Development",
+    areaServed: "Worldwide",
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "Backend Services",
-      "itemListElement": [
+      name: "Backend Services",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "API Development",
-            "description": "RESTful and GraphQL API development with comprehensive documentation."
-          }
+            name: "API Development",
+            description:
+              "RESTful and GraphQL API development with comprehensive documentation.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Database Architecture",
-            "description": "Optimized database design and implementation for performance and scalability."
-          }
+            name: "Database Architecture",
+            description:
+              "Optimized database design and implementation for performance and scalability.",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Microservices",
-            "description": "Scalable microservice architectures for complex applications."
-          }
-        }
-      ]
-    }
-  }
+            name: "Microservices",
+            description:
+              "Scalable microservice architectures for complex applications.",
+          },
+        },
+      ],
+    },
+  };
 
   return (
     <div className="min-h-screen font-sans text-text selection:bg-accent selection:text-white">
-      <SEO 
+      <SEO
         title="Backend & API Development | Code by Jerry"
         description="Backend and API development for scalable applications, databases, integrations, authentication, and server-side systems using the right stack for the product."
         keywords="backend development, API development, database architecture, API integration, scalable backend, REST APIs, server-side systems"
@@ -105,26 +130,40 @@ export default function BackendAPIs() {
       <div className="grid-overlay fixed inset-0 z-0 pointer-events-none opacity-[0.12]" />
 
       {/* Sticky Header */}
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-border/50 bg-background/90 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.12)] backdrop-blur-md' : 'bg-transparent'}`}>
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "border-b border-border/50 bg-background/90 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.12)] backdrop-blur-md" : "bg-transparent"}`}
+      >
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-5 py-3.5 sm:px-6 sm:py-4 md:px-12 lg:px-20">
-          <Link to="/" className="flex min-w-0 items-center gap-3" >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-background/90 shadow-[0_8px_24px_-12px_rgba(15,23,42,0.28)]">
-              <img src="/logo.png" alt="Code by Jerry logo" className="h-full w-full object-cover" />
-            </span>
-            <span className="min-w-0 leading-none">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.24em] text-accent sm:tracking-[0.35em]">Code by Jerry</span>
-              <span className="mt-1 block max-w-[10rem] truncate text-[11px] font-medium leading-none text-text-secondary/80 sm:max-w-none">Scalable systems for real businesses</span>
+          <Link to="/" className="flex min-w-0 items-center">
+            <span className="flex h-10 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+              <img
+                src="/logo.png"
+                alt="Code by Jerry logo"
+                className="h-full w-auto object-contain"
+              />
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
-            <Link to="/" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Main navigation"
+          >
+            <Link
+              to="/"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Home
             </Link>
-            <Link to="/portfolio" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <Link
+              to="/portfolio"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Work
             </Link>
-            <a href="/#contact" className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary">
+            <a
+              href="/#contact"
+              className="px-4 py-2 text-[11px] font-bold uppercase tracking-[0.22em] text-text-secondary transition-colors hover:text-primary"
+            >
               Contact
             </a>
           </nav>
@@ -135,8 +174,13 @@ export default function BackendAPIs() {
       <section className="relative pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-32 md:pb-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="mb-8">
-            <a href="/services" className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group">
-              <span className="transition-transform group-hover:-translate-x-1">←</span>
+            <a
+              href="/services"
+              className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-text-secondary transition-colors hover:text-accent group"
+            >
+              <span className="transition-transform group-hover:-translate-x-1">
+                ←
+              </span>
               Back to all services
             </a>
           </div>
@@ -152,12 +196,14 @@ export default function BackendAPIs() {
               <h1 className="font-display text-4xl font-bold leading-tight text-primary sm:text-5xl lg:text-6xl">
                 Robust Backend Architecture
                 <span className="bg-gradient-to-r from-accent via-[#374151] to-[#4B5563] bg-clip-text text-transparent">
-                  {' & API Development'}
+                  {" & API Development"}
                 </span>
               </h1>
 
               <p className="mt-6 text-lg leading-8 text-text-secondary sm:text-xl">
-                Clean APIs, optimized databases, and scalable architectures that power your applications. Built to handle growth without breaking, with security and performance as top priorities.
+                Clean APIs, optimized databases, and scalable architectures that
+                power your applications. Built to handle growth without
+                breaking, with security and performance as top priorities.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -194,12 +240,15 @@ export default function BackendAPIs() {
       <section className="py-12 sm:py-16 md:py-20">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">Capabilities</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
+              Capabilities
+            </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               Complete Backend Development Services
             </h2>
             <p className="text-lg text-text-secondary">
-              From database design to API development, I build the foundation that makes your applications reliable and scalable.
+              From database design to API development, I build the foundation
+              that makes your applications reliable and scalable.
             </p>
           </div>
 
@@ -228,12 +277,15 @@ export default function BackendAPIs() {
       <section className="py-12 sm:py-16 md:py-20 bg-surface/30">
         <div className="mx-auto max-w-screen-xl px-5 sm:px-6 md:px-12 lg:px-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">Technologies</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent mb-4">
+              Technologies
+            </p>
             <h2 className="font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl mb-6">
               Modern Backend Technologies
             </h2>
             <p className="text-lg text-text-secondary">
-              Using battle-tested technologies that power production applications worldwide.
+              Using battle-tested technologies that power production
+              applications worldwide.
             </p>
           </div>
 
@@ -259,7 +311,8 @@ export default function BackendAPIs() {
                 Ready to Build a Scalable Backend?
               </h2>
               <p className="text-lg text-text-secondary mb-8">
-                Let's create the robust backend foundation that will support your application's growth and success.
+                Let's create the robust backend foundation that will support
+                your application's growth and success.
               </p>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                 <a
@@ -281,5 +334,5 @@ export default function BackendAPIs() {
         </div>
       </section>
     </div>
-  )
+  );
 }
