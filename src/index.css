@@ -113,43 +113,59 @@ body {
 
 @media (min-width: 1024px) {
   .freelance-hero-grid {
-    min-height: calc(100vh - 7rem);
-  }
-}
-
-@media (min-width: 1024px) and (max-height: 900px) {
-  .freelance-hero-grid {
-    max-height: calc(100vh - 7rem);
+    min-height: calc(100svh - 6rem);
+    max-height: calc(100svh - 6rem);
     overflow: hidden;
   }
 
   .freelance-hero-copy {
-    gap: 0.75rem;
+    min-height: 0;
   }
 
-  .freelance-hero-title {
-    font-size: clamp(3.8rem, 4.6vw, 5.6rem);
-    line-height: 0.92;
-  }
-
-  .freelance-hero-stats {
-    margin-top: 1.25rem;
+  .freelance-hero-grid > * {
+    min-height: 0;
   }
 
   .freelance-showcase {
     min-height: 0;
     height: 100%;
+    max-height: 100%;
+  }
+
+  .freelance-showcase-image-stage {
+    min-height: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 900px) {
+  .freelance-hero-copy {
+    gap: 0.75rem;
+  }
+
+  .freelance-hero-title {
+    font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+    line-height: 0.95;
+    margin-top: 1rem;
+  }
+
+  .freelance-hero-stats {
+    margin-top: 1rem;
+  }
+
+  .freelance-hero-copy > p,
+  .freelance-hero-copy > div:not(.freelance-hero-stats) {
+    margin-top: 1.25rem;
   }
 }
 
 @media (min-width: 1024px) and (max-height: 820px) {
   .freelance-hero-grid {
-    padding-top: 1.25rem;
-    padding-bottom: 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   .freelance-hero-title {
-    font-size: clamp(3.4rem, 4.2vw, 4.8rem);
+    font-size: clamp(2.35rem, 4.2vw, 3.1rem);
   }
 }
 

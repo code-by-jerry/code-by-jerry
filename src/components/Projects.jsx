@@ -27,7 +27,7 @@ const projects = [
     link: 'https://jippymart.in/mart/',
   },
   {
-    title: 'Area24Reality',
+    title: 'Area24Realty',
     sector: 'Real Estate Operations',
     status: 'Live',
     year: '2025',
@@ -36,22 +36,10 @@ const projects = [
       'Multi-region real estate platform with interactive mapping, advanced listing management, analytics dashboards, owner and agent portals, and lead handling.',
     positioning: 'Property discovery and publishing workflows built for regional real estate scale.',
     tech: ['Laravel', 'TypeScript', 'MySQL', 'Maps', 'SEO'],
-    link: 'https://lightgoldenrodyellow-jaguar-333517.hostingersite.com/',
+    link: 'https://area24group.com/',
   },
   {
-    title: 'Area24One',
-    sector: 'Business Platform',
-    status: 'Live',
-    year: '2025',
-    logo: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279',
-    description:
-      'Conversion-focused multi-vertical business platform with centralized CMS management, SEO controls, assistant workflows, and admin tooling.',
-    positioning: 'Service positioning, customer conversion, and content operations in one managed system.',
-    tech: ['React', 'Laravel', 'TypeScript', 'Tailwind CSS', 'SEO'],
-    link: 'https://area24one.com/',
-  },
-  {
-    title: 'Nesthetix Design',
+    title: 'Nesthetix Designs',
     sector: 'Interior Design Business',
     status: 'Live',
     year: '2025',

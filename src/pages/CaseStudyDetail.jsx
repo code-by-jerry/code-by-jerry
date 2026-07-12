@@ -90,6 +90,11 @@ export default function CaseStudyDetail() {
             <span className="rounded-full border border-accent/20 bg-accent/8 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-accent">
               {study.category}
             </span>
+            {study.status && (
+              <span className="rounded-full border border-border/60 bg-surface px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary">
+                {study.status}
+              </span>
+            )}
             <span className="text-xs font-medium text-text-secondary">
               {study.year}
             </span>
@@ -102,6 +107,18 @@ export default function CaseStudyDetail() {
             {study.summary}
           </p>
 
+          {study.liveUrl && (
+            <a
+              href={study.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-accent transition-colors hover:text-accent/80"
+            >
+              View live site
+              <FaArrowRight size={10} />
+            </a>
+          )}
+
           <div className="mt-10 overflow-hidden rounded-[2rem] border border-border/60 bg-surface shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
             <img
               src={study.images[0]}
@@ -110,18 +127,44 @@ export default function CaseStudyDetail() {
             />
           </div>
 
-          <section className="mt-10 grid gap-5 md:grid-cols-3">
-            {study.results.map((result) => (
-              <div
-                key={result}
-                className="rounded-2xl border border-border/60 bg-background/90 p-5 shadow-[0_18px_48px_-32px_rgba(15,23,42,0.18)]"
-              >
-                <FaCheckCircle className="text-accent" size={18} />
-                <p className="mt-4 text-sm font-semibold leading-6 text-primary">
-                  {result}
-                </p>
-              </div>
-            ))}
+          <section className="mt-10">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+              Project Snapshot
+            </p>
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {study.metrics?.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-border/60 bg-background/90 p-4 shadow-[0_18px_48px_-32px_rgba(15,23,42,0.18)]"
+                >
+                  <p className="font-display text-2xl font-bold text-primary">
+                    {item.value}
+                  </p>
+                  <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary">
+                    {item.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-10">
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+              What Shipped
+            </p>
+            <div className="mt-5 grid gap-5 md:grid-cols-2">
+              {study.results.map((result) => (
+                <div
+                  key={result}
+                  className="rounded-2xl border border-border/60 bg-background/90 p-5 shadow-[0_18px_48px_-32px_rgba(15,23,42,0.18)]"
+                >
+                  <FaCheckCircle className="text-accent" size={18} />
+                  <p className="mt-4 text-sm font-semibold leading-6 text-primary">
+                    {result}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section className="mt-10 grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">

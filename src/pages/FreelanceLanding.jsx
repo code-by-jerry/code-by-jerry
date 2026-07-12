@@ -26,6 +26,7 @@ import {
   FaMoneyBillWave,
   FaCartArrowDown,
   FaTachometerAlt,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 
 const services = [
@@ -139,10 +140,6 @@ const trustedByLogos = [
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
   },
   {
-    name: "Enmart",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857",
-  },
-  {
     name: "Atha Constructions",
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093",
   },
@@ -239,7 +236,6 @@ const aboutStats = [
 
 const trustLogos = [
   "Atha Platform",
-  "EnMart",
   "DestroSolutions",
   "Commerce Systems",
   "Admin Platforms",
@@ -508,28 +504,14 @@ const jippymartScreens = [
   "https://ik.imagekit.io/codebyjerry/works/Jippy%20Mart/Screenshot%202026-05-20%20151654.png",
 ];
 
-const enmartScreens = [
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(3).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM.jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(4).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM.jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(1).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%203.59.44%20PM.jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(5).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(2).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(2).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(3).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(1).jpeg",
-  "https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(4).jpeg",
-];
-
 const caseStudies = [
   {
     title: "Atha Constructions",
     category: "Construction Operations",
     tagline:
-      "Lead-focused construction website with consultation workflows, pricing visibility, inquiry handling, and admin operations.",
+      "Lead-focused construction platform with consultation workflows, pricing visibility, inquiry handling, and admin operations.",
     logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093",
+    link: "https://athaconstruction.in/",
     images: [
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145530.png?updatedAt=1776505896460&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/athaconstructions/Screenshot%202026-04-11%20145546.png?updatedAt=1776505896414&tr=f-auto,q-80",
@@ -545,14 +527,16 @@ const caseStudies = [
     tagline:
       "Full-scale food delivery ecosystem with customer storefront, restaurant panel, admin operations, and delivery coordination.",
     logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251",
+    link: "https://jippymart.in/mart/",
     images: jippymartScreens,
   },
   {
-    title: "Area24Reality",
+    title: "Area24Realty",
     category: "Real Estate",
     tagline:
       "Multi-region real estate platform with interactive mapping, listing management, dashboards, portals, and lead handling.",
     logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832",
+    link: "https://area24group.com/",
     images: [
       "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174924.png?updatedAt=1776506172591&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/realty/Screenshot%202026-04-11%20174906.png?updatedAt=1776506172562&tr=f-auto,q-80",
@@ -563,48 +547,12 @@ const caseStudies = [
     ],
   },
   {
-    title: "Aaran Billing",
-    category: "Accounting & Inventory",
-    tagline:
-      "GST-ready accounting and inventory system for garment, knitting, and printing operations with transaction workflows and reporting.",
-    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170",
-    images: billingScreens,
-  },
-  {
-    title: "EnMart",
-    category: "Quick Commerce",
-    tagline:
-      "Mobile-first quick commerce platform with product discovery, store operations, inventory workflows, and delivery coordination.",
-    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857",
-    images: enmartScreens,
-  },
-  {
-    title: "Baybee",
-    category: "Shopify eCommerce",
-    tagline:
-      "Conversion-focused Shopify storefront with optimized product structure, mobile buying flow, and commerce presentation.",
-    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
-    images: [
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181416.png?updatedAt=1776505955600&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181443.png?updatedAt=1776505955588&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181400.png?updatedAt=1776505955585&tr=f-auto,q-80",
-    ],
-  },
-  {
-    title: "Camiprod",
-    category: "Shopify Health Commerce",
-    tagline:
-      "Complete Shopify ecommerce storefront for health products with product browsing, collection structure, responsive pages, and conversion-focused purchase flows.",
-    logo: "",
-    images: camiprodScreens,
-  },
-  {
-    title: "Nesthetix Design",
+    title: "Nesthetix Designs",
     category: "Interior Design",
     tagline:
       "Premium design business website with lead generation, service showcasing, SEO structure, CMS management, and project presentation.",
     logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?updatedAt=1777100737298",
+    link: "https://nesthetixdesigns.com/",
     images: [
       "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174304.png?updatedAt=1776506131947&tr=f-auto,q-80",
       "https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174404.png?updatedAt=1776506131779&tr=f-auto,q-80",
@@ -614,280 +562,280 @@ const caseStudies = [
     ],
   },
   {
-    title: "Area24One",
-    category: "Business Platform",
+    title: "Baybee",
+    category: "Shopify eCommerce",
     tagline:
-      "Conversion-focused business platform with centralized CMS management, SEO controls, assistant logic, and admin tooling.",
-    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279",
+      "Conversion-focused Shopify storefront with optimized product structure, mobile buying flow, and commerce presentation.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
+    link: "https://baybee.co.in/",
     images: [
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180920.png?updatedAt=1776505783378&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180816.png?updatedAt=1776505783376&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180731.png?updatedAt=1776505783393&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180834.png?updatedAt=1776505783335&tr=f-auto,q-80",
-      "https://ik.imagekit.io/codebyjerry/works/area24one/Screenshot%202026-04-11%20180935.png?updatedAt=1776505783299&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181416.png?updatedAt=1776505955600&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181443.png?updatedAt=1776505955588&tr=f-auto,q-80",
+      "https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181400.png?updatedAt=1776505955585&tr=f-auto,q-80",
     ],
+  },
+  {
+    title: "Aaran Billing",
+    category: "Accounting & Inventory",
+    tagline:
+      "Internal GST-ready accounting and inventory system for garment, knitting, and printing operations with transaction workflows and reporting.",
+    logo: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170",
+    images: billingScreens,
   },
 ];
 
 const detailedCaseStudies = [
   {
     id: 1,
-    client: "JippyMart",
-    industry: "Quick Commerce / Food Delivery",
-    serviceType: "Full Commerce Platform + Operations",
+    client: "Atha Constructions",
+    industry: "Construction",
+    status: "Live",
+    year: "2026",
+    liveUrl: "https://athaconstruction.in/",
+    serviceType: "Lead Platform + Admin Operations",
     challenge:
-      "Fragmented order flow, slow delivery coordination, and high cart drop during checkout leading to missed daily order targets.",
+      "Consultation requests, pricing visibility, and content updates were handled manually across disconnected tools instead of one operational system.",
     solution:
-      "Built an end-to-end food delivery platform with streamlined restaurant onboarding, real-time order routing, delivery tracking, and optimized checkout flows. Implemented operational dashboards for drivers and restaurants.",
-    results: [
+      "Built a Laravel + React (Inertia) platform with structured lead capture, estimator tools, SEO-ready pages, theme controls, and an admin panel the team can run without developer support.",
+    metrics: [
+      { label: "Engagement", value: "Dec 2025–" },
+      { label: "Screens", value: "6" },
+      { label: "Platforms", value: "Web + Admin" },
+      { label: "Status", value: "Live" },
+    ],
+    deliverables: [
       {
-        metric: "Order Throughput",
-        before: "~1.2k/day",
-        after: "~4.8k/day",
+        metric: "Lead operations",
+        detail: "Consultation flows, inquiry handling, and package visibility in one system.",
+        icon: FaEnvelope,
+      },
+      {
+        metric: "Estimator tooling",
+        detail: "Cost estimator and pricing workflows built into the public site.",
+        icon: FaCogs,
+      },
+      {
+        metric: "Admin control",
+        detail: "Internal panel for content, themes, SEO settings, and operational updates.",
+        icon: FaDatabase,
+      },
+      {
+        metric: "Production launch",
+        detail: "Live deployment at athaconstruction.in.",
         icon: FaRocket,
-        improvement: "4x increase",
-      },
-      {
-        metric: "Delivery SLA",
-        before: "60% on-time",
-        after: "92% on-time",
-        icon: FaClock,
-        improvement: "53% improvement",
-      },
-      {
-        metric: "Conversion Rate",
-        before: "1.8%",
-        after: "5.6%",
-        icon: FaCartArrowDown,
-        improvement: "3.1x improvement",
-      },
-      {
-        metric: "Mobile Load Time",
-        before: "6s",
-        after: "0.9s",
-        icon: FaTachometerAlt,
-        improvement: "85% faster",
       },
     ],
-    technologies: ["React", "Node.js", "Postgres", "Redis", "Realtime APIs"],
-    timeline: "5 months",
-    impact:
-      "Scaled to multiple city clusters; daily GMV increased 3.5x within 6 months",
+    technologies: ["React", "Inertia.js", "Laravel", "MySQL", "SEO"],
   },
   {
     id: 2,
-    client: "Area24Reality",
-    industry: "Real Estate",
-    serviceType: "Property Platform + CRM",
+    client: "JippyMart",
+    industry: "Food Delivery",
+    status: "Live",
+    year: "2025",
+    liveUrl: "https://jippymart.in/mart/",
+    serviceType: "Full Commerce Platform + Operations",
     challenge:
-      "Low discoverability, poor lead routing, and inconsistent listing publishing workflows causing loss of buyer interest.",
+      "Food delivery needed one system connecting customers, restaurants, admins, and fulfillment — not separate tools patched together.",
     solution:
-      "Delivered a regional property discovery experience, agent-facing CRM, and automated lead routing with SEO-optimized listing pages and analytics for market segments.",
-    results: [
+      "Delivered a Laravel-based commerce platform with restaurant onboarding, order operations, Razorpay payments, Firebase integrations, and multi-role admin tooling.",
+    metrics: [
+      { label: "Build year", value: "2025" },
+      { label: "Screens", value: "11" },
+      { label: "User roles", value: "3" },
+      { label: "Status", value: "Live" },
+    ],
+    deliverables: [
       {
-        metric: "Leads / Month",
-        before: "120",
-        after: "840",
+        metric: "Customer storefront",
+        detail: "Public ordering experience with commerce flows built for daily use.",
+        icon: FaCartArrowDown,
+      },
+      {
+        metric: "Restaurant panel",
+        detail: "Onboarding and order operations for restaurant partners.",
         icon: FaUsers,
-        improvement: "7x increase",
       },
       {
-        metric: "Close Rate",
-        before: "8%",
-        after: "28%",
-        icon: FaChartLine,
-        improvement: "3.5x improvement",
-      },
-      {
-        metric: "Listing Time",
-        before: "2 days",
-        after: "10 min",
+        metric: "Admin operations",
+        detail: "Centralized control for orders, coordination, and platform management.",
         icon: FaCogs,
-        improvement: "97% faster",
       },
       {
-        metric: "SEO Traffic",
-        before: "+0",
-        after: "+180%",
-        icon: FaSignal,
-        improvement: "Significant uplift",
+        metric: "Payments & integrations",
+        detail: "Razorpay, Firebase, and REST API workflows wired into production.",
+        icon: FaBolt,
       },
     ],
-    technologies: ["Laravel", "React", "MySQL", "Maps", "SEO"],
-    timeline: "4 months",
-    impact: "Increased organic inquiries and reduced manual publishing overhead for agent teams",
+    technologies: ["Laravel", "Firebase", "MySQL", "Razorpay", "REST API"],
   },
   {
     id: 3,
-    client: "EnMart",
-    industry: "Quick Commerce",
-    serviceType: "Mobile-first Q-commerce Platform",
+    client: "Area24Realty",
+    industry: "Real Estate",
+    status: "Live",
+    year: "2025",
+    liveUrl: "https://area24group.com/",
+    serviceType: "Property Platform + Lead Operations",
     challenge:
-      "Slow product discovery and inventory sync issues causing failed orders and high refund rates.",
+      "Property discovery, listing publishing, and lead routing needed to work together across regions instead of spreadsheets and static pages.",
     solution:
-      "Built a mobile-first storefront with inventory-first architecture, optimized product discovery, streamlined checkout, and headless integrations for rapid order fulfillment.",
-    results: [
+      "Built a Laravel + TypeScript platform with map-aware browsing, listing workflows, agent and owner portals, and SEO-ready property pages.",
+    metrics: [
+      { label: "Build year", value: "2025" },
+      { label: "Screens", value: "6" },
+      { label: "Portals", value: "Owner + Agent" },
+      { label: "Status", value: "Live" },
+    ],
+    deliverables: [
       {
-        metric: "Failed Orders",
-        before: "7%",
-        after: "0.5%",
-        icon: FaShieldAlt,
-        improvement: "~86% reduction",
+        metric: "Property discovery",
+        detail: "Map-aware browsing and structured listing experiences.",
+        icon: FaSignal,
       },
       {
-        metric: "Checkout Conversion",
-        before: "2.1%",
-        after: "6.8%",
-        icon: FaCartArrowDown,
-        improvement: "3.2x improvement",
+        metric: "Listing workflows",
+        detail: "Publishing and management tools for property operations.",
+        icon: FaCogs,
       },
       {
-        metric: "Time-to-purchase",
-        before: "120s",
-        after: "18s",
-        icon: FaRocket,
-        improvement: "6.6x faster",
-      },
-      {
-        metric: "Fulfillment SLA",
-        before: "70%",
-        after: "96%",
+        metric: "Portal systems",
+        detail: "Owner and agent-facing workflows for day-to-day operations.",
         icon: FaUsers,
-        improvement: "37% improvement",
+      },
+      {
+        metric: "Production launch",
+        detail: "Live deployment at area24group.com.",
+        icon: FaRocket,
       },
     ],
-    technologies: ["React", "Next.js", "Node", "Redis", "Headless Commerce"],
-    timeline: "3 months",
-    impact: "Lower refunds, higher repeat purchase rate, and stronger unit economics",
+    technologies: ["Laravel", "TypeScript", "MySQL", "Maps", "SEO"],
   },
   {
     id: 4,
-    client: "ArranBilling",
-    industry: "Accounting & Inventory",
-    serviceType: "Accounting Platform",
+    client: "Nesthetix Designs",
+    industry: "Interior Design",
+    status: "Live",
+    year: "2025",
+    liveUrl: "https://nesthetixdesigns.com/",
+    serviceType: "Brand Platform + Lead Generation",
     challenge:
-      "Manual invoicing, reconciliation errors, and slow monthly closing timelines impacting cashflow visibility.",
+      "The business needed a site that builds trust, showcases work clearly, and turns interest into qualified inquiries while staying easy to update.",
     solution:
-      "Delivered a GST-ready accounting and inventory platform with automated invoicing, reconciliation workflows, and operational reporting tailored to manufacturing operations.",
-    results: [
+      "Built a Laravel + React (Inertia) experience with project presentation, service pages, lead forms, CMS-managed content, and motion-led brand presentation.",
+    metrics: [
+      { label: "Build year", value: "2025" },
+      { label: "Screens", value: "5" },
+      { label: "CMS", value: "Team-managed" },
+      { label: "Status", value: "Live" },
+    ],
+    deliverables: [
       {
-        metric: "Invoicing Time",
-        before: "3 days",
-        after: "< 2 hours",
-        icon: FaClock,
-        improvement: "> 95% faster",
+        metric: "Brand presentation",
+        detail: "Service and project showcase designed for a premium design business.",
+        icon: FaChartLine,
       },
       {
-        metric: "Reconciliation Errors",
-        before: "4%",
-        after: "0.1%",
-        icon: FaBolt,
-        improvement: "> 97% reduction",
+        metric: "Lead generation",
+        detail: "Inquiry flows integrated into the browsing experience.",
+        icon: FaEnvelope,
       },
       {
-        metric: "Close Time",
-        before: "10 days",
-        after: "1 day",
-        icon: FaTachometerAlt,
-        improvement: "90% faster",
-      },
-      {
-        metric: "Operational Accuracy",
-        before: "Manual",
-        after: "Automated",
+        metric: "CMS operations",
+        detail: "Lightweight content management for team-led updates.",
         icon: FaDatabase,
-        improvement: "Improved reliability",
+      },
+      {
+        metric: "Production launch",
+        detail: "Live deployment at nesthetixdesigns.com.",
+        icon: FaRocket,
       },
     ],
-    technologies: ["Laravel", "Vue", "MySQL", "Accounting Integrations"],
-    timeline: "4 months",
-    impact: "Faster month-end closes and more accurate cashflow reporting for operations",
+    technologies: ["React", "Inertia.js", "Laravel", "ImageKit", "GSAP"],
   },
   {
     id: 5,
     client: "Baybee",
     industry: "Shopify Commerce",
+    status: "Live",
+    year: "2024",
+    liveUrl: "https://baybee.co.in/",
     serviceType: "Shopify Storefront",
     challenge:
-      "Low mobile conversion and slow product organization causing drop-offs and lower average order value.",
+      "The brand needed a storefront that feels trustworthy on mobile, organizes products clearly, and supports smoother buying decisions.",
     solution:
-      "Rebuilt storefront with optimized product structure, fast mobile checkout, and conversion-focused UI improvements plus performance tuning.",
-    results: [
+      "Implemented and refined the Shopify storefront with structured collections, Liquid theme work, GoKwik checkout integration, and conversion-focused product presentation.",
+    metrics: [
+      { label: "Build year", value: "2024" },
+      { label: "Screens", value: "5" },
+      { label: "Checkout", value: "GoKwik" },
+      { label: "Status", value: "Live" },
+    ],
+    deliverables: [
       {
-        metric: "Conversion Rate",
-        before: "1.9%",
-        after: "5.4%",
+        metric: "Storefront structure",
+        detail: "Organized collections and product pages for a baby products brand.",
         icon: FaCartArrowDown,
-        improvement: "2.8x improvement",
       },
       {
-        metric: "Average Order Value",
-        before: "$32",
-        after: "$48",
-        icon: FaMoneyBillWave,
-        improvement: "50% increase",
+        metric: "Checkout flow",
+        detail: "GoKwik-integrated purchase path tuned for mobile buyers.",
+        icon: FaBolt,
       },
       {
-        metric: "Mobile Load Time",
-        before: "7s",
-        after: "1s",
-        icon: FaTachometerAlt,
-        improvement: "86% faster",
+        metric: "Theme implementation",
+        detail: "Shopify Liquid and custom UI work across key commerce pages.",
+        icon: FaCogs,
       },
       {
-        metric: "Repeat Customers",
-        before: "8%",
-        after: "18%",
-        icon: FaUsers,
-        improvement: "2.25x increase",
+        metric: "Production launch",
+        detail: "Live store at baybee.co.in.",
+        icon: FaRocket,
       },
     ],
-    technologies: ["Shopify", "Liquid", "React", "SEO"],
-    timeline: "2.5 months",
-    impact: "Material uplift in conversion and revenue within a single season",
+    technologies: ["Shopify", "Liquid", "GoKwik", "Custom UI"],
   },
   {
     id: 6,
-    client: "TechBuds",
-    industry: "Digital Services",
-    serviceType: "Service Platform + Lead Gen",
+    client: "Aaran Billing",
+    industry: "Accounting & Inventory",
+    status: "Internal",
+    year: "2024",
+    serviceType: "Internal Operations Platform",
     challenge:
-      "Scattered service pages and poor lead capture resulting in low qualified inquiries and inconsistent branding.",
+      "Accounting, inventory tracking, and GST workflows were spread across manual processes that slowed reconciliation and month-end operations.",
     solution:
-      "Consolidated service offerings into a conversion-focused platform, improved SEO structure, and built lead qualification workflows and booking funnels.",
-    results: [
+      "Built an internal Laravel + Livewire system with invoicing, inventory sync, purchase/sales workflows, GST-ready accounting, and operational reporting.",
+    metrics: [
+      { label: "Build year", value: "2024" },
+      { label: "Screens", value: "10" },
+      { label: "Modules", value: "4" },
+      { label: "Status", value: "Internal" },
+    ],
+    deliverables: [
       {
-        metric: "Qualified Leads",
-        before: "12/mo",
-        after: "92/mo",
-        icon: FaSignal,
-        improvement: "7.6x increase",
+        metric: "GST workflows",
+        detail: "Invoicing and accounting flows built for Indian tax operations.",
+        icon: FaShieldAlt,
       },
       {
-        metric: "Contact Form Conv.",
-        before: "0.8%",
-        after: "5.2%",
-        icon: FaEnvelope,
-        improvement: "6.5x improvement",
+        metric: "Inventory control",
+        detail: "Stock, purchase, and sales handling in one internal system.",
+        icon: FaDatabase,
       },
       {
-        metric: "Organic Traffic",
-        before: "+0",
-        after: "+140%",
+        metric: "Operational reporting",
+        detail: "Reporting tailored to garment, knitting, and printing operations.",
         icon: FaChartLine,
-        improvement: "Significant uplift",
       },
       {
-        metric: "Brand Consistency",
-        before: "Multiple templates",
-        after: "Unified system",
+        metric: "Internal deployment",
+        detail: "Private system used for day-to-day business operations.",
         icon: FaCogs,
-        improvement: "Improved clarity",
       },
     ],
-    technologies: ["React", "Tailwind", "Node", "SEO"],
-    timeline: "2 months",
-    impact: "Higher-quality inbound leads and clearer service positioning for sales",
+    technologies: ["Laravel", "Livewire", "PHP", "MySQL", "GST"],
   },
 ];
 
@@ -905,11 +853,11 @@ function DetailedCaseStudiesSection() {
             Case Studies
           </p>
           <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-4xl">
-            Measurable impact across industries.
+            Verified builds across live and internal systems.
           </h2>
           <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
-            Real results with documented before/after metrics. Systems that
-            drive revenue, reduce costs, and scale reliably.
+            Project facts from real deployments — build timeline, documented
+            screens, scope, stack, and live links where available.
           </p>
         </div>
 
@@ -935,6 +883,7 @@ function DetailedCaseStudiesSection() {
                     </h3>
                     <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.15em] text-text-secondary/70">
                       {cs.industry}
+                      {cs.status ? ` · ${cs.status}` : ""}
                     </p>
                     <p className="mt-1 text-xs text-text-secondary line-clamp-1">
                       {cs.serviceType}
@@ -972,14 +921,14 @@ function DetailedCaseStudiesSection() {
               </div>
             </div>
 
-            {/* Results Grid */}
+            {/* Deliverables Grid */}
             <div>
               <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent mb-2">
-                Results
+                What Shipped
               </p>
               <div className="grid gap-2 sm:grid-cols-2">
-                {study.results.map((result, idx) => {
-                  const Icon = result.icon;
+                {study.deliverables.map((item, idx) => {
+                  const Icon = item.icon;
                   return (
                     <div
                       key={idx}
@@ -991,18 +940,10 @@ function DetailedCaseStudiesSection() {
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-text-secondary/70">
-                            {result.metric}
+                            {item.metric}
                           </p>
-                          <div className="mt-1 flex items-baseline gap-1">
-                            <span className="text-xs line-through text-text-secondary/70">
-                              {result.before}
-                            </span>
-                            <span className="font-display text-sm font-bold text-primary">
-                              {result.after}
-                            </span>
-                          </div>
-                          <p className="mt-0.5 text-[8px] font-bold text-green-500/80">
-                            {result.improvement}
+                          <p className="mt-1 text-xs leading-5 text-primary">
+                            {item.detail}
                           </p>
                         </div>
                       </div>
@@ -1012,52 +953,80 @@ function DetailedCaseStudiesSection() {
               </div>
             </div>
 
-            {/* Footer Info */}
-            <div className="border-t border-border/40 pt-3">
-              <div className="grid gap-3">
-                <div>
-                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                    Tech Stack
-                  </p>
-                  <div className="mt-1.5 flex flex-wrap gap-1">
-                    {study.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full bg-accent/10 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-accent"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                      Timeline
+            {/* Project Metrics */}
+            <div>
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent mb-2">
+                Project Snapshot
+              </p>
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+                {study.metrics.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-lg border border-border/40 bg-surface/40 px-3 py-2.5"
+                  >
+                    <p className="font-display text-base font-bold leading-tight text-primary sm:text-lg">
+                      {item.value}
                     </p>
-                    <p className="mt-1 font-display text-sm font-bold text-primary">
-                      {study.timeline}
+                    <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
+                      {item.label}
                     </p>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                      Impact
-                    </p>
-                    <p className="mt-1 text-[10px] leading-4 font-medium text-text-secondary line-clamp-2">
-                      {study.impact}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <a
-              href="mailto:contact@codebyjerry.online"
-              className="inline-flex w-max items-center gap-2 rounded-full bg-accent px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-accent/85"
-            >
-              Start Project
-              <FaArrowRight size={10} />
-            </a>
+            {/* Footer Info */}
+            <div className="border-t border-border/40 pt-3">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                  Tech Stack
+                </p>
+                <div className="mt-1.5 flex flex-wrap gap-1">
+                  {study.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full bg-accent/10 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-accent"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              {study.liveUrl && (
+                <p className="mt-2 text-[10px] text-text-secondary/80">
+                  Live at{" "}
+                  <a
+                    href={study.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium text-primary underline decoration-border/60 underline-offset-2 hover:text-accent"
+                  >
+                    {study.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                  </a>
+                </p>
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="mailto:contact@codebyjerry.online"
+                className="inline-flex w-max items-center gap-2 rounded-full bg-accent px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-accent/85"
+              >
+                Start Project
+                <FaArrowRight size={10} />
+              </a>
+              {study.liveUrl && (
+                <a
+                  href={study.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex w-max items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent/50 hover:text-accent"
+                >
+                  View Live Site
+                  <FaExternalLinkAlt size={10} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -1077,12 +1046,12 @@ function HeroServiceShowcase() {
   }, []);
 
   return (
-    <div className="freelance-showcase relative flex min-h-[560px] flex-col overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/78 p-4 shadow-[0_20px_55px_-36px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:min-h-[600px] sm:rounded-[2rem] sm:p-6 md:min-h-[620px] lg:h-full lg:min-h-[34rem] lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
+    <div className="freelance-showcase relative flex min-h-[420px] flex-col overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/78 p-4 shadow-[0_20px_55px_-36px_rgba(15,23,42,0.22)] backdrop-blur-sm sm:min-h-[480px] sm:rounded-[2rem] sm:p-6 lg:h-full lg:min-h-0 lg:max-h-full lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none lg:backdrop-blur-none">
       <div className="pointer-events-none absolute -left-8 top-6 h-40 w-40 rounded-full bg-[rgba(255,255,255,0.82)] blur-3xl sm:h-56 sm:w-56" />
       <div className="pointer-events-none absolute right-0 top-14 h-48 w-48 rounded-full bg-[rgba(17, 24, 39,0.14)] blur-3xl sm:h-64 sm:w-64" />
       <div className="pointer-events-none absolute bottom-20 right-12 h-36 w-36 rounded-full bg-[rgba(55, 65, 81,0.14)] blur-3xl sm:h-52 sm:w-52" />
 
-      <div className="relative min-h-[465px] flex-1 overflow-hidden sm:min-h-[500px] lg:min-h-0">
+      <div className="freelance-showcase-image-stage relative min-h-[300px] flex-1 overflow-hidden sm:min-h-[360px] lg:min-h-0">
         {serviceSlides.map((slide, index) => {
           const isActive = index === activeSlide;
 
@@ -1096,7 +1065,7 @@ function HeroServiceShowcase() {
                   : "pointer-events-none translate-y-8 opacity-0"
               }`}
             >
-              <div className="relative h-full flex items-center justify-center">
+              <div className="flex h-full items-center justify-center">
                 <div className="pointer-events-none absolute inset-x-6 bottom-5 h-24 blur-3xl sm:inset-x-8 sm:bottom-auto sm:top-10 sm:h-48 lg:inset-x-12 lg:top-12 lg:h-56" />
 
                 <img
@@ -1104,45 +1073,16 @@ function HeroServiceShowcase() {
                   alt={`${slide.name} service visual`}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "auto"}
-                  className={`relative z-10 mx-auto block h-auto max-h-full w-auto max-w-[315px] object-contain object-center transition-all duration-700 ease-out sm:max-w-[400px] md:max-w-[420px] lg:max-w-[560px] ${
+                  className={`relative z-10 mx-auto block h-auto max-h-full w-auto max-w-full object-contain object-center transition-all duration-700 ease-out sm:max-w-[400px] md:max-w-[420px] lg:max-h-[calc(100%-0.5rem)] lg:max-w-[min(560px,100%)] ${
                     isActive
                       ? "translate-y-0 scale-100 opacity-100"
                       : "translate-y-4 scale-[0.98] opacity-0"
                   }`}
-                  style={{
-                    // ensure image scales by height without cropping
-                    maxHeight: "100%",
-                  }}
                 />
               </div>
             </article>
           );
         })}
-      </div>
-
-      <div className="relative z-30 mt-3 grid grid-cols-2 gap-2 pt-2 sm:mt-4 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2 lg:justify-start">
-        {serviceSlides.map((slide, index) => (
-          <button
-            key={slide.name}
-            type="button"
-            onClick={() => setActiveSlide(index)}
-            aria-pressed={index === activeSlide}
-            className={`group inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-2 py-1.5 text-center text-[10px] font-bold uppercase tracking-[0.18em] transition-colors sm:justify-start sm:px-0 sm:py-0 sm:text-left sm:text-[11px] sm:tracking-[0.32em] ${
-              index === activeSlide
-                ? "text-primary"
-                : "text-text-secondary/70 hover:text-primary"
-            }`}
-          >
-            <span
-              className={`h-1.5 w-1.5 rounded-full transition-colors ${
-                index === activeSlide
-                  ? "bg-accent"
-                  : "bg-text-secondary/25 group-hover:bg-primary/50"
-              }`}
-            />
-            {slide.name}
-          </button>
-        ))}
       </div>
     </div>
   );
@@ -1497,12 +1437,12 @@ function CaseStudiesSection() {
             Case Studies
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-            Real projects. Real results.
+            Selected production work.
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-          Each project is a system built for a real business, not a template,
-          not a demo. Browse the actual screens delivered to clients.
+          Verified client systems with real screenshots — live deployments and
+          one internal operations platform.
         </p>
       </div>
 
@@ -1616,112 +1556,114 @@ function AboutSection() {
   return (
     <section
       id="about"
-      className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+      className="mx-auto flex max-w-screen-xl scroll-mt-24 flex-col justify-center px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:h-[calc(100svh-4.5rem)] lg:max-h-[calc(100svh-4.5rem)] lg:overflow-hidden lg:px-20 lg:py-4"
     >
-      <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
-        <div className="relative overflow-hidden rounded-[2.2rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-6 py-8 text-white shadow-[0_28px_70px_-38px_rgba(15,23,42,0.5)] sm:px-8 sm:py-10 lg:px-10 lg:flex lg:items-center">
-          <div className="pointer-events-none absolute -left-8 top-10 h-36 w-36 rounded-full bg-[rgba(17, 24, 39,0.24)] blur-3xl" />
-          <div className="pointer-events-none absolute right-0 top-0 h-44 w-44 rounded-full bg-[rgba(55, 65, 81,0.16)] blur-3xl" />
-          <div className="pointer-events-none absolute bottom-0 left-1/3 h-28 w-28 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
+      <div className="flex min-h-0 flex-1 flex-col gap-3">
+        <div className="grid min-h-0 flex-1 gap-3 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch">
+          <div className="relative flex min-h-0 overflow-hidden rounded-[1.5rem] border border-primary bg-[linear-gradient(145deg,#111827_0%,#0b0b0b_48%,#050816_100%)] px-5 py-5 text-white shadow-[0_20px_50px_-32px_rgba(15,23,42,0.45)] sm:px-6 lg:px-7 lg:py-6">
+            <div className="pointer-events-none absolute -left-8 top-10 h-28 w-28 rounded-full bg-[rgba(17, 24, 39,0.24)] blur-3xl" />
+            <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-[rgba(55, 65, 81,0.16)] blur-3xl" />
+            <div className="pointer-events-none absolute bottom-0 left-1/3 h-20 w-20 rounded-full bg-[rgba(255,255,255,0.08)] blur-3xl" />
 
-          <div className="relative z-10">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-white/70">
-              About
-            </p>
-            <h2 className="mt-4 max-w-lg font-display text-3xl font-bold leading-tight sm:text-4xl lg:text-[2.8rem] lg:leading-[1.02]">
-              I don’t just build websites.
-              <br />
-              I build systems businesses
-              <br />
-              run on.
-            </h2>
-            <p className="mt-6 max-w-xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
-              From ecommerce infrastructure and internal dashboards to backend
-              platforms and automation workflows, I build scalable digital
-              products engineered for real operations.
-            </p>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-white/70 sm:text-base sm:leading-8">
-              Systems engineered for teams that rely on them every day.
-            </p>
+            <div className="relative z-10 flex h-full min-h-0 flex-col justify-center">
+              <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-white/70">
+                About
+              </p>
+              <h2 className="mt-2 max-w-lg font-display text-2xl font-bold leading-[1.08] sm:text-[1.75rem] lg:text-[1.95rem]">
+                I don’t just build websites.
+                <br />
+                I build systems businesses
+                <br />
+                run on.
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-6 text-white/74 lg:mt-2.5">
+                From ecommerce infrastructure and internal dashboards to backend
+                platforms and automation workflows, I build scalable digital
+                products engineered for real operations.
+              </p>
+              <p className="mt-1.5 max-w-xl text-sm leading-6 text-white/70">
+                Systems engineered for teams that rely on them every day.
+              </p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {aboutDeliverables.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm"
-                >
-                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
-                    <FaCheckCircle size={12} aria-hidden="true" />
-                  </span>
-                  <span className="text-sm leading-6 text-white/86">
-                    {item}
-                  </span>
-                </div>
-              ))}
+              <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:mt-3">
+                {aboutDeliverables.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-2.5 py-2 backdrop-blur-sm"
+                  >
+                    <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/20 text-accent-soft">
+                      <FaCheckCircle size={9} aria-hidden="true" />
+                    </span>
+                    <span className="text-xs leading-5 text-white/86 sm:text-[13px]">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid min-h-0 grid-cols-2 grid-rows-2 gap-2 max-lg:grid-rows-[8.5rem_8.5rem] lg:h-full lg:max-h-full">
+            <div className="flex min-h-0 items-center justify-center overflow-hidden rounded-[1.15rem] bg-white/70 p-2">
+              <img
+                src="https://ik.imagekit.io/codebyjerry/revenue_op.png"
+                alt="Revenue Infrastructure"
+                loading="lazy"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
+
+            <article className="flex min-h-0 items-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-3.5">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/80">Key Metrics</p>
+                <h3 className="mt-1 font-display text-base font-bold sm:text-lg">Production Metrics</h3>
+                <ul className="mt-2 space-y-1.5 text-white/90">
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">40%</span><span className="text-[11px] sm:text-xs">Faster load times</span></li>
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">2x</span><span className="text-[11px] sm:text-xs">Conversion improvement</span></li>
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">10k+</span><span className="text-[11px] sm:text-xs">Active users on live systems</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <article className="flex min-h-0 items-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-3.5">
+              <div>
+                <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/80">Operational Stats</p>
+                <h3 className="mt-1 font-display text-base font-bold sm:text-lg">Operational Health</h3>
+                <ul className="mt-2 space-y-1.5 text-white/90">
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">99.9%</span><span className="text-[11px] sm:text-xs">Uptime</span></li>
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">-80%</span><span className="text-[11px] sm:text-xs">Manual tasks reduced</span></li>
+                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">92%</span><span className="text-[11px] sm:text-xs">Team adoption</span></li>
+                </ul>
+              </div>
+            </article>
+
+            <div className="flex min-h-0 items-center justify-center overflow-hidden rounded-[1.15rem] bg-white/70 p-2">
+              <img
+                src="https://ik.imagekit.io/codebyjerry/growth_op.png"
+                alt="Growth Systems"
+                loading="lazy"
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 h-full">
-          {/* Revenue image (bare) */}
-          <img
-            src="https://ik.imagekit.io/codebyjerry/revenue_op.png"
-            alt="Revenue Infrastructure"
-            loading="lazy"
-            className="block h-full w-full object-contain"
-          />
-
-          {/* Metric card (solid theme) */}
-          <article className="overflow-hidden rounded-[1.75rem] h-full bg-primary text-white p-6 flex items-center shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Key Metrics</p>
-              <h3 className="mt-3 font-display text-2xl font-bold">Production Metrics</h3>
-              <ul className="mt-4 space-y-3 text-white/90">
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">40%</span><span className="text-sm">Faster load times</span></li>
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">2x</span><span className="text-sm">Conversion improvement</span></li>
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">10k+</span><span className="text-sm">Active users on live systems</span></li>
-              </ul>
-            </div>
-          </article>
-
-          {/* Metric card (solid theme) */}
-          <article className="overflow-hidden rounded-[1.75rem] h-full bg-primary text-white p-6 flex items-center shadow-[0_24px_60px_-38px_rgba(15,23,42,0.18)]">
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-white/80">Operational Stats</p>
-              <h3 className="mt-3 font-display text-2xl font-bold">Operational Health</h3>
-              <ul className="mt-4 space-y-3 text-white/90">
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">99.9%</span><span className="text-sm">Uptime</span></li>
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">-80%</span><span className="text-sm">Manual tasks reduced</span></li>
-                <li className="flex items-baseline gap-3"><span className="text-2xl font-bold">92%</span><span className="text-sm">Team adoption</span></li>
-              </ul>
-            </div>
-          </article>
-
-          {/* Growth image (bare) */}
-          <img
-            src="https://ik.imagekit.io/codebyjerry/growth_op.png"
-            alt="Growth Systems"
-            loading="lazy"
-            className="block h-full w-full object-contain"
-          />
-        </div>
-      </div>
-
-      <div className="mt-8 rounded-[2rem] border border-border/70 bg-background/88 px-6 py-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:px-8 lg:px-10">
-        <div className="grid gap-6 text-center sm:grid-cols-3">
-          {aboutStats.map((item, index) => (
-            <div
-              key={item.label}
-              className={`py-2 ${index < aboutStats.length - 1 ? "sm:border-r sm:border-border/70" : ""}`}
-            >
-              <p className="font-display text-3xl font-bold text-primary sm:text-[2rem]">
-                {item.value}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-text-secondary">
-                {item.label}
-              </p>
-            </div>
-          ))}
+        <div className="shrink-0 rounded-[1.25rem] border border-border/70 bg-background/88 px-4 py-3 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.14)] sm:px-5">
+          <div className="grid gap-3 text-center sm:grid-cols-3">
+            {aboutStats.map((item, index) => (
+              <div
+                key={item.label}
+                className={`py-0.5 ${index < aboutStats.length - 1 ? "sm:border-r sm:border-border/70" : ""}`}
+              >
+                <p className="font-display text-xl font-bold text-primary sm:text-2xl">
+                  {item.value}
+                </p>
+                <p className="mt-0.5 text-xs leading-5 text-text-secondary">
+                  {item.label}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -1800,30 +1742,30 @@ function TrustSection() {
             : "lg:order-4",
   ];
   return (
-    <section className="mx-auto max-w-screen-xl px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20">
-      <div className="rounded-[2.25rem] border border-border/70 bg-background/88 p-6 shadow-[0_24px_60px_-35px_rgba(15,23,42,0.18)] backdrop-blur sm:p-8 lg:p-10">
+    <section className="mx-auto max-w-screen-xl px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12">
+      <div className="rounded-[1.75rem] border border-border/70 bg-background/88 p-5 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.14)] backdrop-blur sm:p-6 lg:p-7">
         {/* Header */}
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="max-w-lg">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
               Trust
             </p>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-[3rem] lg:leading-[1.02]">
+            <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2.15rem] lg:leading-[1.08]">
                 Product engineering credibility is proven through shipped systems,
                 data, and outcomes.
               </h2>
           </div>
-          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base sm:leading-8">
+          <p className="max-w-2xl text-sm leading-6 text-text-secondary">
             This is not a portfolio of demos. These are operational systems built
             to solve business problems and scale reliably.
           </p>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap gap-2">
           {trustLogos.map((item) => (
             <div
               key={item}
-              className="rounded-full border border-border/70 bg-surface/80 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.24em] text-text-secondary shadow-[0_12px_32px_-26px_rgba(15,23,42,0.18)]"
+              className="rounded-full border border-border/70 bg-surface/80 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.22em] text-text-secondary"
             >
               {item}
             </div>
@@ -1831,20 +1773,20 @@ function TrustSection() {
         </div>
 
         {/* Main content: testimonial + dashboard */}
-        <div className="mt-8 grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <div className="mt-5 grid gap-4 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           {/* Left rotating testimonials */}
-          <article className="relative flex h-auto flex-col rounded-[1.75rem] border border-primary bg-primary p-6 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-7">
+          <article className="relative flex h-auto flex-col rounded-[1.35rem] border border-primary bg-primary p-5 shadow-[0_18px_44px_-30px_rgba(15,23,42,0.16)]">
             {/* bg glow */}
-            <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[rgba(55, 65, 81,0.22)] blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-8 left-8 h-32 w-32 rounded-full bg-[rgba(17, 24, 39,0.18)] blur-3xl" />
+            <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-[rgba(55, 65, 81,0.22)] blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-6 left-6 h-24 w-24 rounded-full bg-[rgba(17, 24, 39,0.18)] blur-3xl" />
 
             <div className="relative z-10">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white">
-                <FaQuoteLeft size={16} />
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white/10 text-white">
+                <FaQuoteLeft size={14} />
               </span>
 
               {/* Animated review + response */}
-              <div className="relative mt-4 min-h-[190px]">
+              <div className="relative mt-3 min-h-[148px]">
                 {trustTestimonials.map((item, i) => (
                   <div
                     key={i}
@@ -1854,12 +1796,12 @@ function TrustSection() {
                         : "pointer-events-none absolute inset-0 translate-y-4 opacity-0"
                     }`}
                   >
-                    <div className="rounded-[1.2rem] rounded-tl-md border border-white/12 bg-white/6 px-4 py-3">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">
+                    <div className="rounded-xl rounded-tl-md border border-white/12 bg-white/6 px-3.5 py-2.5">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-white/70">
                         Client Review
                       </p>
                       <p
-                        className="mt-2 text-[15px] leading-7 text-white/88"
+                        className="mt-1.5 text-sm leading-6 text-white/88"
                         style={{
                           display: "-webkit-box",
                           WebkitLineClamp: 4,
@@ -1870,12 +1812,12 @@ function TrustSection() {
                         {item.quote}
                       </p>
                     </div>
-                    <div className="mt-3 ml-auto max-w-[86%] rounded-[1.2rem] rounded-tr-md bg-white px-4 py-3 text-primary shadow-[0_18px_42px_-30px_rgba(255,255,255,0.28)]">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-text-secondary/70">
+                    <div className="mt-2.5 ml-auto max-w-[86%] rounded-xl rounded-tr-md bg-white px-3.5 py-2.5 text-primary shadow-[0_14px_32px_-24px_rgba(255,255,255,0.28)]">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-text-secondary/70">
                         Response
                       </p>
                       <p
-                        className="mt-2 text-[13px] leading-6 text-text-secondary"
+                        className="mt-1.5 text-xs leading-5 text-text-secondary"
                         style={{
                           display: "-webkit-box",
                           WebkitLineClamp: 3,
@@ -1891,10 +1833,10 @@ function TrustSection() {
               </div>
             </div>
 
-            <div className="relative z-10 mt-5">
-              <div className="border-t border-white/10 pt-5">
+            <div className="relative z-10 mt-4">
+              <div className="border-t border-white/10 pt-3.5">
                 {/* Animated author */}
-                <div className="relative min-h-[40px]">
+                <div className="relative min-h-[34px]">
                   {trustTestimonials.map((item, i) => (
                     <div
                       key={i}
@@ -1907,7 +1849,7 @@ function TrustSection() {
                       <p className="text-sm font-semibold text-white">
                         {item.author}
                       </p>
-                      <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-white/70">
+                      <p className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-white/70">
                         {item.role}
                       </p>
                     </div>
@@ -1918,74 +1860,74 @@ function TrustSection() {
           </article>
 
           {/* Right dynamic dashboard synced to active testimonial */}
-          <div className="rounded-[2rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-5 shadow-[0_24px_60px_-38px_rgba(17, 24, 39,0.22)] sm:p-6">
+          <div className="rounded-[1.35rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-4 shadow-[0_18px_44px_-30px_rgba(17, 24, 39,0.18)] sm:p-5">
             <div
               className={`transition-all duration-300 ${animating ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"}`}
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-accent">
                     Outcome Board
                   </p>
-                  <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-primary">
+                  <h3 className="mt-1.5 font-display text-lg font-bold leading-tight text-primary sm:text-xl">
                     {dash.label}
                   </h3>
                 </div>
-                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-green-600">
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-green-600">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
                   Live
                 </span>
               </div>
 
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
                 <div
-                  className={`rounded-2xl border border-border/70 bg-background p-4 shadow-[0_16px_36px_-32px_rgba(15,23,42,0.18)] ${chartOrder[0]}`}
+                  className={`rounded-xl border border-border/70 bg-background p-3.5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.18)] ${chartOrder[0]}`}
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-start justify-between gap-2">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
                         Key Stat
                       </p>
-                      <p className="mt-3 font-display text-4xl font-bold leading-none text-primary">
+                      <p className="mt-2 font-display text-3xl font-bold leading-none text-primary">
                         {primaryMetric.value}
                       </p>
                     </div>
                     <span
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-2xl"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-xl"
                       style={{
                         background: `${dash.color}14`,
                         color: dash.color,
                       }}
                     >
-                      <primaryMetric.Icon size={16} />
+                      <primaryMetric.Icon size={14} />
                     </span>
                   </div>
-                  <p className="mt-3 text-xs font-bold uppercase tracking-[0.16em] text-text-secondary/70">
+                  <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
                     {primaryMetric.label}
                   </p>
                 </div>
 
                 <div
-                  className={`rounded-2xl border border-border/70 bg-surface/70 p-4 ${chartOrder[1]}`}
+                  className={`rounded-xl border border-border/70 bg-surface/70 p-3.5 ${chartOrder[1]}`}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3">
                     <div
-                      className="grid h-24 w-24 shrink-0 place-items-center rounded-full"
+                      className="grid h-20 w-20 shrink-0 place-items-center rounded-full"
                       style={{
                         background: `conic-gradient(${dash.color} ${pieMetric.pct * 3.6}deg, rgba(17, 24, 39,0.12) 0deg)`,
                       }}
                     >
-                      <div className="grid h-16 w-16 place-items-center rounded-full bg-background">
-                        <span className="font-display text-lg font-bold text-primary">
+                      <div className="grid h-14 w-14 place-items-center rounded-full bg-background">
+                        <span className="font-display text-base font-bold text-primary">
                           {pieMetric.pct}%
                         </span>
                       </div>
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
                         Pie Signal
                       </p>
-                      <p className="mt-2 text-sm font-bold leading-5 text-primary">
+                      <p className="mt-1.5 text-xs font-bold leading-5 text-primary">
                         {pieMetric.label}
                       </p>
                     </div>
@@ -1993,19 +1935,19 @@ function TrustSection() {
                 </div>
 
                 <div
-                  className={`rounded-2xl border border-border/70 bg-background p-4 ${chartOrder[2]}`}
+                  className={`rounded-xl border border-border/70 bg-background p-3.5 ${chartOrder[2]}`}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
                       Line Trend
                     </p>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-green-600">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-green-600">
                       Trending
                     </p>
                   </div>
                   <svg
                     viewBox="0 0 100 100"
-                    className="mt-3 h-28 w-full overflow-visible"
+                    className="mt-2 h-20 w-full overflow-visible"
                     preserveAspectRatio="none"
                     aria-hidden="true"
                   >
@@ -2023,29 +1965,29 @@ function TrustSection() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-text-secondary/70">
+                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
                     {dash.sparkLabel}
                   </p>
                 </div>
 
                 <div
-                  className={`rounded-2xl border border-border/70 bg-surface/70 p-4 ${chartOrder[3]}`}
+                  className={`rounded-xl border border-border/70 bg-surface/70 p-3.5 ${chartOrder[3]}`}
                 >
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
                     Progress Bars
                   </p>
-                  <div className="mt-4 space-y-3">
+                  <div className="mt-3 space-y-2.5">
                     {dash.bars.map((bar) => (
                       <div key={bar.label}>
-                        <div className="flex items-center justify-between gap-4">
-                          <span className="text-xs text-text-secondary">
+                        <div className="flex items-center justify-between gap-3">
+                          <span className="text-[11px] text-text-secondary">
                             {bar.label}
                           </span>
-                          <span className="text-xs font-bold text-primary">
+                          <span className="text-[11px] font-bold text-primary">
                             {bar.pct}%
                           </span>
                         </div>
-                        <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-border/60">
+                        <div className="mt-1 h-1 overflow-hidden rounded-full bg-border/60">
                           <div
                             className="h-full rounded-full transition-all duration-700"
                             style={{
@@ -2173,56 +2115,58 @@ function FAQSection() {
   return (
     <section
       id="faq"
-      className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+      className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12"
     >
-      <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+      <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
         <div className="max-w-lg">
           <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
             FAQ
           </p>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-              How product engineering collaboration works
-            </h2>
-          </div>
-          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-            Practical answers for teams choosing a product engineer, not a generic
-            developer.
-          </p>
+          <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
+            How product engineering collaboration works
+          </h2>
         </div>
+        <p className="max-w-2xl text-sm leading-6 text-text-secondary">
+          Practical answers for teams choosing a product engineer, not a
+          generic developer.
+        </p>
+      </div>
 
-        <div className="mt-10 space-y-4 lg:mt-12">
-          {faqData.map((faq, index) => (
-            <div
-              key={index}
-              className="overflow-hidden rounded-[1.5rem] border border-border/60 bg-background/95 shadow-[0_12px_32px_-20px_rgba(15,23,42,0.12)]"
+      <div className="mt-5 grid gap-2.5 lg:grid-cols-2 lg:gap-3">
+        {faqData.map((faq, index) => (
+          <div
+            key={index}
+            className="overflow-hidden rounded-xl border border-border/60 bg-background/95 shadow-[0_8px_24px_-18px_rgba(15,23,42,0.12)]"
+          >
+            <button
+              onClick={() => toggleItem(index)}
+              className="flex w-full items-start justify-between gap-3 p-3.5 text-left transition-colors hover:bg-surface/50 sm:p-4"
+              aria-expanded={openItems.has(index)}
             >
-              <button
-                onClick={() => toggleItem(index)}
-                className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-surface/50 sm:p-7"
-                aria-expanded={openItems.has(index)}
-              >
-              <h3 className="font-display text-lg font-bold leading-tight text-primary sm:text-xl">
+              <h3 className="font-display text-sm font-bold leading-snug text-primary sm:text-[15px]">
                 {faq.question}
               </h3>
               <span
-                className={`ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border/60 transition-transform ${
+                className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-border/60 text-[11px] transition-transform ${
                   openItems.has(index) ? "rotate-45 bg-accent/10" : ""
                 }`}
               >
-                <span className="text-sm font-bold text-accent">+</span>
+                <span className="font-bold text-accent">+</span>
               </span>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ${
+              className={`grid transition-all duration-300 ${
                 openItems.has(index)
-                  ? "max-h-96 opacity-100"
-                  : "max-h-0 opacity-0"
+                  ? "grid-rows-[1fr] opacity-100"
+                  : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <div className="border-t border-border/60 px-6 pb-6 pt-4 sm:px-7 sm:pb-7">
-                <p className="text-sm leading-7 text-text-secondary sm:text-base">
-                  {faq.answer}
-                </p>
+              <div className="overflow-hidden">
+                <div className="border-t border-border/60 px-3.5 pb-3.5 pt-2.5 sm:px-4 sm:pb-4">
+                  <p className="text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -2323,7 +2267,6 @@ export default function FreelanceLanding() {
   const navLinks = [
     { label: "About", to: "/about" },
     { label: "Portfolio", to: "/portfolio" },
-    { label: "Services", to: "/services" },
     { label: "Blog", to: "/blog" },
   ];
 
@@ -2527,15 +2470,15 @@ export default function FreelanceLanding() {
       <main id="main-content" className="relative z-10">
         {/* Hero section padded to clear sticky header */}
         <section className="mx-auto max-w-screen-xl px-5 pt-[5.75rem] sm:px-6 sm:pt-24 md:px-12 lg:px-20">
-          <div className="freelance-hero-grid grid gap-8 pb-10 pt-4 sm:gap-10 sm:py-8 md:gap-14 md:py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16 lg:py-10">
+          <div className="freelance-hero-grid grid gap-8 pb-10 pt-4 sm:gap-10 sm:py-8 md:gap-14 md:py-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12 lg:py-4 lg:pb-0">
             {/* Left fixed copy */}
-            <div className="freelance-hero-copy flex flex-col text-left">
+            <div className="freelance-hero-copy flex flex-col justify-center text-left">
               {/* Headline */}
               <h1 className="max-w-lg text-[0.85rem] font-display font-semibold uppercase tracking-[0.28em] text-primary sm:text-[0.95rem]">
                 FULL-STACK ENGINEER • PRODUCT BUILDER
               </h1>
 
-              <h2 className="mt-6 max-w-lg text-[2.2rem] font-display font-bold leading-[0.98] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
+              <h2 className="freelance-hero-title mt-6 max-w-lg text-[2.2rem] font-display font-bold leading-[0.98] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
                 <span className="block">Building production-grade</span>
                 <span className="block">digital systems</span>
                 <span className="block">for growth-stage businesses.</span>
@@ -2569,7 +2512,7 @@ export default function FreelanceLanding() {
               </p>
 
               {/* Trust indicators */}
-              <div className="mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
+              <div className="freelance-hero-stats mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
                 {[
                   { value: "10+", label: "Industry Verticals" },
                   { value: "10K+", label: "Users Supported" },
@@ -2596,13 +2539,13 @@ export default function FreelanceLanding() {
             {/* Right service showcase */}
             <HeroServiceShowcase />
           </div>
+        </section>
 
-          {/* Trusted By / Feature Bar */}
-          <div className="mt-6 border-t border-border/40 pt-10 sm:mt-12">
-            <p className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-secondary/60">
-              Helping businesses scale with systems that perform
-            </p>
-            <div className="mt-8 overflow-hidden">
+        <section className="mx-auto max-w-screen-xl border-t border-border/40 px-5 pb-2 pt-8 sm:px-6 sm:pt-10 md:px-12 lg:px-20">
+          <p className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-secondary/60">
+            Helping businesses scale with systems that perform
+          </p>
+          <div className="mt-6 overflow-hidden sm:mt-8">
               <style>{`
                 @keyframes trustedByMarquee {
                   from { transform: translateX(0); }
@@ -2630,7 +2573,6 @@ export default function FreelanceLanding() {
                 ))}
               </div>
             </div>
-          </div>
         </section>
 
         <HighImpactSection />
@@ -2684,24 +2626,24 @@ export default function FreelanceLanding() {
 
         <section
           id="process"
-          className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+          className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12"
         >
-          <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div className="grid gap-3 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
             <div className="max-w-lg">
               <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
                 How I Work
               </p>
-              <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+              <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
                 This is how I think, decide, and deliver.
               </h2>
             </div>
-            <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+            <p className="max-w-2xl text-sm leading-6 text-text-secondary">
               Not a process template. A set of principles built from shipping
               real systems for real businesses.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-5 grid gap-2.5 md:grid-cols-2 md:items-start lg:gap-3">
             {[
               {
                 title: "I challenge the problem before touching the code",
@@ -2738,45 +2680,45 @@ export default function FreelanceLanding() {
             ].map((item, i) => (
               <article
                 key={i}
-                className={`group relative overflow-hidden rounded-[1.75rem] border p-6 transition-all duration-300 hover:-translate-y-1 sm:p-7 ${
+                className={`group relative flex flex-col overflow-hidden rounded-[1.35rem] border p-4 transition-all duration-300 sm:p-5 ${
                   item.featured
-                    ? "border-transparent accent-gradient text-white shadow-[0_24px_60px_-20px_rgba(17, 24, 39,0.5)] hover:shadow-[0_28px_64px_-20px_rgba(17, 24, 39,0.65)]"
-                    : "border-border/70 bg-background/90 shadow-[0_8px_32px_-16px_rgba(15,23,42,0.1)] hover:border-accent/30 hover:shadow-[0_16px_48px_-20px_rgba(17, 24, 39,0.18)]"
+                    ? "border-transparent accent-gradient text-white shadow-[0_18px_44px_-20px_rgba(17, 24, 39,0.45)]"
+                    : "border-border/70 bg-background/90 shadow-[0_6px_24px_-14px_rgba(15,23,42,0.1)] hover:border-accent/30"
                 }`}
               >
                 {item.featured && (
                   <>
-                    <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10 blur-3xl" />
-                    <div className="pointer-events-none absolute bottom-0 left-1/3 h-24 w-24 rounded-full bg-white/8 blur-3xl" />
+                    <div className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/10 blur-3xl" />
+                    <div className="pointer-events-none absolute bottom-0 left-1/3 h-16 w-16 rounded-full bg-white/8 blur-3xl" />
                   </>
                 )}
 
-                <div className="relative z-10 flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-3">
+                <div className="relative z-10 flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-2.5">
                     <span
-                      className={`inline-flex h-11 w-11 items-center justify-center rounded-2xl ${
+                      className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ${
                         item.featured
                           ? "bg-white/14 text-white"
                           : "bg-accent/10 text-accent"
                       }`}
                     >
-                      <item.Icon size={17} />
+                      <item.Icon size={15} />
                     </span>
                     <div>
                       <p
-                        className={`text-[10px] font-bold uppercase tracking-[0.24em] ${item.featured ? "text-white/70" : "text-text-secondary/70"}`}
+                        className={`text-[9px] font-bold uppercase tracking-[0.22em] ${item.featured ? "text-white/70" : "text-text-secondary/70"}`}
                       >
                         {item.label}
                       </p>
                       <p
-                        className={`mt-1 text-[11px] ${item.featured ? "text-white/70" : "text-text-secondary/70"}`}
+                        className={`mt-0.5 text-[10px] ${item.featured ? "text-white/70" : "text-text-secondary/70"}`}
                       >
                         {item.meta}
                       </p>
                     </div>
                   </div>
                   <span
-                    className={`inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.2em] ${
+                    className={`inline-flex shrink-0 rounded-full px-2 py-0.5 text-[9px] font-bold uppercase tracking-[0.18em] ${
                       item.featured
                         ? "bg-white/12 text-white/78"
                         : "bg-surface text-text-secondary/70"
@@ -2787,18 +2729,15 @@ export default function FreelanceLanding() {
                 </div>
 
                 <h3
-                  className={`relative z-10 mt-5 font-display text-lg font-bold leading-snug sm:text-xl ${item.featured ? "text-white" : "text-primary"}`}
+                  className={`relative z-10 mt-3 font-display text-base font-bold leading-snug sm:text-[17px] ${item.featured ? "text-white" : "text-primary"}`}
                 >
                   {item.title}
                 </h3>
                 <p
-                  className={`relative z-10 mt-3 text-sm leading-6 sm:text-[15px] sm:leading-7 ${item.featured ? "text-white/74" : "text-text-secondary"}`}
+                  className={`relative z-10 mt-2 text-xs leading-5 sm:text-sm sm:leading-6 ${item.featured ? "text-white/74" : "text-text-secondary"}`}
                 >
                   {item.body}
                 </p>
-                <div
-                  className={`relative z-10 mt-6 h-px w-full ${item.featured ? "bg-white/16" : "bg-border/70"}`}
-                />
               </article>
             ))}
           </div>
@@ -2807,39 +2746,39 @@ export default function FreelanceLanding() {
         {/* Dedicated Contact Form Section */}
         <section
           id="contact"
-          className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
+          className="mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-10"
         >
-          <div className="grid items-start gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
-            <div className="space-y-7">
+          <div className="grid items-start gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-6">
+            <div className="space-y-4">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
                   Get in Touch
                 </p>
-                <h2 className="mt-4 max-w-xl font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+                <h2 className="mt-2 max-w-xl font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
                   Share your product vision
                 </h2>
-                <p className="mt-5 max-w-xl text-base leading-7 text-text-secondary sm:text-lg sm:leading-8">
+                <p className="mt-3 max-w-xl text-sm leading-6 text-text-secondary">
                   Fill out the form and I'll get back to you within 24 hours
                   with a clear perspective on your system and next steps.
                 </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-                <div className="rounded-2xl border border-border/60 bg-background/80 p-5">
-                  <h3 className="font-display text-base font-bold text-primary">
+              <div className="grid gap-2.5 sm:grid-cols-2">
+                <div className="rounded-xl border border-border/60 bg-background/80 p-3.5 sm:p-4">
+                  <h3 className="font-display text-sm font-bold text-primary">
                     Why reach out?
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-text-secondary">
+                  <p className="mt-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6">
                     I help turn business bottlenecks into scalable systems teams
                     can run, grow, and rely on every day.
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-border/60 bg-background/80 p-5">
-                  <h3 className="font-display text-base font-bold text-primary">
+                <div className="rounded-xl border border-border/60 bg-background/80 p-3.5 sm:p-4">
+                  <h3 className="font-display text-sm font-bold text-primary">
                     What happens next?
                   </h3>
-                  <ul className="mt-3 space-y-2.5">
+                  <ul className="mt-2 space-y-1.5">
                     {[
                       "I review your project details",
                       "We schedule a 15-min discovery call",
@@ -2847,30 +2786,30 @@ export default function FreelanceLanding() {
                     ].map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-3 text-sm leading-6 text-text-secondary"
+                        className="flex items-start gap-2 text-xs leading-5 text-text-secondary sm:text-sm sm:leading-6"
                       >
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="rounded-2xl border border-border/60 bg-background/80 p-5 sm:col-span-2 lg:col-span-1">
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-accent">
+                <div className="rounded-xl border border-border/60 bg-background/80 p-3.5 sm:col-span-2 sm:p-4">
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-accent">
                     Availability
                   </p>
-                  <p className="mt-3 font-display text-base font-bold text-primary">
+                  <p className="mt-1.5 font-display text-sm font-bold text-primary">
                     Available for June Projects
                   </p>
-                  <p className="mt-2 text-sm leading-6 text-text-secondary">
+                  <p className="mt-1 text-xs leading-5 text-text-secondary sm:text-sm">
                     I take on 2-3 projects per month to keep delivery focused.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="w-full rounded-[2rem] border border-border/60 bg-background/88 p-5 shadow-[0_24px_60px_-38px_rgba(15,23,42,0.16)] sm:p-8">
+            <div className="w-full rounded-[1.5rem] border border-border/60 bg-background/88 p-4 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.14)] sm:p-5">
               <InlineContactForm />
             </div>
           </div>
@@ -3254,14 +3193,14 @@ function InlineContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center text-center py-10 animate-in zoom-in duration-500">
-        <div className="h-16 w-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mb-4">
-          <FaCheckCircle size={32} />
+      <div className="flex flex-col items-center justify-center py-8 text-center animate-in zoom-in duration-500">
+        <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/10 text-green-500">
+          <FaCheckCircle size={28} />
         </div>
-        <h3 className="font-display text-xl font-bold text-primary">
+        <h3 className="font-display text-lg font-bold text-primary">
           Message Received!
         </h3>
-        <p className="mt-3 text-sm text-text-secondary">
+        <p className="mt-2 text-sm text-text-secondary">
           Thanks for reaching out. I'll get back to you within 24 hours.
         </p>
         <button
@@ -3282,74 +3221,78 @@ function InlineContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
-          Your Name
-        </label>
-        <input
-          required
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="John Doe"
-          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-        />
+    <form onSubmit={handleSubmit} className="space-y-3">
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+            Your Name
+          </label>
+          <input
+            required
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="John Doe"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+          />
+        </div>
+        <div>
+          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+            Email Address
+          </label>
+          <input
+            required
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="john@company.com"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+          />
+        </div>
+      </div>
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="+91 7092936243"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+          />
+        </div>
+        <div>
+          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+            Service Interested In
+          </label>
+          <select
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+          >
+            <option value="">Select a service</option>
+            <option value="Web Applications">Web Applications</option>
+            <option value="eCommerce Systems">eCommerce Systems</option>
+            <option value="Mobile Applications">Mobile Applications</option>
+            <option value="Backend & APIs">Backend & APIs</option>
+            <option value="Business Platforms">Business Platforms</option>
+            <option value="Growth & SEO">Growth & SEO</option>
+          </select>
+        </div>
       </div>
       <div>
-        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
-          Email Address
-        </label>
-        <input
-          required
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="john@company.com"
-          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-        />
-      </div>
-      <div>
-        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="+91 7092936243"
-          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-        />
-      </div>
-      <div>
-        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
-          Service Interested In
-        </label>
-        <select
-          value={service}
-          onChange={(e) => setService(e.target.value)}
-          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-        >
-          <option value="">Select a service</option>
-          <option value="Web Applications">Web Applications</option>
-          <option value="eCommerce Systems">eCommerce Systems</option>
-          <option value="Mobile Applications">Mobile Applications</option>
-          <option value="Backend & APIs">Backend & APIs</option>
-          <option value="Business Platforms">Business Platforms</option>
-          <option value="Growth & SEO">Growth & SEO</option>
-        </select>
-      </div>
-      <div>
-        <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+        <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
           Tell me about the project
         </label>
         <textarea
           required
-          rows={4}
+          rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Briefly describe the challenge or opportunity..."
-          className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors resize-none"
+          className="w-full resize-none rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
         />
       </div>
       {status === "error" && (
@@ -3358,7 +3301,7 @@ function InlineContactForm() {
       <button
         disabled={status === "submitting"}
         type="submit"
-        className="w-full rounded-full accent-gradient py-3 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+        className="w-full rounded-full accent-gradient py-2.5 text-[11px] font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-70"
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>

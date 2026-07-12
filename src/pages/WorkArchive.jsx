@@ -109,13 +109,64 @@ const logos = {
   area24one: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279',
 }
 
+const previews = {
+  atha: '/preview/atha.png',
+  jippymart: '/preview/jippymart.png',
+  baybee: '/preview/baybee.png',
+  area24realty: '/preview/area24realty.png',
+  nesthetix: '/preview/nesthetix.png',
+  area24one: '/preview/area24one.png',
+  techbuds: '/preview/techbuds.png',
+  fundam: '/preview/crm-builddock.png',
+  fellomart: '/preview/fellomart.png',
+}
+
+const portfolioGroups = [
+  {
+    id: 'career-live',
+    label: 'Career · Live',
+    description: 'Production systems shipped through client and career engagements — all live and verifiable.',
+  },
+  {
+    id: 'internal',
+    label: 'Internal Systems',
+    description: 'Private internal tools built for day-to-day business operations.',
+  },
+  {
+    id: 'individual-live',
+    label: 'Individual · Live',
+    description: 'Independent builds and live storefronts delivered outside primary career engagements.',
+  },
+  {
+    id: 'product-prototypes',
+    label: 'Product Prototypes',
+    description: 'Product experiments and platform prototypes with live demo environments.',
+  },
+  {
+    id: 'mobile-ongoing',
+    label: 'Mobile Apps · Ongoing',
+    description: 'Featured mobile applications currently in active development.',
+  },
+  {
+    id: 'github-archive',
+    label: 'GitHub Archive',
+    description: 'Featured archive projects available on GitHub — screenshots and details documented in portfolio.',
+  },
+]
+
+const filterOptions = [
+  { id: 'all', label: 'All' },
+  ...portfolioGroups.map((group) => ({ id: group.id, label: group.label })),
+]
+
 const allProjects = [
   {
     title: 'Atha Constructions',
     year: '2026',
     status: 'Live',
     category: 'Construction',
-    images: shots.atha,
+    group: 'career-live',
+    images: [previews.atha],
     logo: logos.atha,
     description: 'Lead-focused construction operations platform with consultation workflows, pricing visibility, cost estimators, inquiry handling, SEO controls, theme customization, and an internal admin system.',
     tech: ['React', 'Inertia.js', 'Laravel', 'MySQL', 'Brevo', 'SEO'],
@@ -123,23 +174,12 @@ const allProjects = [
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'EnMart',
-    year: '2026',
-    status: 'GitHub',
-    category: 'Commerce',
-    images: shots.enmart,
-    logo: logos.enmart,
-    description: 'Mobile-first quick commerce infrastructure for rapid product discovery, multi-vertical store management, inventory workflows, delivery coordination, and scalable commerce administration.',
-    tech: ['React.js', 'Inertia.js', 'Laravel', 'PostgreSQL', 'Maps'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
     title: 'JippyMart',
     year: '2025',
     status: 'Live',
-    category: 'Commerce',
-    images: shots.jippymart,
+    category: 'Food Delivery',
+    group: 'career-live',
+    images: [previews.jippymart],
     logo: logos.jippymart,
     description: 'Full-scale food delivery ecosystem with customer storefront, restaurant panel, centralized admin operations, restaurant onboarding, order workflows, mobile deep links, SEO infrastructure, and dashboards.',
     tech: ['Laravel', 'Firebase', 'MySQL', 'Razorpay', 'REST API'],
@@ -147,23 +187,38 @@ const allProjects = [
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'Area24Reality',
+    title: 'Baybee',
+    year: '2024',
+    status: 'Live',
+    category: 'Commerce',
+    group: 'career-live',
+    images: [previews.baybee],
+    logo: logos.baybee,
+    description: 'End-to-end Shopify commerce store for a baby products brand with optimized storefront structure, product organization, cleaner purchase flows, and conversion-focused shopping experiences.',
+    tech: ['Shopify', 'Liquid', 'GoKwik', 'Custom UI'],
+    link: 'https://baybee.co.in/',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Area24Realty',
     year: '2025',
     status: 'Live',
     category: 'Real Estate',
-    images: shots.realty,
+    group: 'career-live',
+    images: [previews.area24realty],
     logo: logos.realty,
     description: 'Multi-region real estate operations platform with interactive property mapping, advanced listing management, analytics dashboards, owner and agent portals, and lead handling tools.',
     tech: ['Laravel', 'TypeScript', 'MySQL', 'Maps', 'SEO'],
-    link: 'https://lightgoldenrodyellow-jaguar-333517.hostingersite.com/',
+    link: 'https://area24group.com/',
     github: 'https://github.com/code-by-jerry',
   },
   {
     title: 'Nesthetix Designs',
     year: '2025',
     status: 'Live',
-    category: 'Portfolio',
-    images: shots.nesthetix,
+    category: 'Interior Design',
+    group: 'career-live',
+    images: [previews.nesthetix],
     logo: logos.nesthetix,
     description: 'Premium interior design business website with lead generation, SEO structure, lightweight CMS management, service showcasing, inquiry conversion, and easy content updates.',
     tech: ['React.js', 'Inertia.js', 'Laravel', 'ImageKit', 'GSAP'],
@@ -174,8 +229,9 @@ const allProjects = [
     title: 'Area24One',
     year: '2025',
     status: 'Live',
-    category: 'Services',
-    images: shots.area24one,
+    category: 'Business Platform',
+    group: 'career-live',
+    images: [previews.area24one],
     logo: logos.area24one,
     description: 'Conversion-focused business platform with rule-based assistant systems, centralized CMS management, SEO controls, theme customization, and operational admin tooling.',
     tech: ['React.js', 'Laravel', 'TypeScript', 'Tailwind CSS', 'SEO'],
@@ -183,65 +239,12 @@ const allProjects = [
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'Baybee',
-    year: '2024',
-    status: 'Live',
-    category: 'Commerce',
-    images: shots.baybee,
-    logo: logos.baybee,
-    description: 'End-to-end Shopify commerce store for a baby products brand with optimized storefront structure, product organization, cleaner purchase flows, and conversion-focused shopping experiences.',
-    tech: ['Shopify', 'Liquid', 'GoKwik', 'Custom UI'],
-    link: 'https://baybee.co.in/',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'Camiprod',
-    year: '2024',
-    status: 'Storefront',
-    category: 'Commerce',
-    images: shots.camiprod,
-    logo: '',
-    description: 'Complete Shopify ecommerce store for health products with product browsing, collection structure, visual merchandising, responsive storefront pages, and conversion-focused purchase flows.',
-    tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Commerce'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'ArranBilling',
-    year: '2024',
-    status: 'GitHub',
-    category: 'Operations',
-    images: shots.billing,
-    logo: logos.arran,
-    description: 'Accounting and inventory management system tailored for garment, knitting, and printing operations with GST-ready accounting, purchase and sales workflows, payables, receivables, and reporting.',
-    tech: ['Laravel', 'Livewire', 'PHP', 'MySQL', 'GST'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'Edulearn',
-    year: '2024',
-    status: 'GitHub',
-    category: 'Education',
-    images: ['/assets/projects/atha.png'],
-    logo: '',
-    description: 'Structured learning management platform supporting onboarding-to-learning workflows, course management, tutorial delivery, student access, admin controls, and scalable educational content operations.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'Admin Panel', 'LMS'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
     title: 'TechBuds',
     year: '2024',
     status: 'Live',
     category: 'Services',
-    images: [
-      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153008.png',
-      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20152941.png',
-      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153039.png',
-      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153056.png',
-      'https://ik.imagekit.io/codebyjerry/works/techbuds/Screenshot%202026-05-20%20153123.png',
-    ],
+    group: 'individual-live',
+    images: [previews.techbuds],
     logo: logos.techbuds,
     description: 'Digital services platform positioned around web engineering, mobile solutions, SEO systems, business platforms, and branding services with conversion-focused service presentation.',
     tech: ['React', 'Tailwind CSS', 'SEO', 'Lead Forms', 'Branding'],
@@ -249,10 +252,89 @@ const allProjects = [
     github: 'https://github.com/code-by-jerry',
   },
   {
+    title: 'Camiprod',
+    year: '2024',
+    status: 'Live',
+    category: 'Commerce',
+    group: 'individual-live',
+    images: shots.camiprod,
+    logo: '',
+    description: 'Complete Shopify ecommerce store for health products with product browsing, collection structure, visual merchandising, responsive storefront pages, and conversion-focused purchase flows.',
+    tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Commerce'],
+    link: 'https://camiprod.myshopify.com/',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Fundam',
+    year: '2026',
+    status: 'Prototype',
+    category: 'CRM Platform',
+    group: 'product-prototypes',
+    images: [previews.fundam],
+    logo: '',
+    description: 'CRM platform prototype for business operations and workflow management. Full product details and screenshots coming soon.',
+    tech: ['Laravel', 'React', 'Multi-tenant', 'CRM'],
+    link: 'http://crm.builddock.website/',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Fellomart',
+    year: '2026',
+    status: 'Prototype',
+    category: 'Commerce Platform',
+    group: 'product-prototypes',
+    images: [previews.fellomart],
+    logo: '',
+    description: 'Multi-tenant commerce platform for local businesses — marketing site, business dashboard, and dedicated storefront URLs per tenant.',
+    tech: ['Laravel', 'React', 'Multi-tenant', 'Commerce'],
+    link: 'https://fellomart.builddock.website/',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Paalu Predictor',
+    year: '2026',
+    status: 'Ongoing',
+    category: 'Mobile App',
+    group: 'mobile-ongoing',
+    images: [],
+    logo: '',
+    description: 'Featured mobile application currently in active development. App store links and screenshots coming soon.',
+    tech: ['Flutter', 'Mobile', 'API'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'Plym',
+    year: '2026',
+    status: 'Ongoing',
+    category: 'Mobile App',
+    group: 'mobile-ongoing',
+    images: [],
+    logo: '',
+    description: 'Featured mobile application currently in active development. App store links and screenshots coming soon.',
+    tech: ['Flutter', 'Mobile', 'API'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
+    title: 'EnMart',
+    year: '2026',
+    status: 'GitHub',
+    category: 'Commerce',
+    group: 'github-archive',
+    images: shots.enmart,
+    logo: logos.enmart,
+    description: 'Mobile-first quick commerce infrastructure for rapid product discovery, multi-vertical store management, inventory workflows, delivery coordination, and scalable commerce administration.',
+    tech: ['React.js', 'Inertia.js', 'Laravel', 'PostgreSQL', 'Maps'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
+  {
     title: 'DestroSolutions',
     year: '2025',
     status: 'GitHub',
     category: 'Branding',
+    group: 'github-archive',
     images: ['/assets/projects/jippymart.png'],
     logo: logos.destro,
     description: 'Software-defined vehicles branding platform focused on technical positioning, corporate communication, and scalable content presentation for vehicle technology solutions.',
@@ -260,9 +342,165 @@ const allProjects = [
     link: '',
     github: 'https://github.com/code-by-jerry',
   },
+  {
+    title: 'Aaran Billing',
+    year: '2024',
+    status: 'Internal',
+    category: 'Operations',
+    group: 'internal',
+    images: shots.billing,
+    logo: logos.arran,
+    description: 'Accounting and inventory management system tailored for garment, knitting, and printing operations with GST-ready accounting, purchase and sales workflows, payables, receivables, and reporting.',
+    tech: ['Laravel', 'Livewire', 'PHP', 'MySQL', 'GST'],
+    link: '',
+    github: 'https://github.com/code-by-jerry',
+  },
 ]
 
-const categories = ['All', 'Construction', 'Real Estate', 'Commerce', 'Operations', 'Services', 'Education', 'Portfolio', 'Branding']
+function formatLiveHost(link) {
+  if (!link) return ''
+  return link.replace(/^https?:\/\//, '').replace(/\/$/, '')
+}
+
+function ProjectPreview({ project, index, onOpenLightbox }) {
+  const hasImages = project.images.length > 0
+
+  if (!hasImages) {
+    return (
+      <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-[linear-gradient(145deg,#111827_0%,#1f2937_52%,#374151_100%)] text-left shadow-[0_14px_36px_-28px_rgba(15,23,42,0.24)] sm:w-42">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_55%)]" />
+        <div className="relative px-4 text-center">
+          <p className="font-display text-lg font-bold text-white">{project.title}</p>
+          <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white/55">
+            {project.status}
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => onOpenLightbox({ images: project.images, title: project.title })}
+      className="relative block aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/70 bg-background text-left shadow-[0_14px_36px_-28px_rgba(15,23,42,0.24)] focus:outline-none focus:ring-2 focus:ring-accent sm:w-42"
+      aria-label={`View ${project.title} preview`}
+    >
+      <img
+        src={project.images[0]}
+        alt={`${project.title} preview`}
+        loading={index < 4 ? 'eager' : 'lazy'}
+        className="h-full w-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
+      />
+      <div className="absolute left-2.5 top-2.5 flex items-center gap-1 rounded-full border border-border/50 bg-background/90 px-2 py-1 backdrop-blur-md">
+        <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+        <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+        <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+      </div>
+      {project.images.length > 1 && (
+        <div className="absolute bottom-2.5 right-2.5 text-white">
+          <span className="rounded-full bg-black/38 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.16em]">
+            {project.images.length} shots
+          </span>
+        </div>
+      )}
+    </button>
+  )
+}
+
+function ProjectRow({ project, index, onOpenLightbox }) {
+  const liveHost = formatLiveHost(project.link)
+
+  return (
+    <div className="group -mx-3 grid gap-4 rounded-2xl px-3 py-5 transition-all duration-200 hover:bg-surface/50 sm:grid-cols-[10.5rem_1fr] sm:items-start">
+      <ProjectPreview project={project} index={index} onOpenLightbox={onOpenLightbox} />
+
+      <div className="flex min-w-0 flex-col justify-between">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 items-start gap-3">
+            <ProjectLogo project={project} />
+            <div className="min-w-0">
+              <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-accent">
+                {project.title}
+              </h2>
+              <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
+                {project.category} · {project.year} · {project.status}
+              </p>
+              {liveHost && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-1 inline-flex items-center gap-1 text-[10px] font-medium text-accent transition-colors hover:text-accent/80"
+                >
+                  {liveHost}
+                  <FaExternalLinkAlt size={9} />
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="flex shrink-0 items-center gap-3">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="text-text-secondary/70 transition-colors hover:text-primary"
+              aria-label={`${project.title} GitHub`}
+            >
+              <FaGithub size={14} />
+            </a>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="text-text-secondary/70 transition-colors hover:text-primary"
+                aria-label={`${project.title} live site`}
+              >
+                <FaExternalLinkAlt size={12} />
+              </a>
+            )}
+          </div>
+        </div>
+
+        <p className="mt-2 line-clamp-3 text-xs leading-6 text-text-secondary">{project.description}</p>
+
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {project.tech.slice(0, 5).map((tech) => (
+            <span
+              key={tech}
+              className="rounded-full border border-accent/10 bg-accent/5 px-2.5 py-1 text-[9px] font-bold leading-4 text-accent"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          {project.images.length > 0 && (
+            <button
+              type="button"
+              onClick={() => onOpenLightbox({ images: project.images, title: project.title })}
+              className="text-[10px] font-bold uppercase tracking-widest text-accent transition-colors"
+            >
+              {project.images.length > 1 ? 'View Screens' : 'View Preview'}
+            </button>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[10px] font-bold uppercase tracking-widest text-primary transition-colors hover:text-accent"
+            >
+              Open Live
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function ProjectLogo({ project }) {
   const initials = project.title
@@ -372,37 +610,42 @@ function Lightbox({ images, title, onClose }) {
 }
 
 export default function WorkArchive() {
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeFilter, setActiveFilter] = useState('all')
   const [lightbox, setLightbox] = useState(null)
 
-  const filtered = useMemo(() => {
-    if (activeCategory === 'All') return allProjects
-    return allProjects.filter((project) => project.category === activeCategory)
-  }, [activeCategory])
+  const visibleGroups = useMemo(() => {
+    if (activeFilter === 'all') return portfolioGroups
+    return portfolioGroups.filter((group) => group.id === activeFilter)
+  }, [activeFilter])
+
+  const filteredCount = useMemo(() => {
+    if (activeFilter === 'all') return allProjects.length
+    return allProjects.filter((project) => project.group === activeFilter).length
+  }, [activeFilter])
 
   const portfolioSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Project Portfolio",
-    "description": "Archive of production systems and applications developed by Jerry.",
-    "url": "https://codebyjerry.online/portfolio",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": allProjects.map((project, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "name": project.title,
-        "description": project.description,
-        "url": project.link || "https://codebyjerry.online/portfolio"
-      }))
-    }
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Project Portfolio',
+    description: 'Archive of production systems and applications developed by Jerry.',
+    url: 'https://codebyjerry.online/portfolio',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: allProjects.map((project, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: project.title,
+        description: project.description,
+        url: project.link || 'https://codebyjerry.online/portfolio',
+      })),
+    },
   }
 
   return (
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
-      <SEO 
+      <SEO
         title="Project Portfolio | Code by Jerry"
-        description="Explore a compact archive of shipped production systems, commerce builds, real estate platforms, and custom business applications developed by Jerry."
+        description="Explore live career builds, product prototypes, mobile apps, and archived GitHub projects — organized by priority with live links where available."
         keywords="developer portfolio, production systems, business applications, Laravel projects, React projects, custom software development"
         schema={portfolioSchema}
       />
@@ -424,11 +667,11 @@ export default function WorkArchive() {
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Work Archive</p>
               <h1 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl">
-                Compact archive of shipped work.
+                Live work, prototypes, and featured builds.
               </h1>
             </div>
             <p className="max-w-2xl text-sm leading-7 text-text-secondary">
-              A quick scan of production sites, commerce builds, real estate platforms, and business systems with updated screenshots.
+              Projects grouped by priority — career deployments, individual live builds, product prototypes, ongoing mobile apps, and GitHub archive work.
             </p>
           </div>
           <div className="mt-6">
@@ -443,119 +686,51 @@ export default function WorkArchive() {
         </header>
 
         <div className="mb-8 flex flex-wrap gap-2">
-          {categories.map((category) => (
+          {filterOptions.map((option) => (
             <button
-              key={category}
+              key={option.id}
               type="button"
-              onClick={() => setActiveCategory(category)}
+              onClick={() => setActiveFilter(option.id)}
               className={`rounded-full border px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${
-                activeCategory === category
+                activeFilter === option.id
                   ? 'border-transparent accent-gradient text-white shadow-[0_14px_34px_-22px_rgba(17, 24, 39,0.72)]'
                   : 'border-border/70 bg-background/82 text-text-secondary hover:border-accent/30 hover:text-accent'
               }`}
             >
-              {category}
+              {option.label}
             </button>
           ))}
         </div>
 
-        <section className="flex flex-col divide-y divide-border/40">
-          {filtered.map((project, index) => (
-            <div
-              key={project.title}
-              className="group -mx-3 grid gap-4 rounded-2xl px-3 py-5 transition-all duration-200 hover:bg-surface/50 sm:grid-cols-[10.5rem_1fr] sm:items-start"
-            >
-              <button
-                type="button"
-                onClick={() => setLightbox({ images: project.images, title: project.title })}
-                className="relative block aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/70 bg-[#0f172a] text-left shadow-[0_14px_36px_-28px_rgba(15,23,42,0.24)] focus:outline-none focus:ring-2 focus:ring-accent sm:w-42"
-                aria-label={`View ${project.title} screenshots`}
-              >
-                <img
-                  src={project.images[0]}
-                  alt={`${project.title} preview`}
-                  loading={index < 4 ? 'eager' : 'lazy'}
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/0 to-transparent" />
-                <div className="absolute left-2.5 top-2.5 flex items-center gap-1 rounded-full border border-white/16 bg-white/10 px-2 py-1 backdrop-blur-md">
-                  <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-                  <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-                  <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-                </div>
-                <div className="absolute bottom-2.5 right-2.5 text-white">
-                  <span className="rounded-full bg-black/38 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.16em]">
-                    {project.images.length} shots
-                  </span>
-                </div>
-              </button>
+        <div className="flex flex-col gap-10">
+          {visibleGroups.map((group) => {
+            const projects = allProjects.filter((project) => project.group === group.id)
+            if (projects.length === 0) return null
 
-              <div className="flex min-w-0 flex-col justify-between">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex min-w-0 items-start gap-3">
-                    <ProjectLogo project={project} />
-                    <div className="min-w-0">
-                      <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-accent">
-                        {project.title}
-                      </h2>
-                      <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                        {project.category} - {project.year} - {project.status}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex shrink-0 items-center gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-text-secondary/70 transition-colors hover:text-primary"
-                      aria-label={`${project.title} GitHub`}
-                    >
-                      <FaGithub size={14} />
-                    </a>
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="text-text-secondary/70 transition-colors hover:text-primary"
-                        aria-label={`${project.title} live site`}
-                      >
-                        <FaExternalLinkAlt size={12} />
-                      </a>
-                    )}
-                  </div>
+            return (
+              <section key={group.id} id={group.id}>
+                <div className="mb-4 border-b border-border/40 pb-4">
+                  <h2 className="font-display text-xl font-bold text-primary">{group.label}</h2>
+                  <p className="mt-2 max-w-2xl text-xs leading-6 text-text-secondary">{group.description}</p>
                 </div>
 
-                <p className="mt-2 line-clamp-3 text-xs leading-6 text-text-secondary">{project.description}</p>
-
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {project.tech.slice(0, 5).map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-full border border-accent/10 bg-accent/5 px-2.5 py-1 text-[9px] font-bold leading-4 text-accent"
-                    >
-                      {tech}
-                    </span>
+                <div className="flex flex-col divide-y divide-border/40">
+                  {projects.map((project, index) => (
+                    <ProjectRow
+                      key={project.title}
+                      project={project}
+                      index={index}
+                      onOpenLightbox={setLightbox}
+                    />
                   ))}
                 </div>
-
-                <div className="mt-3">
-                  <button
-                    type="button"
-                    onClick={() => setLightbox({ images: project.images, title: project.title })}
-                    className="text-[10px] font-bold uppercase tracking-widest text-accent transition-colors"
-                  >
-                    View Screens
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
+              </section>
+            )
+          })}
+        </div>
 
         <p className="mt-10 text-center text-[10px] text-text-secondary/70">
-          Showing {filtered.length} project{filtered.length !== 1 ? 's' : ''}. More updates continue on{' '}
+          Showing {filteredCount} project{filteredCount !== 1 ? 's' : ''}. More updates continue on{' '}
           <a href="https://github.com/code-by-jerry" target="_blank" rel="noreferrer" className="text-accent hover:underline">
             GitHub
           </a>
