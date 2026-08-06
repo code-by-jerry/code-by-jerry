@@ -34,18 +34,7 @@ const shots = {
     'https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174224.png?updatedAt=1776506131740&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/nesthetixdesigns/Screenshot%202026-04-11%20174324.png?updatedAt=1776506131733&tr=f-auto,q-80',
   ],
-  camiprod: [
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144833.png?updatedAt=1776506056407&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144853.png?updatedAt=1776506056398&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144548.png?updatedAt=1776506054013&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144659.png?updatedAt=1776506055429&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144745.png?updatedAt=1776506054151&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144819.png?updatedAt=1776506054135&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144802.png?updatedAt=1776506054356&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144915.png?updatedAt=1776506053788&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144641.png?updatedAt=1776506053279&tr=f-auto,q-80',
-    'https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144721.png?updatedAt=1776506052388&tr=f-auto,q-80',
-  ],
+
   baybee: [
     'https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181456.png?updatedAt=1776505955612&tr=f-auto,q-80',
     'https://ik.imagekit.io/codebyjerry/works/baybee/Screenshot%202026-04-11%20181416.png?updatedAt=1776505955600&tr=f-auto,q-80',
@@ -136,7 +125,7 @@ const logos = {
   techbuds: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png',
   destro: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions_new.png?updatedAt=1779038470588',
   area24one: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279',
-  camiprod: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/logo.svg?updatedAt=1779038004821',
+
   fellomart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/ChatGPT%20Image%20Jul%209,%202026,%2008_09_42%20AM.png',
   fundam: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/fundam.png',
   paalu: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/paalu.png',
@@ -285,19 +274,7 @@ const allProjects = [
     link: 'https://techbuds.online/',
     github: 'https://github.com/code-by-jerry',
   },
-  {
-    title: 'Camiprod',
-    year: '2024',
-    status: 'Live',
-    category: 'Commerce',
-    group: 'individual-live',
-    images: shots.camiprod,
-    logo: logos.camiprod,
-    description: 'Complete Shopify ecommerce store for health products with product browsing, collection structure, visual merchandising, responsive storefront pages, and conversion-focused purchase flows.',
-    tech: ['Shopify', 'Liquid', 'JavaScript', 'CSS', 'Commerce'],
-    link: 'https://camiprod.myshopify.com/',
-    github: 'https://github.com/code-by-jerry',
-  },
+
   {
     title: 'Fundam',
     year: '2026',

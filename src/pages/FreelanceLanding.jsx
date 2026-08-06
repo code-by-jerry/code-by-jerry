@@ -132,10 +132,6 @@ const trustedByLogos = [
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions_new.png?updatedAt=1779038470588",
   },
   {
-    name: "Contributions",
-    src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/logo.svg?updatedAt=1779038004821",
-  },
-  {
     name: "Baybee",
     src: "https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024",
   },
@@ -475,19 +471,6 @@ const billingScreens = [
   "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182608.png",
   "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182053.png",
   "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20183413.png",
-];
-
-const camiprodScreens = [
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144833.png?updatedAt=1776506056407",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144853.png?updatedAt=1776506056398",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144548.png?updatedAt=1776506054013",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144659.png?updatedAt=1776506055429",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144745.png?updatedAt=1776506054151",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144819.png?updatedAt=1776506054135",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144802.png?updatedAt=1776506054356",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144915.png?updatedAt=1776506053788",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144641.png?updatedAt=1776506053279",
-  "https://ik.imagekit.io/codebyjerry/works/camiprod/Screenshot%202026-04-11%20144721.png?updatedAt=1776506052388",
 ];
 
 const jippymartScreens = [
