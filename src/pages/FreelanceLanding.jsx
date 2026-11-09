@@ -2892,27 +2892,37 @@ export default function FreelanceLanding() {
   );
 }
 
-function ContactFormModal({ isOpen, onClose }) {
-  const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
-  const STATIC_FORMS_ACCESS_KEY =
-    import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
-    "YOUR_STATICFORMS_ACCESS_KEY";
+const SPLITFORMS_ENDPOINT = "https://splitforms.com/api/submit";
+const SPLITFORMS_ACCESS_KEY =
+  import.meta.env.VITE_SPLITFORMS_ACCESS_KEY ||
+  import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
+  "fb96f3520a004414a6235358a73e07ea";
 
+function ContactFormModal({ isOpen, onClose }) {
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
+  const [botcheck, setBotcheck] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (botcheck) {
+      setStatus("success");
+      return;
+    }
+
+    const formElement = e.currentTarget;
     setStatus("submitting");
     setErrorMessage("");
 
+    const sid = formElement.querySelector('input[name="sf_sid"]')?.value;
+
     const payload = {
-      accessKey: STATIC_FORMS_ACCESS_KEY,
+      access_key: SPLITFORMS_ACCESS_KEY,
       name,
       email,
       phone,
@@ -2920,25 +2930,30 @@ function ContactFormModal({ isOpen, onClose }) {
       message,
       source: "Portfolio Homepage Contact Modal",
       subject: "Website project inquiry",
-      replyTo: email,
+      replyto: email,
+      ...(sid ? { sf_sid: sid } : {}),
     };
 
     try {
-      const response = await fetch(STATIC_FORMS_ENDPOINT, {
+      const response = await fetch(SPLITFORMS_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error(`Submission failed with status ${response.status}`);
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(
+          result.message || `Submission failed with status ${response.status}`,
+        );
       }
 
-      const result = await response.json();
-      if (result.success !== true) {
-        throw new Error(result.message || "Static Forms submission failed");
+      if (typeof window !== "undefined" && window.splitforms?.done) {
+        window.splitforms.done(formElement);
       }
 
       setStatus("success");
@@ -2948,6 +2963,7 @@ function ContactFormModal({ isOpen, onClose }) {
       setPhone("");
       setService("");
       setMessage("");
+      setBotcheck(false);
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -3016,14 +3032,41 @@ function ContactFormModal({ isOpen, onClose }) {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                action={SPLITFORMS_ENDPOINT}
+                method="POST"
+                data-sf-key={SPLITFORMS_ACCESS_KEY}
+                onSubmit={handleSubmit}
+                className="space-y-5"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value={SPLITFORMS_ACCESS_KEY}
+                />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  checked={botcheck}
+                  onChange={(e) => setBotcheck(e.target.checked)}
+                />
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                  <label
+                    htmlFor="sf-modal-name"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                  >
                     Your Name
                   </label>
                   <input
+                    id="sf-modal-name"
+                    name="name"
                     required
                     type="text"
+                    autoComplete="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
@@ -3031,12 +3074,18 @@ function ContactFormModal({ isOpen, onClose }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                  <label
+                    htmlFor="sf-modal-email"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                  >
                     Email Address
                   </label>
                   <input
+                    id="sf-modal-email"
+                    name="email"
                     required
                     type="email"
+                    autoComplete="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="john@company.com"
@@ -3044,11 +3093,17 @@ function ContactFormModal({ isOpen, onClose }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                  <label
+                    htmlFor="sf-modal-phone"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                  >
                     Phone Number
                   </label>
                   <input
+                    id="sf-modal-phone"
+                    name="phone"
                     type="tel"
+                    autoComplete="tel"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="+91 7092936243"
@@ -3056,10 +3111,15 @@ function ContactFormModal({ isOpen, onClose }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                  <label
+                    htmlFor="sf-modal-service"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                  >
                     Service Interested In
                   </label>
                   <select
+                    id="sf-modal-service"
+                    name="service"
                     value={service}
                     onChange={(e) => setService(e.target.value)}
                     className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
@@ -3078,10 +3138,15 @@ function ContactFormModal({ isOpen, onClose }) {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2">
+                  <label
+                    htmlFor="sf-modal-message"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                  >
                     Tell me about the project
                   </label>
                   <textarea
+                    id="sf-modal-message"
+                    name="message"
                     required
                     rows={4}
                     value={message}
@@ -3110,26 +3175,30 @@ function ContactFormModal({ isOpen, onClose }) {
 }
 
 function InlineContactForm() {
-  const STATIC_FORMS_ENDPOINT = "https://api.staticforms.xyz/submit";
-  const STATIC_FORMS_ACCESS_KEY =
-    import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
-    "YOUR_STATICFORMS_ACCESS_KEY";
-
   const [status, setStatus] = useState("idle");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
+  const [botcheck, setBotcheck] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (botcheck) {
+      setStatus("success");
+      return;
+    }
+
+    const formElement = e.currentTarget;
     setStatus("submitting");
     setErrorMessage("");
 
+    const sid = formElement.querySelector('input[name="sf_sid"]')?.value;
+
     const payload = {
-      accessKey: STATIC_FORMS_ACCESS_KEY,
+      access_key: SPLITFORMS_ACCESS_KEY,
       name,
       email,
       phone,
@@ -3137,25 +3206,30 @@ function InlineContactForm() {
       message,
       source: "Portfolio Homepage Inline Form",
       subject: "Website project inquiry",
-      replyTo: email,
+      replyto: email,
+      ...(sid ? { sf_sid: sid } : {}),
     };
 
     try {
-      const response = await fetch(STATIC_FORMS_ENDPOINT, {
+      const response = await fetch(SPLITFORMS_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error(`Submission failed with status ${response.status}`);
+      const result = await response.json();
+
+      if (!response.ok || result.success !== true) {
+        throw new Error(
+          result.message || `Submission failed with status ${response.status}`,
+        );
       }
 
-      const result = await response.json();
-      if (result.success !== true) {
-        throw new Error(result.message || "Static Forms submission failed");
+      if (typeof window !== "undefined" && window.splitforms?.done) {
+        window.splitforms.done(formElement);
       }
 
       setStatus("success");
@@ -3164,6 +3238,7 @@ function InlineContactForm() {
       setPhone("");
       setService("");
       setMessage("");
+      setBotcheck(false);
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -3194,6 +3269,7 @@ function InlineContactForm() {
             setPhone("");
             setService("");
             setMessage("");
+            setBotcheck(false);
           }}
           className="mt-6 rounded-full bg-accent px-6 py-2 text-xs font-bold uppercase tracking-widest text-white hover:bg-accent/90 transition-colors"
         >
@@ -3204,15 +3280,42 @@ function InlineContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form
+      action={SPLITFORMS_ENDPOINT}
+      method="POST"
+      data-sf-key={SPLITFORMS_ACCESS_KEY}
+      onSubmit={handleSubmit}
+      className="space-y-3"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value={SPLITFORMS_ACCESS_KEY}
+      />
+      <input
+        type="checkbox"
+        name="botcheck"
+        className="hidden"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        checked={botcheck}
+        onChange={(e) => setBotcheck(e.target.checked)}
+      />
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+          <label
+            htmlFor="sf-inline-name"
+            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
             Your Name
           </label>
           <input
+            id="sf-inline-name"
+            name="name"
             required
             type="text"
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="John Doe"
@@ -3220,12 +3323,18 @@ function InlineContactForm() {
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+          <label
+            htmlFor="sf-inline-email"
+            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
             Email Address
           </label>
           <input
+            id="sf-inline-email"
+            name="email"
             required
             type="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="john@company.com"
@@ -3235,11 +3344,17 @@ function InlineContactForm() {
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+          <label
+            htmlFor="sf-inline-phone"
+            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
             Phone Number
           </label>
           <input
+            id="sf-inline-phone"
+            name="phone"
             type="tel"
+            autoComplete="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+91 7092936243"
@@ -3247,10 +3362,15 @@ function InlineContactForm() {
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+          <label
+            htmlFor="sf-inline-service"
+            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
             Service Interested In
           </label>
           <select
+            id="sf-inline-service"
+            name="service"
             value={service}
             onChange={(e) => setService(e.target.value)}
             className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
@@ -3266,10 +3386,15 @@ function InlineContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70">
+        <label
+          htmlFor="sf-inline-message"
+          className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+        >
           Tell me about the project
         </label>
         <textarea
+          id="sf-inline-message"
+          name="message"
           required
           rows={3}
           value={message}

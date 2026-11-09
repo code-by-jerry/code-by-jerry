@@ -69,67 +69,20 @@ const shots = {
     'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182053.png',
     'https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20183413.png',
   ],
-  enmart: [
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(3).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(4).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(1).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%203.59.44%20PM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(5).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.21%20PM%20(2).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(2).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(3).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(1).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/Enmart/WhatsApp%20Image%202026-05-20%20at%204.16.22%20PM%20(4).jpeg',
-  ],
-  destro: [
-    'https://ik.imagekit.io/codebyjerry/works/Destro%20Solutions/Screenshot%202026-06-06%20210322.png?updatedAt=1780760201774',
-    'https://ik.imagekit.io/codebyjerry/works/Destro%20Solutions/Screenshot%202026-06-06%20210519.png?updatedAt=1780760201782',
-    'https://ik.imagekit.io/codebyjerry/works/Destro%20Solutions/Screenshot%202026-06-06%20210427.png?updatedAt=1780760201771',
-    'https://ik.imagekit.io/codebyjerry/works/Destro%20Solutions/Screenshot%202026-06-06%20210404.png?updatedAt=1780760201780',
-    'https://ik.imagekit.io/codebyjerry/works/Destro%20Solutions/Screenshot%202026-06-06%20210339.png?updatedAt=1780760201580',
-  ],
-  plyn: [
-    'https://ik.imagekit.io/codebyjerry/works/plyn/08.jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/12.jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/03.png',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/14.jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/02.jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/26%20(1).jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/14%20(1).jpg',
-    'https://ik.imagekit.io/codebyjerry/works/plyn/26.jpg',
-  ],
-  paalu: [
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.56%20AM%20(2).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.58%20AM%20(1).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.57%20AM%20(1).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.56%20AM%20(1).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.57%20AM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.57%20AM%20(2).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.56%20AM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.58%20AM.jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.58%20AM%20(2).jpeg',
-    'https://ik.imagekit.io/codebyjerry/works/paalu/WhatsApp%20Image%202026-07-13%20at%207.27.59%20AM.jpeg',
-  ],
 }
 
 const logos = {
   atha: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Atha%20Constructions.webp?updatedAt=1777100806093',
   jippymart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/jippymart.webp?updatedAt=1777100737251',
   realty: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24realty.webp?updatedAt=1777100909832',
-  enmart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/enmart_logo.png?updatedAt=1779037768857',
   arran: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/aaraninfo.png?updatedAt=1777100866170',
   baybee: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/Baybee_logo.svg?updatedAt=1779037891024',
   nesthetix: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/nesthetix.webp?updatedAt=1777100737298',
   techbuds: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/techbuds.png',
-  destro: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/destrosolutions_new.png?updatedAt=1779038470588',
   area24one: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/area24one.png?updatedAt=1777100737279',
 
   fellomart: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/ChatGPT%20Image%20Jul%209,%202026,%2008_09_42%20AM.png',
   fundam: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/fundam.png',
-  paalu: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/paalu.png',
-  plyn: 'https://ik.imagekit.io/codebyjerry/contibutions%20-%20logo/plyn.svg',
 }
 
 const previews = {
@@ -164,16 +117,6 @@ const portfolioGroups = [
     id: 'product-prototypes',
     label: 'Product Prototypes',
     description: 'Product experiments and platform prototypes with live demo environments.',
-  },
-  {
-    id: 'mobile-ongoing',
-    label: 'Mobile Apps · Ongoing',
-    description: 'Featured mobile applications currently in active development.',
-  },
-  {
-    id: 'github-archive',
-    label: 'GitHub Archive',
-    description: 'Featured archive projects available on GitHub — screenshots and details documented in portfolio.',
   },
 ]
 
@@ -299,60 +242,6 @@ const allProjects = [
     description: 'Multi-tenant commerce platform for local businesses — marketing site, business dashboard, and dedicated storefront URLs per tenant.',
     tech: ['Next.js', 'Supabase', 'Cloudflare'],
     link: 'https://fellomart.builddock.website/',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'Paalu Predictor',
-    year: '2026',
-    status: 'Ongoing',
-    category: 'Dairy Analytics',
-    group: 'mobile-ongoing',
-    images: shots.paalu,
-    logo: logos.paalu,
-    description:
-      'AI analysis for buffalo milk yielding — capture rear udder photos and get on-device yield estimates with health, lactation, and escutcheon-based dairy insights.',
-    tech: ['Flutter', 'Mobile', 'API'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'Plyn',
-    year: '2026',
-    status: 'Ongoing',
-    category: 'Travel · Itinerary',
-    group: 'mobile-ongoing',
-    images: shots.plyn,
-    logo: logos.plyn,
-    description:
-      'Trips and tours itinerary app — plan city travel, manage stays and flights, and navigate unfamiliar destinations with AI-guided trip planning.',
-    tech: ['Flutter', 'Mobile', 'API'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'EnMart',
-    year: '2026',
-    status: 'GitHub',
-    category: 'Commerce',
-    group: 'github-archive',
-    images: shots.enmart,
-    logo: logos.enmart,
-    description: 'Mobile-first quick commerce infrastructure for rapid product discovery, multi-vertical store management, inventory workflows, delivery coordination, and scalable commerce administration.',
-    tech: ['React.js', 'Inertia.js', 'Laravel', 'PostgreSQL', 'Maps'],
-    link: '',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'DestroSolutions',
-    year: '2025',
-    status: 'GitHub',
-    category: 'Branding',
-    group: 'github-archive',
-    images: shots.destro,
-    logo: logos.destro,
-    description: 'Software-defined vehicles branding platform focused on technical positioning, corporate communication, and scalable content presentation for vehicle technology solutions.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'GSAP', 'Branding'],
-    link: '',
     github: 'https://github.com/code-by-jerry',
   },
   {
@@ -658,7 +547,7 @@ export default function WorkArchive() {
     <div className="hero-bg min-h-screen font-sans text-text selection:bg-accent selection:text-white">
       <SEO
         title="Project Portfolio | Code by Jerry"
-        description="Explore live career builds, product prototypes, mobile apps, and archived GitHub projects — organized by priority with live links where available."
+        description="Explore live career builds, internal systems, individual builds, and product prototypes — organized by priority with live links where available."
         keywords="developer portfolio, production systems, business applications, Laravel projects, React projects, custom software development"
         schema={portfolioSchema}
       />
@@ -684,7 +573,7 @@ export default function WorkArchive() {
               </h1>
             </div>
             <p className="max-w-2xl text-sm leading-7 text-text-secondary">
-              Projects grouped by priority — career deployments, individual live builds, product prototypes, ongoing mobile apps, and GitHub archive work.
+              Projects grouped by priority — career deployments, internal systems, individual live builds, and product prototypes.
             </p>
           </div>
           <div className="mt-6">
