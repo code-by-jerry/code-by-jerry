@@ -2236,10 +2236,19 @@ function ConversionCtaStrip({
   );
 }
 
+function getAvailabilityStatus() {
+  const now = new Date();
+  const month = now.toLocaleString("en-US", { month: "long" });
+  const year = now.getFullYear();
+  return `Available for ${month} ${year} Projects`;
+}
+
 export default function FreelanceLanding() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+
+  const availabilityStatus = getAvailabilityStatus();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -2782,8 +2791,11 @@ export default function FreelanceLanding() {
                   <p className="text-[9px] font-bold uppercase tracking-widest text-accent">
                     Availability
                   </p>
-                  <p className="mt-1.5 font-display text-sm font-bold text-primary">
-                    Available for June Projects
+                  <p
+                    suppressHydrationWarning
+                    className="mt-1.5 font-display text-sm font-bold text-primary"
+                  >
+                    {availabilityStatus}
                   </p>
                   <p className="mt-1 text-xs leading-5 text-text-secondary sm:text-sm">
                     I take on 2-3 projects per month to keep delivery focused.
@@ -2881,12 +2893,13 @@ export default function FreelanceLanding() {
       </a>
 
       {/* Exit Intent Popup */}
-      <ExitIntentModal />
+      <ExitIntentModal onOpenContact={() => setContactOpen(true)} />
 
       {/* Contact Form Modal */}
       <ContactFormModal
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
+        availabilityStatus={availabilityStatus}
       />
     </div>
   );
@@ -2898,7 +2911,11 @@ const SPLITFORMS_ACCESS_KEY =
   import.meta.env.VITE_STATICFORMS_ACCESS_KEY ||
   "fb96f3520a004414a6235358a73e07ea";
 
-function ContactFormModal({ isOpen, onClose }) {
+function ContactFormModal({
+  isOpen,
+  onClose,
+  availabilityStatus = getAvailabilityStatus(),
+}) {
   const [status, setStatus] = useState("idle"); // idle, submitting, success, error
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -3003,9 +3020,12 @@ function ContactFormModal({ isOpen, onClose }) {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4 text-xs">
+              <div
+                suppressHydrationWarning
+                className="flex items-center gap-4 text-xs"
+              >
                 <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
-                Available for June Projects
+                {availabilityStatus}
               </div>
             </div>
           </div>
@@ -3417,7 +3437,7 @@ function InlineContactForm() {
   );
 }
 
-function ExitIntentModal() {
+function ExitIntentModal({ onOpenContact }) {
   const [shown, setShown] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -3442,6 +3462,21 @@ function ExitIntentModal() {
 
   if (!shown) return null;
 
+  const handleAction = () => {
+    setShown(false);
+    setDismissed(true);
+    if (onOpenContact) {
+      onOpenContact();
+    } else {
+      const contactEl = document.getElementById("contact");
+      if (contactEl) {
+        contactEl.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.hash = "contact";
+      }
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-5 backdrop-blur-md bg-black/40 animate-in fade-in duration-300">
       <div className="relative w-full max-w-xl overflow-hidden rounded-[2.5rem] border border-white/20 bg-primary p-8 text-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.6)] sm:p-12">
@@ -3465,24 +3500,20 @@ function ExitIntentModal() {
             Want to see how I scale systems?
           </h2>
           <p className="mt-5 text-sm leading-7 text-white/70">
-            Download my **Project Execution Roadmap** for free. It breaks down
-            exactly how I take projects from concept to $1M+ scale.
+            Get a tailored <strong className="font-semibold text-white">Project Execution Roadmap</strong> for your product. Share your bottlenecks or goals, and let's map out the right architecture and delivery plan.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <a
-              href="/Jerry (Azhagirishankar K).docx"
-              download
-              onClick={() => {
-                setShown(false);
-                setDismissed(true);
-              }}
+            <button
+              type="button"
+              onClick={handleAction}
               className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-transform hover:-translate-y-1 shadow-xl"
             >
               Get the Roadmap
-              <FaRocket size={14} className="text-accent" />
-            </a>
+              <FaArrowRight size={13} className="text-accent" />
+            </button>
             <button
+              type="button"
               onClick={() => {
                 setShown(false);
                 setDismissed(true);
