@@ -108,16 +108,6 @@ const portfolioGroups = [
     label: 'Internal Systems',
     description: 'Private internal tools built for day-to-day business operations.',
   },
-  {
-    id: 'individual-live',
-    label: 'Individual · Live',
-    description: 'Independent builds and live storefronts delivered outside primary career engagements.',
-  },
-  {
-    id: 'product-prototypes',
-    label: 'Product Prototypes',
-    description: 'Product experiments and platform prototypes with live demo environments.',
-  },
 ]
 
 const filterOptions = [
@@ -126,6 +116,123 @@ const filterOptions = [
 ]
 
 const allProjects = [
+  {
+    title: 'Tilde',
+    year: '2025',
+    status: 'Live',
+    category: "Women's Fashion",
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/tilde%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/logo-tilde-sym.webp',
+    description: "Modern eCommerce storefront and brand experience for contemporary women's fashion and apparel collections.",
+    tech: ['eCommerce', 'Shopify', 'Responsive UI', 'Checkout'],
+    link: 'https://tildeonline.com/',
+    github: '',
+  },
+  {
+    title: 'Mikazo Watches',
+    year: '2025',
+    status: 'Live',
+    category: 'Watch Brand',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/mikazo%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/mikazo-logo-black.avif',
+    description: 'Direct-to-consumer digital storefront and luxury product presentation for a timepiece brand.',
+    tech: ['eCommerce', 'Brand Store', 'Custom UI', 'Payments'],
+    link: 'https://mikazo.in/',
+    github: '',
+  },
+  {
+    title: 'onlybambuu',
+    year: '2025',
+    status: 'Live',
+    category: 'Knitwear Brand',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/only%20bambuu%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/only%20bambuu%20logo.webp',
+    description: 'Sustainable knitwear and apparel brand storefront with collection browsing and seamless checkout.',
+    tech: ['eCommerce', 'Knitwear Brand', 'Mobile Commerce'],
+    link: 'https://onlybambuu.in/',
+    github: '',
+  },
+  {
+    title: 'Fitobee',
+    year: '2025',
+    status: 'Live',
+    category: "Men's Fashion",
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/fitobee%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/fitobee_logo.webp',
+    description: "High-performance digital commerce storefront tailored for modern men's fashion and lifestyle apparel.",
+    tech: ['eCommerce', 'Fashion Storefront', 'Checkout Flow'],
+    link: 'https://fitobee.com/',
+    github: '',
+  },
+  {
+    title: 'Srishanmugasilks',
+    year: '2025',
+    status: 'Live',
+    category: 'Saree Brand',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/sss%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/SSS-Logo.webp',
+    description: 'Heritage silk saree digital catalog and online commerce platform with rich product imagery.',
+    tech: ['eCommerce', 'Catalog Architecture', 'Custom Storefront'],
+    link: 'https://srishanmugasilks.com/',
+    github: '',
+  },
+  {
+    title: 'Lotus International',
+    year: '2025',
+    status: 'Live',
+    category: 'Apparel Website',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/lotusintl%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/lotusintl-logo.png',
+    description: 'Corporate manufacturing showcase and international textile export website.',
+    tech: ['Web Platform', 'Corporate Website', 'Responsive Design', 'SEO'],
+    link: 'https://lotusinternationaltextiles.com/',
+    github: '',
+  },
+  {
+    title: 'Weblanks',
+    year: '2025',
+    status: 'Live',
+    category: "Men's Fashion Brand",
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/weblanks%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/weblanks-logo-black_320x.avif',
+    description: 'Apparel and blank merchandise eCommerce store built for direct sales and wholesale inquiries.',
+    tech: ['eCommerce', 'Shopify', 'Conversion Optimization'],
+    link: 'https://weblanks.com/',
+    github: '',
+  },
+  {
+    title: 'Wepix Sourcing',
+    year: '2025',
+    status: 'Live',
+    category: 'Apparel Website',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/wepixsourcing%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/wepixsourcing-logo.webp',
+    description: 'Global garment sourcing and textile manufacturing operations website.',
+    tech: ['Web Development', 'Business Website', 'Lead Generation'],
+    link: 'https://wepixsourcing.com/',
+    github: '',
+  },
+  {
+    title: 'Krishna Hosierys',
+    year: '2025',
+    status: 'Live',
+    category: 'Knitwear Website',
+    group: 'career-live',
+    images: ['https://ik.imagekit.io/codebyjerry/assets/krishnahosierys%20cover%20image.png'],
+    logo: 'https://ik.imagekit.io/codebyjerry/assets/KH_Logo.webp',
+    description: 'Corporate knitwear manufacturing showcase and garment product export platform.',
+    tech: ['Web Platform', 'Corporate Website', 'Responsive Design'],
+    link: 'https://www.krishnahosierys.com/',
+    github: '',
+  },
   {
     title: 'Atha Constructions',
     year: '2026',
@@ -205,46 +312,6 @@ const allProjects = [
     github: 'https://github.com/code-by-jerry',
   },
   {
-    title: 'TechBuds',
-    year: '2024',
-    status: 'Live',
-    category: 'Services',
-    group: 'individual-live',
-    images: [previews.techbuds],
-    logo: logos.techbuds,
-    description: 'Digital services platform positioned around web engineering, mobile solutions, SEO systems, business platforms, and branding services with conversion-focused service presentation.',
-    tech: ['Next.js', 'Tailwind CSS', 'SEO', 'Lead Forms', 'Branding'],
-    link: 'https://techbuds.online/',
-    github: 'https://github.com/code-by-jerry',
-  },
-
-  {
-    title: 'Fundam',
-    year: '2026',
-    status: 'Prototype',
-    category: 'CRM Platform',
-    group: 'product-prototypes',
-    images: [previews.fundam],
-    logo: logos.fundam,
-    description: 'CRM platform prototype for business operations and workflow management. Full product details and screenshots coming soon.',
-    tech: ['PHP', 'MySQL', 'Tailwind CSS', 'JavaScript'],
-    link: 'http://crm.builddock.website/',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
-    title: 'Fellomart',
-    year: '2026',
-    status: 'Prototype',
-    category: 'Commerce Platform',
-    group: 'product-prototypes',
-    images: [previews.fellomart],
-    logo: logos.fellomart,
-    description: 'Multi-tenant commerce platform for local businesses — marketing site, business dashboard, and dedicated storefront URLs per tenant.',
-    tech: ['Next.js', 'Supabase', 'Cloudflare'],
-    link: 'https://fellomart.builddock.website/',
-    github: 'https://github.com/code-by-jerry',
-  },
-  {
     title: 'Aaran Billing',
     year: '2024',
     status: 'Internal',
@@ -264,146 +331,6 @@ function formatLiveHost(link) {
   return link.replace(/^https?:\/\//, '').replace(/\/$/, '')
 }
 
-function ProjectPreview({ project, index, onOpenLightbox }) {
-  const hasImages = project.images.length > 0
-
-  if (!hasImages) {
-    return (
-      <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-xl border border-border/70 bg-[linear-gradient(145deg,#111827_0%,#1f2937_52%,#374151_100%)] text-left shadow-[0_14px_36px_-28px_rgba(15,23,42,0.24)] sm:w-42">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.08),transparent_55%)]" />
-        <div className="relative px-4 text-center">
-          <p className="font-display text-lg font-bold text-white">{project.title}</p>
-          <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white/55">
-            {project.status}
-          </p>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={() => onOpenLightbox({ images: project.images, title: project.title })}
-      className="relative block aspect-[16/10] w-full overflow-hidden rounded-xl border border-border/70 bg-background text-left shadow-[0_14px_36px_-28px_rgba(15,23,42,0.24)] focus:outline-none focus:ring-2 focus:ring-accent sm:w-42"
-      aria-label={`View ${project.title} preview`}
-    >
-      <img
-        src={project.images[0]}
-        alt={`${project.title} preview`}
-        loading={index < 4 ? 'eager' : 'lazy'}
-        className="h-full w-full object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
-      />
-      <div className="absolute left-2.5 top-2.5 flex items-center gap-1 rounded-full border border-border/50 bg-background/90 px-2 py-1 backdrop-blur-md">
-        <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
-        <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
-        <span className="h-2 w-2 rounded-full bg-[#28c840]" />
-      </div>
-      {project.images.length > 1 && (
-        <div className="absolute bottom-2.5 right-2.5 text-white">
-          <span className="rounded-full bg-black/38 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.16em]">
-            {project.images.length} shots
-          </span>
-        </div>
-      )}
-    </button>
-  )
-}
-
-function ProjectRow({ project, index, onOpenLightbox }) {
-  const liveHost = formatLiveHost(project.link)
-
-  return (
-    <div className="group -mx-3 grid gap-4 rounded-2xl px-3 py-5 transition-all duration-200 hover:bg-surface/50 sm:grid-cols-[10.5rem_1fr] sm:items-start">
-      <ProjectPreview project={project} index={index} onOpenLightbox={onOpenLightbox} />
-
-      <div className="flex min-w-0 flex-col justify-between">
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex min-w-0 items-start gap-3">
-            <ProjectLogo project={project} />
-            <div className="min-w-0">
-              <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-accent">
-                {project.title}
-              </h2>
-              <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                {project.category} · {project.year} · {project.status}
-              </p>
-              {liveHost && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-1 inline-flex items-center gap-1 text-[10px] font-medium text-accent transition-colors hover:text-accent/80"
-                >
-                  {liveHost}
-                  <FaExternalLinkAlt size={9} />
-                </a>
-              )}
-            </div>
-          </div>
-          <div className="flex shrink-0 items-center gap-3">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noreferrer"
-              className="text-text-secondary/70 transition-colors hover:text-primary"
-              aria-label={`${project.title} GitHub`}
-            >
-              <FaGithub size={14} />
-            </a>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-text-secondary/70 transition-colors hover:text-primary"
-                aria-label={`${project.title} live site`}
-              >
-                <FaExternalLinkAlt size={12} />
-              </a>
-            )}
-          </div>
-        </div>
-
-        <p className="mt-2 line-clamp-3 text-xs leading-6 text-text-secondary">{project.description}</p>
-
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {project.tech.slice(0, 5).map((tech) => (
-            <span
-              key={tech}
-              className="rounded-full border border-accent/10 bg-accent/5 px-2.5 py-1 text-[9px] font-bold leading-4 text-accent"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-3">
-          {project.images.length > 0 && (
-            <button
-              type="button"
-              onClick={() => onOpenLightbox({ images: project.images, title: project.title })}
-              className="text-[10px] font-bold uppercase tracking-widest text-accent transition-colors"
-            >
-              {project.images.length > 1 ? 'View Screens' : 'View Preview'}
-            </button>
-          )}
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[10px] font-bold uppercase tracking-widest text-primary transition-colors hover:text-accent"
-            >
-              Open Live
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function ProjectLogo({ project }) {
   const initials = project.title
     .split(' ')
@@ -412,18 +339,110 @@ function ProjectLogo({ project }) {
     .slice(0, 2)
 
   return (
-    <div className="flex h-16 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border/70 bg-white p-3 shadow-[0_14px_30px_-24px_rgba(15,23,42,0.45)] ring-1 ring-black/[0.03]">
+    <div className="flex h-12 w-14 shrink-0 items-center justify-center">
       {project.logo ? (
         <img
           src={project.logo}
           alt={`${project.title} logo`}
           loading="lazy"
-          className="max-h-10 max-w-full object-contain contrast-125 saturate-110"
+          className="max-h-10 max-w-full object-contain"
         />
       ) : (
         <span className="text-sm font-black uppercase tracking-tight text-primary">{initials}</span>
       )}
     </div>
+  )
+}
+
+function ProjectCard({ project, index, onOpenLightbox }) {
+  const liveHost = formatLiveHost(project.link)
+  const hasImages = project.images && project.images.length > 0
+
+  return (
+    <article className="group flex flex-col overflow-hidden rounded-[1.75rem] border border-border/70 bg-surface/30 p-4 transition-all duration-300 hover:border-accent/40 hover:bg-surface/60 hover:shadow-[0_16px_40px_-20px_rgba(15,23,42,0.12)] sm:p-5">
+      {/* Visual Preview / Browser Mockup */}
+      <div className="relative mb-4 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-border/60 bg-background shadow-inner">
+        {hasImages ? (
+          <button
+            type="button"
+            onClick={() => onOpenLightbox({ images: project.images, title: project.title })}
+            className="group/img relative block h-full w-full text-left focus:outline-none"
+            aria-label={`View ${project.title} gallery`}
+          >
+            <img
+              src={project.images[0]}
+              alt={`${project.title} preview`}
+              loading={index < 4 ? 'eager' : 'lazy'}
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover/img:scale-[1.02]"
+            />
+            <div className="absolute inset-0 bg-black/0 transition-colors group-hover/img:bg-black/15" />
+          </button>
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-surface to-background p-4 text-center">
+            <div>
+              <p className="font-display text-base font-bold text-primary">{project.title}</p>
+              <p className="text-[10px] uppercase tracking-widest text-text-secondary">{project.status}</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Project Header Info */}
+      <div className="flex items-center gap-3.5">
+        <ProjectLogo project={project} />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-center justify-between gap-2">
+            <h2 className="font-display text-lg font-bold leading-tight text-primary transition-colors group-hover:text-accent">
+              {project.title}
+            </h2>
+            <div className="flex items-center gap-2.5 text-text-secondary/60">
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-primary"
+                  aria-label={`${project.title} GitHub repository`}
+                >
+                  <FaGithub size={15} />
+                </a>
+              )}
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-accent"
+                  aria-label={`${project.title} live link`}
+                >
+                  <FaExternalLinkAlt size={13} />
+                </a>
+              )}
+            </div>
+          </div>
+
+          <p className="mt-1 text-[11px] font-bold uppercase tracking-[0.18em] text-text-secondary/70">
+            {project.category} · {project.year}
+          </p>
+
+          {liveHost ? (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-1.5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition-colors hover:text-accent"
+            >
+              {liveHost}
+              <FaExternalLinkAlt size={9} />
+            </a>
+          ) : (
+            <span className="mt-1.5 block text-xs font-medium text-text-secondary/60">
+              Internal Platform
+            </span>
+          )}
+        </div>
+      </div>
+    </article>
   )
 }
 
@@ -555,7 +574,7 @@ export default function WorkArchive() {
       <SiteHeader />
       {lightbox && <Lightbox images={lightbox.images} title={lightbox.title} onClose={() => setLightbox(null)} />}
 
-      <main className="relative z-10 mx-auto max-w-3xl px-5 pb-12 pt-28 sm:px-6 sm:pb-14 md:px-10 lg:pb-16 lg:pt-32">
+      <main className="relative z-10 mx-auto max-w-screen-xl px-5 pb-16 pt-28 sm:px-6 sm:pb-20 md:px-12 lg:px-20 lg:pt-32">
         <header className="mb-9">
           <Link
             to="/about"
@@ -568,12 +587,12 @@ export default function WorkArchive() {
           <div className="grid gap-4 md:grid-cols-[0.85fr_1.15fr] md:items-end">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">Work Archive</p>
-              <h1 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl">
-                Live work, prototypes, and featured builds.
+              <h1 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
+                Live systems and verified production builds.
               </h1>
             </div>
-            <p className="max-w-2xl text-sm leading-7 text-text-secondary">
-              Projects grouped by priority — career deployments, internal systems, individual live builds, and product prototypes.
+            <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
+              Production platforms, client systems, and internal operational applications — all verifiable.
             </p>
           </div>
           <div className="mt-6">
@@ -604,21 +623,21 @@ export default function WorkArchive() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-12">
           {visibleGroups.map((group) => {
             const projects = allProjects.filter((project) => project.group === group.id)
             if (projects.length === 0) return null
 
             return (
               <section key={group.id} id={group.id}>
-                <div className="mb-4 border-b border-border/40 pb-4">
-                  <h2 className="font-display text-xl font-bold text-primary">{group.label}</h2>
-                  <p className="mt-2 max-w-2xl text-xs leading-6 text-text-secondary">{group.description}</p>
+                <div className="mb-6 border-b border-border/40 pb-4">
+                  <h2 className="font-display text-2xl font-bold text-primary">{group.label}</h2>
+                  <p className="mt-1.5 max-w-2xl text-xs leading-6 text-text-secondary sm:text-sm">{group.description}</p>
                 </div>
 
-                <div className="flex flex-col divide-y divide-border/40">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {projects.map((project, index) => (
-                    <ProjectRow
+                    <ProjectCard
                       key={project.title}
                       project={project}
                       index={index}

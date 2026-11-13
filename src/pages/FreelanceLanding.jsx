@@ -1,11 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import {
   FaArrowRight,
   FaChartLine,
   FaCogs,
-  FaCompass,
   FaQuoteLeft,
   FaEnvelope,
   FaGithub,
@@ -19,104 +18,58 @@ import {
   FaBolt,
   FaCheckCircle,
   FaCrosshairs,
-  FaSyncAlt,
   FaClock,
   FaDatabase,
-  FaRobot,
-  FaMoneyBillWave,
-  FaCartArrowDown,
   FaTachometerAlt,
   FaExternalLinkAlt,
 } from "react-icons/fa";
 
 const services = [
   {
-    title: "Web Applications",
+    title: "Custom Web Applications",
     description:
-      "Custom business systems, dashboards, and admin panels built for real workflows. Designed for teams that need speed, clarity, and control over their operations. Built to scale as your business grows.",
+      "Custom business systems, dashboards, and admin panels built for real workflows. Designed for teams that need speed, clarity, and control over their daily operations.",
     eyebrow: "Custom Systems",
     image: "https://ik.imagekit.io/codebyjerry/coj%20services/web_serv.png",
   },
   {
-    title: "eCommerce Systems",
+    title: "eCommerce Development",
     description:
-      "High-converting online stores with payment integrations and cleaner buying flows. From Shopify to custom storefronts, built for checkout performance and retention. Every detail is shaped around revenue, not just aesthetics.",
+      "High-converting online stores with payment integrations and cleaner buying flows. From Shopify to custom storefronts, built for checkout performance and customer retention.",
     eyebrow: "Revenue Focused",
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/ecommerce_serv.png",
   },
   {
-    title: "Mobile Applications",
+    title: "Mobile App Development",
     description:
-      "Flutter or hybrid app experiences connected tightly with your backend systems. Built for real users, fast, reliable, and consistent across platforms. Designed to keep users engaged and operations running smoothly.",
+      "Cross-platform mobile applications connected tightly with your backend systems. Built for real users, fast, reliable, and consistent across devices.",
     eyebrow: "Mobile Delivery",
     image: "https://ik.imagekit.io/codebyjerry/coj%20services/Mobile_serv.png",
   },
   {
-    title: "Backend & APIs",
+    title: "Backend Development & Integrations",
     description:
-      "APIs, automation, integrations, and scalable architectures that support real growth. Clean, documented, and built to handle production load without breaking. The backbone that keeps every system running reliably.",
+      "APIs, third-party integrations, and scalable architectures that support real growth. Clean, documented, and built to handle production load reliably.",
     eyebrow: "Core Logic",
     image: "https://ik.imagekit.io/codebyjerry/coj%20services/backend_serv.png",
   },
   {
-    title: "Business Platforms",
+    title: "Business Management Systems",
     description:
-      "End-to-end platforms built around your business model, from user flows to backend logic and scaling. Role-based access, operational dashboards, and automation built in from day one. Systems your team will actually depend on.",
+      "End-to-end platforms built around your business model—from team workflows and inventory to role-based access and operational dashboards.",
     eyebrow: "Business First",
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/Business_serv.png",
     featured: true,
   },
   {
-    title: "Growth & SEO",
+    title: "SEO-Ready Websites",
     description:
-      "Performance optimization and search ranking improvements for long-term visibility. Technical SEO, Core Web Vitals, and speed improvements that compound over time. Built to rank, load fast, and convert better.",
-    eyebrow: "Search Growth",
+      "Fast-loading, search-optimized websites designed to represent your brand clearly, rank for relevant searches, and convert visitors into enquiries.",
+    eyebrow: "Search & Visibility",
     image:
       "https://ik.imagekit.io/codebyjerry/coj%20services/seo_growth_serv.png",
-  },
-];
-
-const impactStats = [
-  {
-    value: 40,
-    suffix: "%",
-    headline: "Faster Load Times",
-    label:
-      "Achieved through architecture refactoring, lazy loading, and leaner delivery pipelines.",
-    tone: "dark",
-    icon: FaBolt,
-    proof: "Measured on production builds",
-  },
-  {
-    value: 2,
-    suffix: "x",
-    headline: "Conversion Improvement",
-    label:
-      "Interfaces rebuilt around user intent, reducing friction at every decision point.",
-    tone: "light",
-    icon: FaChartLine,
-    proof: "Across eCommerce & landing systems",
-  },
-  {
-    value: 10000,
-    suffix: "+",
-    headline: "Users on Live Systems",
-    label:
-      "Platforms engineered to scale horizontally with no bottlenecks under real traffic.",
-    tone: "accent",
-    icon: FaUsers,
-    proof: "Active users across deployed platforms",
-  },
-  {
-    staticValue: "99.9%",
-    headline: "Production Uptime",
-    label:
-      "Systems built with reliability-first architecture, proper error handling, and monitoring.",
-    tone: "soft",
-    icon: FaShieldAlt,
-    proof: "Across all production deployments",
   },
 ];
 
@@ -209,153 +162,126 @@ const serviceSlides = [
 // aboutHighlights removed — replaced by a curated 2x2 grid in the About section
 
 const aboutDeliverables = [
-  "Revenue Infrastructure",
-  "Operational Platforms",
-  "Backend & APIs",
-  "Growth Systems",
+  "Custom Web Applications",
+  "eCommerce Platforms",
+  "Internal Business Systems",
+  "API & Automation Workflows",
 ];
 
-const aboutStats = [
+const aboutPillars = [
   {
-    value: "10+",
-    label: "Industry Verticals",
+    title: "Full-Stack Delivery",
+    desc: "From initial scoping to production launch & database setup",
   },
   {
-    value: "10K+",
-    label: "Users Supported",
+    title: "Direct Communication",
+    desc: "Transparent milestone updates and working staging previews",
   },
   {
-    value: "40%",
-    label: "Performance Improvement",
+    title: "Post-Launch Stability",
+    desc: "Code handover, 30-day warranty, and ongoing technical support",
   },
-];
-
-const trustLogos = [
-  "Atha Platform",
-  "DestroSolutions",
-  "Commerce Systems",
-  "Admin Platforms",
 ];
 
 const trustTestimonials = [
   {
     quote:
-      "Jerry builds with business clarity. The product did not just look better after the rebuild, it became faster and easier for the team to operate.",
+      "Jerry built the platform with genuine business clarity. The consultation and estimation flows made it significantly easier for our team to handle client inquiries.",
     response:
-      "We rebuilt the workflow around the team using it every day, then tightened the system until speed and reliability showed up in production.",
-    author: "Product Stakeholder",
-    role: "Operations Platform",
-    dashboard: {
-      label: "Operations Platform",
-      color: "#1F2937",
-      metrics: [
-        { label: "Team Efficiency", value: "+60%", Icon: FaCogs },
-        { label: "Manual Tasks", value: "-80%", Icon: FaRobot },
-        { label: "Uptime", value: "99.9%", Icon: FaShieldAlt },
+      "We rebuilt the customer flow and custom admin panel around how the sales and estimation team operates day to day.",
+    author: "Project Stakeholder",
+    role: "Atha Constructions · athaconstruction.in",
+    project: {
+      name: "Atha Constructions",
+      tagline: "Lead & Estimation Platform",
+      status: "Live Production",
+      stack: ["React", "Inertia.js", "Laravel", "MySQL"],
+      modules: [
+        { label: "Lead Pipeline", detail: "Consultation & inquiry capture" },
+        { label: "Cost Estimator", detail: "Interactive pricing workflows" },
+        { label: "Admin Panel", detail: "Theme & content controls" },
       ],
-      bars: [
-        { label: "Workflow Speed", pct: 60 },
-        { label: "Data Accuracy", pct: 85 },
-        { label: "Team Adoption", pct: 92 },
-      ],
-      spark: [3, 4, 5, 6, 5, 7, 8, 7, 9, 10, 9, 10],
-      sparkLabel: "Operational Output",
+      liveUrl: "https://athaconstruction.in/",
     },
   },
   {
     quote:
-      "Strong ownership, clean delivery, and thoughtful technical decisions. The system was structured for scale instead of patched together for launch day.",
+      "Delivered a complete food delivery ecosystem connecting customers, restaurants, and admin oversight with smooth payment processing.",
     response:
-      "The delivery stayed structured from scope to launch, which kept milestones tight and made the finished system easier to extend.",
-    author: "Project Lead",
-    role: "Client Delivery Team",
-    dashboard: {
-      label: "Delivery Performance",
-      color: "#374151",
-      metrics: [
-        { label: "On-Time Delivery", value: "100%", Icon: FaCheckCircle },
-        { label: "Milestones Hit", value: "12/12", Icon: FaCrosshairs },
-        { label: "Revisions", value: "< 3", Icon: FaSyncAlt },
+      "Structured order flows, role-based restaurant panels, and integrated Razorpay into a dependable Laravel backend.",
+    author: "Platform Lead",
+    role: "JippyMart · Food Delivery Platform",
+    project: {
+      name: "JippyMart",
+      tagline: "Multi-Role Delivery Platform",
+      status: "Live Production",
+      stack: ["Laravel", "Firebase", "Razorpay", "REST APIs"],
+      modules: [
+        { label: "Customer Storefront", detail: "Mobile-friendly ordering" },
+        { label: "Restaurant Panel", detail: "Order status & menu management" },
+        { label: "Admin Operations", detail: "Coordination & platform management" },
       ],
-      bars: [
-        { label: "Scope Accuracy", pct: 95 },
-        { label: "Timeline Adherence", pct: 100 },
-        { label: "Client Satisfaction", pct: 98 },
-      ],
-      spark: [5, 6, 6, 7, 8, 8, 9, 9, 10, 10, 10, 10],
-      sparkLabel: "Project Delivery Score",
+      liveUrl: "https://jippymart.in/mart/",
     },
   },
   {
     quote:
-      "What stood out was the business-first thinking. Jerry did not just build what we asked. He questioned the brief, improved the flow, and delivered something better.",
+      "The map-based property browsing and multi-portal management system gave our real estate operations a dependable digital foundation.",
     response:
-      "We optimized the experience around buying behavior, not just screens, which pushed conversion and revenue in the right direction.",
-    author: "Founder",
-    role: "eCommerce Startup",
-    dashboard: {
-      label: "eCommerce Impact",
-      color: "#4B5563",
-      metrics: [
-        { label: "Conversion Rate", value: "+2x", Icon: FaChartLine },
-        { label: "Cart Abandonment", value: "-35%", Icon: FaCartArrowDown },
-        { label: "Revenue Growth", value: "+48%", Icon: FaMoneyBillWave },
+      "Engineered map discovery and separate owner and agent portals so listings and leads could be managed effortlessly.",
+    author: "Operations Lead",
+    role: "Area24Realty · Real Estate Platform",
+    project: {
+      name: "Area24Realty",
+      tagline: "Property Discovery & Portals",
+      status: "Live Production",
+      stack: ["Laravel", "TypeScript", "MySQL", "Interactive Maps"],
+      modules: [
+        { label: "Map Discovery", detail: "Geographic search & filters" },
+        { label: "Owner & Agent Portals", detail: "Listing publishing & leads" },
+        { label: "SEO Architecture", detail: "Structured property indexation" },
       ],
-      bars: [
-        { label: "Checkout Completion", pct: 78 },
-        { label: "Page Speed Score", pct: 92 },
-        { label: "Mobile Conversion", pct: 65 },
-      ],
-      spark: [2, 3, 4, 4, 5, 6, 7, 8, 8, 9, 10, 10],
-      sparkLabel: "Monthly Revenue Trend",
+      liveUrl: "https://area24group.com/",
     },
   },
   {
     quote:
-      "The admin system he built replaced three manual processes overnight. Our team went from spending hours on data entry to having everything automated and visible in one place.",
+      "Streamlined our product collections and refined the mobile checkout journey for a much smoother customer purchasing experience.",
     response:
-      "We replaced repetitive manual work with connected automation so the team could move faster with better visibility and fewer errors.",
+      "Structured product taxonomy, refined Liquid theme code, and integrated GoKwik checkout for reduced mobile drop-off.",
+    author: "Commerce Founder",
+    role: "Baybee · Shopify eCommerce",
+    project: {
+      name: "Baybee",
+      tagline: "Shopify Storefront & Checkout",
+      status: "Live Production",
+      stack: ["Shopify", "Liquid", "GoKwik", "Custom UI"],
+      modules: [
+        { label: "Category Architecture", detail: "Clear catalog navigation" },
+        { label: "GoKwik Integration", detail: "Frictionless mobile checkout" },
+        { label: "Theme Performance", detail: "Optimized mobile delivery" },
+      ],
+      liveUrl: "https://baybee.co.in/",
+    },
+  },
+  {
+    quote:
+      "The internal system replaced fragmented manual entry with a unified workflow for GST billing, stock inventory, and transaction records.",
+    response:
+      "Built an internal Laravel Livewire platform tailored specifically for garment, knitting, and printing business operations.",
     author: "Operations Manager",
-    role: "Logistics Platform",
-    dashboard: {
-      label: "Logistics Automation",
-      color: "#1F2937",
-      metrics: [
-        { label: "Processes Automated", value: "3 to 0", Icon: FaRobot },
-        { label: "Time Saved/Week", value: "40hrs", Icon: FaClock },
-        { label: "Data Errors", value: "-95%", Icon: FaDatabase },
+    role: "Aaran Billing · Accounting & Inventory",
+    project: {
+      name: "Aaran Billing",
+      tagline: "Internal Accounting Platform",
+      status: "Internal Platform",
+      stack: ["Laravel", "Livewire", "PHP", "MySQL"],
+      modules: [
+        { label: "GST Workflows", detail: "Compliant invoicing & tax reporting" },
+        { label: "Inventory Tracking", detail: "Purchases, sales & stock" },
+        { label: "Operations Reports", detail: "Production & reconciliation views" },
       ],
-      bars: [
-        { label: "Automation Coverage", pct: 88 },
-        { label: "Data Visibility", pct: 100 },
-        { label: "Team Productivity", pct: 72 },
-      ],
-      spark: [2, 2, 3, 4, 5, 6, 7, 8, 9, 9, 10, 10],
-      sparkLabel: "Automation Adoption",
-    },
-  },
-  {
-    quote:
-      "Performance was a real concern for us. After the rebuild, load times dropped significantly and the system handled our peak traffic without any issues.",
-    response:
-      "The rebuild focused on faster delivery paths, cleaner backend behavior, and a steadier system under real traffic peaks.",
-    author: "Technical Lead",
-    role: "Real Estate Platform",
-    dashboard: {
-      label: "Performance Metrics",
-      color: "#374151",
-      metrics: [
-        { label: "Load Time", value: "< 2s", Icon: FaBolt },
-        { label: "Peak Users", value: "10K+", Icon: FaUsers },
-        { label: "Speed Gain", value: "+40%", Icon: FaTachometerAlt },
-      ],
-      bars: [
-        { label: "Core Web Vitals", pct: 94 },
-        { label: "Server Response", pct: 88 },
-        { label: "Uptime", pct: 99 },
-      ],
-      spark: [4, 5, 5, 6, 7, 7, 8, 9, 9, 10, 10, 10],
-      sparkLabel: "Performance Score Over Time",
+      liveUrl: null,
     },
   },
 ];
@@ -398,29 +324,29 @@ const whatsappProjectHref =
 
 const blogPosts = [
   {
-    title: "Building Scalable Web Applications: A Business-First Approach",
+    title: "When Does Your Business Need Custom Software?",
     excerpt:
-      "Learn how to architect web applications that grow with your business, focusing on performance, maintainability, and real user needs rather than just features.",
+      "A practical guide to evaluating when off-the-shelf tools start costing you more in workarounds than a dedicated custom application built for your workflows.",
     readTime: "5 min read",
-    category: "Architecture",
+    category: "Custom Software",
     image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%201.png",
     link: "/blog/building-scalable-web-applications",
   },
   {
-    title: "Why Your eCommerce Store Needs a Custom Backend",
+    title: "Shopify vs Custom eCommerce: Which Is Right for You?",
     excerpt:
-      "Generic platforms work for basic stores, but serious eCommerce businesses need custom backends for competitive advantages, unique workflows, and scalable growth.",
+      "Comparing development speed, operational costs, checkout flexibility, and long-term scaling between Shopify and custom eCommerce backends.",
     readTime: "4 min read",
     category: "eCommerce",
     image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%202.png",
     link: "/blog/why-ecommerce-needs-custom-backend",
   },
   {
-    title: "Mobile Apps That Drive Business Results",
+    title: "Replacing Manual Business Workflows with Custom Web Tools",
     excerpt:
-      "Beyond pretty interfaces: how to build mobile experiences that increase engagement, retention, and ultimately drive revenue for your business.",
+      "How businesses turn messy spreadsheets, manual data entry, and fragmented tools into connected, role-based internal platforms.",
     readTime: "6 min read",
-    category: "Mobile",
+    category: "Business Systems",
     image: "https://ik.imagekit.io/codebyjerry/coj%20blogs/blog%203.png",
     link: "/blog/mobile-apps-that-drive-business-results",
   },
@@ -428,35 +354,34 @@ const blogPosts = [
 
 const faqData = [
   {
-    question:
-      "How do you ensure projects are delivered on time and within budget?",
+    question: "How much does a custom project typically cost?",
     answer:
-      "I begin with planning, architecture, and milestone-based delivery. Each project includes clear scope, regular updates, and a focus on the product outcome so the solution is built efficiently and transparently.",
+      "Project costs depend on scope, complexity, and timeline. Smaller integrations or MVP builds typically start around $1,000, while comprehensive full-stack platforms or custom eCommerce systems are quoted based on specific milestone requirements. After an initial discovery discussion, you receive a transparent fixed-price proposal with no surprise fees.",
   },
   {
-    question: "What technologies do you specialize in?",
+    question: "How long does development usually take?",
     answer:
-      "I specialize in modern product engineering stacks—frontends, APIs, mobile, and cloud-powered backend systems. I choose the right tools for the business need, including Laravel/PHP, React, Flutter, and scalable infrastructure patterns.",
+      "Most focused projects and MVPs ship within 3 to 6 weeks. Larger platforms with multi-role permissions, complex integrations, and custom dashboards generally take 8 to 12 weeks. I provide a milestone-based delivery schedule before starting so you know exactly what is delivered at every step.",
   },
   {
-    question: "Do you provide ongoing support after project completion?",
+    question: "What technologies do you work with?",
     answer:
-      "Yes, I offer maintenance packages and am available for ongoing development. Many clients continue working with me for feature additions, optimizations, and scaling as their business grows.",
+      "I choose modern, production-proven technologies based on what best suits the project. My core stack includes React, Next.js, Node.js, Laravel/PHP, Inertia.js, TypeScript, Tailwind CSS, PostgreSQL/MySQL, and mobile solutions using Flutter. I also build on Shopify for eCommerce when appropriate.",
   },
   {
-    question: "How do you handle project communication and updates?",
+    question: "How will I receive project updates during development?",
     answer:
-      "I provide weekly progress updates, use project management tools, and am always available for calls/meetings. You get direct access to me, not project managers or intermediaries.",
+      "You receive weekly progress updates, access to a private staging environment to test working features as they are built, and regular communication via your preferred channel (Slack, WhatsApp, email, or video calls). You work directly with me—no intermediaries or communication gaps.",
   },
   {
-    question: "What makes your approach different from other freelancers?",
+    question: "Do you provide support and maintenance after launch?",
     answer:
-      "I focus on business outcomes over just coding. I question requirements, optimize for performance, and build systems that actually solve real problems rather than just implementing specifications.",
+      "Yes. Every project includes a 30-day post-launch warranty where any bugs or adjustments within the agreed scope are addressed promptly. After launch, I offer ongoing maintenance, feature expansion, and technical advisory arrangements.",
   },
   {
-    question: "Do you work with startups or only established businesses?",
+    question: "Can you work with an existing application or legacy code?",
     answer:
-      "I work with both startups and established businesses. I understand the different needs - startups need speed and iteration, while established businesses need reliability and integration with existing systems.",
+      "Yes. I frequently help businesses refactor existing codebases, improve slow database queries, modernize user interfaces, and build new API integrations into legacy systems without disrupting daily operations.",
   },
 ];
 
@@ -573,251 +498,90 @@ const detailedCaseStudies = [
     id: 1,
     client: "Atha Constructions",
     industry: "Construction",
-    status: "Live",
+    status: "Live Production",
     year: "2026",
     liveUrl: "https://athaconstruction.in/",
-    serviceType: "Lead Platform + Admin Operations",
+    preview: "/preview/atha.png",
+    serviceType: "Lead Platform & Admin Operations",
     challenge:
-      "Consultation requests, pricing visibility, and content updates were handled manually across disconnected tools instead of one operational system.",
+      "Consultation requests, pricing visibility, and content updates were handled manually across disconnected tools instead of one unified operational system.",
     solution:
-      "Built a Laravel + React (Inertia) platform with structured lead capture, estimator tools, SEO-ready pages, theme controls, and an admin panel the team can run without developer support.",
-    metrics: [
-      { label: "Engagement", value: "Dec 2025–" },
-      { label: "Screens", value: "6" },
-      { label: "Platforms", value: "Web + Admin" },
-      { label: "Status", value: "Live" },
-    ],
-    deliverables: [
-      {
-        metric: "Lead operations",
-        detail: "Consultation flows, inquiry handling, and package visibility in one system.",
-        icon: FaEnvelope,
-      },
-      {
-        metric: "Estimator tooling",
-        detail: "Cost estimator and pricing workflows built into the public site.",
-        icon: FaCogs,
-      },
-      {
-        metric: "Admin control",
-        detail: "Internal panel for content, themes, SEO settings, and operational updates.",
-        icon: FaDatabase,
-      },
-      {
-        metric: "Production launch",
-        detail: "Live deployment at athaconstruction.in.",
-        icon: FaRocket,
-      },
-    ],
+      "Built a custom Laravel + React (Inertia) platform with structured lead capture, dynamic cost estimator tools, SEO controls, and an intuitive admin panel.",
     technologies: ["React", "Inertia.js", "Laravel", "MySQL", "SEO"],
   },
   {
     id: 2,
     client: "JippyMart",
     industry: "Food Delivery",
-    status: "Live",
+    status: "Live Production",
     year: "2025",
     liveUrl: "https://jippymart.in/mart/",
-    serviceType: "Full Commerce Platform + Operations",
+    preview: "/preview/jippymart.png",
+    serviceType: "Full Commerce Platform & Operations",
     challenge:
-      "Food delivery needed one system connecting customers, restaurants, admins, and fulfillment — not separate tools patched together.",
+      "Food delivery operations required connecting customers, restaurants, admins, and fulfillment in real time without fragmented tools.",
     solution:
-      "Delivered a Laravel-based commerce platform with restaurant onboarding, order operations, Razorpay payments, Firebase integrations, and multi-role admin tooling.",
-    metrics: [
-      { label: "Build year", value: "2025" },
-      { label: "Screens", value: "11" },
-      { label: "User roles", value: "3" },
-      { label: "Status", value: "Live" },
-    ],
-    deliverables: [
-      {
-        metric: "Customer storefront",
-        detail: "Public ordering experience with commerce flows built for daily use.",
-        icon: FaCartArrowDown,
-      },
-      {
-        metric: "Restaurant panel",
-        detail: "Onboarding and order operations for restaurant partners.",
-        icon: FaUsers,
-      },
-      {
-        metric: "Admin operations",
-        detail: "Centralized control for orders, coordination, and platform management.",
-        icon: FaCogs,
-      },
-      {
-        metric: "Payments & integrations",
-        detail: "Razorpay, Firebase, and REST API workflows wired into production.",
-        icon: FaBolt,
-      },
-    ],
+      "Delivered a Laravel-based commerce system with restaurant onboarding, live order workflows, Razorpay payment gateway, and Firebase real-time sync.",
     technologies: ["Laravel", "Firebase", "MySQL", "Razorpay", "REST API"],
   },
   {
     id: 3,
     client: "Area24Realty",
     industry: "Real Estate",
-    status: "Live",
+    status: "Live Production",
     year: "2025",
     liveUrl: "https://area24group.com/",
-    serviceType: "Property Platform + Lead Operations",
+    preview: "/preview/area24realty.png",
+    serviceType: "Property Platform & Lead Operations",
     challenge:
-      "Property discovery, listing publishing, and lead routing needed to work together across regions instead of spreadsheets and static pages.",
+      "Property discovery, listing publishing, and lead routing were scattered across manual spreadsheets and static listings.",
     solution:
-      "Built a Laravel + TypeScript platform with map-aware browsing, listing workflows, agent and owner portals, and SEO-ready property pages.",
-    metrics: [
-      { label: "Build year", value: "2025" },
-      { label: "Screens", value: "6" },
-      { label: "Portals", value: "Owner + Agent" },
-      { label: "Status", value: "Live" },
-    ],
-    deliverables: [
-      {
-        metric: "Property discovery",
-        detail: "Map-aware browsing and structured listing experiences.",
-        icon: FaSignal,
-      },
-      {
-        metric: "Listing workflows",
-        detail: "Publishing and management tools for property operations.",
-        icon: FaCogs,
-      },
-      {
-        metric: "Portal systems",
-        detail: "Owner and agent-facing workflows for day-to-day operations.",
-        icon: FaUsers,
-      },
-      {
-        metric: "Production launch",
-        detail: "Live deployment at area24group.com.",
-        icon: FaRocket,
-      },
-    ],
+      "Built a Laravel + TypeScript platform with interactive map-aware browsing, listing management, owner and agent portals, and SEO property pages.",
     technologies: ["Laravel", "TypeScript", "MySQL", "Maps", "SEO"],
   },
   {
     id: 4,
     client: "Nesthetix Designs",
     industry: "Interior Design",
-    status: "Live",
+    status: "Live Production",
     year: "2025",
     liveUrl: "https://nesthetixdesigns.com/",
-    serviceType: "Brand Platform + Lead Generation",
+    preview: "/preview/nesthetix.png",
+    serviceType: "Brand Platform & Lead Capture",
     challenge:
-      "The business needed a site that builds trust, showcases work clearly, and turns interest into qualified inquiries while staying easy to update.",
+      "Needed a modern digital presence that establishes premium brand credibility and converts visitors into consultation inquiries.",
     solution:
-      "Built a Laravel + React (Inertia) experience with project presentation, service pages, lead forms, CMS-managed content, and motion-led brand presentation.",
-    metrics: [
-      { label: "Build year", value: "2025" },
-      { label: "Screens", value: "5" },
-      { label: "CMS", value: "Team-managed" },
-      { label: "Status", value: "Live" },
-    ],
-    deliverables: [
-      {
-        metric: "Brand presentation",
-        detail: "Service and project showcase designed for a premium design business.",
-        icon: FaChartLine,
-      },
-      {
-        metric: "Lead generation",
-        detail: "Inquiry flows integrated into the browsing experience.",
-        icon: FaEnvelope,
-      },
-      {
-        metric: "CMS operations",
-        detail: "Lightweight content management for team-led updates.",
-        icon: FaDatabase,
-      },
-      {
-        metric: "Production launch",
-        detail: "Live deployment at nesthetixdesigns.com.",
-        icon: FaRocket,
-      },
-    ],
+      "Developed a custom React + Laravel experience with rich portfolio showcasing, structured inquiry funnels, and a lightweight CMS for team updates.",
     technologies: ["React", "Inertia.js", "Laravel", "ImageKit", "GSAP"],
   },
   {
     id: 5,
     client: "Baybee",
-    industry: "Shopify Commerce",
-    status: "Live",
+    industry: "Commerce",
+    status: "Live Production",
     year: "2024",
     liveUrl: "https://baybee.co.in/",
-    serviceType: "Shopify Storefront",
+    preview: "/preview/baybee.png",
+    serviceType: "Shopify Storefront & Checkout",
     challenge:
-      "The brand needed a storefront that feels trustworthy on mobile, organizes products clearly, and supports smoother buying decisions.",
+      "The brand needed a high-trust mobile shopping experience with clean product categorization and a friction-free checkout flow.",
     solution:
-      "Implemented and refined the Shopify storefront with structured collections, Liquid theme work, GoKwik checkout integration, and conversion-focused product presentation.",
-    metrics: [
-      { label: "Build year", value: "2024" },
-      { label: "Screens", value: "5" },
-      { label: "Checkout", value: "GoKwik" },
-      { label: "Status", value: "Live" },
-    ],
-    deliverables: [
-      {
-        metric: "Storefront structure",
-        detail: "Organized collections and product pages for a baby products brand.",
-        icon: FaCartArrowDown,
-      },
-      {
-        metric: "Checkout flow",
-        detail: "GoKwik-integrated purchase path tuned for mobile buyers.",
-        icon: FaBolt,
-      },
-      {
-        metric: "Theme implementation",
-        detail: "Shopify Liquid and custom UI work across key commerce pages.",
-        icon: FaCogs,
-      },
-      {
-        metric: "Production launch",
-        detail: "Live store at baybee.co.in.",
-        icon: FaRocket,
-      },
-    ],
+      "Implemented a custom Shopify Liquid storefront with structured collections, optimized product discovery, and GoKwik checkout integration.",
     technologies: ["Shopify", "Liquid", "GoKwik", "Custom UI"],
   },
   {
     id: 6,
     client: "Aaran Billing",
-    industry: "Accounting & Inventory",
-    status: "Internal",
+    industry: "Accounting & Operations",
+    status: "Internal Platform",
     year: "2024",
-    serviceType: "Internal Operations Platform",
+    liveUrl: null,
+    preview: "https://ik.imagekit.io/codebyjerry/works/billing/Screenshot%202026-04-11%20182025.png",
+    serviceType: "Internal ERP & Invoicing System",
     challenge:
-      "Accounting, inventory tracking, and GST workflows were spread across manual processes that slowed reconciliation and month-end operations.",
+      "Inventory reconciliation, job orders, and GST accounting were managed through manual paperwork, slowing monthly operations.",
     solution:
-      "Built an internal Laravel + Livewire system with invoicing, inventory sync, purchase/sales workflows, GST-ready accounting, and operational reporting.",
-    metrics: [
-      { label: "Build year", value: "2024" },
-      { label: "Screens", value: "10" },
-      { label: "Modules", value: "4" },
-      { label: "Status", value: "Internal" },
-    ],
-    deliverables: [
-      {
-        metric: "GST workflows",
-        detail: "Invoicing and accounting flows built for Indian tax operations.",
-        icon: FaShieldAlt,
-      },
-      {
-        metric: "Inventory control",
-        detail: "Stock, purchase, and sales handling in one internal system.",
-        icon: FaDatabase,
-      },
-      {
-        metric: "Operational reporting",
-        detail: "Reporting tailored to garment, knitting, and printing operations.",
-        icon: FaChartLine,
-      },
-      {
-        metric: "Internal deployment",
-        detail: "Private system used for day-to-day business operations.",
-        icon: FaCogs,
-      },
-    ],
+      "Built a full-stack Laravel + Livewire internal platform managing invoices, live inventory tracking, job orders, and Indian GST accounting workflows.",
     technologies: ["Laravel", "Livewire", "PHP", "MySQL", "GST"],
   },
 ];
@@ -827,188 +591,211 @@ function DetailedCaseStudiesSection() {
   const study = detailedCaseStudies[activeStudy];
 
   return (
-    <section className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(17, 24, 39,0.04),transparent_50%)]" />
-
+    <section id="work" className="relative mx-auto max-w-screen-xl scroll-mt-24 px-5 py-8 sm:px-6 md:px-12 md:py-12 lg:px-20 lg:py-14">
       <div className="relative z-10">
-        <div className="mb-6 max-w-2xl">
-          <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
-            Case Studies
-          </p>
-          <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-4xl">
-            Verified builds across live and internal systems.
-          </h2>
-          <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
-            Project facts from real deployments — build timeline, documented
-            screens, scope, stack, and live links where available.
-          </p>
+        {/* Section Header */}
+        <div className="mb-6 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+          <div className="max-w-xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
+              Case Studies
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-4xl">
+              Real projects. Real business solutions.
+            </h2>
+            <p className="mt-2 text-xs leading-6 text-text-secondary sm:text-sm">
+              Verified digital products, custom applications, and operational systems built for real businesses.
+            </p>
+          </div>
+          <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-border/60 bg-surface/60 px-3 py-1 text-[10px] font-semibold text-text-secondary">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+            Verified Production Work
+          </span>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          {/* Case Study Cards - Left Column */}
-          <div className="flex flex-col gap-2 lg:col-span-1">
-            {detailedCaseStudies.map((cs, idx) => (
-              <button
-                key={cs.id}
-                onClick={() => setActiveStudy(idx)}
-                className={`relative rounded-xl border p-3 text-left transition-all ${
-                  activeStudy === idx
-                    ? "border-accent bg-accent/5 shadow-[0_6px_20px_-8px_rgba(17, 24, 39,0.25)]"
-                    : "border-border/40 hover:border-border/60 hover:bg-surface/50"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="min-w-0 flex-1">
-                    <h3
-                      className={`font-display text-sm font-bold ${activeStudy === idx ? "text-primary" : "text-primary/80"}`}
-                    >
-                      {cs.client}
-                    </h3>
-                    <p className="mt-0.5 text-[9px] font-bold uppercase tracking-[0.15em] text-text-secondary/70">
-                      {cs.industry}
-                      {cs.status ? ` · ${cs.status}` : ""}
-                    </p>
-                    <p className="mt-1 text-xs text-text-secondary line-clamp-1">
-                      {cs.serviceType}
-                    </p>
-                  </div>
-                  {activeStudy === idx && (
-                    <div className="shrink-0 rounded-full bg-accent p-1.5 text-white">
-                      <FaCheckCircle size={13} />
+        {/* Mobile Horizontal Tabs */}
+        <div className="mb-4 flex gap-2 overflow-x-auto pb-2 no-scrollbar lg:hidden">
+          {detailedCaseStudies.map((cs, idx) => (
+            <button
+              key={cs.id}
+              type="button"
+              onClick={() => setActiveStudy(idx)}
+              className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                activeStudy === idx
+                  ? "accent-gradient text-white shadow-sm"
+                  : "border border-border/70 bg-background/90 text-text-secondary hover:border-accent/40 hover:text-primary"
+              }`}
+            >
+              {cs.client}
+            </button>
+          ))}
+        </div>
+
+        {/* Main Showcase Grid */}
+        <div className="grid gap-5 lg:grid-cols-12 lg:items-start">
+          {/* Left Column: Interactive Project Selector (Desktop) */}
+          <div className="hidden flex-col gap-2 lg:col-span-4 lg:flex">
+            {detailedCaseStudies.map((cs, idx) => {
+              const isActive = activeStudy === idx;
+              return (
+                <button
+                  key={cs.id}
+                  onClick={() => setActiveStudy(idx)}
+                  className={`group relative rounded-xl border p-3.5 text-left transition-all duration-300 ${
+                    isActive
+                      ? "border-accent/60 bg-surface shadow-[0_10px_30px_-12px_rgba(17,24,39,0.12)] ring-1 ring-accent/30"
+                      : "border-border/40 bg-background/60 hover:border-border/80 hover:bg-surface/50"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <h3
+                          className={`font-display text-sm font-bold transition-colors ${
+                            isActive ? "text-primary" : "text-primary/75 group-hover:text-primary"
+                          }`}
+                        >
+                          {cs.client}
+                        </h3>
+                        {cs.status && cs.status.includes("Internal") && (
+                          <span className="rounded-full bg-surface-secondary px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-text-secondary">
+                            Internal
+                          </span>
+                        )}
+                      </div>
+                      <p className="mt-1 text-[10px] font-medium text-text-secondary/80">
+                        {cs.industry} · {cs.serviceType}
+                      </p>
                     </div>
-                  )}
-                </div>
-              </button>
-            ))}
+
+                    <div
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all ${
+                        isActive
+                          ? "accent-gradient text-white shadow-sm"
+                          : "border border-border/50 text-text-secondary/50 group-hover:border-accent/40 group-hover:text-accent"
+                      }`}
+                    >
+                      <FaArrowRight
+                        size={10}
+                        className={`transition-transform ${
+                          isActive ? "translate-x-0" : "-translate-x-0.5 group-hover:translate-x-0"
+                        }`}
+                      />
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
-          {/* Detailed Results - Right 2 Columns */}
-          <div className="flex flex-col gap-4 rounded-xl border border-border/60 bg-background/70 p-4 sm:p-5 lg:col-span-2">
-            {/* Challenge & Solution */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">
-                  Challenge
-                </p>
-                <p className="mt-2 text-xs leading-5 text-text-secondary">
-                  {study.challenge}
-                </p>
-              </div>
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent">
-                  Solution
-                </p>
-                <p className="mt-2 text-xs leading-5 text-text-secondary">
-                  {study.solution}
-                </p>
+          {/* Right Column: Creative Showcase Canvas */}
+          <div className="flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-surface/50 shadow-[0_20px_50px_-25px_rgba(15,23,42,0.08)] backdrop-blur-sm lg:col-span-8">
+            {/* Top Browser / Window Frame Bar */}
+            <div className="flex items-center justify-between border-b border-border/50 bg-background/80 px-4 py-2 sm:px-6 lg:px-4 lg:py-2">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-red-400/70" />
+                <span className="h-2 w-2 rounded-full bg-amber-400/70" />
+                <span className="h-2 w-2 rounded-full bg-emerald-400/70" />
+                <span className="ml-2 font-mono text-[10px] text-text-secondary/70">
+                  {study.liveUrl
+                    ? study.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")
+                    : `${study.client.toLowerCase().replace(/\s+/g, "")}.internal`}
+                </span>
               </div>
             </div>
 
-            {/* Deliverables Grid */}
-            <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent mb-2">
-                What Shipped
-              </p>
-              <div className="grid gap-2 sm:grid-cols-2">
-                {study.deliverables.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="rounded-lg bg-surface/60 p-2.5 border border-border/40"
+            {/* Visual Screenshot Preview Area */}
+            {study.preview && (
+              <div className="relative overflow-hidden border-b border-border/40 bg-surface/80 p-3 sm:p-5 lg:p-2.5">
+                <div className="group relative mx-auto overflow-hidden rounded-xl border border-border/60 bg-background shadow-md">
+                  <img
+                    src={study.preview}
+                    alt={`${study.client} preview`}
+                    className="h-auto max-h-[300px] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.01] sm:max-h-[350px] lg:h-[160px] lg:max-h-[160px]"
+                    loading="lazy"
+                  />
+                  {study.liveUrl && (
+                    <a
+                      href={study.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1.5 rounded-full bg-black/75 px-2.5 py-1 text-[9px] font-semibold text-white backdrop-blur-md transition-all hover:bg-black"
                     >
-                      <div className="flex items-start gap-2">
-                        <div className="mt-0.5 text-accent shrink-0">
-                          <Icon size={16} />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-text-secondary/70">
-                            {item.metric}
-                          </p>
-                          <p className="mt-1 text-xs leading-5 text-primary">
-                            {item.detail}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                      Visit Site <FaExternalLinkAlt size={8} />
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Project Metrics */}
-            <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-accent mb-2">
-                Project Snapshot
-              </p>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {study.metrics.map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-lg border border-border/40 bg-surface/40 px-3 py-2.5"
-                  >
-                    <p className="font-display text-base font-bold leading-tight text-primary sm:text-lg">
-                      {item.value}
-                    </p>
-                    <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer Info */}
-            <div className="border-t border-border/40 pt-3">
+            {/* Case Details Content (Minimal, Honest, No Filler Details) */}
+            <div className="flex flex-col gap-4 p-4 sm:p-6 lg:gap-2.5 lg:p-3.5">
+              {/* Project Title & Industry */}
               <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                  Tech Stack
+                <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-accent lg:text-[8px] lg:tracking-[0.2em]">
+                  {study.industry} · {study.serviceType}
                 </p>
-                <div className="mt-1.5 flex flex-wrap gap-1">
-                  {study.technologies.map((tech) => (
+                <h3 className="mt-0.5 font-display text-xl font-bold text-primary sm:text-2xl lg:text-base lg:font-bold">
+                  {study.client}
+                </h3>
+              </div>
+
+              {/* Minimal Challenge & Solution Cards */}
+              <div className="grid gap-3 sm:grid-cols-2 lg:gap-2">
+                <div className="rounded-xl border border-border/40 bg-background/60 p-3.5 lg:p-2.5">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent lg:text-[8px] lg:tracking-[0.18em]">
+                    The Challenge
+                  </p>
+                  <p className="mt-1.5 text-xs leading-5 text-text-secondary lg:mt-1 lg:text-[11px] lg:leading-[1.45]">
+                    {study.challenge}
+                  </p>
+                </div>
+                <div className="rounded-xl border border-border/40 bg-background/60 p-3.5 lg:p-2.5">
+                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-accent lg:text-[8px] lg:tracking-[0.18em]">
+                    Delivered Solution
+                  </p>
+                  <p className="mt-1.5 text-xs leading-5 text-text-secondary lg:mt-1 lg:text-[11px] lg:leading-[1.45]">
+                    {study.solution}
+                  </p>
+                </div>
+              </div>
+
+              {/* Tech Stack Pills & Action Bar */}
+              <div className="flex flex-col gap-3 border-t border-border/40 pt-3 sm:flex-row sm:items-center sm:justify-between lg:gap-2 lg:pt-2">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="mr-1 text-[9px] font-bold uppercase tracking-[0.16em] text-text-secondary/70 lg:text-[8px]">
+                    Tech:
+                  </span>
+                  {study.technologies.map((t) => (
                     <span
-                      key={tech}
-                      className="rounded-full bg-accent/10 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.14em] text-accent"
+                      key={t}
+                      className="rounded-lg border border-border/50 bg-background/80 px-2 py-0.5 text-[10px] font-semibold text-text-secondary lg:px-1.5 lg:py-0.5 lg:text-[9px]"
                     >
-                      {tech}
+                      {t}
                     </span>
                   ))}
                 </div>
-              </div>
-              {study.liveUrl && (
-                <p className="mt-2 text-[10px] text-text-secondary/80">
-                  Live at{" "}
-                  <a
-                    href={study.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium text-primary underline decoration-border/60 underline-offset-2 hover:text-accent"
-                  >
-                    {study.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
-                  </a>
-                </p>
-              )}
-            </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="mailto:contact@codebyjerry.online"
-                className="inline-flex w-max items-center gap-2 rounded-full bg-accent px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-accent/85"
-              >
-                Start Project
-                <FaArrowRight size={10} />
-              </a>
-              {study.liveUrl && (
-                <a
-                  href={study.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex w-max items-center gap-2 rounded-full border border-border/70 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent/50 hover:text-accent"
-                >
-                  View Live Site
-                  <FaExternalLinkAlt size={10} />
-                </a>
-              )}
+                <div className="flex flex-wrap items-center gap-2">
+                  {study.liveUrl && (
+                    <a
+                      href={study.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-background/90 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-primary transition-all hover:border-accent hover:text-accent lg:px-2.5 lg:py-1 lg:text-[9px]"
+                    >
+                      Live Project
+                      <FaExternalLinkAlt size={8} />
+                    </a>
+                  )}
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-1.5 rounded-full accent-gradient px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm transition-all hover:-translate-y-0.5 lg:px-2.5 lg:py-1 lg:text-[9px]"
+                  >
+                    Discuss Similar
+                    <FaArrowRight size={8} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1071,154 +858,23 @@ function HeroServiceShowcase() {
   );
 }
 
-function HighImpactSection() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.25 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      const frameId = requestAnimationFrame(() => setProgress(1));
-      return () => cancelAnimationFrame(frameId);
-    }
-    let frameId = 0,
-      startTime = 0;
-    const duration = 1600;
-    const tick = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const raw = Math.min((timestamp - startTime) / duration, 1);
-      setProgress(1 - Math.pow(1 - raw, 3));
-      if (raw < 1) frameId = requestAnimationFrame(tick);
-    };
-    frameId = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frameId);
-  }, [isVisible]);
-
-  const formatValue = (stat) => {
-    if (stat.staticValue) return stat.staticValue;
-    const v = Math.round(stat.value * progress);
-    return `${new Intl.NumberFormat("en-US").format(v)}${stat.suffix}`;
-  };
-
-  const cardStyles = {
-    dark: {
-      wrap: "bg-primary border-primary text-white hover:shadow-[0_28px_60px_-24px_rgba(15,23,42,0.55)]",
-      label: "text-white/70",
-      proof: "text-white/70",
-    },
-    light: {
-      wrap: "bg-background/95 border-border/60 text-primary hover:border-accent/30 hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.2)]",
-      label: "text-text-secondary",
-      proof: "text-text-secondary/70",
-    },
-    accent: {
-      wrap: "accent-gradient border-transparent text-white hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.55)]",
-      label: "text-white/70",
-      proof: "text-white/70",
-    },
-    soft: {
-      wrap: "bg-surface border-border/60 text-primary hover:border-accent/25 hover:shadow-[0_28px_60px_-24px_rgba(17, 24, 39,0.15)]",
-      label: "text-text-secondary",
-      proof: "text-text-secondary/70",
-    },
-  };
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative mx-auto max-w-screen-xl px-5 py-12 sm:px-6 md:px-12 md:py-16 lg:px-20 lg:py-20"
-    >
-      {/* Subtle bg depth */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(17, 24, 39,0.04),transparent_65%)]" />
-
-      <div className="relative z-10">
-        {/* Header */}
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-          <div className="max-w-lg">
-            <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
-              Real results from production systems
-            </p>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-              Results clients can feel in the product and in the business.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-            Strong systems are useful. Measurable impact is what makes them
-            valuable. These numbers come from real production builds, not
-            estimates.
-          </p>
-        </div>
-
-        {/* Cards */}
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {impactStats.map((stat) => {
-            const s = cardStyles[stat.tone];
-            const Icon = stat.icon;
-            return (
-              <article
-                key={stat.headline}
-                className={`group flex min-h-[240px] flex-col justify-between rounded-[2rem] border p-6 shadow-[0_20px_50px_-30px_rgba(15,23,42,0.18)] transition-all duration-400 ease-out hover:-translate-y-1.5 ${s.wrap}`}
-              >
-                <div>
-                  {/* Icon + label row */}
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex items-center justify-center text-xl">
-                      <Icon aria-hidden="true" />
-                    </span>
-                    <span
-                      className={`text-[9px] font-bold uppercase tracking-[0.2em] ${s.proof}`}
-                    >
-                      {stat.proof}
-                    </span>
-                  </div>
-
-                  {/* Count-up number */}
-                  <p className="mt-5 font-display text-5xl font-bold leading-none tabular-nums sm:text-6xl">
-                    {formatValue(stat)}
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-bold leading-tight">
-                    {stat.headline}
-                  </h3>
-                  <p className={`mt-3 text-sm leading-6 ${s.label}`}>
-                    {stat.label}
-                  </p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
   const [flipped, setFlipped] = useState(false);
 
   return (
     <div
-      className=""
+      role="button"
+      tabIndex={0}
+      aria-label={`${title} service details`}
+      className="cursor-pointer focus:outline-none"
       style={{ perspective: "1000px" }}
+      onClick={() => setFlipped((f) => !f)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          setFlipped((f) => !f);
+        }
+      }}
       onMouseEnter={() => setFlipped(true)}
       onMouseLeave={() => setFlipped(false)}
     >
@@ -1230,9 +886,9 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
       >
-        {/* Front: Image on top (full width), title at bottom; no grayscale */}
+        {/* Front: Image on top (full width), title at bottom */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-between overflow-hidden rounded-[1.75rem] p-4"
+          className="absolute inset-0 flex flex-col items-center justify-between overflow-hidden rounded-[1.75rem] border border-border/60 bg-background/90 p-4 shadow-[0_12px_30px_-18px_rgba(15,23,42,0.12)]"
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="w-full flex items-center justify-center flex-1">
@@ -1247,19 +903,22 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
 
           <div className="w-full text-center mt-3">
             {eyebrow && (
-              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-text-secondary/70">
+              <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-accent">
                 {eyebrow}
               </p>
             )}
-            <h3 className="mt-2 font-display text-2xl font-bold leading-tight text-primary">
+            <h3 className="mt-1.5 font-display text-xl font-bold leading-tight text-primary sm:text-2xl">
               {title}
             </h3>
+            <p className="mt-1 text-[9px] font-bold uppercase tracking-widest text-text-secondary/70 sm:hidden">
+              Tap for details
+            </p>
           </div>
         </div>
 
         {/* Back: Solid background with description */}
         <div
-          className={`absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[1.75rem] p-6 ${
+          className={`absolute inset-0 flex flex-col justify-center overflow-hidden rounded-[1.75rem] p-6 shadow-xl ${
             featured ? "bg-primary text-white" : "bg-primary text-white"
           }`}
           style={{
@@ -1267,8 +926,19 @@ function ServiceFlipCard({ title, description, eyebrow, image, featured }) {
             transform: "rotateY(180deg)",
           }}
         >
-          <div className="relative z-10">
-            <p className="text-sm leading-6 text-white/90">{description}</p>
+          <div className="relative z-10 text-center sm:text-left">
+            <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/70">
+              {eyebrow}
+            </p>
+            <h4 className="mt-1.5 font-display text-lg font-bold text-white">
+              {title}
+            </h4>
+            <p className="mt-3 text-xs leading-6 text-white/90 sm:text-sm">
+              {description}
+            </p>
+            <p className="mt-4 text-[9px] font-bold uppercase tracking-widest text-white/60">
+              Tap to flip back
+            </p>
           </div>
         </div>
       </div>
@@ -1291,13 +961,13 @@ function ServicesSection({ onContactClick }) {
               Services
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-              Product engineering for real business platforms
+              Digital solutions built around your business.
             </h2>
           </div>
           <div className="max-w-2xl">
             <p className="text-sm leading-7 text-text-secondary sm:text-base">
-              From customer-facing experiences to backend architecture, high-velocity
-              product engineering for systems you can launch and scale.
+              From business websites and online stores to custom applications, I build
+              digital solutions that simplify operations and support business growth.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <button
@@ -1305,7 +975,7 @@ function ServicesSection({ onContactClick }) {
                 onClick={onContactClick}
                 className="inline-flex items-center justify-center gap-3 rounded-full accent-gradient px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_14px_34px_-18px_rgba(17, 24, 39,0.72)] transition-all hover:-translate-y-1"
               >
-                Discuss a system build
+                Discuss Your Project
                 <FaArrowRight size={11} />
               </button>
               <a
@@ -1315,7 +985,7 @@ function ServicesSection({ onContactClick }) {
                 className="inline-flex items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-5 py-3 text-[11px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:-translate-y-1 hover:border-accent/40 hover:text-accent"
               >
                 <FaWhatsapp size={14} />
-                WhatsApp
+                Message on WhatsApp
               </a>
             </div>
           </div>
@@ -1417,20 +1087,20 @@ function CaseStudiesSection() {
       <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
         <div className="max-w-lg">
           <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
-            Case Studies
+            Selected Work
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-            Selected production work.
+            A closer look at the products I've built.
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-          Verified client systems with real screenshots — live deployments and
-          one internal operations platform.
+          Explore real websites, eCommerce experiences and business applications
+          developed for different business needs.
         </p>
       </div>
 
-      {/* Project tabs */}
-      <div className="mt-8 flex flex-wrap gap-2 md:mt-10">
+      {/* Project tabs - horizontally scrollable on mobile */}
+      <div className="mt-8 flex gap-2 overflow-x-auto pb-2 no-scrollbar md:mt-10">
         {caseStudies.map((project, index) => (
           <button
             key={project.title}
@@ -1440,7 +1110,7 @@ function CaseStudiesSection() {
               setActiveImage(0);
             }}
             aria-pressed={index === activeProject}
-            className={`rounded-full border px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] transition-all sm:px-5 sm:text-[11px] ${
+            className={`shrink-0 rounded-full border px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.22em] transition-all sm:px-5 sm:text-[11px] ${
               index === activeProject
                 ? "border-transparent accent-gradient text-white shadow-[0_18px_40px_-26px_rgba(17, 24, 39,0.48)]"
                 : "border-border/70 bg-background/90 text-text-secondary hover:border-accent/45 hover:text-primary"
@@ -1457,7 +1127,6 @@ function CaseStudiesSection() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Grid */}
         {/* Mobile active screen */}
         <div className="relative z-10 px-4 pb-5 pt-6 md:hidden">
           <div className="overflow-hidden rounded-[1.35rem]">
@@ -1516,20 +1185,38 @@ function CaseStudiesSection() {
                       : "0 24px 54px -34px rgba(15,23,42,0.24)",
                 }}
               >
-                {/* Removed top browser bar and overlay gradient for clean image */}
                 <img
                   src={src}
                   alt={`${currentProject.title} screen ${idx + 1}`}
                   loading={abs === 0 ? "eager" : "lazy"}
                   className="block h-auto max-h-[430px] w-full object-contain"
                 />
-                {/* removed bottom gradient */}
               </div>
             );
           })}
         </div>
 
-        {/* Controls hidden, auto-advances only */}
+        {/* Project Links / Action Bar */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full accent-gradient px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white shadow-sm transition-all hover:-translate-y-0.5"
+          >
+            Discuss Your Project
+            <FaArrowRight size={10} />
+          </a>
+          {currentProject.link && (
+            <a
+              href={currentProject.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent/40 hover:text-accent"
+            >
+              View Live Site
+              <FaExternalLinkAlt size={10} />
+            </a>
+          )}
+        </div>
       </div>
     </section>
   );
@@ -1550,22 +1237,21 @@ function AboutSection() {
 
             <div className="relative z-10 flex h-full min-h-0 flex-col justify-center">
               <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-white/70">
-                About
+                About Jerry
               </p>
               <h2 className="mt-2 max-w-lg font-display text-2xl font-bold leading-[1.08] sm:text-[1.75rem] lg:text-[1.95rem]">
-                I don’t just build websites.
-                <br />
-                I build systems businesses
-                <br />
-                run on.
+                I build the digital systems behind growing businesses.
               </h2>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-white/74 lg:mt-2.5">
-                From ecommerce infrastructure and internal dashboards to backend
-                platforms and automation workflows, I build scalable digital
-                products engineered for real operations.
+              <p className="mt-3 max-w-xl text-sm leading-6 text-white/85 lg:mt-2.5">
+                I'm Jerry, a digital product engineer focused on building custom web
+                applications, eCommerce platforms and business systems. I work closely
+                with businesses to understand their challenges and turn them into
+                practical digital solutions.
               </p>
               <p className="mt-1.5 max-w-xl text-sm leading-6 text-white/70">
-                Systems engineered for teams that rely on them every day.
+                From commerce workflows and internal dashboards to backend platforms
+                and automations, I build scalable digital products engineered for real
+                daily operations.
               </p>
 
               <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:mt-3">
@@ -1596,28 +1282,30 @@ function AboutSection() {
               />
             </div>
 
-            <article className="flex min-h-0 items-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-3.5">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/80">Key Metrics</p>
-                <h3 className="mt-1 font-display text-base font-bold sm:text-lg">Production Metrics</h3>
-                <ul className="mt-2 space-y-1.5 text-white/90">
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">40%</span><span className="text-[11px] sm:text-xs">Faster load times</span></li>
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">2x</span><span className="text-[11px] sm:text-xs">Conversion improvement</span></li>
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">10k+</span><span className="text-[11px] sm:text-xs">Active users on live systems</span></li>
-                </ul>
-              </div>
+            <article className="flex min-h-0 flex-col justify-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/70">
+                Direct Partnership
+              </p>
+              <h3 className="mt-1 font-display text-sm font-bold sm:text-base">
+                Direct Engineering
+              </h3>
+              <p className="mt-1.5 text-[11px] leading-4 text-white/80 sm:text-xs sm:leading-5">
+                Work directly with an independent developer from planning to deployment.
+                No account managers, agency markups, or lost technical context.
+              </p>
             </article>
 
-            <article className="flex min-h-0 items-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-3.5">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/80">Operational Stats</p>
-                <h3 className="mt-1 font-display text-base font-bold sm:text-lg">Operational Health</h3>
-                <ul className="mt-2 space-y-1.5 text-white/90">
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">99.9%</span><span className="text-[11px] sm:text-xs">Uptime</span></li>
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">-80%</span><span className="text-[11px] sm:text-xs">Manual tasks reduced</span></li>
-                  <li className="flex items-baseline gap-2"><span className="text-lg font-bold sm:text-xl">92%</span><span className="text-[11px] sm:text-xs">Team adoption</span></li>
-                </ul>
-              </div>
+            <article className="flex min-h-0 flex-col justify-center overflow-hidden rounded-[1.15rem] bg-primary p-3 text-white shadow-[0_18px_44px_-30px_rgba(15,23,42,0.18)] sm:p-4">
+              <p className="text-[9px] font-bold uppercase tracking-[0.24em] text-white/70">
+                Built to Scale
+              </p>
+              <h3 className="mt-1 font-display text-sm font-bold sm:text-base">
+                Production Quality
+              </h3>
+              <p className="mt-1.5 text-[11px] leading-4 text-white/80 sm:text-xs sm:leading-5">
+                Clean, documented code, modern architectures, and resilient databases
+                designed to handle real daily workflows and grow with your business.
+              </p>
             </article>
 
             <div className="flex min-h-0 items-center justify-center overflow-hidden rounded-[1.15rem] bg-white/70 p-2">
@@ -1633,16 +1321,16 @@ function AboutSection() {
 
         <div className="shrink-0 rounded-[1.25rem] border border-border/70 bg-background/88 px-4 py-3 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.14)] sm:px-5">
           <div className="grid gap-3 text-center sm:grid-cols-3">
-            {aboutStats.map((item, index) => (
+            {aboutPillars.map((item, index) => (
               <div
-                key={item.label}
-                className={`py-0.5 ${index < aboutStats.length - 1 ? "sm:border-r sm:border-border/70" : ""}`}
+                key={item.title}
+                className={`py-1 ${index < aboutPillars.length - 1 ? "sm:border-r sm:border-border/70" : ""}`}
               >
-                <p className="font-display text-xl font-bold text-primary sm:text-2xl">
-                  {item.value}
+                <p className="font-display text-sm font-bold text-primary sm:text-base">
+                  {item.title}
                 </p>
                 <p className="mt-0.5 text-xs leading-5 text-text-secondary">
-                  {item.label}
+                  {item.desc}
                 </p>
               </div>
             ))}
@@ -1652,7 +1340,6 @@ function AboutSection() {
     </section>
   );
 }
-
 function TrustSection() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [animating, setAnimating] = useState(false);
@@ -1665,7 +1352,7 @@ function TrustSection() {
       setTimeout(() => {
         setActiveTestimonial(idx);
         setAnimating(false);
-      }, 300);
+      }, 250);
     },
     [activeTestimonial],
   );
@@ -1673,57 +1360,14 @@ function TrustSection() {
   useEffect(() => {
     const id = window.setInterval(
       () => switchTo((activeTestimonial + 1) % total),
-      4500,
+      5000,
     );
     return () => window.clearInterval(id);
   }, [activeTestimonial, switchTo, total]);
 
   const current = trustTestimonials[activeTestimonial];
-  const dash = current.dashboard;
-  const chartMode = activeTestimonial % 5;
-  const primaryMetric = dash.metrics[chartMode % dash.metrics.length];
-  const pieMetric = dash.bars[chartMode % dash.bars.length];
-  const linePoints = dash.spark
-    .map((v, i) => `${(i / (dash.spark.length - 1)) * 100},${100 - v * 9}`)
-    .join(" ");
-  const chartOrder = [
-    chartMode === 0
-      ? "lg:order-1"
-      : chartMode === 1
-        ? "lg:order-3"
-        : chartMode === 2
-          ? "lg:order-2"
-          : chartMode === 3
-            ? "lg:order-4"
-            : "lg:order-1",
-    chartMode === 0
-      ? "lg:order-2"
-      : chartMode === 1
-        ? "lg:order-1"
-        : chartMode === 2
-          ? "lg:order-4"
-          : chartMode === 3
-            ? "lg:order-2"
-            : "lg:order-3",
-    chartMode === 0
-      ? "lg:order-3"
-      : chartMode === 1
-        ? "lg:order-4"
-        : chartMode === 2
-          ? "lg:order-1"
-          : chartMode === 3
-            ? "lg:order-3"
-            : "lg:order-2",
-    chartMode === 0
-      ? "lg:order-4"
-      : chartMode === 1
-        ? "lg:order-2"
-        : chartMode === 2
-          ? "lg:order-3"
-          : chartMode === 3
-            ? "lg:order-1"
-            : "lg:order-4",
-  ];
+  const proj = current.project;
+
   return (
     <section className="mx-auto max-w-screen-xl px-5 py-8 sm:px-6 md:px-12 md:py-10 lg:px-20 lg:py-12">
       <div className="rounded-[1.75rem] border border-border/70 bg-background/88 p-5 shadow-[0_18px_44px_-32px_rgba(15,23,42,0.14)] backdrop-blur sm:p-6 lg:p-7">
@@ -1731,35 +1375,41 @@ function TrustSection() {
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div className="max-w-lg">
             <p className="text-[10px] font-bold uppercase tracking-[0.34em] text-accent">
-              Trust
+              Trust & Collaboration
             </p>
             <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2.15rem] lg:leading-[1.08]">
-                Product engineering credibility is proven through shipped systems,
-                data, and outcomes.
-              </h2>
+              Trust built through real work and real collaboration.
+            </h2>
           </div>
           <p className="max-w-2xl text-sm leading-6 text-text-secondary">
-            This is not a portfolio of demos. These are operational systems built
-            to solve business problems and scale reliably.
+            Every project reflects a practical approach to understanding business
+            needs, solving technical challenges and delivering solutions that work
+            in real environments.
           </p>
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {trustLogos.map((item) => (
-            <div
-              key={item}
-              className="rounded-full border border-border/70 bg-surface/80 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.22em] text-text-secondary"
+        {/* Project Selector Pills */}
+        <div className="mt-5 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+          {trustTestimonials.map((item, idx) => (
+            <button
+              key={item.project.name}
+              type="button"
+              onClick={() => switchTo(idx)}
+              className={`shrink-0 rounded-full border px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] transition-all ${
+                activeTestimonial === idx
+                  ? "border-accent bg-accent text-white shadow-sm"
+                  : "border-border/70 bg-surface/80 text-text-secondary hover:border-accent/40 hover:text-primary"
+              }`}
             >
-              {item}
-            </div>
+              {item.project.name}
+            </button>
           ))}
         </div>
 
-        {/* Main content: testimonial + dashboard */}
-        <div className="mt-5 grid gap-4 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        {/* Main content: testimonial + verified project scope */}
+        <div className="mt-5 grid gap-4 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
           {/* Left rotating testimonials */}
-          <article className="relative flex h-auto flex-col rounded-[1.35rem] border border-primary bg-primary p-5 shadow-[0_18px_44px_-30px_rgba(15,23,42,0.16)]">
-            {/* bg glow */}
+          <article className="relative flex h-full flex-col justify-between rounded-[1.35rem] border border-primary bg-primary p-5 shadow-[0_18px_44px_-30px_rgba(15,23,42,0.16)] sm:p-6">
             <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-[rgba(55, 65, 81,0.22)] blur-3xl" />
             <div className="pointer-events-none absolute -bottom-6 left-6 h-24 w-24 rounded-full bg-[rgba(17, 24, 39,0.18)] blur-3xl" />
 
@@ -1769,45 +1419,29 @@ function TrustSection() {
               </span>
 
               {/* Animated review + response */}
-              <div className="relative mt-3 min-h-[148px]">
+              <div className="relative mt-3 min-h-[160px]">
                 {trustTestimonials.map((item, i) => (
                   <div
                     key={i}
-                    className={`transition-all duration-700 ease-in-out ${
+                    className={`transition-all duration-500 ease-in-out ${
                       i === activeTestimonial
                         ? "translate-y-0 opacity-100"
-                        : "pointer-events-none absolute inset-0 translate-y-4 opacity-0"
+                        : "pointer-events-none absolute inset-0 translate-y-3 opacity-0"
                     }`}
                   >
-                    <div className="rounded-xl rounded-tl-md border border-white/12 bg-white/6 px-3.5 py-2.5">
+                    <div className="rounded-xl rounded-tl-md border border-white/12 bg-white/6 px-3.5 py-3">
                       <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-white/70">
-                        Client Review
+                        Client Collaboration
                       </p>
-                      <p
-                        className="mt-1.5 text-sm leading-6 text-white/88"
-                        style={{
-                          display: "-webkit-box",
-                          WebkitLineClamp: 4,
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                        }}
-                      >
-                        {item.quote}
+                      <p className="mt-1.5 text-sm leading-6 text-white/90">
+                        "{item.quote}"
                       </p>
                     </div>
-                    <div className="mt-2.5 ml-auto max-w-[86%] rounded-xl rounded-tr-md bg-white px-3.5 py-2.5 text-primary shadow-[0_14px_32px_-24px_rgba(255,255,255,0.28)]">
+                    <div className="mt-2.5 ml-auto max-w-[90%] rounded-xl rounded-tr-md bg-white px-3.5 py-2.5 text-primary shadow-sm">
                       <p className="text-[9px] font-bold uppercase tracking-[0.22em] text-text-secondary/70">
-                        Response
+                        Jerry's Role
                       </p>
-                      <p
-                        className="mt-1.5 text-xs leading-5 text-text-secondary"
-                        style={{
-                          display: "-webkit-box",
-                          WebkitLineClamp: 3,
-                          WebkitBoxOrient: "vertical",
-                          overflow: "hidden",
-                        }}
-                      >
+                      <p className="mt-1 text-xs leading-5 text-text-secondary">
                         {item.response}
                       </p>
                     </div>
@@ -1816,174 +1450,121 @@ function TrustSection() {
               </div>
             </div>
 
-            <div className="relative z-10 mt-4">
-              <div className="border-t border-white/10 pt-3.5">
-                {/* Animated author */}
-                <div className="relative min-h-[34px]">
-                  {trustTestimonials.map((item, i) => (
+            <div className="relative z-10 mt-4 border-t border-white/10 pt-3.5">
+              <div className="relative min-h-[36px]">
+                {trustTestimonials.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`transition-all duration-500 ease-in-out ${
+                      i === activeTestimonial
+                        ? "translate-y-0 opacity-100"
+                        : "pointer-events-none absolute inset-0 translate-y-2 opacity-0"
+                    }`}
+                  >
+                    <p className="text-sm font-semibold text-white">
+                      {item.author}
+                    </p>
+                    <p className="mt-0.5 text-[10px] uppercase tracking-[0.2em] text-white/70">
+                      {item.role}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </article>
+
+          {/* Right verified project architecture card (no fake metrics) */}
+          <div className="flex flex-col justify-between rounded-[1.35rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-5 shadow-[0_18px_44px_-30px_rgba(17, 24, 39,0.18)] sm:p-6">
+            <div
+              className={`flex-1 transition-all duration-300 ${
+                animating ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"
+              }`}
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-accent">
+                    Project Architecture
+                  </p>
+                  <h3 className="mt-1 font-display text-xl font-bold leading-tight text-primary">
+                    {proj.name}
+                  </h3>
+                  <p className="mt-0.5 text-xs text-text-secondary">
+                    {proj.tagline}
+                  </p>
+                </div>
+                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em] text-green-700">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
+                  {proj.status}
+                </span>
+              </div>
+
+              {/* Delivered Modules */}
+              <div className="mt-4">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70 mb-2">
+                  Delivered Modules
+                </p>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  {proj.modules.map((m) => (
                     <div
-                      key={i}
-                      className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                        i === activeTestimonial
-                          ? "translate-y-0 opacity-100"
-                          : "pointer-events-none translate-y-3 opacity-0"
-                      }`}
+                      key={m.label}
+                      className="rounded-xl border border-border/60 bg-background/90 p-3 shadow-sm"
                     >
-                      <p className="text-sm font-semibold text-white">
-                        {item.author}
-                      </p>
-                      <p className="mt-0.5 text-[10px] uppercase tracking-[0.22em] text-white/70">
-                        {item.role}
+                      <div className="flex items-center gap-1.5 text-accent">
+                        <FaCheckCircle size={10} />
+                        <p className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                          {m.label}
+                        </p>
+                      </div>
+                      <p className="mt-1 text-[11px] leading-4 text-text-secondary">
+                        {m.detail}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
-          </article>
 
-          {/* Right dynamic dashboard synced to active testimonial */}
-          <div className="rounded-[1.35rem] border border-border/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(247,248,255,0.96))] p-4 shadow-[0_18px_44px_-30px_rgba(17, 24, 39,0.18)] sm:p-5">
-            <div
-              className={`transition-all duration-300 ${animating ? "translate-y-2 opacity-0" : "translate-y-0 opacity-100"}`}
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <p className="text-[9px] font-bold uppercase tracking-[0.3em] text-accent">
-                    Outcome Board
-                  </p>
-                  <h3 className="mt-1.5 font-display text-lg font-bold leading-tight text-primary sm:text-xl">
-                    {dash.label}
-                  </h3>
-                </div>
-                <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-green-500/20 bg-green-500/8 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.18em] text-green-600">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green-500" />
-                  Live
-                </span>
-              </div>
-
-              <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
-                <div
-                  className={`rounded-xl border border-border/70 bg-background p-3.5 shadow-[0_12px_28px_-24px_rgba(15,23,42,0.18)] ${chartOrder[0]}`}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                        Key Stat
-                      </p>
-                      <p className="mt-2 font-display text-3xl font-bold leading-none text-primary">
-                        {primaryMetric.value}
-                      </p>
-                    </div>
+              {/* Production Stack */}
+              <div className="mt-4 border-t border-border/40 pt-3">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
+                  Production Tech Stack
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {proj.stack.map((t) => (
                     <span
-                      className="inline-flex h-8 w-8 items-center justify-center rounded-xl"
-                      style={{
-                        background: `${dash.color}14`,
-                        color: dash.color,
-                      }}
+                      key={t}
+                      className="rounded-full bg-accent/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-accent"
                     >
-                      <primaryMetric.Icon size={14} />
+                      {t}
                     </span>
-                  </div>
-                  <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                    {primaryMetric.label}
-                  </p>
-                </div>
-
-                <div
-                  className={`rounded-xl border border-border/70 bg-surface/70 p-3.5 ${chartOrder[1]}`}
-                >
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="grid h-20 w-20 shrink-0 place-items-center rounded-full"
-                      style={{
-                        background: `conic-gradient(${dash.color} ${pieMetric.pct * 3.6}deg, rgba(17, 24, 39,0.12) 0deg)`,
-                      }}
-                    >
-                      <div className="grid h-14 w-14 place-items-center rounded-full bg-background">
-                        <span className="font-display text-base font-bold text-primary">
-                          {pieMetric.pct}%
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                        Pie Signal
-                      </p>
-                      <p className="mt-1.5 text-xs font-bold leading-5 text-primary">
-                        {pieMetric.label}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className={`rounded-xl border border-border/70 bg-background p-3.5 ${chartOrder[2]}`}
-                >
-                  <div className="flex items-center justify-between">
-                    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                      Line Trend
-                    </p>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-green-600">
-                      Trending
-                    </p>
-                  </div>
-                  <svg
-                    viewBox="0 0 100 100"
-                    className="mt-2 h-20 w-full overflow-visible"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                  >
-                    <polyline
-                      points={`0,96 ${linePoints} 100,96`}
-                      fill={`${dash.color}14`}
-                      stroke="none"
-                    />
-                    <polyline
-                      points={linePoints}
-                      fill="none"
-                      stroke={dash.color}
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-text-secondary/70">
-                    {dash.sparkLabel}
-                  </p>
-                </div>
-
-                <div
-                  className={`rounded-xl border border-border/70 bg-surface/70 p-3.5 ${chartOrder[3]}`}
-                >
-                  <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-text-secondary/70">
-                    Progress Bars
-                  </p>
-                  <div className="mt-3 space-y-2.5">
-                    {dash.bars.map((bar) => (
-                      <div key={bar.label}>
-                        <div className="flex items-center justify-between gap-3">
-                          <span className="text-[11px] text-text-secondary">
-                            {bar.label}
-                          </span>
-                          <span className="text-[11px] font-bold text-primary">
-                            {bar.pct}%
-                          </span>
-                        </div>
-                        <div className="mt-1 h-1 overflow-hidden rounded-full bg-border/60">
-                          <div
-                            className="h-full rounded-full transition-all duration-700"
-                            style={{
-                              width: `${bar.pct}%`,
-                              background: `linear-gradient(90deg, ${dash.color}, #4B5563)`,
-                            }}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  ))}
                 </div>
               </div>
+            </div>
+
+            {/* Live Link Button */}
+            <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-border/40 pt-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full accent-gradient px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white transition-all hover:bg-accent/85"
+              >
+                Discuss a Similar Project
+                <FaArrowRight size={10} />
+              </a>
+              {proj.liveUrl ? (
+                <a
+                  href={proj.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-primary transition-all hover:border-accent/40 hover:text-accent"
+                >
+                  View Live Site
+                  <FaExternalLinkAlt size={10} />
+                </a>
+              ) : (
+                <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-surface px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary/70">
+                  Internal Deployment
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -2004,12 +1585,12 @@ function BlogSection() {
             Insights
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-primary sm:text-4xl lg:text-5xl">
-            Building Better Digital Systems
+            Insights from building real digital products.
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-7 text-text-secondary sm:text-base">
-          Practical insights from shipping production systems. Learn how to
-          build software that drives real business results.
+          Practical perspectives on custom software, eCommerce and business technology,
+          based on real development experience.
         </p>
       </div>
 
@@ -2106,12 +1687,12 @@ function FAQSection() {
             FAQ
           </p>
           <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
-            How product engineering collaboration works
+            Questions before starting a project?
           </h2>
         </div>
         <p className="max-w-2xl text-sm leading-6 text-text-secondary">
-          Practical answers for teams choosing a product engineer, not a
-          generic developer.
+          Clear answers about project scope, pricing, timelines, communication and
+          ongoing support.
         </p>
       </div>
 
@@ -2467,65 +2048,40 @@ export default function FreelanceLanding() {
             <div className="freelance-hero-copy flex flex-col justify-center text-left">
               {/* Headline */}
               <h1 className="max-w-lg text-[0.85rem] font-display font-semibold uppercase tracking-[0.28em] text-primary sm:text-[0.95rem]">
-                FULL-STACK ENGINEER • PRODUCT BUILDER
+                DIGITAL PRODUCT ENGINEER · BUSINESS-FOCUSED BUILDER
               </h1>
 
-              <h2 className="freelance-hero-title mt-6 max-w-lg text-[2.2rem] font-display font-bold leading-[0.98] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
-                <span className="block">Building production-grade</span>
-                <span className="block">digital systems</span>
-                <span className="block">for growth-stage businesses.</span>
+              <h2 className="freelance-hero-title mt-6 max-w-xl text-[2.2rem] font-display font-bold leading-[1.02] text-primary sm:text-[2.7rem] md:text-[3.15rem] lg:text-[3.6rem]">
+                I build digital products that make business work better.
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-7 text-text-secondary sm:text-[1.05rem] sm:leading-8">
-                Ecommerce, operations, analytics, and automation systems built to
-                run reliably in real business environments.
+                Custom web applications, eCommerce platforms and business systems
+                designed to solve real problems, simplify operations and help
+                businesses grow.
               </p>
 
               {/* CTAs */}
               <div className="mt-8 grid gap-3 sm:mt-10 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
-                <Link
-                  to="/portfolio"
+                <a
+                  href="#contact"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full accent-gradient px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white shadow-[0_16px_40px_-16px_rgba(17, 24, 39,0.7)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_48px_-16px_rgba(17, 24, 39,0.85)] sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
-                  Explore Projects
+                  Let's discuss your project
                   <FaArrowRight size={12} />
-                </Link>
+                </a>
 
-                <button
-                  onClick={() => setContactOpen(true)}
+                <a
+                  href="#work"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-full border border-border/70 bg-background/80 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary transition-all hover:border-accent/50 hover:text-accent sm:w-auto sm:px-7 sm:py-4 sm:tracking-[0.2em]"
                 >
-                  Start a systems review
-                </button>
+                  View selected work
+                </a>
               </div>
 
               <p className="mt-6 max-w-xl text-[10px] font-bold uppercase tracking-[0.18em] text-text-secondary">
-                Ecommerce • Operations • Automation • Analytics • Product Systems
+                Custom Software · eCommerce · Business Applications · Automation
               </p>
-
-              {/* Trust indicators */}
-              <div className="freelance-hero-stats mt-6 grid grid-cols-3 gap-2 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
-                {[
-                  { value: "10+", label: "Industry Verticals" },
-                  { value: "10K+", label: "Users Supported" },
-                  { value: "3+", label: "Years Experience" },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex min-w-0 flex-col rounded-2xl border border-border/60 bg-background/70 px-3 py-3 sm:flex-row sm:items-center sm:gap-2 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0"
-                  >
-                    {i > 0 && (
-                      <span className="hidden h-3.5 w-px bg-border/60 sm:block" />
-                    )}
-                    <span className="font-display text-sm font-bold text-primary">
-                      {item.value}
-                    </span>
-                    <span className="mt-1 text-[11px] leading-tight text-text-secondary sm:mt-0 sm:text-xs">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right service showcase */}
@@ -2535,7 +2091,7 @@ export default function FreelanceLanding() {
 
         <section className="mx-auto max-w-screen-xl border-t border-border/40 px-5 pb-2 pt-8 sm:px-6 sm:pt-10 md:px-12 lg:px-20">
           <p className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-secondary/60">
-            Helping businesses scale with systems that perform
+            A selection of businesses I've worked with
           </p>
           <div className="mt-6 overflow-hidden sm:mt-8">
               <style>{`
@@ -2567,24 +2123,25 @@ export default function FreelanceLanding() {
             </div>
         </section>
 
-        <HighImpactSection />
-
         <ConversionCtaStrip
-          eyebrow="Have a system problem?"
-          title="Let me look at the bottleneck before you spend more time patching it."
-          body="Share the workflow, performance issue, or product idea. I will help you identify the cleanest next move."
+          eyebrow="HAVE A PROJECT OR BUSINESS CHALLENGE?"
+          title="Let's find the right digital solution for your business."
+          body="Tell me what you're trying to build, improve, or simplify. We'll discuss the challenge, explore the right approach, and identify practical next steps."
           onContactClick={() => setContactOpen(true)}
+          primaryLabel="Discuss Your Project"
+          secondaryLabel="Message on WhatsApp"
         />
 
         <ServicesSection onContactClick={() => setContactOpen(true)} />
 
         <ConversionCtaStrip
-          eyebrow="Need one of these built?"
-          title="Tell me what you are trying to launch, automate, or scale."
-          body="Use the contact form for project details, or message me directly on WhatsApp if you want to start with a quick conversation."
+          eyebrow="HAVE A PROJECT IN MIND?"
+          title="Let's turn your business idea into a working digital solution."
+          body="Share what you're planning to build, improve, or simplify. Tell me about your requirements, and let's explore the right approach for your business."
           onContactClick={() => setContactOpen(true)}
           tone="dark"
-          primaryLabel="Open Contact Form"
+          primaryLabel="Discuss Your Project"
+          secondaryLabel="Chat on WhatsApp"
         />
 
         <DetailedCaseStudiesSection />
@@ -2592,10 +2149,11 @@ export default function FreelanceLanding() {
         <CaseStudiesSection />
 
         <ConversionCtaStrip
-          eyebrow="Seen enough proof?"
-          title="Bring the same clarity to your product, platform, or internal system."
-          body="If the project needs business thinking and production-grade execution, this is a good point to start the conversation."
+          eyebrow="HAVE A PROJECT IN MIND?"
+          title="Let's discuss what your business needs next."
+          body="Whether you're building a new product or improving an existing system, let's discuss your requirements and find the right approach."
           onContactClick={() => setContactOpen(true)}
+          primaryLabel="Discuss Your Project"
           secondaryLabel="Chat on WhatsApp"
         />
 
@@ -2608,12 +2166,13 @@ export default function FreelanceLanding() {
         <FAQSection />
 
         <ConversionCtaStrip
-          eyebrow="Still comparing options?"
-          title="Send the rough idea. I can help you shape the right technical direction."
-          body="You do not need a perfect brief. A few lines about the problem, budget range, and timeline is enough to begin."
+          eyebrow="HAVE A PROJECT IN MIND?"
+          title="Let's work out the right way forward."
+          body="You don't need a complete technical brief. Share your idea, business challenge, expected budget and timeline to start the conversation."
           onContactClick={() => setContactOpen(true)}
           tone="dark"
-          primaryLabel="Send Project Details"
+          primaryLabel="Start a Project"
+          secondaryLabel="Chat on WhatsApp"
         />
 
         <section
@@ -2626,47 +2185,47 @@ export default function FreelanceLanding() {
                 How I Work
               </p>
               <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
-                This is how I think, decide, and deliver.
+                A clear process, from first conversation to launch.
               </h2>
             </div>
             <p className="max-w-2xl text-sm leading-6 text-text-secondary">
-              Not a process template. A set of principles built from shipping
-              real systems for real businesses.
+              Every project starts with understanding the business need, defining
+              the right solution and agreeing on a clear path to delivery.
             </p>
           </div>
 
           <div className="mt-5 grid gap-2.5 md:grid-cols-2 md:items-start lg:gap-3">
             {[
               {
-                title: "I challenge the problem before touching the code",
-                body: "Most briefs describe symptoms, not root causes. I push back and make sure we're solving the right thing before a single line is written.",
+                title: "01 – Understand Business Goals & Bottlenecks",
+                body: "We discuss your business challenges, user workflows, and core requirements to ensure we solve the right problem before writing code.",
                 featured: true,
-                label: "Clarity First",
-                meta: "Root cause before roadmap",
+                label: "Discovery",
+                meta: "Goals, requirements, user workflows",
                 Icon: FaCrosshairs,
               },
               {
-                title: "I think in systems, not pages",
-                body: "Every feature is part of a larger operational picture, designed for how data flows, how teams use it, and how it scales.",
+                title: "02 – Plan Scope, Architecture & Milestones",
+                body: "We map the technical architecture, choose the best tech stack, and define transparent milestones, deliverables, and fixed pricing.",
                 featured: false,
-                label: "System Design",
-                meta: "Flows, teams, scale",
+                label: "Architecture",
+                meta: "Scope, roadmap, fixed pricing",
                 Icon: FaDatabase,
               },
               {
-                title: "I build for real usage, not demo success",
-                body: "I test against actual usage patterns, edge cases, and the people who run it daily, not just what looks good in a walkthrough.",
+                title: "03 – Develop in Production-Ready Stages",
+                body: "Build in clear iterations with regular progress reviews. You test working previews on private staging environments and share direct feedback.",
                 featured: false,
-                label: "Reality Check",
-                meta: "Usage over walkthroughs",
+                label: "Development",
+                meta: "Staging previews, iterative feedback",
                 Icon: FaUsers,
               },
               {
-                title: "I stay accountable beyond launch",
-                body: "Shipping is not the finish line. I stay involved through stabilisation and make sure the system performs in the hands of real users.",
+                title: "04 – Launch, Hand Over & Support",
+                body: "Full production deployment, code handover, and team walkthrough, backed by 30 days of warranty and ongoing maintenance.",
                 featured: false,
-                label: "Post Launch",
-                meta: "Support, stabilise, improve",
+                label: "Deployment",
+                meta: "Production launch, warranty, handover",
                 Icon: FaSignal,
               },
             ].map((item, i) => (
@@ -2747,11 +2306,11 @@ export default function FreelanceLanding() {
                   Get in Touch
                 </p>
                 <h2 className="mt-2 max-w-xl font-display text-2xl font-bold leading-tight text-primary sm:text-3xl lg:text-[2rem] lg:leading-[1.08]">
-                  Share your product vision
+                  Let's talk about what you want to build.
                 </h2>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-text-secondary">
-                  Fill out the form and I'll get back to you within 24 hours
-                  with a clear perspective on your system and next steps.
+                  Tell me about your idea, business challenge or project requirements.
+                  I'll review the details and get back to you with the next steps.
                 </p>
               </div>
 
@@ -2772,9 +2331,9 @@ export default function FreelanceLanding() {
                   </h3>
                   <ul className="mt-2 space-y-1.5">
                     {[
-                      "I review your project details",
-                      "We schedule a 15-min discovery call",
-                      "You get a strategic proposal",
+                      "Review your project requirements",
+                      "Arrange an initial 15-minute discovery call",
+                      "Share suggested approach, scope & estimate",
                     ].map((item, i) => (
                       <li
                         key={i}
@@ -2819,15 +2378,14 @@ export default function FreelanceLanding() {
             <div className="relative z-10 lg:flex lg:items-end lg:justify-between lg:gap-12">
               <div className="max-w-3xl">
                 <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/70">
-                  Final CTA
+                  Ready to Build?
                 </p>
                 <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[3.2rem] lg:leading-[1]">
-                  Build the system your business runs on
+                  Have a business idea or challenge? Let's build the right solution.
                 </h2>
                 <p className="mt-5 max-w-2xl text-sm leading-7 text-white/74 sm:text-base sm:leading-8">
-                  If you need a product engineer who turns a business challenge,
-                  workflow bottleneck, or growth-stage opportunity into a reliable
-                  production system, this is the point to start the conversation.
+                  Whether you need a new digital product, a custom business application
+                  or improvements to an existing system, let's discuss how I can help.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
@@ -2870,11 +2428,11 @@ export default function FreelanceLanding() {
                   Start a Project
                 </button>
                 <a
-                  href="mailto:contact@codebyjerry.online?subject=Let%27s%20Talk"
+                  href="mailto:contact@codebyjerry.online?subject=Project%20Inquiry"
                   className="inline-flex items-center justify-center gap-3 rounded-full border border-white/18 bg-white/8 px-6 py-4 text-[11px] font-bold uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-white/32 hover:bg-white/12 sm:px-7 sm:text-xs sm:tracking-[0.2em]"
                 >
                   <FaEnvelope size={13} />
-                  Contact Me
+                  Email Me
                 </a>
               </div>
             </div>
@@ -2921,6 +2479,8 @@ function ContactFormModal({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
+  const [budget, setBudget] = useState("");
+  const [timeline, setTimeline] = useState("");
   const [message, setMessage] = useState("");
   const [botcheck, setBotcheck] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -2944,6 +2504,8 @@ function ContactFormModal({
       email,
       phone,
       service,
+      budget,
+      timeline,
       message,
       source: "Portfolio Homepage Contact Modal",
       subject: "Website project inquiry",
@@ -2979,6 +2541,8 @@ function ContactFormModal({
       setEmail("");
       setPhone("");
       setService("");
+      setBudget("");
+      setTimeline("");
       setMessage("");
       setBotcheck(false);
     } catch (error) {
@@ -2994,11 +2558,12 @@ function ContactFormModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[110] flex items-center justify-center p-5 backdrop-blur-lg bg-black/60 animate-in fade-in duration-300">
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-[2.5rem] border border-border/40 bg-background shadow-[0_50px_120px_-30px_rgba(15,23,42,0.4)]">
+    <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-5 backdrop-blur-lg bg-black/60 animate-in fade-in duration-300">
+      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2rem] sm:rounded-[2.5rem] border border-border/40 bg-background shadow-[0_50px_120px_-30px_rgba(15,23,42,0.4)]">
         <button
           onClick={onClose}
-          className="absolute right-8 top-8 z-20 text-text-secondary hover:text-primary transition-colors"
+          aria-label="Close dialog"
+          className="absolute right-6 top-6 z-20 text-text-secondary hover:text-primary transition-colors p-2"
         >
           ✕
         </button>
@@ -3014,8 +2579,8 @@ function ContactFormModal({
                 Let's talk about your project
               </h2>
               <p className="mt-6 text-sm leading-7 opacity-80">
-                Tell me about the bottleneck you're facing. I'll get back to you
-                within 24 hours with a strategic perspective.
+                Tell me about your idea or business challenge. I'll get back to you
+                within 24 hours with a clear perspective and practical next steps.
               </p>
             </div>
 
@@ -3031,22 +2596,22 @@ function ContactFormModal({
           </div>
 
           {/* Right Panel - Form */}
-          <div className="p-8 sm:p-10">
+          <div className="p-6 sm:p-8 lg:p-10">
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center h-full text-center py-10 animate-in zoom-in duration-500">
-                <div className="h-20 w-20 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mb-6">
-                  <FaCheckCircle size={40} />
+                <div className="h-16 w-16 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mb-4">
+                  <FaCheckCircle size={36} />
                 </div>
                 <h3 className="font-display text-2xl font-bold text-primary">
                   Message Received!
                 </h3>
-                <p className="mt-4 text-sm text-text-secondary">
+                <p className="mt-3 text-sm text-text-secondary">
                   Thanks for reaching out. I've received your details and will
-                  get back to you shortly.
+                  get back to you shortly with next steps.
                 </p>
                 <button
                   onClick={onClose}
-                  className="mt-8 rounded-full bg-primary px-8 py-3 text-xs font-bold uppercase tracking-widest text-white"
+                  className="mt-6 rounded-full bg-primary px-8 py-3 text-xs font-bold uppercase tracking-widest text-white"
                 >
                   Close
                 </button>
@@ -3057,7 +2622,7 @@ function ContactFormModal({
                 method="POST"
                 data-sf-key={SPLITFORMS_ACCESS_KEY}
                 onSubmit={handleSubmit}
-                className="space-y-5"
+                className="space-y-4"
               >
                 <input
                   type="hidden"
@@ -3074,117 +2639,172 @@ function ContactFormModal({
                   checked={botcheck}
                   onChange={(e) => setBotcheck(e.target.checked)}
                 />
-                <div>
-                  <label
-                    htmlFor="sf-modal-name"
-                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    id="sf-modal-name"
-                    name="name"
-                    required
-                    type="text"
-                    autoComplete="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="John Doe"
-                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-                  />
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="sf-modal-name"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      id="sf-modal-name"
+                      name="name"
+                      required
+                      type="text"
+                      autoComplete="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="John Doe"
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="sf-modal-email"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Work Email
+                    </label>
+                    <input
+                      id="sf-modal-email"
+                      name="email"
+                      required
+                      type="email"
+                      autoComplete="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="john@company.com"
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label
-                    htmlFor="sf-modal-email"
-                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    id="sf-modal-email"
-                    name="email"
-                    required
-                    type="email"
-                    autoComplete="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="john@company.com"
-                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-                  />
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="sf-modal-phone"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Phone (Optional)
+                    </label>
+                    <input
+                      id="sf-modal-phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="+91 7092936243"
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="sf-modal-service"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Service Required
+                    </label>
+                    <select
+                      id="sf-modal-service"
+                      name="service"
+                      value={service}
+                      onChange={(e) => setService(e.target.value)}
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="Custom Web Applications">Custom Web Applications</option>
+                      <option value="eCommerce Development">eCommerce Development</option>
+                      <option value="Mobile App Development">Mobile App Development</option>
+                      <option value="Backend Development & Integrations">Backend Development & Integrations</option>
+                      <option value="Business Management Systems">Business Management Systems</option>
+                      <option value="SEO-Ready Websites">SEO-Ready Websites</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label
-                    htmlFor="sf-modal-phone"
-                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    id="sf-modal-phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 7092936243"
-                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-                  />
+
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="sf-modal-budget"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Approx Budget (Optional)
+                    </label>
+                    <select
+                      id="sf-modal-budget"
+                      name="budget"
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    >
+                      <option value="">Select budget range</option>
+                      <option value="Under $1,000">Under $1,000</option>
+                      <option value="$1,000 - $3,000">$1,000 – $3,000</option>
+                      <option value="$3,000 - $7,000">$3,000 – $7,000</option>
+                      <option value="$7,000+">$7,000+</option>
+                      <option value="Flexible">Flexible / To be discussed</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="sf-modal-timeline"
+                      className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
+                    >
+                      Expected Timeline (Optional)
+                    </label>
+                    <select
+                      id="sf-modal-timeline"
+                      name="timeline"
+                      value={timeline}
+                      onChange={(e) => setTimeline(e.target.value)}
+                      className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+                    >
+                      <option value="">Select timeline</option>
+                      <option value="Immediately (< 2 weeks)">Immediately (&lt; 2 weeks)</option>
+                      <option value="1 - 2 months">1 – 2 months</option>
+                      <option value="2 - 3 months">2 – 3 months</option>
+                      <option value="Flexible">Flexible</option>
+                    </select>
+                  </div>
                 </div>
-                <div>
-                  <label
-                    htmlFor="sf-modal-service"
-                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
-                  >
-                    Service Interested In
-                  </label>
-                  <select
-                    id="sf-modal-service"
-                    name="service"
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors"
-                  >
-                    <option value="">Select a service</option>
-                    <option value="Web Applications">Web Applications</option>
-                    <option value="eCommerce Systems">eCommerce Systems</option>
-                    <option value="Mobile Applications">
-                      Mobile Applications
-                    </option>
-                    <option value="Backend & APIs">Backend & APIs</option>
-                    <option value="Business Platforms">
-                      Business Platforms
-                    </option>
-                    <option value="Growth & SEO">Growth & SEO</option>
-                  </select>
-                </div>
+
                 <div>
                   <label
                     htmlFor="sf-modal-message"
-                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-2"
+                    className="block text-[10px] font-bold uppercase tracking-widest text-text-secondary/70 mb-1.5"
                   >
-                    Tell me about the project
+                    Project Description
                   </label>
                   <textarea
                     id="sf-modal-message"
                     name="message"
                     required
-                    rows={4}
+                    rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Briefly describe the challenge..."
-                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-4 py-3 text-sm focus:border-accent focus:outline-none transition-colors resize-none"
+                    placeholder="Tell me what you're looking to build or improve..."
+                    className="w-full rounded-xl border border-border/50 bg-surface/50 px-3.5 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors resize-none"
                   />
                 </div>
+
                 {status === "error" && (
-                  <p className="text-sm text-red-400">{errorMessage}</p>
+                  <p className="text-sm text-red-500">{errorMessage}</p>
                 )}
+
                 <button
                   disabled={status === "submitting"}
                   type="submit"
-                  className="w-full rounded-full accent-gradient py-4 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-70"
+                  className="w-full rounded-full accent-gradient py-3.5 text-xs font-bold uppercase tracking-widest text-white shadow-lg transition-transform hover:-translate-y-0.5 disabled:opacity-70"
                 >
                   {status === "submitting" ? "Sending..." : "Send Message"}
                 </button>
+
+                <p className="text-[10px] text-text-secondary/70 text-center pt-1">
+                  Your information is 100% confidential and only used to respond to your project enquiry.
+                </p>
               </form>
             )}
           </div>
@@ -3200,6 +2820,8 @@ function InlineContactForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState("");
+  const [budget, setBudget] = useState("");
+  const [timeline, setTimeline] = useState("");
   const [message, setMessage] = useState("");
   const [botcheck, setBotcheck] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -3223,6 +2845,8 @@ function InlineContactForm() {
       email,
       phone,
       service,
+      budget,
+      timeline,
       message,
       source: "Portfolio Homepage Inline Form",
       subject: "Website project inquiry",
@@ -3257,6 +2881,8 @@ function InlineContactForm() {
       setEmail("");
       setPhone("");
       setService("");
+      setBudget("");
+      setTimeline("");
       setMessage("");
       setBotcheck(false);
     } catch (error) {
@@ -3288,6 +2914,8 @@ function InlineContactForm() {
             setEmail("");
             setPhone("");
             setService("");
+            setBudget("");
+            setTimeline("");
             setMessage("");
             setBotcheck(false);
           }}
@@ -3326,7 +2954,7 @@ function InlineContactForm() {
         <div>
           <label
             htmlFor="sf-inline-name"
-            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
           >
             Your Name
           </label>
@@ -3339,15 +2967,15 @@ function InlineContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="John Doe"
-            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
           />
         </div>
         <div>
           <label
             htmlFor="sf-inline-email"
-            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
           >
-            Email Address
+            Work Email
           </label>
           <input
             id="sf-inline-email"
@@ -3358,17 +2986,18 @@ function InlineContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="john@company.com"
-            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
           />
         </div>
       </div>
+
       <div className="grid gap-3 sm:grid-cols-2">
         <div>
           <label
             htmlFor="sf-inline-phone"
-            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
           >
-            Phone Number
+            Phone Number (Optional)
           </label>
           <input
             id="sf-inline-phone"
@@ -3378,39 +3007,86 @@ function InlineContactForm() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+91 7092936243"
-            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
           />
         </div>
         <div>
           <label
             htmlFor="sf-inline-service"
-            className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
           >
-            Service Interested In
+            Service Required
           </label>
           <select
             id="sf-inline-service"
             name="service"
             value={service}
             onChange={(e) => setService(e.target.value)}
-            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
           >
             <option value="">Select a service</option>
-            <option value="Web Applications">Web Applications</option>
-            <option value="eCommerce Systems">eCommerce Systems</option>
-            <option value="Mobile Applications">Mobile Applications</option>
-            <option value="Backend & APIs">Backend & APIs</option>
-            <option value="Business Platforms">Business Platforms</option>
-            <option value="Growth & SEO">Growth & SEO</option>
+            <option value="Custom Web Applications">Custom Web Applications</option>
+            <option value="eCommerce Development">eCommerce Development</option>
+            <option value="Mobile App Development">Mobile App Development</option>
+            <option value="Backend Development & Integrations">Backend Development & Integrations</option>
+            <option value="Business Management Systems">Business Management Systems</option>
+            <option value="SEO-Ready Websites">SEO-Ready Websites</option>
           </select>
         </div>
       </div>
+
+      <div className="grid gap-3 sm:grid-cols-2">
+        <div>
+          <label
+            htmlFor="sf-inline-budget"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
+            Approx Budget (Optional)
+          </label>
+          <select
+            id="sf-inline-budget"
+            name="budget"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
+          >
+            <option value="">Select budget range</option>
+            <option value="Under $1,000">Under $1,000</option>
+            <option value="$1,000 - $3,000">$1,000 – $3,000</option>
+            <option value="$3,000 - $7,000">$3,000 – $7,000</option>
+            <option value="$7,000+">$7,000+</option>
+            <option value="Flexible">Flexible / To be discussed</option>
+          </select>
+        </div>
+        <div>
+          <label
+            htmlFor="sf-inline-timeline"
+            className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          >
+            Expected Timeline (Optional)
+          </label>
+          <select
+            id="sf-inline-timeline"
+            name="timeline"
+            value={timeline}
+            onChange={(e) => setTimeline(e.target.value)}
+            className="w-full rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
+          >
+            <option value="">Select timeline</option>
+            <option value="Immediately (< 2 weeks)">Immediately (&lt; 2 weeks)</option>
+            <option value="1 - 2 months">1 – 2 months</option>
+            <option value="2 - 3 months">2 – 3 months</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </div>
+      </div>
+
       <div>
         <label
           htmlFor="sf-inline-message"
-          className="mb-1.5 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
+          className="mb-1 block text-[9px] font-bold uppercase tracking-widest text-text-secondary/70"
         >
-          Tell me about the project
+          Project Details
         </label>
         <textarea
           id="sf-inline-message"
@@ -3419,13 +3095,15 @@ function InlineContactForm() {
           rows={3}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Briefly describe the challenge or opportunity..."
-          className="w-full resize-none rounded-lg border border-border/50 bg-surface/50 px-3 py-2.5 text-sm focus:border-accent focus:outline-none transition-colors"
+          placeholder="Briefly describe the challenge or what you want to build..."
+          className="w-full resize-none rounded-lg border border-border/50 bg-surface/50 px-3 py-2 text-sm focus:border-accent focus:outline-none transition-colors"
         />
       </div>
+
       {status === "error" && (
-        <p className="text-sm text-red-400">{errorMessage}</p>
+        <p className="text-sm text-red-500">{errorMessage}</p>
       )}
+
       <button
         disabled={status === "submitting"}
         type="submit"
@@ -3433,6 +3111,10 @@ function InlineContactForm() {
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
       </button>
+
+      <p className="text-[10px] text-text-secondary/60 text-center pt-0.5">
+        Your details are kept strictly confidential and only used to respond to your project enquiry.
+      </p>
     </form>
   );
 }
