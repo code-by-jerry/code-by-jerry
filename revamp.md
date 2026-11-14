@@ -93,47 +93,22 @@
 
 ## Section 7 – Project Case Studies
 
-**Status:**
-- Headings, mobile horizontal tab layout, deliverable scope labels & metric cleanup: `[COMPLETED - PHASE 1]`
-- Project screenshot graphics & UI previews: `[PENDING ASSET UPDATE - PHASE 2: Visual creative & assets will be updated in next phase]`
-
-### What was changed
-1. **Heading:** `Real projects. Real business solutions.` `[COMPLETED]`
-2. **Subtitle:** `Verified builds across live and internal systems — documented features, business scope, technical stack, and live project links.` `[COMPLETED]`
-3. **Mobile Layout Optimization (High Priority):**
-   - Implemented compact horizontal scrolling project tabs on mobile (`lg:hidden`), replacing the awkward tall vertical selector.
-   - Cleanly stacked challenge, solution, and scope cards beneath the selector.
-   - Preserved desktop 3-column layout (`lg:grid`).
-4. **Removed unverified ROI metrics:** Renamed metric areas to `Project Scope` (Build, Deliverables, Status, Stack) and `Delivered Capabilities`. `[COMPLETED]`
-5. **CTAs:** `Discuss a Similar Project` and `View Live Site`. `[COMPLETED]`
-6. **Visual mockups & screenshots:** `[PENDING ASSET UPDATE - PHASE 2]`
+**Status:** `[REMOVED FROM FREELANCE HOMEPAGE]`
+- Removed from the freelance landing page to focus primarily on service offerings, capabilities, engineering facts, and creative solutions. Full case studies and portfolio work remain accessible via the dedicated `/portfolio` and `/reviews` routes.
 
 ---
 
 ## Section 8 – Selected Production Work
 
-**Status:**
-- Heading, description, mobile horizontal scroll tabs & action links: `[COMPLETED - PHASE 1]`
-- 3D stack carousel screenshots & UI mockups: `[PENDING ASSET UPDATE - PHASE 2: Visual creative & assets will be updated in next phase]`
-
-### What was changed
-1. **Heading:** `A closer look at the products I've built.` `[COMPLETED]`
-2. **Description:** `Explore real websites, eCommerce experiences and business applications developed for different business needs.` `[COMPLETED]`
-3. **Mobile layout:** Responsive horizontal scroll project tabs, single visible preview on mobile with bullet pagination, removing clipped 3D stage on small screens. `[COMPLETED]`
-4. **Action buttons:** `Discuss Your Project` and `View Live Site`. `[COMPLETED]`
-5. **Screenshots & image assets:** `[PENDING ASSET UPDATE - PHASE 2]`
+**Status:** `[REMOVED FROM FREELANCE HOMEPAGE]`
+- Removed 3D project carousel from the homepage to keep page focus on core services and problem solving.
 
 ---
 
 ## Section 9 – Post-Portfolio CTA
 
-**Status:** `[COMPLETED - PHASE 1]`
-
-### What was changed
-1. **Eyebrow:** `HAVE A PROJECT IN MIND?` `[COMPLETED]`
-2. **Headline:** `Let's discuss what your business needs next.` `[COMPLETED]`
-3. **Description:** `Whether you're building a new product or improving an existing system, let's discuss your requirements and find the right approach.` `[COMPLETED]`
-4. **CTAs:** Primary `Discuss Your Project`, Secondary `Chat on WhatsApp`. `[COMPLETED]`
+**Status:** `[REMOVED - STREAMLINED]`
+- Streamlined redundant CTA strip after removing project case study sections.
 
 ---
 
@@ -157,16 +132,8 @@
 
 ## Section 11 – Testimonials & Performance Proof
 
-**Status:**
-- Heading, copy, removal of fake outcome dashboard & addition of verified Architecture Card: `[COMPLETED - PHASE 1]`
-- Video testimonials & client photo assets: `[PENDING ASSET UPDATE - PHASE 2: Visual creative & assets will be updated in next phase]`
-
-### What was changed
-1. **Heading:** `Trust built through real work and real collaboration.` `[COMPLETED]`
-2. **Description:** `Every project reflects a practical approach to understanding business needs, solving technical challenges and delivering solutions that work in real environments.` `[COMPLETED]`
-3. **Removed fabricated telemetry dashboard:** Deleted fake metrics (10K+ Peak Users, 88% Server Response, 94% Core Web Vitals, 99% Uptime, animated sparklines). `[COMPLETED]`
-4. **Authentic Project Architecture Card:** Displays genuine live project status, real delivered module capabilities, verified tech stack tags, and direct live site links. `[COMPLETED]`
-5. **Client photo & video assets:** `[PENDING ASSET UPDATE - PHASE 2]`
+**Status:** `[REMOVED FROM FREELANCE HOMEPAGE]`
+- Testimonial carousel removed from homepage to maintain a dedicated services, facts, and capabilities focus. Dedicated client reviews remain housed on the `/reviews` page.
 
 ---
 

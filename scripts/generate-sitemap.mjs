@@ -8,6 +8,7 @@ const staticRoutes = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/about", priority: "0.8", changefreq: "monthly" },
   { path: "/portfolio", priority: "0.8", changefreq: "weekly" },
+  { path: "/reviews", priority: "0.8", changefreq: "weekly" },
   { path: "/case-studies", priority: "0.8", changefreq: "monthly" },
   { path: "/case-studies/real-estate-platform", priority: "0.7", changefreq: "monthly" },
   { path: "/remote-full-stack-developer-india", priority: "0.8", changefreq: "monthly" },

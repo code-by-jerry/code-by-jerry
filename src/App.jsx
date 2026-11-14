@@ -22,6 +22,7 @@ import StartupMVPDevelopment from './pages/services/StartupMVPDevelopment'
 import SeoPerformanceOptimization from './pages/services/SeoPerformanceOptimization'
 import BlogCategory from './pages/BlogCategory'
 import CaseStudyDetail from './pages/CaseStudyDetail'
+import ReviewsAndCaseStudies from './pages/ReviewsAndCaseStudies'
 import RemoteFullStackDeveloperIndia from './pages/RemoteFullStackDeveloperIndia'
 import NotFound from './pages/NotFound'
 
@@ -87,6 +88,8 @@ function App() {
         <Route path="/blog" element={<BlogIndex />} />
         <Route path="/blog/category/:categorySlug" element={<BlogCategory />} />
         <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/reviews" element={<ReviewsAndCaseStudies />} />
+        <Route path="/case-studies" element={<ReviewsAndCaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
         <Route path="/remote-full-stack-developer-india" element={<RemoteFullStackDeveloperIndia />} />
         <Route path="/developer" element={<Navigate to="/about" replace />} />
